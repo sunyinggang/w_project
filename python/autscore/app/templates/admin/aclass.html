@@ -1,0 +1,43 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "admin/menu.html" %}
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>班级管理</h1>
+          </div>
+        </div><!-- /.row -->
+        <div style="margin-top: 40px;" class="row">
+          <div class="col-lg-6">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>班级名<i class="fa"></i></th>
+                    <th>操作<i class="fa"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>/index.html</td>
+                    <td><button type="button" class="btn btn-danger">删除</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="clo-lg-6">
+            <div class="col-lg-4"><button type="button" class="btn btn-primary btn-lg">添加班级</button></div> 
+            <div class="col-lg-4 alert alert-dismissable alert-info">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <strong>注意!</strong>请勿重复添加班级名
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+{% endblock %}
+

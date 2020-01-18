@@ -1,0 +1,52 @@
+from app import db
+from sqlalchemy import Column, Integer, String, Date, DateTime,TIMESTAMP,DECIMAL
+from werkzeug.security import check_password_hash
+
+class Admin(db.Model):
+    id = Column(Integer, primary_key=True)
+    username = Column(String)
+    password = Column(String)
+
+    def check_pwd(self, pwd):
+        return check_password_hash(self.password, pwd)
+
+class Teacher(db.Model):
+    id = Column(Integer, primary_key=True)
+    username = Column(String)
+    password = Column(String)
+    name = Column(String)
+
+    def check_pwd(self, pwd):
+        return check_password_hash(self.password, pwd)
+
+class Student(db.Model):
+    id = Column(Integer, primary_key=True)
+    username = Column(String)
+    password = Column(String)
+    name = Column(String)
+    class_id = Column(Integer)
+
+    def check_pwd(self, pwd):
+        return check_password_hash(self.password, pwd)
+
+class Class(db.Model):
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+
+class Experiment(db.Model):
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    teacher_id = Column(Integer)
+    start_time = Column(DateTime)
+    end_time = Column(DateTime)
+
+class Select(db.Model):
+    id = Column(Integer, primary_key=True)
+    experiment_id = Column(Integer)
+    student_id = Column(Integer)
+    word_url = Column(String)
+    select_time = Column(DateTime)
+    add_time = Column(DateTime)
+    aut_score = Column(Integer)
+    tea_score = Column(Integer)
+    is_aut = Column(Integer)
