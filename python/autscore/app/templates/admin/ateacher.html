@@ -1,4 +1,5 @@
 {% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
 {% block content %}
 {% include "admin/menu.html" %}
       <div id="page-wrapper">
@@ -9,15 +10,23 @@
           </div>
         </div><!-- /.row -->
         <div style="margin-top: 40px;" class="row">
+
           <div class="col-lg-6">
             搜索（输入工号）：
+            <form action="{{ url_for('admin.teacherSearch')}}">
             <div class="form-group input-group">
-              <input type="text" class="form-control">
+              <input type="text" name="username" class="form-control">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
               </span>
             </div>
+            </form>
             <div class="table-responsive">
+              <div class="row">
+				{% for msg in get_flashed_messages() %}
+				<p style="color:red;">{{ msg }}</p>
+                {% endfor %}
+              </div>
               <table class="table table-bordered table-hover tablesorter">
                 <thead>
                   <tr>
@@ -27,16 +36,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                {%  for v in teacher_list.items %}
                   <tr>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
+                    <td>{{ v.username }}</td>
+                    <td>{{ v.name }}</td>
                     <td>
-                      <button type="button" class="btn btn-primary">恢复密码</button>
-                      <button type="button" class="btn btn-danger">删除</button>
+                      <a class="btn btn-primary" href="{{ url_for('admin.teacherEdit',id=v.id) }}" role="button">恢复密码</a>
+                      <a class="btn btn-danger" href="{{ url_for('admin.ateacherDel',id=v.id) }}" role="button">删除</a>
                     </td>
                   </tr>
+                {% endfor %}
                 </tbody>
               </table>
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(teacher_list,'admin.ateacher') }}
             </div>
           </div>
           <div class="clo-lg-6">

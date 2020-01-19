@@ -177,3 +177,7 @@ input, textarea {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+a:link {
+   color:inherit;
+}

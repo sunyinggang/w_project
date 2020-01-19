@@ -1,4 +1,5 @@
 {% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
 {% block content %}
 {% include "admin/menu.html" %}
 
@@ -11,6 +12,11 @@
         </div><!-- /.row -->
         <div style="margin-top: 40px;" class="row">
           <div class="col-lg-6">
+            <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+			</div>
             <div class="table-responsive">
               <table class="table table-bordered table-hover tablesorter">
                 <thead>
@@ -20,16 +26,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                {%  for v in class_list.items %}
                   <tr>
-                    <td>/index.html</td>
-                    <td><button type="button" class="btn btn-danger">删除</button></td>
+                    <td>{{ v.name }}</td>
+                    <td><a class="btn btn-danger" href="{{ url_for('admin.classDel',id=v.id) }}" role="button">删除</a></td>
                   </tr>
+                {% endfor %}
                 </tbody>
               </table>
             </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(class_list,'admin.aclass') }}
+            </div>
           </div>
           <div class="clo-lg-6">
-            <div class="col-lg-4"><button type="button" class="btn btn-primary btn-lg">添加班级</button></div> 
+            <div class="col-lg-4"><a class="btn btn-primary" href="{{ url_for('admin.classAdd') }}" role="button">添加班级</a></div>
             <div class="col-lg-4 alert alert-dismissable alert-info">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
               <strong>注意!</strong>请勿重复添加班级名
