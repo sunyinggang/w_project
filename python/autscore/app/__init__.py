@@ -12,7 +12,9 @@ db = SQLAlchemy(app)
 
 from app.home import home as home_blueprint
 from app.admin import admin as admin_blueprint
+from app.teacher import teacher as teacher_blueprint
 
 app.register_blueprint(home_blueprint)
 app.register_blueprint(admin_blueprint, url_prefix="/admin")
+app.register_blueprint(teacher_blueprint, url_prefix="/teacher")
 

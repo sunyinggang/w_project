@@ -1,0 +1,62 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "teacher/menu.html" %}
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-4">
+             <form role="form" method="post">
+                    <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+					</div>
+                  <h1>添加实验</h1>
+                  <div class="form-group">
+                    <label>实验名称</label>
+                    {{ form.name }}
+					{% for err in form.name.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+                    {% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>开始时间</label>
+                    {{ form.start_time }}
+					{% for err in form.start_time.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>结束时间</label>
+                    {{ form.end_time }}
+					{% for err in form.end_time.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+					{% endfor %}
+                  </div>
+                  {{ form.submit }}
+				  {{ form.csrf_token }}
+                </form>
+          </div>
+        </div><!-- /.row -->
+
+
+      </div><!-- /#page-wrapper -->
+
+{% endblock %}
+{% block js %}
+    <script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+    $('#datetimepicker2').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+    </script>
+{% endblock %}
