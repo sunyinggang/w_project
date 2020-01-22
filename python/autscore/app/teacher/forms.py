@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from flask_wtf.file import FileRequired
+from wtforms import StringField, SubmitField, FileField
 from wtforms.validators import DataRequired
 
 
@@ -37,6 +38,13 @@ class ExperimentForm(FlaskForm):
             "id": "datetimepicker2",
             "value": "2020-01-01 00:00"
         }
+    )
+    model_url = FileField(
+        label="实验报告上传",
+        validators=[
+            # 文件必须选择;
+            FileRequired("必须添加实验报告模板！"),
+        ]
     )
     submit = SubmitField(
         "确认",

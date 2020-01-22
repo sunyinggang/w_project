@@ -11,6 +11,7 @@ class Admin(db.Model):
         return check_password_hash(self.password, pwd)
 
 class Teacher(db.Model):
+    __tablename__ = "teacher"
     id = Column(Integer, primary_key=True)
     username = Column(String)
     password = Column(String)
@@ -34,19 +35,22 @@ class Class(db.Model):
     name = Column(String)
 
 class Experiment(db.Model):
+    __tablename__ = "experiment"
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    model_url = Column(String)
     teacher_id = Column(Integer)
     start_time = Column(DateTime)
     end_time = Column(DateTime)
+    select = db.relationship('Select',backref='experiment')
 
 class Select(db.Model):
     id = Column(Integer, primary_key=True)
-    experiment_id = Column(Integer)
+    experiment_id = Column(Integer,db.ForeignKey('experiment.id'))
     student_id = Column(Integer)
     word_url = Column(String)
     select_time = Column(DateTime)
     add_time = Column(DateTime)
     aut_score = Column(Integer)
     tea_score = Column(Integer)
-    is_aut = Column(Integer)
+    is_aut = Column(Integer,default=0)

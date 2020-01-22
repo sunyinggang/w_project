@@ -1,0 +1,66 @@
+{% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
+{% block content %}
+{% include "student/menu.html" %}
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h1>我的实验</h1>
+          </div>
+        </div><!-- /.row -->
+        <div style="margin-top: 40px;" class="row">
+          <div class="col-lg-12">
+           <div class="row">
+				{% for msg in get_flashed_messages() %}
+				<p style="color:red;">{{ msg }}</p>
+				{% endfor %}
+			</div>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>实验题目<i class="fa"></i></th>
+                    <th>开始时间<i class="fa"></i></th>
+                    <th>结束时间<i class="fa"></i></th>
+                    <th>自动评阅分数<i class="fa"></i></th>
+                    <th>手动评阅分数<i class="fa"></i></th>
+                    <th>操作<i class="fa"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {%  for v in select_list.items %}
+                  <tr>
+                    <td>{{ v.experiment.name }}</td>
+                    <td>{{ v.experiment.start_time }}</td>
+                    <td>{{ v.experiment.end_time }}</td>
+                    {% if v.aut_score == None  %}
+                    <td>未评分</td>
+                    {% else %}
+                    <td>{{ v.aut_score }}</td>
+                    {% endif %}
+                    {% if v.tea_score == None  %}
+                    <td>未评分</td>
+                    {% else %}
+                    <td>{{ v.tea_score }}</td>
+                    {% endif %}
+                    <td>
+                      <a class="btn btn-primary" href="{{ url_for('student.download',id=v.experiment.id) }}" role="button">下载模板</a>
+                      <button type="button" class="btn btn-primary">上传实验报告</button>
+                      <a class="btn btn-danger" href="{{ url_for('student.scoreDel',id=v.id) }}" role="button">删除</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(select_list,'student.score') }}
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+{% endblock %}

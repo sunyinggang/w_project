@@ -2,7 +2,7 @@ from flask import flash, redirect, url_for, session, render_template
 
 from . import home
 from app.home.forms import LoginForm
-from app.models import Admin, Teacher
+from app.models import Admin, Teacher, Student
 
 
 @home.route("/",methods=["GET","POST"])
@@ -34,15 +34,18 @@ def login():
             session["type"] = 2
             session["id"] = teacher.id
             return redirect(url_for("teacher.index"))
-        # if data["usertype"] == 3:
-        #     staff = Staff.query.filter_by(username=data["email"]).first()
-        #     if not staff.check_pwd(data["password"]):
-        #         flash("Wrong password!")
-        #         return redirect(url_for("home.login"))
-        #     session["username"] = data["email"]
-        #     session["url"] = "staff.index"
-        #     session["type"] = 3
-        #     return redirect(url_for("staff.index"))
+        if data["usertype"] == 3:
+            student = Student.query.filter_by(username=data["username"]).first()
+            if not student:
+                flash("账号不存在！")
+                return redirect(url_for("home.login"))
+            if not student.check_pwd(data["password"]):
+                flash("密码错误!")
+                return redirect(url_for("home.login"))
+            session["username"] = data["username"]
+            session["id"] = student.id
+            session["type"] = 3
+            return redirect(url_for("student.index"))
     return render_template("home/login.html",form=form)
 
 @home.route("/logout/")
