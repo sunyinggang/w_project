@@ -1,5 +1,6 @@
 import datetime
 import os
+import time
 
 from flask import render_template, session, flash, redirect, url_for, make_response, send_file, request
 
@@ -55,6 +56,25 @@ def score(page=None):
         Select.student_id == session["id"]
     ).paginate(page=page,per_page=5)
     return render_template("student/sscore.html",select_list = select_list)
+
+@student.route("/word/add/<id>/",methods=["POST","GET"])
+def addWord(id=None):
+    UPLOAD_FOLDER = 'app/static/upload/'
+    file_dir = os.path.join(os.getcwd(), UPLOAD_FOLDER)
+    if not os.path.exists(file_dir):
+        os.makedirs(file_dir)
+    f = request.files['file']  # 从表单的file字段获取文件，myfile为该表单的name值
+    fname = f.filename
+    ext = fname.rsplit('.', 1)[1]  # 获取文件后缀
+    unix_time = int(time.time())
+    new_filename = str(unix_time) + '.' + ext  # 修改了上传的文件名
+    f.save(os.path.join(file_dir, new_filename))  # 保存文件到upload目录
+    select = Select.query.filter_by(id=id).first_or_404()
+    select.word_url = new_filename
+    db.session.add(select)
+    db.session.commit()
+    flash("上传成功！")
+    return redirect(url_for("student.score", page=1))
 
 @student.route("/score/del/<id>/",methods=["GET","POST"])
 def scoreDel(id=None):
