@@ -42,3 +42,31 @@ class LoginForm(FlaskForm):
             "class": "btn btn-primary"
         }
     )
+    
+class ChangeForm(FlaskForm):
+    password = StringField(
+        label="新密码",
+        validators=[
+            DataRequired("密码不为空！")
+        ],
+        description="新密码",
+        render_kw={
+            "class": "form-control"
+        }
+    )
+    passwordt = StringField(
+        label="再次输入新密码",
+        validators=[
+            DataRequired("密码不为空！")
+        ],
+        description="再次输入新密码",
+        render_kw={
+            "class": "form-control"
+        }
+    )
+    submit = SubmitField(
+        "确认",
+        render_kw={
+            "class": "btn btn-primary"
+        }
+    )

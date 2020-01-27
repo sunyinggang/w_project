@@ -1,18 +1,36 @@
 import os
 
 import xlrd
-from flask import render_template, send_from_directory, make_response, send_file, request, flash, redirect, url_for
+from flask import render_template, send_from_directory, make_response, send_file, request, flash, redirect, url_for, \
+    session
 from werkzeug.security import generate_password_hash
 from app import db
 
 from . import admin
 from .forms import ClassForm
-from ..models import Teacher, Student, Class
+from ..home.forms import ChangeForm
+from ..models import Teacher, Student, Class, Admin
 
 
 @admin.route("/")
 def index():
     return render_template("admin/admin.html")
+
+@admin.route("/change/",methods=["GET","POST"])
+def change():
+    form = ChangeForm()
+    if form.validate_on_submit():
+        data = form.data
+        if data["password"] != data["passwordt"]:
+            flash("两次密码不一致！")
+            return redirect(url_for("admin.change"))
+        admin = Admin.query.filter_by(username=session["username"]).first()
+        admin.password = generate_password_hash(data["password"])
+        db.session.add(admin)
+        db.session.commit()
+        flash("密码修改成功，重新登录！")
+        return redirect(url_for("home.logout"))
+    return render_template("admin/change.html", form=form)
 
 @admin.route("/aclass/<int:page>/",methods=["GET"])
 def aclass(page=None):

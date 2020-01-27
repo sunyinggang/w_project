@@ -1,4 +1,5 @@
 {% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
 {% block content %}
 {% include "teacher/menu.html" %}
 
@@ -23,17 +24,22 @@
                   </tr>
                 </thead>
                 <tbody>
+                {%  for v in experiment_list.items %}
                   <tr>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
+                    <td>{{ v[1] }}</td>
+                    <td>{{ v[2] }}</td>
+                    <td>{{ v[3] }}</td>
+                    <td>{{ v[4] }}</td>
                     <td>
-                      <a href="{{ url_for('teacher.student') }}">查看学生成绩</a>
+                      <a href="{{ url_for('teacher.student',id=v[0]) }}">查看学生成绩</a>
                   </tr>
+                {% endfor %}
                 </tbody>
               </table>
             </div>
+              <div class="box-footer clearfix">
+              {{ pg.page(experiment_list,'teacher.score') }}
+             </div>
           </div>
         </div><!-- /.row -->
 

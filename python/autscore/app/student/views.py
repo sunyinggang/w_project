@@ -3,15 +3,33 @@ import os
 import time
 
 from flask import render_template, session, flash, redirect, url_for, make_response, send_file, request
+from werkzeug.security import generate_password_hash
 
 from . import student
 from .. import db
-from ..models import Experiment, Select, Teacher
+from ..home.forms import ChangeForm
+from ..models import Experiment, Select, Teacher, Student
 
 
 @student.route("/index/")
 def index():
     return render_template("student/student.html")
+
+@student.route("/change/",methods=["GET","POST"])
+def change():
+    form = ChangeForm()
+    if form.validate_on_submit():
+        data = form.data
+        if data["password"] != data["passwordt"]:
+            flash("两次密码不一致！")
+            return redirect(url_for("student.change"))
+        student = Student.query.filter_by(username=session["username"]).first()
+        student.password = generate_password_hash(data["password"])
+        db.session.add(student)
+        db.session.commit()
+        flash("密码修改成功，重新登录！")
+        return redirect(url_for("home.logout"))
+    return render_template("student/change.html", form=form)
 
 @student.route("/select/<int:page>/")
 def select(page=None):

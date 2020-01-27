@@ -48,6 +48,8 @@ def login():
             return redirect(url_for("student.index"))
     return render_template("home/login.html",form=form)
 
+# @home.route("change",methods=["GET","POST"])
+
 @home.route("/logout/")
 def logout():
     session.pop("username",None)

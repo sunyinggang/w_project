@@ -15,7 +15,7 @@
           <ul class="nav navbar-nav side-nav">
             <li><a href="{{ url_for('teacher.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
             <li><a href="{{ url_for('teacher.experiment',page=1) }}"><i class="fa fa-table"></i> 上机实验</a></li>
-            <li><a href="{{ url_for('teacher.score') }}"><i class="fa fa-caret-square-o-down"></i> 查看成绩</a></li>
+            <li><a href="{{ url_for('teacher.score',page=1) }}"><i class="fa fa-caret-square-o-down"></i> 查看成绩</a></li>
             <li><a href="{{ url_for('teacher.tclass') }}"><i class="fa fa-desktop"></i> 成绩统计</a></li>
           </ul>
 
@@ -23,7 +23,7 @@
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ session["username"] }} <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+                <li><a href="{{ url_for('teacher.change') }}"><i class="fa fa-gear"></i> 修改密码</a></li>
                 <li class="divider"></li>
                 <li><a href="{{ url_for('home.logout') }}"><i class="fa fa-power-off"></i>退出</a></li>
               </ul>

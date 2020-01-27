@@ -6,7 +6,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <h1>《***实验》</h1>
+            <h1>《{{ experiment.name }}》</h1>
           </div>
         </div><!-- /.row -->
         <div style="margin-top: 40px;" class="row">
@@ -24,15 +24,17 @@
                   </tr>
                 </thead>
                 <tbody>
+                {%  for v in select_list %}
                   <tr>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
-                    <td>/index.html</td>
+                    <td>{{ v.student.username }}</td>
+                    <td>{{ v.student.name }}</td>
+                    <td>{{ v.student.class.name }}</td>
+                    <td>{{ v.aut_score}}</td>
+                    <td>{{ v.tea_score}}</td>
                     <td>
                       <button type="button" class="btn btn-primary">查看实验报告</button>
                   </tr>
+                {% endfor %}
                 </tbody>
               </table>
             </div>
