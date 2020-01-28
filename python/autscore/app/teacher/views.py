@@ -110,3 +110,5 @@ def student(id=None):
         Experiment.id == Select.experiment_id
     )
     return render_template("teacher/tstudent.html",experiment = experiment,select_list = select_list)
+
+

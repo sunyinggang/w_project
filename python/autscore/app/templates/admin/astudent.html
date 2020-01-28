@@ -12,7 +12,7 @@
         <div style="margin-top: 40px;" class="row">
           <div class="col-lg-6">
             搜索（输入学号）：
-            <form action="{{ url_for('admin.studentSearch')}}">
+            <form action="{{ url_for('admin.studentSearch',page=1)}}">
             <div class="form-group input-group">
               <input type="text" name="username" class="form-control">
               <span class="input-group-btn">
@@ -31,6 +31,7 @@
                   <tr>
                     <th>学号<i class="fa"></i></th>
                     <th>姓名<i class="fa"></i></th>
+                    <th>班级<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
                 </thead>
@@ -39,6 +40,7 @@
                   <tr>
                     <td>{{ v.username }}</td>
                     <td>{{ v.name }}</td>
+                    <td>{{ v.class_name }}</td>
                     <td>
                       <a class="btn btn-primary" href="{{ url_for('admin.studentEdit',id=v.id) }}" role="button">恢复密码</a>
                       <a class="btn btn-danger" href="{{ url_for('admin.studentDel',id=v.id) }}" role="button">删除</a>

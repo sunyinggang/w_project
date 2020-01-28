@@ -76,6 +76,7 @@ def download():
     response = make_response(send_file(ROOT_FOLDER + "模板文件.xls"))
     return response
 
+
 @admin.route("/fileo/", methods=['POST', 'GET'])
 def fileOne():
     file = request.files['fileo']
@@ -100,7 +101,7 @@ def fileOne():
         db.session.add(teachers)
         db.session.commit()
     flash("导入成功！")
-    return redirect(url_for('admin.ateacher'))
+    return redirect(url_for('admin.ateacher',page = 1))
 
 @admin.route("/filet/", methods=['POST', 'GET'])
 def fileTow():
@@ -122,11 +123,12 @@ def fileTow():
         students = Student()
         students.username = a[0]
         students.name = a[1]
+        students.class_name = a[2]
         students.password = generate_password_hash("123456")
         db.session.add(students)
         db.session.commit()
     flash("导入成功！")
-    return redirect(url_for('admin.astudent'))
+    return redirect(url_for('admin.astudent',page = 1))
 
 @admin.route("/astudent/<int:page>/",methods=["GET"])
 def astudent(page=None):
@@ -143,12 +145,14 @@ def studentDel(id=None):
     flash("删除成功！")
     return redirect(url_for('admin.astudent'))
 
-@admin.route("/astudent/search/")
-def studentSearch():
+@admin.route("/astudent/search/<int:page>/")
+def studentSearch(page=None):
+    if page is None:
+        page = 1
     username = request.args.get("username")
     student_list = Student.query
     if username:
-        student_list = student_list.filter(Student.username==username)
+        student_list = student_list.filter(Student.username==username).paginate(page=page,per_page=5)
     return render_template("admin/astudent.html",student_list = student_list)
 
 @admin.route("/astudent/edit/<id>/",methods=["GET","POST"])

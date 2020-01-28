@@ -6,6 +6,7 @@ from flask import render_template, session, flash, redirect, url_for, make_respo
 from werkzeug.security import generate_password_hash
 
 from . import student
+from .forms import ClassForm
 from .. import db
 from ..home.forms import ChangeForm
 from ..models import Experiment, Select, Teacher, Student
@@ -110,7 +111,14 @@ def download(id=None):
     response = make_response(send_file(file_dir))
     return response
 
+@student.route("/info/")
+def info():
+    return render_template("student/info.html")
 
+@student.route("/selectClass/")
+def selectClass():
+    form = ClassForm()
+    return render_template("student/selectClass.html",form = form)
 
 
 

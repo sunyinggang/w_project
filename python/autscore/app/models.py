@@ -26,7 +26,8 @@ class Student(db.Model):
     username = Column(String)
     password = Column(String)
     name = Column(String)
-    class_id = Column(Integer,db.ForeignKey('class.id'))
+    class_id = Column(Integer,db.ForeignKey('class.id'),default=0)
+    class_name = Column(String)
     select = db.relationship('Select', backref='student')
 
     def check_pwd(self, pwd):
@@ -55,6 +56,6 @@ class Select(db.Model):
     word_url = Column(String)
     select_time = Column(DateTime)
     add_time = Column(DateTime)
-    aut_score = Column(Integer)
-    tea_score = Column(Integer)
+    aut_score = Column(Integer,default=0)
+    tea_score = Column(Integer,default=0)
     is_aut = Column(Integer,default=0)
