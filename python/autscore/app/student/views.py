@@ -6,10 +6,10 @@ from flask import render_template, session, flash, redirect, url_for, make_respo
 from werkzeug.security import generate_password_hash
 
 from . import student
-from .forms import ClassForm
+from app.student.forms import ClassForm
 from .. import db
 from ..home.forms import ChangeForm
-from ..models import Experiment, Select, Teacher, Student
+from ..models import Experiment, Select, Teacher, Student, Class
 
 
 @student.route("/index/")
@@ -18,6 +18,10 @@ def index():
 
 @student.route("/change/",methods=["GET","POST"])
 def change():
+    student = Student.query.filter_by(id=session["id"]).first_or_404()
+    if student.class_id == 0:
+        flash("请先选择班级！")
+        return redirect(url_for("student.selectClass"))
     form = ChangeForm()
     if form.validate_on_submit():
         data = form.data
@@ -34,6 +38,10 @@ def change():
 
 @student.route("/select/<int:page>/")
 def select(page=None):
+    student = Student.query.filter_by(id=session["id"]).first_or_404()
+    if student.class_id == 0:
+        flash("请先选择班级！")
+        return redirect(url_for("student.selectClass"))
     if page is None:
         page = 1
     experiment_list = Experiment.query.paginate(page=page,per_page=5)
@@ -113,11 +121,31 @@ def download(id=None):
 
 @student.route("/info/")
 def info():
-    return render_template("student/info.html")
+    student =  Student.query.filter_by(id=session["id"]).first_or_404()
+    if student.class_id == 0:
+        flash("请先选择班级！")
+        return redirect(url_for("student.selectClass"))
+    else:
+        student = Student.query.join(
+            Class
+        ).filter(
+            Student.class_id == Class.id
+        ).filter(
+            Student.id == session["id"]
+        ).first()
+        return render_template("student/info.html",student = student)
 
-@student.route("/selectClass/")
+@student.route("/selectClass/", methods=['POST', 'GET'])
 def selectClass():
     form = ClassForm()
+    if form.validate_on_submit():
+        data = form.data
+        student = Student.query.filter_by(id=session["id"]).first_or_404()
+        student.class_id = data["class_name"]
+        db.session.add(student)
+        db.session.commit()
+        flash("选择班级成功！")
+        return redirect(url_for("student.info"))
     return render_template("student/selectClass.html",form = form)
 
 

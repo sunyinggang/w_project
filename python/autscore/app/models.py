@@ -27,7 +27,6 @@ class Student(db.Model):
     password = Column(String)
     name = Column(String)
     class_id = Column(Integer,db.ForeignKey('class.id'),default=0)
-    class_name = Column(String)
     select = db.relationship('Select', backref='student')
 
     def check_pwd(self, pwd):

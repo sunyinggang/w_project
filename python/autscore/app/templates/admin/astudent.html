@@ -40,7 +40,7 @@
                   <tr>
                     <td>{{ v.username }}</td>
                     <td>{{ v.name }}</td>
-                    <td>{{ v.class_name }}</td>
+                    <td>{{ v.class.name }}</td>
                     <td>
                       <a class="btn btn-primary" href="{{ url_for('admin.studentEdit',id=v.id) }}" role="button">恢复密码</a>
                       <a class="btn btn-danger" href="{{ url_for('admin.studentDel',id=v.id) }}" role="button">删除</a>
@@ -57,7 +57,8 @@
           <div class="clo-lg-6">
             <div class="col-lg-4 alert alert-dismissable alert-info">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              恢复密码为初始密码：123456    
+                学生列表为仅展示已选择班级的学生<br>
+                恢复密码为初始密码：123456
             </div>
           </div>
         </div><!-- /.row -->

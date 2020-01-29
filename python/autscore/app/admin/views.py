@@ -123,7 +123,6 @@ def fileTow():
         students = Student()
         students.username = a[0]
         students.name = a[1]
-        students.class_name = a[2]
         students.password = generate_password_hash("123456")
         db.session.add(students)
         db.session.commit()
@@ -134,7 +133,11 @@ def fileTow():
 def astudent(page=None):
     if page is None:
         page = 1
-    student_list = Student.query.paginate(page=page,per_page=5)
+    student_list = Student.query.join(
+        Class
+    ).filter(
+        Student.class_id == Class.id
+    ).paginate(page=page,per_page=5)
     return render_template("admin/astudent.html",student_list=student_list)
 
 @admin.route("/astudent/del/<id>/",methods=["GET","POST"])

@@ -1,0 +1,37 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "teacher/menu.html" %}
+      <div id="page-wrapper">
+          <div class="row">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+                <form role="form" method="post">
+                    <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+					</div>
+                  <h1>填写分数</h1>
+                  <div class="form-group">
+                      <label>学号:{{ student.username }}</label><br>
+                      <label>姓名:{{ student.name }}</label><br>
+                      <label>分数:{{ select.tea_score }}</label><br>
+                      <label>评分</label>
+                    {{ form.score }}
+							{% for err in form.score.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  {{ form.submit }}
+                  {{ form.csrf_token }}
+                </form>
+              </div>
+              <div class="col-lg-4"></div>
+            </div><!-- /.row -->
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+{% endblock %}

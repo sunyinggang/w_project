@@ -31,7 +31,7 @@
                     <td>{{ v[3] }}</td>
                     <td>{{ v[4] }}</td>
                     <td>
-                      <a href="{{ url_for('teacher.student',id=v[0]) }}">查看学生成绩</a>
+                      <a href="{{ url_for('teacher.student',page=1,id=v[0]) }}">查看学生成绩</a>
                   </tr>
                 {% endfor %}
                 </tbody>

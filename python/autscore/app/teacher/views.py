@@ -6,7 +6,7 @@ from sqlalchemy import func
 from werkzeug.security import generate_password_hash
 
 from . import teacher
-from .forms import ExperimentForm
+from .forms import ExperimentForm, ClassFindForm, ScoreForm
 from .. import db
 from ..home.forms import ChangeForm
 from ..models import Experiment, Teacher, Select, Student, Class
@@ -31,10 +31,6 @@ def change():
         flash("密码修改成功，重新登录！")
         return redirect(url_for("home.logout"))
     return render_template("teacher/change.html", form=form)
-
-@teacher.route("/class/")
-def tclass():
-    return render_template("teacher/tclass.html")
 
 @teacher.route("/experiment/<int:page>/")
 def experiment(page=None):
@@ -93,8 +89,33 @@ def score(page=None):
     experiment_list = db.session.query(Experiment.id,Experiment.name, Experiment.start_time,Experiment.end_time,func.count(Experiment.name)).filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
     return render_template("teacher/tscore.html",experiment_list = experiment_list)
 
-@teacher.route("/student/<id>/")
-def student(id=None):
+@teacher.route("/student/<int:page>/",methods=["POST","GET"])
+def student(page=None):
+    form = ClassFindForm()
+    if form.validate_on_submit():
+        data = form.data
+        id = data["id"]
+        experiment = Experiment.query.filter_by(id=id).first_or_404()
+        select_list = Select.query.join(
+            Experiment, Student, Class
+        ).filter(
+            Select.is_aut != 0
+        ).filter(
+            Experiment.id == id
+        ).filter(
+            Select.student_id == Student.id
+        ).filter(
+            Class.id == Student.class_id
+        ).filter(
+            Student.class_id == data["class_name"]
+        ).filter(
+            Experiment.id == Select.experiment_id
+        ).paginate(page=page, per_page=5)
+        return render_template("teacher/tstudent.html", form=form, experiment=experiment, select_list=select_list,
+                               id=id)
+    if page is None:
+        page = 1
+    id = request.args.get('id')
     experiment = Experiment.query.filter_by(id=id).first_or_404()
     select_list = Select.query.join(
         Experiment,Student,Class
@@ -108,7 +129,20 @@ def student(id=None):
         Class.id == Student.class_id
     ).filter(
         Experiment.id == Select.experiment_id
-    )
-    return render_template("teacher/tstudent.html",experiment = experiment,select_list = select_list)
+    ).paginate(page=page,per_page=5)
+    return render_template("teacher/tstudent.html",form=form,experiment = experiment,select_list = select_list,id=id)
 
-
+@teacher.route("/addScore/<id>/",methods=["POST","GET"])
+def addScore(id=None):
+    form = ScoreForm()
+    select = Select.query.filter_by(id=id).first_or_404()
+    student = Student.query.filter_by(id=select.student_id).first_or_404()
+    if form.validate_on_submit():
+        data = form.data
+        select = Select.query.filter_by(id=id).first_or_404()
+        select.tea_score = data["score"]
+        db.session.add(select)
+        db.session.commit()
+        flash("评分成功！")
+        return redirect(url_for('teacher.addScore',id=id))
+    return render_template("teacher/addScore.html",form=form,student=student,select=select)

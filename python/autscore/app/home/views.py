@@ -45,6 +45,9 @@ def login():
             session["username"] = data["username"]
             session["id"] = student.id
             session["type"] = 3
+            if student.class_id == 0:
+                flash("请先选择班级！")
+                return redirect(url_for("student.selectClass"))
             return redirect(url_for("student.index"))
     return render_template("home/login.html",form=form)
 

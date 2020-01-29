@@ -15,7 +15,8 @@ class ClassForm(FlaskForm):
         choices=[(v.id, v.name) for v in classList],
         render_kw={
             "class": "form-control"
-        }
+        },
+        coerce=int
     )
     submit = SubmitField(
         "确认",
