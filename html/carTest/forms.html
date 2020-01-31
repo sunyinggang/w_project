@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Forms - SB Admin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="admin.html">车辆管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  信息审核 <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="forms.html">车主基本信息</a></li>
+                <li><a href="tables.html">行驶证基本信息</a></li>
+                <li><a href="forms.html">行驶证副业基本信息</a></li>
+                <li><a href="tables.html">驾驶证基本信息</a></li>
+                <li><a href="forms.html">驾驶员副页基本信息</a></li>
+                <li><a href="tables.html">身份证基本信息（正页）</a></li>
+                <li><a href="forms.html">身份证基本信息(副页)</a></li>
+                <li><a href="tables.html">车辆页小标签</a></li>
+                <li><a href="tables.html">车辆外观小标签</a></li>
+              </ul>
+            </li>
+            <li><a href="tables.html">信息审核进度</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <form role="form">
+              <h1>添加借书记录</h1>
+              <div class="form-group">
+                <label>图书名称</label>
+                <input class="form-control">
+                <p class="help-block">请填写图书全名</p>
+              </div>
+              <div class="form-group">
+                <label>借书日期</label>
+                <input class="form-control">
+                <p class="help-block">日期格式：年-月-日（如：1999-9-10）</p>
+              </div>
+              <div class="form-group">
+                <label>借书天数</label>
+                <input class="form-control">
+                <p class="help-block">填写整数代表天数</p>
+              </div>
+              <button type="submit" class="btn btn-default">确定</button>
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
