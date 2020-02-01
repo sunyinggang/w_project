@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard - SB Admin</title>
+    <title>Forms - SB Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -14,8 +14,6 @@
     <!-- Add custom CSS here -->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <!-- Page Specific CSS -->
-    <link rel="stylesheet" href="css/morris-0.4.3.min.css">
   </head>
 
   <body>
@@ -35,7 +33,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  信息审核 <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="user.html">车主基本信息</a></li>
+                <li><a href="forms.html">车主基本信息</a></li>
                 <li><a href="tables.html">行驶证基本信息</a></li>
                 <li><a href="forms.html">行驶证副业基本信息</a></li>
                 <li><a href="tables.html">驾驶证基本信息</a></li>
@@ -53,27 +51,53 @@
             <li class="dropdown user-dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#"><i class="fa fa-gear"></i> 审核人信息</a></li>
                 <li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+                <li class="divider"></li>
                 <li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
               </ul>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </nav>
-      <div id="page-wrapper">
 
+      <div id="page-wrapper">
         <div class="row">
-          <div class="col-lg-12">
-            <h1>欢迎进入车辆管理系统</h1>
-            <ol class="breadcrumb">
-              <li class="active"><i class="fa fa-dashboard"></i> 审核须知</li>
-            </ol>
-            <div class="alert alert-success alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              审核须知具体内容
-            </div>
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <form role="form">
+              <h1>身份证基本信息(副页)</h1>
+              <div class="form-group">
+                <label>姓名</label>
+                <input type="text" class="form-control" placeholder="" name="name">
+              </div>
+              <div class="form-group">
+                <label>性别</label>
+                <input type="text" class="form-control" placeholder="" name="sex">
+              </div>
+              <div class="form-group">
+                <label>民族</label>
+                <input type="text" class="form-control" placeholder="" name="nation">
+              </div>
+              <div class="form-group">
+                <label>出生日期</label>
+                <input type="text" class="form-control" placeholder="" name="born_data">
+              </div>
+              <div class="form-group">
+                <label>地址</label>
+                <input type="text" class="form-control" placeholder="" name="address">
+              </div>
+              <div class="form-group">
+                <label>身份证号码</label>
+                <input type="text" class="form-control" placeholder="" name="number">
+              </div>
+              <div class="form-group">
+                <label>插入身份证副页图片</label>
+                <input type="file" class="form-control" name="picture_url">
+              </div>
+              <button type="submit" class="btn btn-primary">确定</button>
+            </form>
           </div>
+          <div class="col-lg-4"></div>
         </div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
@@ -83,12 +107,6 @@
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
-
-    <!-- Page Specific Plugins -->    <script src="js/raphael-min.js"></script>
-    <script src="js/morris-0.4.3.min.js"></script>
-    <script src="js/morris/chart-data-morris.js"></script>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/tables.js"></script>
 
   </body>
 </html>
