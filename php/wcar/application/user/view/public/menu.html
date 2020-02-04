@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{:url('index/index')}">车辆审核管理系统</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav side-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  信息审核 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{:url('index/carerInfo')}">车主基本信息</a></li>
+                    <li><a href="{:url('index/travelCard')}">行驶证基本信息</a></li>
+                    <li><a href="{:url('index/travelSubpage')}">行驶证副业基本信息</a></li>
+                    <li><a href="{:url('index/driveCard')}">驾驶证基本信息</a></li>
+                    <li><a href="{:url('index/driveSubpage')}">驾驶证副页基本信息</a></li>
+                    <li><a href="{:url('index/idCard')}">身份证基本信息（正页）</a></li>
+                    <li><a href="{:url('index/idSubpage')}">身份证基本信息(副页)</a></li>
+                    <li><a href="{:url('index/car')}">车辆页</a></li>
+                    <li><a href="{:url('index/carShow')}">车辆外观</a></li>
+                </ul>
+            </li>
+            <li><a href="{:url('index/reviewProgress')}">信息审核进度</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$user["name"]}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{:url('index/user')}"><i class="fa fa-gear"></i> 审核人信息</a></li>
+                    <li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+                    <li><a href="{:url('index/login/logout')}"><i class="fa fa-power-off"></i>退出</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>

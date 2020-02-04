@@ -1,0 +1,44 @@
+{include file="public/header" /}
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      {include file="public/menu" /}
+
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <form method="post" action="{:url('index/carerInfo')}">
+              <h1>车主基本信息</h1>
+              <div class="form-group">
+                <label>车牌号</label>
+                <input type="text" class="form-control" placeholder="" value="{$res['number']}" name="number">
+              </div>
+              <div class="form-group">
+                <label>城市</label>
+                <input type="text" class="form-control" placeholder="" value="{$res['city']}" name="city">
+              </div>
+              <div class="form-group">
+                <label>汽车品牌</label>
+                <input type="text" class="form-control" placeholder="" value="{$res['logo']}" name="logo">
+              </div>
+              {if condition="$res eq null"}
+              <button type="submit" class="btn btn-primary">确认添加</button>
+              {else /}
+              <button type="submit" class="btn btn-primary">确认修改</button>
+              {/if}
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    {include file="public/footer" /}
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{include file="public/header" /}
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {include file="public/menu" /}
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                    <h1>{$res['title']}</h1>
+                    <div class="form-group">
+                        <label>修改建议</label>
+                        <textarea style="height: 100px;" class="form-control">{$res['suggest']}</textarea>
+                    </div>
+                <a class="btn btn-primary" href="{:url('index/middleWare',['key'=>$key])}" role="button">去修改</a>
+                </form>
+            </div>
+            <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+    </div><!-- /#page-wrapper -->
+
+</div><!-- /#wrapper -->
+
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,0 +1,55 @@
+{include file="public/header" /}
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      {include file="public/menu" /}
+
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <form method="post" action="{:url('index/car')}" role="form">
+              <h1>车辆页</h1>
+              <input type="hidden" value="车辆页" name="title">
+              <div class="form-group">
+                <label>插入车辆图片</label>
+                <input type="file" id="input-id" name="img" accept="image/*"/>
+              </div>
+              {if condition="$res eq null"}
+              <button type="submit" class="btn btn-primary">确认添加</button>
+              {else /}
+              <button type="submit" class="btn btn-primary">确认修改</button>
+              {/if}
+              <input type="hidden" value="" name="picture_url" id="path">
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    {include file="public/footer" /}
+    <script>
+        $(document).ready(function(){
+            $("#path").attr("value","{$res.picture_url}");
+        });
+        $("#input-id").fileinput({
+            language: "zh",
+            showCaption: false, // 不显示本地文件名
+            allowedFileTypes: ['image'], // 只允许上传图片
+            allowedFileExtensions: ["jpg", "jpeg", "png", "gif"],
+            initialPreview: [
+                '<img class="file-preview-image kv-preview-data" src='+'"{$res.picture_url}">'
+            ],
+            uploadUrl: "{:url('index/upload')}" //上传图片的服务器地址
+        }).on("fileuploaded", function (event, data, previewId, index){
+            $("#path").attr("value",data.response["path"]);
+        });
+    </script>
+  </body>
+</html>
