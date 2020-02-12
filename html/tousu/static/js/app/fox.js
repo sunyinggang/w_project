@@ -1,0 +1,1 @@
+$(document).ready(function () { 	$("body").backstretch([      "../../css/default/img/dbg.jpg"/*tpa=http://www.tousuyun.com/static/css/default/img/dbg.jpg*/, 	  "../../css/fox/img/bg.jpg"/*tpa=http://www.tousuyun.com/static/css/fox/img/bg.jpg*/, 	  "../../css/fox/img/bgs.jpg"/*tpa=http://www.tousuyun.com/static/css/fox/img/bgs.jpg*/     ], {duration: 3000, fade: 750});	});
