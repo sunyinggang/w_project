@@ -19,19 +19,17 @@
                     <th>实验题目<i class="fa"></i></th>
                     <th>开始时间<i class="fa"></i></th>
                     <th>结束时间<i class="fa"></i></th>
-                    <th>提交人数<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
                 </thead>
                 <tbody>
                 {%  for v in experiment_list.items %}
                   <tr>
-                    <td>{{ v[1] }}</td>
-                    <td>{{ v[2] }}</td>
-                    <td>{{ v[3] }}</td>
-                    <td>{{ v[4] }}</td>
+                    <td>{{ v.name }}</td>
+                    <td>{{ v.start_time }}</td>
+                    <td>{{ v.end_time }}</td>
                     <td>
-                      <a href="{{ url_for('teacher.student',page=1,id=v[0]) }}">查看学生成绩</a>
+                      <a href="{{ url_for('teacher.student',page=1,id=v.id) }}">查看学生成绩</a>
                   </tr>
                 {% endfor %}
                 </tbody>

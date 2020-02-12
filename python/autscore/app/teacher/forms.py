@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileRequired
-from wtforms import StringField, SubmitField, FileField, SelectField, HiddenField
+from wtforms import StringField, SubmitField, FileField, SelectField, HiddenField, TextAreaField
 from wtforms.validators import DataRequired
 
 from app.models import Class
@@ -14,6 +14,16 @@ class ExperimentForm(FlaskForm):
             DataRequired("实验名称不为空！")
         ],
         description="实验名称",
+        render_kw={
+            "class": "form-control"
+        }
+    )
+    keywords = TextAreaField(
+        label="实验关键字",
+        validators=[
+            DataRequired("实验关键字不为空！")
+        ],
+        description="实验关键字",
         render_kw={
             "class": "form-control"
         }
@@ -89,6 +99,24 @@ class ScoreForm(FlaskForm):
     )
     submit = SubmitField(
         "确认",
+        render_kw={
+            "class": "btn btn-primary"
+        }
+    )
+
+class KeyWordsForm(FlaskForm):
+    keywords = TextAreaField(
+        label="实验关键字",
+        validators=[
+            DataRequired("实验关键字不为空！")
+        ],
+        description="实验关键字",
+        render_kw={
+            "class": "form-control"
+        }
+    )
+    submit = SubmitField(
+        "修改",
         render_kw={
             "class": "btn btn-primary"
         }

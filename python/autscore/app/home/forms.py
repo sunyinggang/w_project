@@ -30,7 +30,7 @@ class LoginForm(FlaskForm):
         validators=[
             DataRequired("请选择用户类型！")
         ],
-        choices=[(1, '教务'), (2, '教师'), (3, '学生')],
+        choices=[(1, '管理员'), (2, '教师'), (3, '学生')],
         coerce=int,
         render_kw={
             "class": "form-control",

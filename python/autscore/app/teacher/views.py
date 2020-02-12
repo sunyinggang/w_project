@@ -6,7 +6,7 @@ from sqlalchemy import func
 from werkzeug.security import generate_password_hash
 
 from . import teacher
-from .forms import ExperimentForm, ClassFindForm, ScoreForm
+from .forms import ExperimentForm, ClassFindForm, ScoreForm, KeyWordsForm
 from .. import db
 from ..home.forms import ChangeForm
 from ..models import Experiment, Teacher, Select, Student, Class
@@ -50,7 +50,7 @@ def addExperiment():
         experiment = Experiment.query.filter_by(name=data["name"]).count()
         if experiment == 1:
             flash("实验名称已存在!")
-            return redirect(url_for("admin.classAdd"))
+            return redirect(url_for("teacher.experiment",page=1))
         UPLOAD_FOLDER = 'app/static/upload/'
         file_dir = os.path.join(os.getcwd(), UPLOAD_FOLDER)
         if not os.path.exists(file_dir):
@@ -63,6 +63,7 @@ def addExperiment():
         f.save(os.path.join(file_dir, new_filename))  # 保存文件到upload目录
         experiment = Experiment(
             name=data["name"],
+            keywords=data["keywords"],
             teacher_id = teacher_id,
             start_time = data["start_time"],
             end_time = data["end_time"],
@@ -73,6 +74,19 @@ def addExperiment():
         flash("添加成功！")
         return redirect(url_for("teacher.experiment", page=1))
     return render_template("teacher/addExperiment.html",form=form)
+
+@teacher.route("/experiment/edit/keywords/<id>/",methods=["POST","GET"])
+def editKeyWords(id=None):
+    experiment = Experiment.query.filter_by(id=id).first_or_404()
+    form = KeyWordsForm(keywords=experiment.keywords)
+    if form.validate_on_submit():
+        data = form.data
+        experiment.keywords = data["keywords"]
+        db.session.add(experiment)
+        db.session.commit()
+        flash("修改成功！")
+        return redirect(url_for("teacher.experiment", page=1))
+    return render_template("teacher/keywords.html",form=form,experiment=experiment)
 
 @teacher.route("/experiment/del/<id>/",methods=["POST","GET"])
 def delExperiment(id=None):
@@ -86,7 +100,7 @@ def delExperiment(id=None):
 def score(page=None):
     if page is None:
         page = 1
-    experiment_list = db.session.query(Experiment.id,Experiment.name, Experiment.start_time,Experiment.end_time,func.count(Experiment.name)).filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
+    experiment_list = Experiment.query.filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
     return render_template("teacher/tscore.html",experiment_list = experiment_list)
 
 @teacher.route("/student/<int:page>/",methods=["POST","GET"])

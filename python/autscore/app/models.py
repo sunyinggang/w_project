@@ -1,5 +1,5 @@
 from app import db
-from sqlalchemy import Column, Integer, String, Date, DateTime,TIMESTAMP,DECIMAL
+from sqlalchemy import Column, Integer, String, Date, DateTime,TIMESTAMP,DECIMAL,Text
 from werkzeug.security import check_password_hash
 
 class Admin(db.Model):
@@ -43,6 +43,7 @@ class Experiment(db.Model):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     model_url = Column(String)
+    keywords = Column(Text)
     teacher_id = Column(Integer)
     start_time = Column(DateTime)
     end_time = Column(DateTime)

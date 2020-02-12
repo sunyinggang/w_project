@@ -105,6 +105,9 @@ def fileOne():
 
 @admin.route("/filet/", methods=['POST', 'GET'])
 def fileTow():
+    if request.files['filet'] == '':
+        flash("未添加学生信息文件！")
+        return redirect(url_for('admin.ainput'))
     file = request.files['filet']
     f = file.read()    #文件内容
     data = xlrd.open_workbook(file_contents=f)
@@ -146,7 +149,7 @@ def studentDel(id=None):
     db.session.delete(student)
     db.session.commit()
     flash("删除成功！")
-    return redirect(url_for('admin.astudent'))
+    return redirect(url_for('admin.astudent',page=1))
 
 @admin.route("/astudent/search/<int:page>/")
 def studentSearch(page=None):
@@ -164,8 +167,8 @@ def studentEdit(id=None):
     student.password = generate_password_hash("123456")
     db.session.add(student)
     db.session.commit()
-    flash("修改成功")
-    return redirect(url_for("admin.astudent"))
+    flash("修改成功!")
+    return redirect(url_for("admin.astudent",page=1))
 
 
 @admin.route("/ateacher/<int:page>/",methods=["GET"])
@@ -181,14 +184,16 @@ def ateacherDel(id=None):
     db.session.delete(teacher)
     db.session.commit()
     flash("删除成功！")
-    return redirect(url_for('admin.ateacher'))
+    return redirect(url_for('admin.ateacher',page=1))
 
-@admin.route("/ateacher/search/")
-def teacherSearch():
+@admin.route("/ateacher/search/<int:page>/")
+def teacherSearch(page=None):
+    if page is None:
+        page = 1
     username = request.args.get("username")
     teacher_list = Teacher.query
     if username:
-        teacher_list = teacher_list.filter(Teacher.username==username)
+        teacher_list = teacher_list.filter(Teacher.username==username).paginate(page=page,per_page=5)
     return render_template("admin/ateacher.html",teacher_list = teacher_list)
 
 @admin.route("/ateacher/edit/<id>/",methods=["GET","POST"])
@@ -197,8 +202,8 @@ def teacherEdit(id=None):
     teacher.password = generate_password_hash("123456")
     db.session.add(teacher)
     db.session.commit()
-    flash("修改成功")
-    return redirect(url_for("admin.ateacher"))
+    flash("修改成功!")
+    return redirect(url_for("admin.ateacher",page=1))
 
 
 

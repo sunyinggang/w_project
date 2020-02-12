@@ -27,7 +27,7 @@
                     <th>实验题目<i class="fa"></i></th>
                     <th>开始时间<i class="fa"></i></th>
                     <th>结束时间<i class="fa"></i></th>
-                    <th>实验报告<i class="fa"></i></th>
+                    <th>实验报告模板<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
                 </thead>
@@ -38,7 +38,10 @@
                     <td>{{ v.start_time }}</td>
                     <td>{{ v.end_time }}</td>
                     <td><a class="btn btn-primary" role="button" onclick="openmydoc('{{ file_dir }}{{ v.model_url }}')" type="activxobject(word.application)">预览</a></td>
-                    <td><a class="btn btn-danger" href="{{ url_for('teacher.delExperiment',id=v.id) }}" role="button">删除</a></td>
+                    <td>
+                        <a class="btn btn-primary" href="{{ url_for('teacher.editKeyWords',id=v.id) }}" role="button">查看关键字</a>
+                        <a class="btn btn-danger" href="{{ url_for('teacher.delExperiment',id=v.id) }}" role="button">删除</a>
+                    </td>
                   </tr>
                 {% endfor %}
                 </tbody>

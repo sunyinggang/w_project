@@ -11,19 +11,15 @@
 					     <p style="color:red;">{{ msg }}</p>
 					     {% endfor %}
 					</div>
-                  <h1>填写分数</h1>
+                  <h1>{{ experiment.name }}</h1>
                   <div class="form-group">
-                      <label>学号:{{ student.username }}</label><br>
-                      <label>姓名:{{ student.name }}</label><br>
-                      <label>自动评审分数:{{ select.aut_score }}</label><br>
-                      <label>手动评审分数:{{ select.tea_score }}</label><br>
-                      <label>评分</label>
-                    {{ form.score }}
-							{% for err in form.score.errors %}
+                      <label>实验关键字</label>
+                    {{ form.keywords}}
+							{% for err in form.keywords.errors %}
 							<div class="clo-md-12">
 								<font style="color:red">{{ err }}</font>
 							</div>
-					{% endfor %}
+					        {% endfor %}
                   </div>
                   {{ form.submit }}
                   {{ form.csrf_token }}

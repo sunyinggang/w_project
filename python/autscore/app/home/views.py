@@ -13,7 +13,7 @@ def login():
         if data["usertype"] == 1:
             admin = Admin.query.filter_by(username=data["username"]).first()
             if not admin:
-                flash("账号不存在！")
+                flash("用户不存在！")
                 return redirect(url_for("home.login"))
             if not admin.check_pwd(data["password"]):
                 flash("密码错误!")
@@ -25,7 +25,7 @@ def login():
         if data["usertype"] == 2:
             teacher = Teacher.query.filter_by(username=data["username"]).first()
             if not teacher:
-                flash("账号不存在！")
+                flash("用户不存在！")
                 return redirect(url_for("home.login"))
             if not teacher.check_pwd(data["password"]):
                 flash("密码错误!")
@@ -37,7 +37,7 @@ def login():
         if data["usertype"] == 3:
             student = Student.query.filter_by(username=data["username"]).first()
             if not student:
-                flash("账号不存在！")
+                flash("用户不存在！")
                 return redirect(url_for("home.login"))
             if not student.check_pwd(data["password"]):
                 flash("密码错误!")
