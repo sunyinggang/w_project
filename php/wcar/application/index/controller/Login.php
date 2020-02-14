@@ -23,7 +23,8 @@ class Login extends Controller
                 if(!$res){
                     return $this->error('此手机号未被申请！');
                 }else{
-                    return $this->success('登录成功','user/index/index');
+                    session('admin', $res,'admin');
+                    return $this->success('登录成功','admin/index/index');
                 }
             }
         }else{

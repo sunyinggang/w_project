@@ -1,0 +1,35 @@
+{include file="public/header" /}
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    {include file="public/menu" /}
+
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                    <div class="form-group">
+                        <form method="post" action="{:url('index/suggest')}" role="form">
+                        <label>修改建议</label>
+                        <textarea name="suggest" style="height: 100px;" class="form-control"></textarea>
+                            <input type="hidden" name="key" value="{$key}" />
+                            <input type="hidden" name="id" value="{$id}" />
+                        <button style="margin-top: 20px;" type="submit" class="btn btn-primary">确认添加</button>
+                        </form>
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+    </div><!-- /#page-wrapper -->
+
+</div><!-- /#wrapper -->
+
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tables - SB Admin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="admin.html">车辆管理系统</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  信息审核 <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="tables.html">行驶证基本信息</a></li>
+                <li><a href="forms.html">行驶证副业基本信息</a></li>
+                <li><a href="tables.html">驾驶证基本信息</a></li>
+                <li><a href="forms.html">驾驶员副页基本信息</a></li>
+                <li><a href="tables.html">身份证基本信息（正页）</a></li>
+                <li><a href="forms.html">身份证基本信息(副页)</a></li>
+                <li><a href="tables.html">车辆页</a></li>
+                <li><a href="tables.html">车辆外观</a></li>
+              </ul>
+            </li>
+            <li><a href="tables.html">已受理审核列表</a></li>
+            <li><a href="tables.html">未受理审核列表</a></li>
+            <li><a href="tables.html">错误信息列表</a></li>
+            <li><a href="tables.html">信息统计</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>信息审核进度</h1>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>名称<i class="fa fa-sort"></i></th>
+                    <th>提交日期<i class="fa fa-sort"></i></th>
+                    <th>审核通过日期<i class="fa fa-sort"></i></th>
+                    <th>审核状态<i class="fa fa-sort"></i></th>
+                    <th>操作<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>车主基本信息</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-success">审核通过</span></td>
+                    <td><button type="button" class="btn btn-primary">查看</button></td>
+                  </tr>
+                  <tr>
+                    <td>行驶证基本信息</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-default">待审核</span></td>
+                    <td><button type="button" class="btn btn-primary">编辑</button></td>
+                  </tr>
+                  <tr>
+                    <td>行驶证副业基本信息</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-success">审核通过</span></td>
+                    <td><button type="button" class="btn btn-primary">查看</button></td>
+                  </tr>
+                  <tr>
+                    <td>驾驶证基本信息</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-danger">未通过审核</span></td>
+                    <td><button type="button" class="btn btn-primary">修改建议</button></td>
+                  </tr>
+                  <tr>
+                    <td>驾驶员副页基本信息</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-success">审核通过</span></td>
+                    <td><button type="button" class="btn btn-primary">查看</button></td>
+                  </tr>
+                  <tr>
+                    <td>身份证基本信息（正页）</td>
+                    <td>2020-01-01 10:30:00</td>
+                    <td>2020-01-02 12:36:00</td>
+                    <td><span class="label label-success">审核通过</span></td>
+                    <td><button type="button" class="btn btn-primary">查看</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->
+    <script src="js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="js/tablesorter/tables.js"></script>
+
+  </body>
+</html>
