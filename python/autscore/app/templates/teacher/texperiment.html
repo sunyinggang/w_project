@@ -39,7 +39,7 @@
                     <td>{{ v.end_time }}</td>
                     <td><a class="btn btn-primary" role="button" onclick="openmydoc('{{ file_dir }}{{ v.model_url }}')" type="activxobject(word.application)">预览</a></td>
                     <td>
-                        <a class="btn btn-primary" href="{{ url_for('teacher.editKeyWords',id=v.id) }}" role="button">查看关键字</a>
+                        <a class="btn btn-primary" href="{{ url_for('teacher.editKeyWords',id=v.id) }}" role="button">查看关键词</a>
                         <a class="btn btn-danger" href="{{ url_for('teacher.delExperiment',id=v.id) }}" role="button">删除</a>
                     </td>
                   </tr>

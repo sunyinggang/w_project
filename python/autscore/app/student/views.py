@@ -176,13 +176,11 @@ def TfIdf(fileUrl,keywords):
     all_doc.append(result)
     all_doc.append("")
 
-
+    # 1、将实验内容all_doc_list与关键词doc_test_list制作为分词列表
     all_doc_list = []
     for doc in all_doc:
         doc_list = [word for word in jieba.cut(doc)]
         all_doc_list.append(doc_list)
-
-    #1、将【文本集】生产【分词列表】
     doc_test_list = [word for word in jieba.cut(keywords)]
     # 2、基于文件集建立【词典】，并提取词典特征数
     dictionary = corpora.Dictionary(all_doc_list)
@@ -190,7 +188,7 @@ def TfIdf(fileUrl,keywords):
     corpus = [dictionary.doc2bow(doc) for doc in all_doc_list]
     # 4、使用“TF-TDF模型”处理【语料库】
     tfidf = models.TfidfModel(corpus)
-    # 5、同理，用词典把搜索词也转换为稀疏向量
+    # 5、同理，用词典把关键词也转换为稀疏向量
     doc_test_vec = dictionary.doc2bow(doc_test_list)
     # 6、对稀疏向量建立索引
     index = similarities.SparseMatrixSimilarity(tfidf[corpus], num_features=len(dictionary.keys()))
