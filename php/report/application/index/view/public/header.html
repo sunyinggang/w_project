@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=Utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>网上投诉平台</title>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/icon.css" />
+
+    <link href="__STATIC__/index/css/default/common.css-v=20190317.css" rel="stylesheet"  type="text/css" />
+    <link href="__STATIC__/index/css/default/link.css-v=20190317.css"  rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/js/plug_module/style.css-v=20190317.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/fox/fox.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/compatibility.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="__STATIC__/index/js/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="aw-top-menu-wrap">
+    <div class="container">
+        <!-- logo -->
+        <div class="aw-logo hidden-xs">
+            <a href="{:url('index/index')}"></a>
+        </div>
+        <!-- end logo -->
+        <!-- 导航 -->
+        <div class="aw-top-nav navbar">
+            <div class="navbar-header">
+                <button  class="navbar-toggle pull-left">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{:url('index/index')}"><i class="icon icon-topic"></i> 举报信息</a></li>
+                    <li><a href="{:url('index/exposure')}" ><i class="icon icon-list"></i> 曝光栏</a></li>
+
+                    <li><a href="{:url('index/safety')}"><i class="icon icon-wechat" style="color:#fff;"></i> 安全警示</a></li>
+
+                    <li><a href="{:url('index/reward')}" class=""><i class="icon icon-reader"></i> 悬赏公告栏</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- end 导航 -->
+        <!-- 用户栏 -->
+        <div class="aw-user-nav">
+            <!-- 登陆&注册栏 -->
+            <a class="btn-primary btnst " href="{:url('index/login')}">登录</a>
+            <span class="or">or</span>
+            <a class="register btn-success btnst" href="{:url('index/register')}">注册</a>								<!-- end 登陆&注册栏 -->
+        </div>
+        <!-- end 用户栏 -->
+        <!-- 发起 -->
+        <div class="aw-publish-btn">
+            <a id="header_publish" href="{:url('index/reportIndex')}" class="btn-primary"><i class="icon icon-ask"></i>发布举报</a>
+        </div>
+        <!-- end 发起 -->
+    </div>
+</div>

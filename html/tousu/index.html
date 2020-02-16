@@ -36,36 +36,6 @@
 				<a href="index.html" tppabs="http://www.tousuyun.com/"></a>
 			</div>
 			<!-- end logo -->
-			<!-- 搜索框 -->
-			<div class="aw-search-box hidden-xs hidden-sm">
-				<form class="navbar-search" action="http://www.tousuyun.com/search/" id="global_search_form" method="post">
-					<input class="form-control search-query" type="text" placeholder="搜索问题、话题或人" autocomplete="off" name="q" id="aw-search-query" />
-					<span title="搜索" id="global_search_btns" onClick="$('#global_search_form').submit();"><i class="icon icon-search"></i></span>
-					<div class="aw-dropdown">
-						<div class="mod-body">
-							<p class="title">输入关键字进行搜索</p>
-							<ul class="aw-dropdown-list hide"></ul>
-							<p class="search"><span>搜索:</span><a onClick="$('#global_search_form').submit();"></a></p>
-						</div>
-						<div class="mod-footer">
-							<a href="account/login/url-L3B1Ymxpc2g=.htm" tppabs="http://www.tousuyun.com/publish" onClick="$('#header_publish').click();" class="pull-right btn btn-mini btn-success publish">发起问题</a>
-						</div>
-					</div>
-				</form>
-			<a href="javascript:search(0);" class="search-close">关闭</a>
-			</div>
-			<script type="text/javascript">
-			  function search(s){
-				  if (s == 1){
-					  $('.aw-top-nav').fadeOut();
-					  $('.aw-search-box').stop().css({top:-50}).show().animate({top:0},100);
-				  }else{
-					  $('.aw-top-nav').fadeIn();
-					  $('.aw-search-box').stop().animate({top:-50},200);
-				  }
-			  }
-			  </script>
-			<!-- end 搜索框 -->
 			<!-- 导航 -->
 			<div class="aw-top-nav navbar">
 				<div class="navbar-header">
@@ -123,43 +93,8 @@
 		<div class="row" style="margin-left: 100px;">
 			<div class="aw-content-wrap">
 				<div class="col-sm-12 col-md-9 aw-main-content">
-					<!-- 新消息通知 -->
-					<div class="aw-mod aw-notification-box hide" id="index_notification">
-						<div class="mod-head common-head">
-							<h2>
-								<span class="pull-right"><a href="account/login/url-L2FjY291bnQvc2V0dGluZy9wcml2YWN5Lw==.htm#notifications" tppabs="http://www.tousuyun.com/account/setting/privacy/#notifications" class="text-color-999"><i class="icon icon-setting"></i> 通知设置</a></span>
-								<i class="icon icon-bell"></i>新通知<em class="badge badge-important" name="notification_unread_num"></em>
-							</h2>
-						</div>
-						<div class="mod-body">
-							<ul id="notification_list"></ul>
-						</div>
-						<div class="mod-footer clearfix">
-							<a href="javascript:;" onclick="AWS.Message.read_notification(false, 0, false);" class="pull-left btn btn-mini btn-gray">我知道了</a>
-							<a href="account/login/url-L25vdGlmaWNhdGlvbnMv.htm" tppabs="http://www.tousuyun.com/notifications/" class="pull-right btn btn-mini btn-success">查看所有</a>
-						</div>
-					</div>
-
-<script type="text/javascript">
-$(document).ready(function()
-{
-	$('.xboxs').hover(function()
-	 {  
-		$(this).find(".aw-user-name img").css("background","red");
-		$(this).find('img').animate({width:54, marginTop:-5, marginLeft:-2}, 500);
-	 }, function()
-	 {
-        $(this).find(".aw-user-name img").css("background","");
-		$(this).find('img').animate({width:50, marginTop:0, marginLeft:0},300);
-	 });
-});
-</script>					<!-- tab切换 -->
+					<!-- tab切换 -->
 					<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
-						<li><a href="sort_type-unresponsive.htm" tppabs="http://www.tousuyun.com/sort_type-unresponsive">等待回复</a></li>
-						<li><a href="sort_type-hot__day-7.htm" tppabs="http://www.tousuyun.com/sort_type-hot__day-7" id="sort_control_hot">热门</a></li>
-						<li><a href="is_recommend-1.htm" tppabs="http://www.tousuyun.com/is_recommend-1">推荐</a></li>
-						<li class="active"><a href="sort_type-new.htm" tppabs="http://www.tousuyun.com/sort_type-new">最新</a></li>
-
 						<h2 class="hidden-xs"><i class="icon icon-list"></i> 发现</h2>
 					</ul>
 					<!-- end tab切换 -->
@@ -234,6 +169,8 @@ $(document).ready(function()
 		</div>
 	</div>
 </div>
+
+
 <div class="SW_footer">
 	<div class="ft layout clearfix hidden-xs">
 		<div class="slogan"><a href="index.html" tppabs="http://www.tousuyun.com/"></a></div>
@@ -272,23 +209,6 @@ $(document).ready(function()
 	<div class="cp">Copyright © 2020, All Rights Reserved</span> <a href="index.htm" tppabs="http://www.tousuyun.com/" target="_blank">投诉网</a> 版权所有 <script language="JavaScript" src="static/js/track.js" tppabs="http://www.tousuyun.com/static/js/track.js"></script></div>
 </div>
 		
-<a href="javascript:;" id="gotoTop" class="show hidden-xs"><i></i></a>
-<!-- <a class="aw-back-top hidden-xs" href="javascript:;" onclick="$.scrollTo(1, 600, {queue:true});"><i class="icon icon-up"></i></a>-->
-<!-- DO NOT REMOVE -->
-<div id="aw-ajax-box" class="aw-ajax-box hidden-xs"></div>
-<script type="text/javascript" language="javascript"> var Default_isFT = 0 </script>
-<div style="display:none;" id="__crond">
-	<script type="text/javascript">
-		function xxxxx(){ 
-		var container=document.getElementById("contain"); 
-		container.appendChild(container.firstChild); 
-		} 
-		setInterval("xxxxx()",3000); 
-		$(document).ready(function () {
-			$('#__crond').html(unescape('%3Cimg%20src%3D%22' + G_BASE_URL + '/crond/run/1580733755%22%20width%3D%221%22%20height%3D%221%22%20/%3E'));
-		});
-	</script>
-</div>
 
 <!-- Escape time: 0.890625 --><!-- / DO NOT REMOVE -->
 </body>
