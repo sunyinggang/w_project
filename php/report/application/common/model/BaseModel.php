@@ -20,6 +20,11 @@ class BaseModel extends Model
     public function selectByUserId($user_id) {
         return $this->where('user_id','=',$user_id)->find();
     }
+    //根据id查询
+    public function selectById($id){
+        return $this->where('id','=',$id)->find();
+    }
+
     //根据status查询数据
     public function selectByStatus($title,$status) {
         return $this->where('title','like',"%".$title."%")->where('status','=',$status)->select();

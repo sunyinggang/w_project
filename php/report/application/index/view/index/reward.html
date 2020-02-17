@@ -1,135 +1,76 @@
 {include file="public/header" /}
 
 <div class="aw-container-wrap">
-	
+
 	<div class="container">
 		<div class="row" style="margin-left: 100px;">
 			<div class="aw-content-wrap">
 				<div class="col-sm-12 col-md-9 aw-main-content">
 					<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
-						<h2 class="hidden-xs"><i class="icon icon-reader"></i> 悬赏公告栏</h2>
+						<h2 class="hidden-xs"><i class="icon icon-list"></i> 悬赏公告栏</h2>
 					</ul>
 					<div class="mod-body">
-																			<ul class="col-md-12 aw-article-list">
-								<div id="article-list_611" style="border: 1px solid #e2e2e2;padding: 10px;border-radius: 3px;display: none;">
-									<div class="mod-head" style="background:#f9f9f9;">
-										<a class="pull-right" href="javascript:;" onclick="AWS.content_switchers($('#article-list_611'), $('#oarticle-list_611'), $('#article-list-box_611'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										<h1><a href="611.htm" tppabs="http://www.tousuyun.com/article/611">封号永久冻结</a></h1>
-									</div>
-									<div class="mod-body markitup-box zhankai" id="article-list-box_611" style="display:inline;">
-										<p>
-										<img src="static/common/loading_b.gif" tppabs="http://www.tousuyun.com/static/common/loading_b.gif" style="margin:20px;">
-										</p>
-									</div>
-									<div class="mod-footer" style="height:30px;margin:10px 0 0 0;">
-										<span class="pull-right more-operate text-color-999 hidden-xs">   
-											<a class="text-color-999" href="#" onclick="AWS.content_switchers($('#article-list_611'), $('#oarticle-list_611'), $('#article-list-box_611'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										</span>
-										<span class="pull-left more-operate text-color-999 fcontribute">
-											<i class="pull-left kr"><a class="aw-user-name hidden-xs" data-id="18011" href="../people/YANGB.htm" tppabs="http://www.tousuyun.com/people/YANGB" rel="nofollow"><img src="static/common/avatar-mid-img.png" tppabs="http://www.tousuyun.com/static/common/avatar-mid-img.png" alt="" /></a></i>
-											<a href="../people/YANGB.htm" tppabs="http://www.tousuyun.com/people/YANGB" class="aw-user-name">YANGB</a> 发表于 : 2020-01-23&nbsp;&nbsp;
-											浏览 (24)&nbsp;&nbsp;
-											<a class="text-color-999" href="611.htm#!answer_form" tppabs="http://www.tousuyun.com/article/611#!answer_form"> 评论 (0)</a>
-										</span>
-									</div>	
+						{volist name="res" id="vo"}
+						{if condition="$vo.img neq null"}
+						<ul class="col-md-12 aw-article-list">
+							<li id="oarticle-list_609">
+								<div class="aw-article-text col-md-4">
+									<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+										<img class="img-polaroid kltu" src={$vo.img} />
+									</a>
 								</div>
-								<li id="oarticle-list_611">
-																				<div class="col-md-12 foxo">
-											<h1>
-																																												<a href="611.htm" tppabs="http://www.tousuyun.com/article/611">封号永久冻结</a>
-											</h1>
-											<span id="detail_611">
-											<a class="text-colors-999" href="611.htm" tppabs="http://www.tousuyun.com/article/611">
-											尊敬的投诉网工作人员你好，2020年一月二十二日，本人在使用腾讯公司产品腾讯QQ中被腾讯公司通知发布传播违法违规信息或组织相关活动，本人后续多次与腾讯官方客服沟...											</a>
-											</span>
-										</div>          
-										<div class="mod-body col-md-12 clearfix kl">
-											 <div class="mod-footer">
-												<span class="pull-right more-operate text-color-999 hidden-xs">   
-													<a href="611.htm" tppabs="http://www.tousuyun.com/article/611" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
-												</span>
-												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : 2020-01-23&nbsp;&nbsp;
-												</span>
-											</div>	
-										</div>										
-								</li>								   
-							</ul>
-													<ul class="col-md-12 aw-article-list">
-								<div id="article-list_610" style="border: 1px solid #e2e2e2;padding: 10px;border-radius: 3px;display: none;">
-									<div class="mod-head" style="background:#f9f9f9;">
-										<a class="pull-right" href="javascript:;" onclick="AWS.content_switchers($('#article-list_610'), $('#oarticle-list_610'), $('#article-list-box_610'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										<h1><a href="610.htm" tppabs="http://www.tousuyun.com/article/610">营口站前黑恶势力戴建国、杨家斌</a></h1>
-									</div>
-									<div class="mod-body markitup-box zhankai" id="article-list-box_610" style="display:inline;">
-										<p>
-										<img src="static/common/loading_b.gif" tppabs="http://www.tousuyun.com/static/common/loading_b.gif" style="margin:20px;">
-										</p>
-									</div>
-									<div class="mod-footer" style="height:30px;margin:10px 0 0 0;">
-										<span class="pull-right more-operate text-color-999 hidden-xs">   
-											<a class="text-color-999" href="#" onclick="AWS.content_switchers($('#article-list_610'), $('#oarticle-list_610'), $('#article-list-box_610'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										</span>
-										<span class="pull-left more-operate text-color-999 fcontribute">
-											<i class="pull-left kr"><a class="aw-user-name hidden-xs" data-id="17892" href="../people/王松杰.htm" tppabs="http://www.tousuyun.com/people/%E7%8E%8B%E6%9D%BE%E6%9D%B0" rel="nofollow"><img src="static/common/avatar-mid-img.png" tppabs="http://www.tousuyun.com/static/common/avatar-mid-img.png" alt="" /></a></i>
-											<a href="../people/王松杰.htm" tppabs="http://www.tousuyun.com/people/%E7%8E%8B%E6%9D%BE%E6%9D%B0" class="aw-user-name">王松杰</a> 发表于 : 2020-01-03&nbsp;&nbsp;
-											浏览 (693)&nbsp;&nbsp;
-											<a class="text-color-999" href="610.htm#!answer_form" tppabs="http://www.tousuyun.com/article/610#!answer_form"> 评论 (0)</a>
-										</span>
-									</div>	
-								</div>							   
-							</ul>
-													<ul class="col-md-12 aw-article-list">
-								<div id="article-list_609" style="border: 1px solid #e2e2e2;padding: 10px;border-radius: 3px;display: none;">
-									<div class="mod-head" style="background:#f9f9f9;">
-										<a class="pull-right" href="javascript:;" onclick="AWS.content_switchers($('#article-list_609'), $('#oarticle-list_609'), $('#article-list-box_609'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										<h1><a href="609.htm" tppabs="http://www.tousuyun.com/article/609">弹个车一成首付买车变租车引投诉，以租代买是忽悠吗？</a></h1>
-									</div>
-									<div class="mod-body markitup-box zhankai" id="article-list-box_609" style="display:inline;">
-										<p>
-										<img src="static/common/loading_b.gif" tppabs="http://www.tousuyun.com/static/common/loading_b.gif" style="margin:20px;">
-										</p>
-									</div>
-									<div class="mod-footer" style="height:30px;margin:10px 0 0 0;">
-										<span class="pull-right more-operate text-color-999 hidden-xs">   
-											<a class="text-color-999" href="#" onclick="AWS.content_switchers($('#article-list_609'), $('#oarticle-list_609'), $('#article-list-box_609'));return false;"><i class="icon icon-delete text-color-999"></i> 关闭阅读</a>
-										</span>
-										<span class="pull-left more-operate text-color-999 fcontribute">
-											<i class="pull-left kr"><a class="aw-user-name hidden-xs" data-id="180" href="../people/不以为然.htm" tppabs="http://www.tousuyun.com/people/%E4%B8%8D%E4%BB%A5%E4%B8%BA%E7%84%B6" rel="nofollow"><img src="../uploads/avatar/000/00/01/80_avatar_mid.jpg" tppabs="http://www.tousuyun.com/uploads/avatar/000/00/01/80_avatar_mid.jpg" alt="" /></a></i>
-											<a href="../people/不以为然.htm" tppabs="http://www.tousuyun.com/people/%E4%B8%8D%E4%BB%A5%E4%B8%BA%E7%84%B6" class="aw-user-name">不以为然</a> 发表于 : 2019-12-18&nbsp;&nbsp;
-											浏览 (2188)&nbsp;&nbsp;
-											<a class="text-color-999" href="609.htm#!answer_form" tppabs="http://www.tousuyun.com/article/609#!answer_form"> 评论 (0)</a>
-										</span>
-									</div>	
-								</div>
-								<li id="oarticle-list_609">
-																			<div class="aw-article-text col-md-4">
-																						<a href="uploads/article/20191218/acf9911c7655fb723c1fbe74f47bf921.jpg" tppabs="http://www.tousuyun.com/uploads/article/20191218/acf9911c7655fb723c1fbe74f47bf921.jpg" target="_blank" data-fancybox-group="thumb" rel="lightbox">
-											<img class="img-polaroid kltu" src="uploads/article/20191218/170x110_acf9911c7655fb723c1fbe74f47bf921.jpg" tppabs="http://www.tousuyun.com/uploads/article/20191218//170x110_acf9911c7655fb723c1fbe74f47bf921.jpg" alt="1.jpg" />
+								<div class="col-md-8 foxo">
+									<h1>
+										<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">{$vo.title}</a>
+									</h1>
+									<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">
+												{$vo.content|htmlspecialchars_decode}
 											</a>
-										</div>
-																				<div class="col-md-8 foxo">
-											<h1>
-																						<span class="spanb_b">热</span>																						<a href="609.htm" tppabs="http://www.tousuyun.com/article/609">弹个车一成首付买车变租车引投诉，以租代买是忽悠吗？</a>
-											</h1>
-											<span id="detail_609">
-											<a class="text-colors-999" href="609.htm" tppabs="http://www.tousuyun.com/article/609">
-											近日，弹个车一成首付买车变租车引发关注。不少用户投诉，互联网平台“弹个车”的销售人员混淆买车与租车的概念，在用户下单时让人误以为是分期买车，后来又变更为租车，用...											</a>
 											</span>
-										</div>          
-										<div class="mod-body col-md-12 clearfix kl">
-											 <div class="mod-footer">
-												<span class="pull-right more-operate text-color-999 hidden-xs">   
-													<a href="609.htm" tppabs="http://www.tousuyun.com/article/609" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
+								</div>
+								<div class="mod-body col-md-12 clearfix kl">
+									<div class="mod-footer">
+												<span class="pull-right more-operate text-color-999 hidden-xs">
+													<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
 												</span>
-												<span class="pull-left more-operate text-color-999 fcontribute">
-													发表于 : 2019-12-18&nbsp;&nbsp;
+										<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
-											</div>	
-										</div>										
-								</li>								   
-							</ul>
-						</div>
-						<div class="mod-body col-md-12 clearfix">
+									</div>
+								</div>
+							</li>
+						</ul>
+						{else/}
+
+						<ul class="col-md-12 aw-article-list">
+							<li id="oarticle-list_611">
+								<div class="col-md-8 foxo">
+									<h1>
+										<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">{$vo.title}</a>
+									</h1>
+								</div>
+								<div class="col-md-12 foxo">
+								<span id="detail_611">
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">
+												{$vo.content|htmlspecialchars_decode}
+											</a>
+											</span>
+								</div>
+								<div class="mod-body col-md-12 clearfix kl">
+									<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
+								</span>
+										<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						{/if}
+						{/volist}
+					</div>
+					<div class="mod-body col-md-12 clearfix">
 						<div class="mod-footer pull-right">
 							<div class="page-control">
 								<ul class="pagination pull-right">
@@ -144,14 +85,24 @@
 								</ul>
 							</div>
 						</div>
-						</div>
-										</div>
-				<!-- end 文章列表 -->
+					</div>
 				</div>
-				<!-- 侧边栏 -->
+				<!-- end 文章列表 -->
 			</div>
+			<!-- 侧边栏 -->
 		</div>
 	</div>
 </div>
+</div>
+
+<script>
+    var dd = document.getElementsByClassName("detail");
+    for (var i = 0; i < dd.length; i++) {
+        var s= dd[i].innerText;
+        str = s.substr(0,20) + '...' ;
+        dd[i].innerText=str;
+    }
+</script>
+
 
 {include file="public/footer" /}
