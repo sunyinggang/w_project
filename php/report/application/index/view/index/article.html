@@ -6,12 +6,22 @@
             <div class="aw-content-wrap clearfix">
                 <div class="col-sm-12 col-md-9 aw-main-content aw-article-content">
                     <div class="aw-mod aw-question-detail">
-                        <div class="mod-head">
+                        <div class="mod-head" style="margin-left: 300px;">
                           <h1>{$res.title}</h1>
+                        </div>
+                        {if condition=""}
+                        {elseif condition=""}
+                        {elseif condition=""}
+                        {elseif condition=""}
+                        {elseif condition=""}
+                        {else/}
+                        {/if}
+                        <div class="mod-head" style="">
+                            <h3>sda:d</h3>
                         </div>
                         <div class="mod-body">
                           <div class="content markitup-box">
-							  {$res.content|htmlspecialchars_decode}
+							  {$res.description|htmlspecialchars_decode}
                          </div>
                           <div class="meta clearfix">
                             <span class="pull-right  more-operate">

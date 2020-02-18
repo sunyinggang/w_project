@@ -28,42 +28,40 @@
 	<span style="font-size:18px;"><i class="icon icon-user"></i> 注 册 新 用 户</span>&nbsp;
   </div>
     <div class="mod-body">
-        <form class="aw-register-form" action="http://www.tousuyun.com/account/ajax/register_process/" method="post" id="register_form">
-                        			            <ul>
+        <form class="aw-register-form" action="{:url('index/register')}" method="post">
+            <ul>
                 <li class="alert alert-danger hide error_message text-left">
                     <i class="icon icon-delete"></i> <em></em>
                 </li>
                 <li>
-                    <input class="aw-register-name form-control" type="text" name="user_name" placeholder="姓名" tips="请输入一个 2-14 位的用户名" errortips="用户名长度不符合" value="" />
+                    <input class="aw-register-name form-control" type="text" name="name" placeholder="姓名" required />
                 </li>
                 <li>
-                    <input class="aw-register-name form-control" type="text" name="user_name" placeholder="手机号" tips="请输入一个 2-14 位的用户名" errortips="用户名长度不符合" value="" />
+                    <input class="aw-register-name form-control" type="text" name="phone" placeholder="手机号" required/>
                 </li>
                 <li>
-                    <input class="aw-register-name form-control" type="text" name="user_name" placeholder="证件号码" tips="请输入一个 2-14 位的用户名" errortips="用户名长度不符合" value="" />
+                    <input class="aw-register-name form-control" type="text" name="number" required placeholder="证件号码" />
                 </li>
                 <li style="padding-right: 200px;height:20px;" >
                     性别:
-                    <label>
-                        <input name="sex" id="sex" value="1" type="radio"> 男                            </label>&nbsp;
-                    <label>
-                        <input name="sex" id="sex" value="2" type="radio"> 女 </label>&nbsp;
+                    <label><input name="sex" value="男" type="radio" checked="checked"> 男</label>&nbsp;
+                    <label><input name="sex" value="女" type="radio"> 女 </label>&nbsp;
                 </li>
                 <li>
-                    <input class="aw-register-email form-control" type="text" placeholder="邮箱" name="email" tips="请输入你常用的电子邮箱作为你的账号" value="" errortips="邮箱格式不正确" />
+                    <input class="aw-register-email form-control" type="text" placeholder="邮箱" name="email" required />
                 </li>
                 <li>
-                    <input class="aw-register-email form-control" type="text" placeholder="地域" name="email" tips="请输入你常用的电子邮箱作为你的账号" value="" errortips="邮箱格式不正确" />
+                    <input class="aw-register-email form-control" type="text" placeholder="地域" name="area" required />
                 </li>
                 <li>
-                    <input class="aw-register-pwd form-control" type="password" name="password" placeholder="密码" tips="请输入 6-16 个字符,区分大小写" errortips="密码不符合规则" />
+                    <input class="aw-register-pwd form-control" type="password" name="password" placeholder="密码" required />
                 </li>   
                 <li>
-                    <input class="aw-register-pwd form-control" type="password" name="password" placeholder="确认密码" tips="请输入 6-16 个字符,区分大小写" errortips="密码不符合规则" />
+                    <input class="aw-register-pwd form-control" type="password" name="passwordt" placeholder="确认密码" required  />
                 </li> 
                 
                 <li class="clearfix">
-                    <button class="btn btn-large btn-orange btn-block" onclick="AWS.ajax_post($('#register_form'), AWS.ajax_processer, 'error_message'); return false;">注册</button>
+                    <button type="submit" class="btn btn-large btn-orange btn-block">注册</button>
                 </li>
             </ul>
         </form>

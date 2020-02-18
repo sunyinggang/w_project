@@ -29,12 +29,9 @@
                                 <p class="clearfix">
                                     <!-- 话题内容 -->
                                     <span class="topic-tag">
-                                        <a class="text" href="">{$data["name"]}</a>
+                                        <a class="text" href="{:url('index/question',['ikey'=>$data['id'],'sort'=>$data['ano_name']])}">{$data["name"]}</a>
                                     </span>
                                     <!-- end 话题内容 -->
-                                </p>
-                                <p class="text-color-999">
-                                    <span>157 个举报</span>
                                 </p>
                             </div>
                             {/volist}
