@@ -1,0 +1,64 @@
+{% extends "home/home.html" %}
+{% block content %}
+		<div class="self_right_content clearfix">
+			{% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+			{% endfor %}
+                {% if order.review_status == 0 %}
+						<h3 class="self_common_title2">添加评价</h3>
+                {% else %}
+                        <h3 class="self_common_title2">查看评价</h3>
+			            <a href="{{url_for('home.delReview',id=order.id)}}" class="info_submit" style="margin-left:1000px;">删除评论</a>
+                {% endif %}
+
+            	<ul class="order_list_th w978 clearfix">
+					<li class="col01">{{order.create_time}}</li>
+					<li class="col02">订单号：{{order.order_no}}</li>
+                    <li class="col02 stress">已支付</li>
+				</ul>
+				<table class="order_list_table w980">
+					<tbody>
+						<tr>
+							<td width="65%">
+                                {% for n in order_product %}
+								<ul class="order_goods_list clearfix">
+									<li class="col01"><img title="{{n.name}}" src="{{url_for('static',filename='uploads/'+n.img)}}"></li>
+									<li class="col02">{{n.name}}</li>
+									<li class="col05">{{n.price}}元/件</li>
+									<li class="col03">{{n.count}}件</li>
+									<li class="col04">{{n.price*n.count}}元</li>
+								</ul>
+                                {% endfor %}
+							</td>
+							<td width="18%">{{order.total_price}}元</td>
+						</tr>
+					</tbody>
+				</table>
+            	<div class="self_form_input">
+					{% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+					{% endfor %}
+					<form method="post" enctype="multipart/form-data">
+                    <label>我的评语：</label>
+					{{form.content}}
+                     {% for err in form.content.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				    {% endfor %}
+                        {% if order.review_status == 0 %}
+						<label>评价图片：</label>
+					     {{form.img}}
+						{{ form.submit }}
+						{{ form.csrf_token }}
+						{% else %}
+						<label>评价图片：</label>
+						<img style="width:300px;height:300px;" src="{{url_for('static',filename='uploads/'+img)}}">
+                        {% endif %}
+					</form>
+				</div>
+		</div>
+	</div>
+
+
+{% endblock %}

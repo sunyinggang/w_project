@@ -1,0 +1,51 @@
+{% extends "admin/home.html" %}
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>商品评语</h1>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+               <ul class="order_list_th w978 clearfix">
+					<li class="col01">{{order.create_time}}</li>
+					<li class="col02">订单号：{{order.order_no}}</li>
+                    <li class="col02 stress">已支付</li>
+				</ul>
+				<table class="order_list_table w980">
+					<tbody>
+						<tr>
+							<td width="55%">
+                                {% for n in order_product %}
+								<ul class="order_goods_list clearfix">
+									<li class="col01"><img src="{{url_for('static',filename='uploads/'+n.img)}}"></li>
+									<li class="col02">{{n.name}}<em>{{n.price}}元/件</em></li>
+									<li class="col03">{{n.count}}</li>
+									<li class="col04">{{n.price*n.count}}元</li>
+								</ul>
+                                {% endfor %}
+							</td>
+							<td width="8%">{{order.total_price}}元</td>
+						</tr>
+					</tbody>
+				</table>
+            	<div class="self_admin_review">
+                    <label>评语：</label>
+					{{form.content}}
+					<br>
+					<label>评价图片：</label>
+					<img style="width:300px;height:300px;" src="{{url_for('static',filename='uploads/'+img)}}">
+				</div>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}

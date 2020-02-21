@@ -1,0 +1,58 @@
+{% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
+{% block content %}
+{% include "home/search.html" %}
+	<div class="navbar_con">
+		<div class="navbar clearfix">
+			<div class="subnav_con fl">
+				<h1>全部商品分类</h1>	
+				<span></span>			
+				<ul class="subnav">
+					{% for c in category %}
+					<li><a href="{{ url_for('home.list',id=c.id,page=1) }}">{{ c.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="breadcrumb">
+		<a href="{{url_for('home.index')}}">全部分类</a>
+		<span>></span>
+		<a href="#">{{now_category.name}}</a>
+	</div>
+
+	<div class="main_wrap clearfix">
+		<div class="l_wrap fl clearfix">
+			<div class="new_goods">
+				<h3>新品推荐</h3>
+				<ul>
+					{% for m in new_product %}
+					<li>
+						<a href="{{ url_for('home.detail',id=m.id) }}"><img src="{{ url_for('static',filename='uploads/'+m.img) }}"></a>
+						<h4><a href="{{ url_for('home.detail',id=m.id) }}">{{ m.name }}</a></h4>
+						<div class="prize">￥{{ m.price }}</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+		<div class="r_wrap fr clearfix">
+
+
+			<ul class="goods_type_list clearfix">
+				{% for v in product_list.items %}
+				<li>
+					<a href="{{ url_for('home.detail',id=v.id) }}"><img src="{{ url_for('static',filename='uploads/'+v.img) }}"></a>
+					<h4><a href="{{ url_for('home.detail',id=v.id) }}">{{ v.name }}</a></h4>
+					<div class="operate">
+						<span class="prize">￥{{ v.price }}</span>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+			{{ pg.page(product_list,"home.list",id) }}
+		</div>
+	</div>
+{% endblock %}

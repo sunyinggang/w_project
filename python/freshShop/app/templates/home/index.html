@@ -1,0 +1,52 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "home/search.html" %}
+
+	<div class="center_con clearfix">
+		<ul class="subnav fl">
+			<li><a href="#model01" class="fruit">新鲜水果</a></li>
+			<li><a href="#model02" class="seafood">海鲜水产</a></li>
+			<li><a href="#model03" class="meet">猪牛羊肉</a></li>
+			<li><a href="#model04" class="egg">禽类蛋品</a></li>
+			<li><a href="#model05" class="vegetables">新鲜蔬菜</a></li>
+			<li><a href="#model06" class="ice">速冻食品</a></li>
+		</ul>
+		<div class="slide fl">
+			<ul class="slide_pics">
+				{% for v in new_product %}
+				<li><a href="{{url_for('home.detail',id=v.id)}}"><img src="{{ url_for('static',filename='uploads/'+v.img) }}" style="width:760px;height:270px;"></a></li>
+				{% endfor %}
+			</ul>
+			<div class="prev"></div>
+			<div class="next"></div>
+			<ul class="points"></ul>
+		</div>
+		<div class="adv fl">
+			<h1>公告</h1>
+			<ul>
+				{% for a in announcement_list %}
+				<li><a href="{{ url_for('home.announcement',id=a.id) }}">{{ a.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+   {% for v in category %}
+	<div class="list_model">
+		<div class="list_title clearfix">
+			<h3 class="fl" id="model01">{{v.name}}</h3>
+			<a href="{{ url_for('home.list',id=v.id,page=1) }}" class="goods_more fr" id="fruit_more">查看更多 ></a>
+		</div>
+		<div class="goods_con clearfix">
+			<ul class="goods_list fl">
+				{% for m in product[v.id] %}
+				<li>
+					<h4><a href="{{ url_for('home.detail',id=m.id) }}">{{ m.name }}</a></h4>
+					<a href="{{ url_for('home.detail',id=m.id) }}" title="{{m.name}}"><img src="{{ url_for('static',filename='uploads/'+m.img) }}"></a>
+					<div class="prize">¥ {{ m.price }}</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+    {% endfor %}
+{% endblock %}

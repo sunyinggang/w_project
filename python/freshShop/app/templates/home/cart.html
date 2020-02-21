@@ -1,0 +1,99 @@
+{% extends "home/home.html" %}
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/cart.css') }}">
+	<script type="text/javascript" src="{{ url_for('static',filename='js/etao.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/cart.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="search_bar clearfix">
+		<a href="index.html" class="logo fl"><img src="{{ url_for('static',filename='images/logo.png') }}"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;购物车</div>
+		<div class="search_con fr">
+			<input type="text" class="input_text fl" name="" placeholder="搜索商品">
+			<input type="button" class="input_btn fr" name="" value="搜索">
+		</div>
+	</div>
+    {% for msg in get_flashed_messages() %}
+					<p style="color:red;margin-left:100px;">{{ msg }}</p>
+			{% endfor %}
+	<div class="total_count">全部商品<em>{{count}}</em>件</div>
+    <div class="cart-wrap">
+		<table id="cartTable" class="cart table table-condensed">
+			<thead>
+				<tr>
+					<th class="t-checkbox"><label><input class="check-all check" type="checkbox" />全选</label></th>
+					<th class="t-goods text-center"><label>产品图片</label></th>
+					<th class="t-goods text-center"><label>产品名称</label></th>
+					<th class="text-center">产品分类</th>
+					<th class="t-selling-price text-center"><label>销售单价</label></th>
+					<th class="t-qty text-center"><label>采购数量</label></th>
+					<th class="t-subtotal text-center"><label>金额小计</label></th>
+					<th class="t-action"><label>操作</label></th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for v in cart %}
+				<tr>
+					<td colspan="2"><label> <input type="checkbox" value="{{v.product_id}}" class="check-one check" /><img src="{{ url_for('static',filename='uploads/'+v.product.img) }}" style="width:100px;height:100px;margin-left:100px;"></label></td>
+					<td class="goods text-center">{{ v.product.name }}</td>
+					<td class="goods text-center">{{ v.product.category.name }}</td>
+					<td class="selling-price number small-bold-red text-right"
+								style="padding-top: 1.1rem;" data-bind="{{ v.product.price }}">{{ v.product.price }}</td>
+					<td>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon minus">-</span> <input
+										type="text" class="number form-control input-sm" value="{{ v.count }}" />
+							<span class="input-group-addon plus">+</span>
+						</div>
+					</td>
+					<td class="subtotal number small-bold-red text-right" style="padding-top: 1.1rem;"></td>
+					<td class="action" style="padding-top: 1.1rem;"><span class="delete btn btn-xs btn-warning" data-id="{{v.id}}">删除</span></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-sm-10">
+				<div class="cart-summary" style="margin-left:100px;">
+					<div style="margin-left: 2rem;" class="pull-right">
+						<span id="btn_settlement" type="button" class="btn btn-primary">去结算</span>
+					</div>
+					<div style="margin-left: 1rem; margin-top: 0.4rem;" class="pull-right total">
+						<label>金额合计:<span id="priceTotal" class="price-total large-bold-red">0.00</span></label>
+					</div>
+					<div style="margin-top: 4px;" class="pull-right">
+						<label>您选择了<span id="itemCount" class="large-bold-red" style="margin: 0 4px;"></span>种产品型号，共计<span id="qtyCount" class="large-bold-red" style="margin: 0 4px;"></span>件
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block js %}
+	<script type="text/javascript">
+		$(".delete").click(function(){
+		   cart_id = $(this).attr('data-id')
+		   if (confirm("确定要从购物车中删除此产品？")) {
+                    window.location.href="{{url_for('home.delCart')}}?cart_id="+cart_id;
+                }
+		   });
+		$("#btn_settlement").click(function(){
+		      var cart = [];
+		      $(cartTable).find("tr:gt(0)").each(function(){
+		         if($(this).find(":checkbox").prop("checked") == true) {
+		            var cartOne = new Object();
+		            product_id = parseInt($(this).find(".check-one").val());
+		            count = parseInt($(this).find(":text").val());
+		            cartOne.product_id = product_id;
+		            cartOne.count = count;
+		            cart.push(cartOne);
+		         }
+		       });
+		       cart = JSON.stringify(cart)
+              window.location.href="{{url_for('home.placeMulorder')}}?cart="+cart;
+		 });
+	</script>
+{% endblock %}

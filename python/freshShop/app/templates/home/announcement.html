@@ -1,0 +1,15 @@
+{% extends "home/home.html" %}
+{% block content %}
+		<div class="self_right_content clearfix">
+						<h3 class="self_common_title2">{{announcement.title}}</h3>
+            <div style="width:200px;height:20px;margin:20px auto;">发布时间：{{announcement.create_time}}</div>
+
+            	<div class="announcement">
+                     公告内容：
+                     {{announcement.content}}
+				</div>
+		</div>
+	</div>
+
+
+{% endblock %}

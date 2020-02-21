@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/reset.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+	<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/amazeui.css') }}">-->
+	<script src="{{ url_for('static',filename='js/jquery-1.11.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='js/jquery-ui.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static',filename='js/slide.js') }}"></script>
+    	{% block head %}{% endblock %}
+</head>
+<body>
+	<div class="header_con">
+		<div class="header">
+			<div class="welcome fl"><a href="{{ url_for('home.index') }}">欢迎来到天天生鲜!</a></div>
+			<div class="fr">
+				<div class="login_info fl">
+					欢迎您：<em>张 山</em>
+				</div>
+				<div class="login_btn fl">
+					{% if session["nickname"] %}
+					<a href="{{ url_for('home.info') }}">{{ session["nickname"] }}</a>
+					<span>|</span>
+					<a href="{{ url_for('home.cart') }}">我的购物车</a>
+					<span>|</span>
+					<a href="{{ url_for('home.order',page=1) }}">我的订单</a>
+					<span>|</span>
+					<a href="{{ url_for('home.loginout') }}">退出登录</a>
+					{% else %}
+					<a href="{{ url_for('home.login') }}">登录</a>
+					<span>|</span>
+					<a href="{{ url_for('home.register') }}">注册</a>
+					{% endif %}
+					<span>|</span>
+					<a href="{{ url_for('home.help') }}">帮助中心</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    {% block content %}{% endblock %}
+	<div class="footer">
+		<div class="foot_link">
+			<a href="#">地址成都市锦江区上东大街2号（盐市口 新中兴广场）6楼14号</a>
+		</div>
+		<p>CopyRight © 2016 东方新娘婚纱租赁公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+<script>
+  $("#do_search").click(function(){
+      var key = $("#key_commodity").val();
+      if(key == ''){
+          alert("搜索字段不能为空！");
+      }else{
+          location.href = "{{ url_for('home.search',page=1) }}?key=" + key;
+      }
+      });
+</script>
+{% block js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "home/user_home.html" %}
+		<div class="right_content clearfix">
+			{% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+			{% endfor %}
+				<div class="info_con clearfix">
+				<h3 class="common_title2">基本信息</h3>
+						<ul class="user_info_list">
+							<li><span>昵称：</span>{{session["nickname"]}}</li>
+							<li><span>收货地址：</span>{{address.address}} （{{address.name}} 收） {{address.phone}}</li>
+						</ul>
+					<button class="info_submit"><a href="{{ url_for('home.site',id=address.id) }}">修改地址</a></button>
+					<button class="info_submit"><a href="{{url_for('home.siteAdd')}}">添加地址</a></button>
+				</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+{% block js %}
+<script>
+	$(document).ready(function(){
+	          $("#m-1").addClass("active");
+	});
+</script>
+{% endblock %}

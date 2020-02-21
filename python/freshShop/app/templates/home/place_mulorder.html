@@ -1,0 +1,78 @@
+{% extends "home/home.html" %}
+{% block content %}
+	
+	<h3 class="common_title">确认收货地址</h3>
+
+	<div class="common_list_con clearfix">
+		<dl>
+			<dt>寄送到：</dt>
+			<dd><input type="radio" name="" checked="">{{address.address}} （{{address.name}} 收） {{address.phone}}</dd>
+		</dl>
+		<a href="{{url_for('home.site',id=address.id)}}" class="edit_site">编辑收货地址</a>
+
+	</div>
+
+	<h3 class="common_title">商品列表</h3>
+
+	<div class="common_list_con clearfix">
+		<ul class="goods_list_th clearfix">
+			<li class="col01">商品名称</li>
+			<li class="col02">商品类别</li>
+			<li class="col03">商品单价</li>
+			<li class="col04">数量</li>
+			<li class="col05">总价</li>
+		</ul>
+		{% for v in product_list %}
+		<ul class="goods_list_td clearfix">
+			<li class="col02"><img src="{{url_for('static',filename='uploads/'+v.img)}}"></li>
+			<li class="col03">{{ v.name }}</li>
+			<li class="col04">{{ v.category.name }}</li>
+			<li class="col05">{{ v.price }}</li>
+			<li class="col06">{{ count[v.id] }}</li>
+			<li class="col07">{{ v.price*count[v.id] }}</li>
+		</ul>
+		{% endfor %}
+	</div>
+
+	<h3 class="common_title">总金额结算</h3>
+
+	<div class="common_list_con clearfix">
+		<div class="settle_con">
+			<div class="total_goods_count">共<em>{{ itemCount }}</em>件商品，总金额<b></b></div>
+			<div class="transit">运费：<b>0元</b></div>
+			<div class="total_pay">实付款：<b>{{sum}}元</b></div>
+		</div>
+	</div>
+
+	<div class="order_submit clearfix">
+		<a href="javascript:;" id="order_btn">提交订单</a>
+	</div>	
+
+{% endblock %}
+{% block js %}
+	<script type="text/javascript">
+		$('#order_btn').click(function() {
+		    var product_list = new Array()
+		    {% for v in product_list %}
+		    var product = {
+		        id   :{{v.id}},
+		        name : "{{v.name}}",
+		        img : "{{v.img}}",
+		        price : {{v.price}}
+		        }
+		     product_list.push(product)
+		    {% endfor %}
+		    var mul_product = product_list
+		    mul_product = JSON.stringify(mul_product)
+		    var count={{ count }};
+		    count = JSON.stringify(count)
+		    var address = "{{address.address}} （{{address.name}} 收） {{address.phone}}";
+		    var sum = {{sum}};
+		    var itemCount = {{ itemCount }};
+			$.post('{{url_for('home.placeMulorder')}}',{'mul_product':mul_product,'count':count,'address':address,'sum':sum,'itemCount':itemCount},function(data){
+			   alert("购买成功");
+			   window.location.href = "{{url_for('home.order',page=1)}}"
+			});
+		});
+	</script>
+{% endblock %}

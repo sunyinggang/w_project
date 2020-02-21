@@ -1,0 +1,75 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+	<div class="register_con">
+		<div class="l_con fl">
+			<a class="reg_logo"><img src="{{ url_for('static',filename='images/logo.png') }}" style="width: 200px;height: 100px;"></a>
+			<div class="reg_slogan">见证真爱  ·  成就经典</div>
+			<div class="reg_banner"></div>
+		</div>
+
+		<div class="r_con fr">
+			<div class="reg_title clearfix">
+				<h1>用户注册</h1>
+				<a href="{{ url_for('home.login') }}">登录</a>
+			</div>
+			<div class="reg_form clearfix">
+				{% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+					{% endfor %}
+					<form method="post">
+						<ul>
+					<li>
+						<label>用户名:</label>
+						{{ form.nickname }}
+                     {% for err in form.nickname.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				    {% endfor %}
+					</li>
+					<li>
+						<label>邮箱:</label>
+						{{ form.email }}
+                     {% for err in form.email.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				    {% endfor %}
+					</li>
+					<li>
+						<label>密码:</label>
+						{{ form.password }}
+                     {% for err in form.password.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				    {% endfor %}
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>确认密码:</label>
+						{{ form.passwordtwo }}
+                     {% for err in form.passwordtwo.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				    {% endfor %}
+					</li>
+					<li class="reg_sub">
+						{{ form.submit }}
+						{{ form.csrf_token }}
+					</li>
+				</ul>
+
+
+
+
+
+					</form>
+			</div>
+
+		</div>
+
+	</div>
+{% endblock %}

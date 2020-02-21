@@ -1,0 +1,27 @@
+{% macro page(data,url) -%}
+{% if data %}
+<div class="pagenation">
+    {% if data.has_prev %}
+	<a href="{{ url_for(url,page=data.prev_num) }}">《上一页</a>
+    {% else %}
+    <a href="#">《上一页</a>
+    {% endif %}
+    {% for v in data.iter_pages() %}
+    {% if v %}
+       {% if v == data.page %}
+	      <a href="#" class="active">{{ v }}</a>
+       {% else %}
+          <a href="{{ url_for(url,page=v,**kwargs) }}">{{ v }}</a>
+       {% endif %}
+    {% else %}
+    <a href="#">&hellip;</a>
+    {% endif %}
+    {% endfor %}
+    {% if data.has_next %}
+	<a href="{{ url_for(url,page=data.next_num) }}">下一页》</a>
+    {% else %}
+    <a href="#">下一页》</a>
+    {% endif %}
+</div>
+{% endif %}
+{%- endmacro %}

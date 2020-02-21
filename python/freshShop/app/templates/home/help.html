@@ -1,0 +1,24 @@
+{% extends "home/home.html" %}
+{% block content %}
+		<div class="self_right_content clearfix">
+						<h3 class="self_common_title2">帮助中心</h3>
+
+            	<div class="help">
+                    <div class="help_list">
+                        <label>企业介绍:</label>
+                        <div class="help_content">{{help.info}}</div>
+                    </div>
+                    <div class="help_list">
+                        <label>常见问题:</label>
+                        <div class="help_content">{{help.problem}}</div>
+                    </div>
+                    <div class="help_list">
+                        <label>配送流程:</label>
+                        <div class="help_content">{{help.distribution}}</div>
+                    </div>
+				</div>
+		</div>
+	</div>
+
+
+{% endblock %}

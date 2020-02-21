@@ -1,0 +1,60 @@
+{% extends "admin/home.html" %}
+{% import "admin/pageTwo.html" as pg %}
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>会员订单列表</h1>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              {% for v in order_list.items %}
+				<ul class="order_list_th w978 clearfix">
+					<li class="col01">{{v.create_time}}</li>
+					<li class="col02">订单号：{{v.order_no}}</li>
+                    {% if v.status == 1 %}
+                    <li class="stress">已支付</li>
+                    {% else %}
+                    <li class="stress">已发货</li>
+                    {% endif %}
+                    <li>收货地址：{{v.snap_address}}</li>
+				</ul>
+				<table class="order_list_table w980">
+					<tbody>
+						<tr>
+							<td width="55%">
+                                {% for n in mul_order_list[v.id] %}
+								<ul class="order_goods_list clearfix">
+									<li class="col01"><img src="{{url_for('static',filename='uploads/'+n.img)}}"></li>
+									<li class="col02">{{n.name}}<em>{{n.price}}元/件</em></li>
+									<li class="col03">{{n.count}}</li>
+									<li class="col04">{{n.price*n.count}}元</li>
+								</ul>
+                                {% endfor %}
+							</td>
+							<td width="8%">{{v.total_price}}元</td>
+							{% if v.review_status == 0 %}
+							<td width="5%"><a href="#" class="oper_btn">未评价</a></td>
+							{% else %}
+							<td width="5%"><a href="{{url_for('admin.review',id=v.id)}}" class="oper_btn">查看评价</a></td>
+							{% endif %}
+						</tr>
+					</tbody>
+				</table>
+			  {% endfor %}
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(order_list,"admin.memberDetail",id) }}
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}

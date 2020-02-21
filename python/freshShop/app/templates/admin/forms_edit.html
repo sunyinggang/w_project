@@ -1,0 +1,122 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <form method="post" role="form">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <h1>修改商品信息</h1>
+              <div class="form-group">
+                <label>标题</label>
+                {{ form.title(value=commodity.title) }}
+                {% for err in form.title.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>价格</label>
+                {{ form.price(value=commodity.price) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>请填写整数</p>
+              </div>
+              <div class="form-group">
+                <label>操作系统</label>
+                {{ form.os(value=commodity.os) }}
+              </div>
+              <div class="form-group">
+                <label>商品编号</label>
+                {{ form.number(value=commodity.number) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>所在大区</label>
+                {{ form.area(value=commodity.area) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>服务器</label>
+                {{ form.server(value=commodity.server) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>等级</label>
+                {{ form.rank(value=commodity.rank) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>请填写整数</p>
+              </div>
+              <div class="form-group">
+                <label>账号类型</label>
+                {{ form.type(value=commodity.type) }}
+              </div>
+              <div class="form-group">
+                <label>神兽数量</label>
+                {{ form.pet(value=commodity.pet) }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>填写数字</p>
+              </div>
+              <div class="form-group">
+                <label>门派</label>
+                {{ form.sect(value=commodity.sect) }}
+              </div>
+              <div class="form-group">
+                <label>性别</label>
+                {{ form.sex(value=commodity.sex) }}
+              </div>
+              <div class="form-group">
+                <label>是否议价</label>
+                {{ form.bargain(value=commodity.bargain) }}
+              </div>
+              <div class="form-group">
+                <label>卖家描述</label>
+                {{ form.description() }}
+                {% for err in form.description.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+                {% endfor %}
+              </div>
+              <div class="form-group">
+                <label>图片内容</label>
+                {{ form.content() }}
+              </div>
+              {{ form.submit }}
+			  {{ form.csrf_token }}
+            </form>
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='content') }}
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}

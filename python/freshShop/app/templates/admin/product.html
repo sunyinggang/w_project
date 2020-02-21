@@ -1,0 +1,73 @@
+{% extends "admin/home.html" %}
+{% import "admin/page.html" as pg %}
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>我的商品列表</h1>
+          </div>
+          <div class="col-lg-2 col-lg-offset-10" style="margin-bottom:30px;">
+            <button class="btn btn-primary" onclick="window.location.href='{{ url_for('admin.addProduct') }}'">添加商品</button>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-lg-6">
+              <span>根据商品名称进行搜索</span>
+            <input type="text" id="key_commodity" />
+            <a id="do_search" class="btn btn-primary">搜索</a>
+            </div>
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>商品名称<i class="fa fa-sort"></i></th>
+                    <th>商品图片<i class="fa fa-sort"></i></th>
+                    <th>价格<i class="fa fa-sort"></i></th>
+                    <th>所属分类<i class="fa fa-sort"></i></th>
+                    <th>创建时间<i class="fa fa-sort"></i></th>
+                    <th>查看或修改信息<i class="fa fa-sort"></i></th>
+                    <th>删除<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for v in product_list.items %}
+                  <tr>
+                    <td>{{ v.name }}</td>
+                    <td><img src="{{ url_for('static',filename='uploads/'+v.img) }}" style="width:100px;height:100px;"></td>
+                    <td>{{ v.price }}</td>
+                    <td>{{ v.category.name }}</td>
+                    <td>{{ v.create_time }}</td>
+                    <td><a href="{{ url_for('admin.editProduct',id=v.id) }}">点击查看或修改</a></td>
+                    <td><a href="{{ url_for('admin.delProduct',id=v.id) }}">删除</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(product_list,"admin.product") }}
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}
+
+{% block js %}
+<script>
+  $("#do_search").click(function(){
+      var key = $("#key_commodity").val();
+      if(key == ''){
+          alert("搜索字段不能为空！");
+      }else{
+      location.href = "{{ url_for('admin.search',page=1) }}?key=" + key;
+      }
+      });
+</script>
+{% endblock %}

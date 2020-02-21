@@ -1,0 +1,52 @@
+{% extends "admin/home.html" %}
+{% import "admin/page.html" as pg %}
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>我的公告</h1>
+          </div>
+          <div class="col-lg-2 col-lg-offset-10" style="margin-bottom:30px;">
+            <button class="btn btn-primary" onclick="window.location.href='{{ url_for('admin.addAnnouncement') }}'">添加公告</button>
+          </div>
+          <div class="row"></div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>标题<i class="fa fa-sort"></i></th>
+                    <th>内容<i class="fa fa-sort"></i></th>
+                    <th>发布时间<i class="fa fa-sort"></i></th>
+                    <th>查看或修改<i class="fa fa-sort"></i></th>
+                    <th>删除<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for v in announcement_list.items %}
+                  <tr>
+                    <td>{{ v.title }}</td>
+                    <td>{{ v.content }}</td>
+                    <td>{{ v.create_time }}</td>
+                    <td><a href="{{ url_for('admin.editAnnouncement',id=v.id) }}">点击查看或修改</a></td>
+                    <td><a href="{{ url_for('admin.delAnnouncement',id=v.id) }}">删除</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(announcement_list,"admin.announcement") }}
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}

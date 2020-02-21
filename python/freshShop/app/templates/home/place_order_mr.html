@@ -1,0 +1,110 @@
+{% extends "home/home.html" %}
+{% block content %}
+	
+	<h3 class="common_title">确认收货地址</h3>
+
+	<div class="common_list_con clearfix">
+		<dl>
+			<dt>寄送到：</dt>
+			<dd><input type="radio" name="" checked="">{{address.address}} （{{address.name}} 收） {{address.phone}}</dd>
+		</dl>
+		<a href="{{url_for('home.site',id=address.id)}}" class="edit_site">编辑收货地址</a>
+
+	</div>
+
+	<h3 class="common_title">商品列表</h3>
+	<div class="common_list_con clearfix">
+		<ul class="goods_list_th clearfix">
+			<li class="col01">商品名称</li>
+			<li class="col02">商品类别</li>
+			<li class="col03">商品单格</li>
+			<li class="col04">数量</li>
+			<li class="col05">总价</li>
+		</ul>
+		<ul class="goods_list_td clearfix">
+			<li class="col02"><img src="{{url_for('static',filename='uploads/'+product.img)}}"></li>
+			<li class="col03">{{ product.name }}</li>
+			<li class="col04">{{ product.category.name }}</li>
+			<li class="col05">{{ product.price }}</li>
+			<li class="col06">{{ count }}</li>
+			<li class="col07">{{ product.price*count }}</li>
+		</ul>
+	</div>
+    <h3 class="common_title">购买金额已满2000可免费选择一件伴娘服<button style="margin-left:40px;" class="adsw">不选择</button></h3>
+    <div class="common_list_con clearfix">
+        <form>
+		<ul class="goods_type_list clearfix">
+            {% for v in product_list %}
+				<li>
+					<a href="{{ url_for('home.detail',id=v.id) }}"><img src="{{ url_for('static',filename='uploads/'+v.img) }}"></a>
+					<h4><a href="{{ url_for('home.detail',id=v.id) }}">{{ v.name }}</a></h4>
+					<div class="operate">
+						<span class="prize">￥{{ v.price }}</span>
+					</div>
+					<input class="select" type="checkbox" data-id="{{v.id}}" data-name="{{v.name}}" data-img="{{v.img}}" data-price="{{v.price}}">
+				</li>
+            {% endfor %}
+			</ul>
+            </form>
+	</div>
+	<h3 class="common_title">总金额结算</h3>
+
+	<div class="common_list_con clearfix">
+		<div class="settle_con">
+			<div class="total_goods_count">共<em>{{ count }}</em>件商品，总金额<b>{{ count*product.price }}</b></div>
+			<div class="transit">伴娘服：<b class="transit_m">0</b>元</div>
+			<div class="total_pay">实付款：<b class="all_m">{{ count*product.price }}</b>元</div>
+		</div>
+	</div>
+
+	<div class="order_submit clearfix">
+		<a href="javascript:;" id="order_btn">提交订单</a>
+	</div>
+{% endblock %}
+{% block js %}
+	<script type="text/javascript">
+		$('#order_btn').click(function() {
+		   var mBoolean =false;
+		   var count={{ count }};
+		   var address = "{{address.address}} （{{address.name}} 收） {{address.phone}}";
+		   var product = {
+		        id : "{{product.id}}",
+		        name : "{{product.name}}",
+		        img : "{{product.img}}",
+		        price : {{product.price}}
+		   }
+		   product = JSON.stringify(product);
+		   $('.select').each(function(){
+		         if($(this).prop('checked')){
+		          mBoolean = true;
+		          var product_s = {
+		                   id : $(this).attr('data-id'),
+		                   name : $(this).attr('data-name'),
+		                   img : $(this).attr('data-img'),
+		                   price : 0
+		          }
+		          product_s = JSON.stringify(product_s);
+		          $.post('{{url_for('home.placeOrder')}}',{'product':product,'product_s':product_s,'count':count,'address':address},function(data){
+			   alert("购买成功");
+			   window.location.href = "{{url_for('home.order',page=1)}}"
+			});
+		    }
+		   });
+		   if(!mBoolean){
+		   $.post('{{url_for('home.placeOrder')}}',{'product':product,'count':count,'address':address},function(data){
+			   alert("购买成功");
+			   window.location.href = "{{url_for('home.order',page=1)}}"
+			});
+		   }
+		});
+		$(document).ready(function(){
+            $('.select').click(function(){
+                if($(this).attr('checked')){
+                }else{
+                            $(':checkbox[type="checkbox"]').removeAttr('checked');
+                            $(this).prop('checked',true);
+                       }
+		   });
+		});
+	</script>
+{% endblock %}
