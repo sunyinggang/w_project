@@ -1,0 +1,80 @@
+[ 2019-11-29T11:07:15+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=4c6bd449b74c78ceef0559365fc63f5a10045ac0&timestamp=1574996835&nonce=1210018379&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+
+[ 2019-11-29T11:07:16+08:00 ] 101.91.60.27 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+
+[ 2019-11-29T11:07:18+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo?nsukey=o9bQOh1%2BkKamxdpdYgVcNFsbp%2BKHrBwwQSdkeoYji0waqX7PRirbTS4fpuoBLODT9b7vm5XDcBbDCefiCevS4Edc%2FlGGjKeHJEWwYNpi%2Br4jzdANZv7dXfdu%2BQefL7MKBywc6ucvXmNeSLGhHxnaj%2FmfVPBTmbcHlMy3RfJhtPVXxPJXYib4DZXv%2FasTOm9c5Ia4hyjRRYNQLbTI9%2BXqaA%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+
+[ 2019-11-29T11:07:28+08:00 ] 112.224.69.127 /index.php/Wx/Index/getBaseInfo?nsukey=o9bQOh1%2BkKamxdpdYgVcNFsbp%2BKHrBwwQSdkeoYji0waqX7PRirbTS4fpuoBLODT9b7vm5XDcBbDCefiCevS4Edc%2FlGGjKeHJEWwYNpi%2Br4jzdANZv7dXfdu%2BQefL7MKBywc6ucvXmNeSLGhHxnaj%2FmfVPBTmbcHlMy3RfJhtPVXxPJXYib4DZXv%2FasTOm9c5Ia4hyjRRYNQLbTI9%2BXqaA%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+
+[ 2019-11-29T11:07:29+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo?nsukey=o9bQOh1%2BkKamxdpdYgVcNFsbp%2BKHrBwwQSdkeoYji0waqX7PRirbTS4fpuoBLODT9b7vm5XDcBbDCefiCevS4Edc%2FlGGjKeHJEWwYNpi%2Br4jzdANZv7dXfdu%2BQefL7MKBywc6ucvXmNeSLGhHxnaj%2FmfVPBTmbcHlMy3RfJhtPVXxPJXYib4DZXv%2FasTOm9c5Ia4hyjRRYNQLbTI9%2BXqaA%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+
+[ 2019-11-29T11:07:30+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=011Bi92d1QUKhA0VFO4d1VpQ1d1Bi92V&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-11-29T11:07:30+08:00 ] 123.151.77.73 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-11-29T11:07:31+08:00 ] 112.224.69.127 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-11-29T11:07:44+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+
+[ 2019-11-29T11:07:45+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-11-29T11:07:46+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=071KoYpq17GHri0QDfoq1qXKpq1KoYpE&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+
+[ 2019-11-29T11:07:46+08:00 ] 123.151.77.73 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+
+[ 2019-11-29T11:07:58+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=6121079cfed319767fe7d4c08b0373ae765ae222&timestamp=1574996878&nonce=1502856043&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+
+[ 2019-11-29T11:08:00+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo?nsukey=KuaNvv%2BvcdPn120hG%2F9XfzKphLccjRLHIwgG5h6UKafz7N4qHUgOpkv3lKOXQW8FF41%2FVNCoL2bUIhypAH3hVrGAeMGgST87%2BA%2B1xBUm7a368KzX8fdfIuerqw%2FkqvzRnvhHhtm5%2FAHwCsSxOXBcPbIgm9sSXJOzZ5n%2BVyWpqR9%2Fu2RmLIFQFQosMSB6OBiAwuTZ1QIpRnuoyj4xZl4qQQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+
+[ 2019-11-29T11:08:07+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=081GjcSi02pnZp1HKpOi085WRi0GjcS1&state=123&nsukey=45P6dukqS6FeBHmYx2Zh%2FVxklI44AR84Ue1AP1IrqOb7HjwVoC%2BvRvmyCDmWoVa7lBpJsaIJubofHYU5J2lqZgGq0dldhxIFk5dZ7EsS%2FEGr86DZNeM4BhQgD3bvEYXD2T0vAgTihxF1cRfYY7moz%2BYvn5f13Lr7IuCgLQOyKS8C8taJen%2B5mTJ8VZWNIxiT0qvHCUh%2FwHPGL99ZxIvBrA%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+
+[ 2019-11-29T11:08:07+08:00 ] 123.151.77.73 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+

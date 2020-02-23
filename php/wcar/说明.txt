@@ -1,0 +1,9 @@
+
+
+登录地址：http://localhost/wcar/public/index.php/index/login/login
+    初始管理员：
+            账户：1
+			密码：123456
+	初始车主：
+	        账户：15688708938
+			密码：123456

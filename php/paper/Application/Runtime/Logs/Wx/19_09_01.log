@@ -1,0 +1,25 @@
+[ 2019-09-01T07:51:06+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=16a9af8c61703274660219aa606bb50c51b1ea29&timestamp=1567295466&nonce=65885996&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001389s ]
+
+[ 2019-09-01T07:51:10+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+
+[ 2019-09-01T07:51:10+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+
+[ 2019-09-01T07:51:12+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=021mAuiW0RqE712uWRiW0hPyiW0mAuih&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+
+[ 2019-09-01T07:51:12+08:00 ] 123.151.77.73 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+

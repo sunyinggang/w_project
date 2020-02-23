@@ -10,7 +10,7 @@ class BaseModel extends Model
 {
     public function add($data){
         //allowField(true)自动过滤非表中字段
-        return $this->data($data)->allowField(true)->save();
+        return $this->data($data)->allowField(true)->insert($data,true);
     }
     //根据id更新数据
     public function updateById($data, $id) {
@@ -32,5 +32,9 @@ class BaseModel extends Model
     //根据修改时间查询数据
     public function selectByUpdateTime() {
         return $this->whereTime('update_time','>','-1 days')->where('status' ,'neq',0)->select();
+    }
+    //根据sort_id查询举报列表
+    public function selectBySortId($id){
+        return $this->where('sort_id','=',$id)->order('update_time', 'desc')->paginate(5);
     }
 }

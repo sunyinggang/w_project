@@ -1,0 +1,1659 @@
+[ 2019-08-12T08:56:20+08:00 ] 222.135.77.242 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001657s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001691s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026066s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026095s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000834s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2019-08-12T08:56:21+08:00 ] 222.135.77.242 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+
+[ 2019-08-12T08:57:00+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=7ba4efe37545f7b5a331aa7be0a36c01353f3bb3&timestamp=1565571420&nonce=141095007&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000643s ]
+
+[ 2019-08-12T08:58:48+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=98c28a906db11e22030e8ba472cd51c050661697&timestamp=1565571528&nonce=532980639&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000385s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2019-08-12T08:58:52+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=ce998ddf9fc9053f1c4935f55da37b38ac4849f9&timestamp=1565571532&nonce=384794616&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-12T09:05:56+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b6ce920e0bffaf6c50ecd4a9fc84ff5192583c3e&timestamp=1565571956&nonce=1148949298&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2019-08-12T09:05:59+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=1e5ba9cd35366bd3e41808c0e3bfe10952e9626b&timestamp=1565571959&nonce=2021487047&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2019-08-12T09:16:44+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=5c5ad08bbb0a3ad18d37a82317e0dd2f6253261c&timestamp=1565572604&nonce=985290462&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 675 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2019-08-12T09:19:28+08:00 ] 222.135.77.242 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 675 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004423s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2019-08-12T09:19:37+08:00 ] 222.135.77.242 /index.php/Wx/Index/Login_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 675 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `paper_student` WHERE `password` = '123456' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003747s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.001096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000823s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.000218s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000903s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.001990s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000829s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001813s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000019s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003505s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001403s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002047s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003308s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+
+[ 2019-08-12T09:20:15+08:00 ] 222.135.77.242 /index.php/Wx/Index/Login_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 675 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `password` = '123456' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003724s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003747s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000141s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.001103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000882s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.000192s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000952s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002015s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000811s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001156s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001842s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002761s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000646s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002057s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002585s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+
+[ 2019-08-12T09:20:22+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=4d8a258360e786942da6f3ba1ceaefcb4d5d386f&timestamp=1565572822&nonce=382503568&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 675 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2019-08-12T09:44:49+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=247fba179619c1f5e0217b85de4109506b1a8fce&timestamp=1565574289&nonce=1241220496&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2019-08-12T09:54:40+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=eb4e52cc2f678c832940cef930dcc6541712ea60&timestamp=1565574880&nonce=966829689&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2019-08-12T10:00:22+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=1e674581bc243088abacb295c08b620f4596096c&timestamp=1565575222&nonce=1757683073&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2019-08-12T10:00:40+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=be51be44e46b8a73cc381f2a29d5d37fbb3927c5&timestamp=1565575240&nonce=592452991&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2019-08-12T10:00:42+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=71470dbc235ad178ed1f08c575b105c679975c71&timestamp=1565575242&nonce=1212665204&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-12T10:04:05+08:00 ] 222.135.77.242 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004772s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004797s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2019-08-12T10:43:10+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=9397ea408de923475e9eda8e1ce656072d7f7e16&timestamp=1565577790&nonce=1690610709&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2019-08-12T10:47:52+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=9bfe2c160f90d1ff07de0c9a8a222016ef5fcdcc&timestamp=1565578072&nonce=2004450137&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2019-08-12T10:48:35+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b63edea23753063525c08a53a49b354becb929bf&timestamp=1565578115&nonce=1510563212&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2019-08-12T10:48:37+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=81e4516eb39ee6380686d133c783f4230e943244&timestamp=1565578116&nonce=651900494&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000379s ]
+
+[ 2019-08-12T10:48:44+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=806f79b3c2be65b32bafbe6ef91fde496ebd66f3&timestamp=1565578124&nonce=3690524&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2019-08-12T11:10:49+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=ee151d6c295ccec0dc8492fac935e07913cd45b4&timestamp=1565579449&nonce=2039873123&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000333s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2019-08-12T11:28:34+08:00 ] 222.135.77.242 /index.php/Wx/Index/Login_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' AND `password` = '123456' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005102s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.001229s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000866s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.000253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000007s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000940s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000871s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001233s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001926s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000019s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003039s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000719s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002765s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+
+[ 2019-08-12T11:28:34+08:00 ] 222.135.77.242 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+
+[ 2019-08-12T11:28:38+08:00 ] 222.135.77.242 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003190s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003214s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2019-08-12T11:30:30+08:00 ] 222.135.77.242 /index.php/Wx/Index/Login_check.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' AND `password` = '123456' LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.001329s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000865s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.000202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000005s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000947s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.002277s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000838s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000004s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001866s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.003727s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001440s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002089s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003414s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /home/bae/app/ThinkPHP/Library/Think/View.class.php:95) /home/bae/app/ThinkPHP/Library/Think/View.class.php 第 93 行.
+
+[ 2019-08-12T14:20:16+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=73cad272ff7259ff421634670a03608087b7d77b&timestamp=1565590816&nonce=513815822&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000878s ]
+
+[ 2019-08-12T14:22:25+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=6340f28ddf3fa7b259dfc32b29f7ed46c635db29&timestamp=1565590945&nonce=793273723&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2019-08-12T14:22:29+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=9b390a847b281180334b6625a345b499bd03558a&timestamp=1565590949&nonce=1484809441&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2019-08-12T14:23:02+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=66c85c3163a4f06f3a5cac61c64f3b93c6a16813&timestamp=1565590982&nonce=2045020714&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2019-08-12T14:23:12+08:00 ] 222.135.77.242 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001690s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001732s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010227s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000344s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2019-08-12T14:33:13+08:00 ] 222.135.77.242 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+
+[ 2019-08-12T14:48:47+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=82bf0136bfa113a1f85e13cf78b516b02a0729f4&timestamp=1565592527&nonce=360769197&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2019-08-12T14:49:01+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=834145b293ff7b94f5ad07323427f8d1274c9463&timestamp=1565592541&nonce=2002946746&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000365s ]
+
+[ 2019-08-12T15:02:25+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000368s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000396s ]
+
+[ 2019-08-12T15:02:44+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2019-08-12T15:03:18+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000375s ]
+
+[ 2019-08-12T15:04:22+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2019-08-12T15:06:22+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+
+[ 2019-08-12T15:07:00+08:00 ] 222.135.77.242 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000360s ]
+
+[ 2019-08-12T15:07:01+08:00 ] 222.135.77.242 /index.php/Wx/Index/getUserOpenId?code=081nQmQf2ND2HH0T1tOf2UtEQf2nQmQ3&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000459s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [2] curl_errno(): supplied resource is not a valid cURL handle resource /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 446 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2019-08-12T15:10:49+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=eb1f6e0abb48e460071264ec7b7e3958a4132e73&timestamp=1565593849&nonce=1136084365&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2019-08-12T15:11:30+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=46ee7cff10af7cbcac18017f318a3eb3794ac0c5&timestamp=1565593890&nonce=1562183309&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2019-08-12T15:11:36+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b525ca114b8eed73b43a2d3c215ef60031b71ba4&timestamp=1565593895&nonce=843049290&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2019-08-12T15:11:49+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=7b900c792f054eb8845b92453aa08740f1cf6080&timestamp=1565593909&nonce=510735202&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2019-08-12T15:11:51+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=40d23ce478eb25d2539277cc1ea0040eeb1e29ad&timestamp=1565593910&nonce=421383581&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000365s ]
+
+[ 2019-08-12T15:12:02+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=16d8b13628e034be268d3625ebe0b61cbc1c0e74&timestamp=1565593922&nonce=570130456&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2019-08-12T15:12:12+08:00 ] 101.91.60.101 /index.php/Wx/Index/index?signature=552fdb3ffce98a2866ec0835c0cad8df2a73b65a&timestamp=1565593931&nonce=1144967272&openid=ofrczv_mhtlVHQRlWOMouh3c0ry0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2019-08-12T15:12:16+08:00 ] 101.91.60.101 /index.php/Wx/Index/index?signature=4b5425b01261e3aa9a983e5a6311bdac51b8dfe4&timestamp=1565593936&nonce=99935071&openid=ofrczv_mhtlVHQRlWOMouh3c0ry0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-12T15:12:43+08:00 ] 101.91.60.101 /index.php/Wx/Index/index?signature=8fbc090686b04138a9b74263ec940c7618845b03&timestamp=1565593963&nonce=750288303&openid=ofrczv_mhtlVHQRlWOMouh3c0ry0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2019-08-12T15:20:32+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=aab854c2da67a7cb9065fdcb1873d74cbbce8b53&timestamp=1565594432&nonce=939070841&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-12T15:20:38+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=77d31794f70ecce88759c901f428d725e01f9dc1&timestamp=1565594437&nonce=163226817&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000387s ]
+
+[ 2019-08-12T15:21:20+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=364741ef8cc95f272552709fa04c374277741ebb&timestamp=1565594480&nonce=535301411&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000360s ]
+
+[ 2019-08-12T15:21:22+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=79b554f4bd7e711a04966464770a2c27dbe2a3dd&timestamp=1565594482&nonce=1515138182&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2019-08-12T15:21:26+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=cef599ffc47df55bca440955a253c49a5d516763&timestamp=1565594485&nonce=875020612&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2019-08-12T15:21:28+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=0c45d6c3aa2889e4f5aa6bd491a64dcc9272eb61&timestamp=1565594488&nonce=247591581&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2019-08-12T15:21:45+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=d1efe53eefa45727f66064fc98a98d08bd88b8eb&timestamp=1565594505&nonce=429910325&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2019-08-12T15:22:06+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=3f1b53846424fcc1e7185bf2e01248a51f32c160&timestamp=1565594526&nonce=2083393274&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2019-08-12T15:22:47+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=92a400142d45add3de2be4c06b12b746160ff6fa&timestamp=1565594567&nonce=1493855716&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000293s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-12T15:31:05+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=853279cc6ed702c3bfee0840dc2bdcbca2f0b087&timestamp=1565595064&nonce=1075625187&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2019-08-12T15:36:24+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=afac55c7a66646e270ef0c240559a317ebc050d9&timestamp=1565595384&nonce=738043684&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2019-08-12T15:37:31+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=c5bec4b687feb982035302726bb58c3502901b23&timestamp=1565595451&nonce=2063654335&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2019-08-12T15:45:31+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=692c717b253cbf33371c4cb33e2b7fda63a97ce4&timestamp=1565595931&nonce=450378988&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-12T15:51:20+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=310544ae32c275d72ffb83d1943efe593d505a5d&timestamp=1565596280&nonce=1497999047&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2019-08-12T16:07:07+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b8a0750b209d31116ac64ebb82511b69c3ee87b1&timestamp=1565597227&nonce=490829937&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2019-08-12T16:07:13+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b81b329a96f1319cf222db17014168fb122c0cc2&timestamp=1565597233&nonce=1719848709&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2019-08-12T16:07:16+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=82f8b7dc3168797fb3d6c126f36d632f8850d0c1&timestamp=1565597236&nonce=50953147&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2019-08-12T16:08:28+08:00 ] 222.135.77.242 /index.php/Wx/Index/definedItem
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000614s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2019-08-12T16:15:08+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=f3921a6656f513612d16f1a2ec0f32b32b5a6dc5&timestamp=1565597708&nonce=924025652&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-12T16:15:09+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004985s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000403s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2019-08-12T16:15:10+08:00 ] 101.227.139.172 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000369s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 676 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2019-08-12T16:15:11+08:00 ] 112.224.67.136 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+
+[ 2019-08-12T16:20:15+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=075c61ace39a4bc4f66c9ed3a6ec93b223cfc166&timestamp=1565598015&nonce=721257453&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000372s ]
+
+[ 2019-08-12T16:20:15+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004446s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2019-08-12T16:20:15+08:00 ] 112.224.67.136 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+
+[ 2019-08-12T16:20:30+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2019-08-12T16:20:30+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-12T16:20:32+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=061IL6bD1r90T406vZaD18fZaD1IL6br&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+
+[ 2019-08-12T16:20:32+08:00 ] 123.151.77.73 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000317s ]
+
+[ 2019-08-12T16:25:20+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=f153e4537154de5a4fc6528ff55f6d5de650a44b&timestamp=1565598320&nonce=1251935246&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2019-08-12T16:25:21+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004695s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004721s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2019-08-12T16:25:22+08:00 ] 112.224.67.136 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+
+[ 2019-08-12T16:25:35+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090206' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-12T16:25:35+08:00 ] 220.194.106.93 /index.php/Wx/Index/index2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000049s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002804s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002830s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2019-08-12T16:32:38+08:00 ] 58.247.206.154 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2019-08-12T16:32:42+08:00 ] 61.151.178.174 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003878s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003906s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2019-08-12T16:32:46+08:00 ] 61.151.178.197 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-12T16:38:05+08:00 ] 58.247.206.154 /index.php/Wx/Index/index2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 716 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000067s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004533s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2019-08-12T18:56:57+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=f6aa1e7a15d3779d0daeed253b4c54758c7fb914&timestamp=1565607416&nonce=809133971&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000802s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000837s ]
+
+[ 2019-08-12T18:56:57+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001704s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001754s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010049s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2019-08-12T18:56:58+08:00 ] 112.224.67.136 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+
+[ 2019-08-12T18:57:10+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000331s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0008s ]
+
+[ 2019-08-12T18:57:10+08:00 ] 123.151.77.73 /index.php/Wx/Index/index2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003227s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000319s ]
+
+[ 2019-08-12T18:57:24+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2019-08-12T18:57:24+08:00 ] 220.194.106.93 /index.php/Wx/Index/index2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000049s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002865s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000337s ]
+
+[ 2019-08-12T18:57:40+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-12T18:57:40+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000325s ]
+
+[ 2019-08-12T18:57:42+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=061Ztw2716QiQM12ue27182N271Ztw22&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+ERR: 1146:Table 'b_acosrgg4a9wb1z.key' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `key`
+ERR: 1146:Table 'b_acosrgg4a9wb1z.key' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `key`
+
+[ 2019-08-12T18:58:31+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-12T18:58:32+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000298s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2019-08-12T18:58:33+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=081vPvT11fzjMQ1HPaV11WdsT11vPvTx&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+ERR: 1146:Table 'b_acosrgg4a9wb1z.studen' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `studen`
+ERR: 1146:Table 'b_acosrgg4a9wb1z.studen' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `studen`
+
+[ 2019-08-12T18:59:01+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-12T18:59:01+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000366s ]
+
+[ 2019-08-12T18:59:03+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=061DrLEE1q75d80xboDE1wZ2FE1DrLEg&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+ERR: 1146:Table 'b_acosrgg4a9wb1z.student' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `student`
+ERR: 1146:Table 'b_acosrgg4a9wb1z.student' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `student`
+
+[ 2019-08-12T19:00:02+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2019-08-12T19:00:03+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000293s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2019-08-12T19:00:04+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=0610UC1s1xvEyk0oZLZr1AN22s10UC1Z&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 717 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column 'ofrczvzQH2Ejb5ck_6G6jEgFLOig' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `paper_student` WHERE ( ofrczvzQH2Ejb5ck_6G6jEgFLOig ) LIMIT 1  
+ERR: 1054:Unknown column 'ofrczvzQH2Ejb5ck_6G6jEgFLOig' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `paper_student` WHERE ( ofrczvzQH2Ejb5ck_6G6jEgFLOig ) LIMIT 1  
+

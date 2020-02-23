@@ -1,0 +1,12 @@
+body{
+    background-color: rgba(27,171,219,0.3);
+}
+.center{
+    text-align: center;
+    margin: 10px auto;
+}
+
+.info{
+    width: 80%;
+    margin: 0 auto;
+}

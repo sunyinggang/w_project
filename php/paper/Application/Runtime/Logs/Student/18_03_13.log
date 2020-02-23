@@ -1,0 +1,164 @@
+[ 2018-03-13T20:36:09+08:00 ] ::1 /paper/index.php/Student/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+
+[ 2018-03-13T20:36:10+08:00 ] ::1 /paper/index.php/Student/login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+
+[ 2018-03-13T20:36:45+08:00 ] ::1 /paper/index.php/Student/Login/Login_check?kind=paper_student
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+
+[ 2018-03-13T20:36:48+08:00 ] ::1 /paper/index.php/Student/Student/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+
+[ 2018-03-13T20:36:48+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000654s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T20:50:36+08:00 ] ::1 /paper/index.php/Student/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001378s ]
+
+[ 2018-03-13T20:51:01+08:00 ] ::1 /paper/index.php/Student/Login/Login_check?kind=paper_student
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+
+[ 2018-03-13T20:51:03+08:00 ] ::1 /paper/index.php/Student/Student/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000535s ]
+
+[ 2018-03-13T20:51:03+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000876s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T20:51:14+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T20:56:01+08:00 ] ::1 /paper/index.php/Student/Student/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000830s ]
+
+[ 2018-03-13T20:56:01+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T20:56:01+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T20:56:04+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000401s ]
+
+[ 2018-03-13T20:56:04+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:15:30+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001242s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:17:29+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000131s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001495s ]
+
+[ 2018-03-13T22:17:31+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:19:17+08:00 ] ::1 /paper/index.php/Student/Student/page_change_password
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+
+[ 2018-03-13T22:19:18+08:00 ] ::1 /paper/index.php/Student/Student/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001394s ]
+
+[ 2018-03-13T22:19:19+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:20:54+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+
+[ 2018-03-13T22:20:54+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:21:08+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001210s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T22:21:13+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+
+[ 2018-03-13T22:21:13+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T23:06:23+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001664s ]
+
+[ 2018-03-13T23:06:23+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+ERR: 非法操作:js
+
+[ 2018-03-13T23:07:27+08:00 ] ::1 /paper/index.php/Student/Student/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+
+[ 2018-03-13T23:07:27+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000373s ]
+ERR: 非法操作:js
+

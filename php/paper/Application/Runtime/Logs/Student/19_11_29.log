@@ -1,0 +1,270 @@
+[ 2019-11-29T09:17:54+08:00 ] 60.212.176.250 /index.php/Student/Student/page_upload_report
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+
+[ 2019-11-29T09:17:54+08:00 ] 60.212.176.250 /index.php/Student/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004113s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000271s ]
+
+[ 2019-11-29T09:17:55+08:00 ] 60.212.176.250 /index.php/Student/login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-11-29T09:31:00+08:00 ] 60.212.176.250 /index.php/Student/Login/Login_check?kind=paper_student
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090257' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `paper_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `paper_system` WHERE `id` = 'r0007' LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: kind /home/bae/app/Application/Student/Controller/LoginController.class.php 第 86 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000241s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000254s ]
+
+[ 2019-11-29T09:31:02+08:00 ] 60.212.176.250 /index.php/Student/Student/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0006s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090257' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `paper_system` [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `paper_system` WHERE `id` = 'r0007'  [ RunTime:0.0005s ]
+SQL: SELECT `topic_state1`,`topic_state2` FROM `paper_student` WHERE `id` = '1630090257'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005573s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000274s ]
+
+[ 2019-11-29T09:31:02+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000226s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:31:02+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:31:45+08:00 ] 60.212.176.250 /index.php/Student/Student/page_select_title
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0005s ]
+SQL: SELECT `topic_state1`,`topic_state2` FROM `paper_student` WHERE `id` = '1630090257'  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `paper_name` [ RunTime:0.0008s ]
+SQL: select id,name from paper_name where sid='r0007' [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004576s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004595s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2019-11-29T09:31:45+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:31:47+08:00 ] 60.212.176.250 /index.php/Student/Student/page_upload_report
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0011s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0005s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004234s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000277s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000292s ]
+
+[ 2019-11-29T09:31:47+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:36:03+08:00 ] 60.212.176.250 /index.php/Student/Student/page_select_title
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0006s ]
+SQL: SELECT `topic_state1`,`topic_state2` FROM `paper_student` WHERE `id` = '1630090257'  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `paper_name` [ RunTime:0.0008s ]
+SQL: select id,name from paper_name where sid='r0007' [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006068s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000279s ]
+
+[ 2019-11-29T09:36:03+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:37:52+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+ERR: 非法操作:js
+
+[ 2019-11-29T09:38:08+08:00 ] 60.212.176.250 /index.php/Student/Student/title_create?topic=%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `paper_name` [ RunTime:0.0008s ]
+SQL: select * from paper_name where name='图书馆管理系统' [ RunTime:0.0004s ]
+SQL: UPDATE `paper_student` SET `topic`='图书馆管理系统',`state`='3' WHERE `id` = '1630090257' [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003164s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000098s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2019-11-29T09:38:09+08:00 ] 60.212.176.250 /index.php/Student/Student/page_select_title
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000261s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0007s ]
+SQL: select state from paper_student where id='1630090257' [ RunTime:0.0006s ]
+SQL: SELECT `topic_state1`,`topic_state2` FROM `paper_student` WHERE `id` = '1630090257'  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `paper_name` [ RunTime:0.0008s ]
+SQL: select id,name from paper_name where sid='r0007' [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003889s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003908s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000078s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000088s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2019-11-29T09:38:09+08:00 ] 60.212.176.250 /index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+ERR: 非法操作:js
+

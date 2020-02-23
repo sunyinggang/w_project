@@ -1,0 +1,5 @@
+[ 2019-09-05T10:59:43+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=f9eae6c0352101f93b07755166bfe3e449b31aa5&timestamp=1567652383&nonce=2121097483&openid=ofrczv_EoAAQuZFv-14_JLzVdNVk
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001266s ]
+

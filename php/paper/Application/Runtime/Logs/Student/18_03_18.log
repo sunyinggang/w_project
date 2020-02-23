@@ -1,0 +1,32 @@
+[ 2018-03-18T08:18:24+08:00 ] ::1 /paper/index.php/Student/Student/page_upload_paper
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0107s ]
+SQL: select state from paper_student where id='1630090205' [ RunTime:0.0006s ]
+SQL: select state from paper_student where id='1630090205' [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000878s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000948s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001043s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001518s ]
+
+[ 2018-03-18T08:18:24+08:00 ] ::1 /paper/index.php/Student/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+ERR: 非法操作:js
+

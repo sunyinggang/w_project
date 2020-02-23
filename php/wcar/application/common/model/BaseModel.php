@@ -22,6 +22,10 @@ class BaseModel extends Model
     }
     //根据status查询数据
     public function selectByStatus($title,$status) {
-        return $this->where('title','like',"%".$title."%")->where('status','=',$status)->find();
+        return $this->where('title','like',"%".$title."%")->where('status','=',$status)->select();
+    }
+    //根据修改时间查询数据
+    public function selectByUpdateTime() {
+        return $this->whereTime('update_time','>','-1 days')->where('status' ,'neq',0)->select();
     }
 }

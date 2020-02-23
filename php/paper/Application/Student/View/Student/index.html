@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>学生信息管理系统</title>
+
+    
+    <link rel="stylesheet" type="text/css" href=" __PUBLIC__/Student/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Student/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Student/css/basictable.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Student/font-awesome/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="__PUBLIC__/Student/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="__PUBLIC__/Student/css/sb-admin.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="__PUBLIC__/Student/css/morris-0.4.3.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+      <!-- 引入公共内容 -->
+      <include file='Student/Public/top' />
+        
+  		<div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+        <div id="page-wrapper">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="title"><center>学生信息</center> </h2>
+            </div>
+            <div class="alert alert-info alert-dismissable">
+                 当前的选题状态为：{$state} 
+              </div>
+          </div><!-- /.row -->
+
+          <div class="row">
+            <table id="table">
+              <thead>
+                <tr>
+                  <th>学号</th>
+                  <th>姓名</th>
+                  <th>所在系</th>
+                  <th>所选课题</th>
+                    <th>教师是否通过该选题</th>
+                    <th>系主任是否通过该选题</th>
+                    <th>开题指导教师成绩</th>
+                    <th>开题答辩委员会成绩</th>
+                    <th>论文指导教师成绩</th>
+                    <th>论文答辩委员会成绩</th>
+                    <th>最终成绩</th>
+                  <th>学生状态</th>
+                </tr>
+              </thead>            
+              <tbody>               
+                  <tr>
+                    <td>{$studentInfo.id}</td>
+                    <td>{$studentInfo.name}</td>
+                    <td><php> echo $department</php></td>
+                    <td><if condition="$studentInfo.topic eq ''">未选题<else /> {$studentInfo.topic}</if> </td>
+                      <td>{$topic_state1}</td>
+                      <td>{$topic_state2}</td>
+                      <td><if condition="$studentInfo.score1 eq -1">成绩未录入<else/>{$studentInfo.score1} </if></td>
+                      <td><if condition="$studentInfo.score2 eq -1">成绩未录入<else/>{$studentInfo.score2} </if></td>
+                      <td><if condition="$studentInfo.score3 eq -1">成绩未录入<else/>{$studentInfo.score3} </if></td>
+                      <td><if condition="$studentInfo.score4 eq -1">成绩未录入<else/>{$studentInfo.score4} </if></td>
+                      <td><if condition="$studentInfo.finally eq -1">成绩未录入<else/>{$studentInfo.finally} </if></td>
+                    <td><php> echo $state</php></td>
+                  </tr>
+           
+              </tbody>
+            </table>
+          </div><!-- /.row -->
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    <!-- JavaScript -->
+    <script src="__PUBLIC__/js/jquery-1.10.2.js"></script>
+    <script src="__PUBLIC__/js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->    <script src="js/raphael-min.js"></script>
+    <script src="__PUBLIC__/js/morris-0.4.3.min.js"></script>
+    <script src="__PUBLIC__/js/morris/chart-data-morris.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="__PUBLIC__/js/tablesorter/tables.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+[ 2019-08-30T07:20:18+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=1fe4f077fc4294116624cb8b87126a0806108a10&timestamp=1567120818&nonce=789928730&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000862s ]
+
+[ 2019-08-30T07:20:19+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+
+[ 2019-08-30T07:20:20+08:00 ] 112.224.65.132 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+

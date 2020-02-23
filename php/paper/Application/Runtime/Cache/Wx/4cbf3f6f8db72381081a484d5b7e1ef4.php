@@ -1,0 +1,30 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/Public/Wx/css/wxui.css">
+    <link rel="stylesheet" type="text/css" href="/Public/Wx/css/style111.css">
+</head>
+<body>
+
+<div class="center">已绑定</div>
+<div class="info">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" name="id" value="<?php echo ($id); ?>"/>
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="text" name="name" value="<?php echo ($name); ?>"/>
+        </div>
+    </div>
+</div>
+<div class="weui-footer">
+    <a href="http://web1812181703085.gz01.bdysite.com/index.php/Wx/Index/quxiao" class="weui-footer__text">取消绑定</a>
+</div>
+</body>
+</html>

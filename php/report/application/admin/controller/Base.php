@@ -10,6 +10,9 @@
         $isLogin = $this->isLogin();
         if(!$isLogin){
             return $this->redirect('login/index');
+        }else{
+            $sort = model('Sort')->select();
+            $this->assign('sort',$sort);
         }
     }
     //判定是否登录

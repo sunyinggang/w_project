@@ -19,7 +19,7 @@
                         </div>
                         <div class="mod-footer">
                             <ul class="nav nav-tabs aw-nav-tabs">
-                                <li><a href="#questions" id="page_questions" data-toggle="tab">我的举报<span class="badge">{$count}</span></a></li>
+                                <li><a href="#" id="page_questions" data-toggle="tab">我的举报<span class="badge">{$count}</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                     {elseif condition="$vo.status eq 1"}
                                     已通过
                                     {else/}
-                                    未通过
+                                    未通过|<a href="www.baidu.com" class="aw-icon-thank-tips text-color-999" >查看原因</a>
                                     {/if}
                                 </a>
 												</span>
@@ -92,7 +92,7 @@
                                     {elseif condition="$vo.status eq 1"}
                                     已通过
                                     {else/}
-                                    未通过
+                                    未通过|<a href="{:url('index/edit',['ikey'=>$vo['sort_id'],'id'=>$vo['id']])}" class="aw-icon-thank-tips text-color-999" >查看原因</a>
                                     {/if}
                                 </a>
 								</span>
@@ -111,27 +111,27 @@
                 <div class="col-sm-12 col-md-3 aw-side-bar">
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            <span>邮箱</span>
+                            <span>邮箱:{$user["email"]}</span>
                         </div>
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            <span>身份证号</span>
+                            <span>身份证号:{$user["number"]}</span>
                         </div>
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            <span>性别</span>
+                            <span>性别:{$user["sex"]}</span>
                         </div>
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            <span>地区</span>
+                            <span>地区:{$user["area"]}</span>
                         </div>
                     </div>
                     <div class="aw-mod people-following">
                         <div class="mod-body">
-                            <span>修改密码</span>
+                            <span><a href="{:url('index/changePassword')}">修改密码</a></span>
                         </div>
                     </div>
                 </div>

@@ -345,4 +345,24 @@ class Index extends BaseController
             'key' => $key
         ]);
     }
+    public function changePassword()
+    {
+        if (request()->isPost()) {
+            $data = input('post.');
+            if ($data["password"] != $data["passwordt"]) {
+                return $this->error('两次密码不一致！');
+            }else{
+                $user = model('User');
+                $userinfo = session('user','','user');
+                $data["password"] = md5($data["password"]);
+                $res = $user->updateById($data,$userinfo["id"]);
+                if($res){
+                    $this->success('修改成功，重新登录','index/login/login');
+                }else{
+                    $this->error('修改失败');
+                }
+            }
+        }
+        return $this->fetch();
+    }
 }

@@ -4,6 +4,10 @@
 namespace app\admin\controller;
 
 
+use app\common\model\IdSubpage;
+use app\common\model\TravelCard;
+use app\common\model\User;
+
 class Index extends BaseController
 {
     public function index(){
@@ -242,5 +246,116 @@ class Index extends BaseController
             'title' => $title,
             'status' => $status
         ]);
+    }
+    public function processToday(){
+        $car = model('Car')->selectByUpdateTime();
+        $carShow = model('CarShow')->selectByUpdateTime();
+        $driveCard = model('DriveCard')->selectByUpdateTime();
+        $driveSubpage = model('DriveSubpage')->selectByUpdateTime();
+        $idCard = model('IdCard')->selectByUpdateTime();
+        $idSubpage = model('IdSubpage')->selectByUpdateTime();
+        $travelCard = model('TravelCard')->selectByUpdateTime();
+        $travelSubpage = model('TravelSubpage')->selectByUpdateTime();
+        $res = array(
+            $car,
+            $carShow,
+            $driveCard,
+            $driveSubpage ,
+            $idCard,
+            $idSubpage,
+            $travelCard,
+            $travelSubpage
+        );
+        //var_dump($res[0][0]["title"]);exit;
+        return $this->fetch('',[
+            'res' => $res
+        ]);
+    }
+    public function userInfo($type){
+        if($type==1){
+            $title = "车主年龄统计";
+            $res = IdSubpage::with('user')->select();
+            foreach ($res as $value)
+            {
+                $value["age"] = $this->age($value["number"],1);
+            }
+        }else{
+            $title = "车主车龄统计";
+            $res = TravelCard::with('user')->select();
+            foreach ($res as $value)
+            {
+                $value["age"] = $this->age($value["send_date"],2);
+                $value["name"] = $value["user"]["name"];
+            }
+        }
+        return $this->fetch('',[
+            'res' => $res,
+            'title' => $title,
+            'type' => $type
+        ]);
+    }
+    public function age($time,$type){
+        if ($type==1){
+            $date = strtotime(substr($time,6,8));
+            #  获得今日的时间戳
+            $today = strtotime('today');
+            #  得到两个日期相差的大体年数
+            $diff = floor(($today-$date)/86400/365);
+            #  strtotime加上这个年数后得到那日的时间戳后与今日的时间戳相比
+            $age = strtotime(substr($time,6,8).' +'.$diff.'years')>$today?($diff+1):$diff;
+        }else{
+            $age = date('Y', time()) - date('Y', strtotime($time)) - 1;
+            if (date('m', time()) == date('m', strtotime($time))){
+                if (date('d', time()) > date('d', strtotime($time))){
+                    $age++;
+                }
+            }elseif (date('m', time()) > date('m', strtotime($time))){
+                $age++;
+            }
+        }
+        return $age;
+    }
+    public function reviewProgress($userId){
+        $car = model('Car')->selectByUserId($userId);
+        $carShow = model('CarShow')->selectByUserId($userId);
+        $driveCard = model('DriveCard')->selectByUserId($userId);
+        $driveSubpage = model('DriveSubpage')->selectByUserId($userId);
+        $idCard = model('IdCard')->selectByUserId($userId);
+        $idSubpage = model('IdSubpage')->selectByUserId($userId);
+        $travelCard = model('TravelCard')->selectByUserId($userId);
+        $travelSubpage = model('TravelSubpage')->selectByUserId($userId);
+        $res = array(
+            $car,
+            $carShow,
+            $driveCard,
+            $driveSubpage ,
+            $idCard,
+            $idSubpage,
+            $travelCard,
+            $travelSubpage
+        );
+        return $this->fetch('',[
+            'res' => $res
+        ]);
+    }
+    public function changePassword()
+    {
+        if (request()->isPost()) {
+            $data = input('post.');
+            if ($data["password"] != $data["passwordt"]) {
+                return $this->error('两次密码不一致！');
+            }else{
+                $admin = model('Admin');
+                $userinfo = session('admin','','admin');
+                $data["password"] = md5($data["password"]);
+                $res = $admin->updateById($data,$userinfo["id"]);
+                if($res){
+                    $this->success('修改成功，重新登录','index/login/login');
+                }else{
+                    $this->error('修改失败');
+                }
+            }
+        }
+        return $this->fetch();
     }
 }

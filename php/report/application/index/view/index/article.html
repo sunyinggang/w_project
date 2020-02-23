@@ -9,17 +9,39 @@
                         <div class="mod-head" style="margin-left: 300px;">
                           <h1>{$res.title}</h1>
                         </div>
-                        {if condition=""}
-                        {elseif condition=""}
-                        {elseif condition=""}
-                        {elseif condition=""}
-                        {elseif condition=""}
+                        {if condition="$res.sort_id eq 1 OR $res.sort_id eq 2 OR $res.sort_id eq 3 OR $res.sort_id eq 4"}
+                        <div class="mod-head" style="">
+                            <h3>举报类型:{$res.type}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 5"}
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 6"}
+                        <div class="mod-head" style="">
+                            <h3>应用名称:{$res.name}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>下载地址:{$res.download}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 7"}
+                        <div class="mod-head" style="">
+                            <h3>举报对象:{$res.object}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 8 OR $res.sort_id eq 9"}
+                        <div class="mod-head" style="">
+                            <h3>举报对象:{$res.object}</h3>
+                        </div>
                         {else/}
                         {/if}
-                        <div class="mod-head" style="">
-                            <h3>sda:d</h3>
-                        </div>
                         <div class="mod-body">
+                            <h3>举报描述如下:</h3>
                           <div class="content markitup-box">
 							  {$res.description|htmlspecialchars_decode}
                          </div>

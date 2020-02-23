@@ -1,0 +1,9 @@
+[ 2019-11-09T14:28:03+08:00 ] 222.135.77.242 /index.php/Home/Index/getBaseInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+ERR: 非法操作:getBaseInfo
+

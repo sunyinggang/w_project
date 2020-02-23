@@ -1,0 +1,924 @@
+[ 2019-11-28T20:59:54+08:00 ] 222.135.77.242 /index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+
+[ 2019-11-28T20:59:54+08:00 ] 222.135.77.242 /index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000238s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000066s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005896s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005920s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000235s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000248s ]
+
+[ 2019-11-28T20:59:54+08:00 ] 222.135.77.242 /index.php/Admin/login/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+
+[ 2019-11-28T21:00:03+08:00 ] 222.135.77.242 /index.php/Admin/Login/Login_check?kind=%27paper_system%27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000218s ]
+SQL: SHOW COLUMNS FROM `paper_admin` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `paper_admin` WHERE `id` = '1730090112' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004153s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004174s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000096s ]
+
+[ 2019-11-28T21:00:15+08:00 ] 222.135.77.242 /index.php/Admin/Login/Login_check?kind=%27paper_system%27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000236s ]
+SQL: SHOW COLUMNS FROM `paper_admin` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `paper_admin` WHERE `id` = '1630090112' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003035s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003053s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000106s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2019-11-28T21:00:16+08:00 ] 222.135.77.242 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000219s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/IndexController.class.php on line 10 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005202s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000081s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2019-11-28T21:00:16+08:00 ] 222.135.77.242 /index.php/Admin/Index/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000221s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:00:17+08:00 ] 222.135.77.242 /index.php/Admin/Index/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000239s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:03:11+08:00 ] 222.135.77.242 /index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000210s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000220s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/IndexController.class.php on line 10 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005492s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000081s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000329s ]
+
+[ 2019-11-28T21:03:13+08:00 ] 222.135.77.242 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000217s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000229s ]
+
+[ 2019-11-28T21:03:15+08:00 ] 222.135.77.242 /index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000209s ]
+
+[ 2019-11-28T21:03:15+08:00 ] 222.135.77.242 /index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000222s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000235s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000247s ]
+
+[ 2019-11-28T21:03:22+08:00 ] 222.135.77.242 /index.php/Admin/Login/Login_check?kind=%27paper_system%27
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `paper_admin` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `paper_admin` WHERE `id` = '1630090112' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000044s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002834s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002851s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2019-11-28T21:03:23+08:00 ] 222.135.77.242 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/IndexController.class.php on line 10 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003056s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003072s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000086s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000277s ]
+
+[ 2019-11-28T21:03:24+08:00 ] 222.135.77.242 /index.php/Admin/Index/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:12:50+08:00 ] 222.135.77.242 /index.php/Admin/User/showAdmin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `paper_admin` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_admin` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `paper_admin` LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `paper_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `paper_system` WHERE ( name = "教务部" )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 /home/bae/app/Application/Admin/Controller/UserController.class.php 第 85 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/UserController.class.php on line 100 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+NOTIC: [8] Undefined index: systemname /home/bae/app/Application/Runtime/Cache/Admin/7dfaf65f84409a8b0b0b5c8735b75fa2.php 第 170 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006062s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000122s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2019-11-28T21:12:50+08:00 ] 222.135.77.242 /index.php/Admin/User/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000273s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:12:57+08:00 ] 222.135.77.242 /index.php/Admin/System/into
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000214s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/SystemController.class.php on line 89 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/d55d846f3618c57067e414f075cfb79c.php 第 180 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000079s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2019-11-28T21:12:57+08:00 ] 222.135.77.242 /index.php/Admin/System/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000234s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:13:02+08:00 ] 222.135.77.242 /index.php/Admin/System/into/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+
+[ 2019-11-28T21:13:10+08:00 ] 222.135.77.242 /index.php/Admin/System/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000228s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:13:49+08:00 ] 222.135.77.242 /index.php/Admin/System/into/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000233s ]
+SQL: SHOW COLUMNS FROM `paper_system` [ RunTime:0.0008s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0000','教务部') [ RunTime:0.0013s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0001','软件工程系') [ RunTime:0.0011s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0002','机械工程系') [ RunTime:0.0025s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0003','电气工程系') [ RunTime:0.0013s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0004','土木工程系') [ RunTime:0.0010s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0005','食品工程系') [ RunTime:0.0010s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0006','艺术系') [ RunTime:0.0010s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0007','经济管理系') [ RunTime:0.0010s ]
+SQL: INSERT INTO `paper_system` (`id`,`name`) VALUES ('r0008','外语系') [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/SystemController.class.php on line 86 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003798s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2019-11-28T21:13:49+08:00 ] 222.135.77.242 /index.php/Admin/System/into/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/SystemController.class.php on line 89 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/d55d846f3618c57067e414f075cfb79c.php 第 180 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000077s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000087s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000251s ]
+
+[ 2019-11-28T21:13:54+08:00 ] 222.135.77.242 /index.php/Admin/User/intoUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/UserController.class.php on line 252 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/9785a95946922cc9c5fd79e126b3cb29.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004585s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2019-11-28T21:13:54+08:00 ] 222.135.77.242 /index.php/Admin/User/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000225s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:14:00+08:00 ] 222.135.77.242 /index.php/Admin/User/intoUser/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `paper_leader` [ RunTime:0.0013s ]
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090133','张起顺','r0001','e10adc3949') [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `paper_teacher` [ RunTime:0.0011s ]
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090135','朱明义','r0002','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090205','崔翊超','r0003','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: SHOW COLUMNS FROM `paper_admin` [ RunTime:0.0006s ]
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090206','房小涵','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090207','孙迎港','r0005','e10adc3949') [ RunTime:0.0013s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090208','宋淑伟','r0006','e10adc3949') [ RunTime:0.0015s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090209','孙七','r0007','e10adc3949') [ RunTime:0.0014s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090210','宋淑伟','e10adc3949') [ RunTime:0.0018s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090211','宋淑伟','r0008','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090212','宋淑伟','r0000','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090213','宋淑伟','r0001','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090214','宋淑伟','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090215','宋淑伟','r0003','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090216','宋淑伟','r0000','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090217','宋淑伟','r0005','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090218','宋淑伟','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090219','宋淑伟','r0007','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090220','宋淑伟','r0000','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090221','宋淑伟','r0008','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090222','宋淑伟','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090223','宋淑伟','r0001','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090224','宋淑伟','r0002','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090225','宋淑伟','r0003','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090226','宋淑伟','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090227','宋淑伟','r0005','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090228','宋淑伟','r0006','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090229','王六','r0007','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090230','宋淑伟','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090231','宋淑伟','r0008','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090232','宋淑伟','r0000','e10adc3949') [ RunTime:0.0013s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090233','宋淑伟','r0001','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090234','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090235','宋淑伟','r0003','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090236','宋淑伟','r0000','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090237','宋淑伟','r0005','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090238','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090239','宋淑伟','r0007','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090240','宋淑伟','r0000','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090241','宋淑伟','r0000','e10adc3949') [ RunTime:0.0012s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090242','宋淑伟','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090243','宋淑伟','r0002','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090244','宋淑伟','r0003','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090245','宋淑伟','r0000','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090246','宋淑伟','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090247','宋淑伟','r0006','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090248','李丽','r0007','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090249','宋淑伟','r0000','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090250','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090251','宋淑伟','r0001','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090252','宋淑伟','r0002','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090253','宋淑伟','r0003','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090254','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090255','宋淑伟','r0005','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090256','宋淑伟','r0006','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090257','王五','r0007','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090258','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090259','宋淑伟','r0000','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090260','李伟','r0007','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090261','宋淑伟','r0002','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090262','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090263','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090264','宋淑伟','r0005','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090265','宋淑伟','r0006','e10adc3949') [ RunTime:0.0011s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090266','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090267','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090268','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090269','宋淑伟','r0001','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090270','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090271','宋淑伟','r0003','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090272','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090273','宋淑伟','r0005','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090274','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090275','宋淑伟','r0007','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090276','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090277','宋淑伟','r0000','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090278','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090279','宋淑伟','r0002','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090280','宋淑伟','r0003','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090281','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090282','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090283','宋淑伟','r0006','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090284','张明','r0007','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090285','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090286','宋淑伟','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090287','宋淑伟','r0001','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090288','宋淑伟','r0002','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090289','宋淑伟','r0003','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090290','宋淑伟','e10adc3949') [ RunTime:0.0006s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090291','宋淑伟','r0005','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090292','宋淑伟','r0006','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090293','李四','r0007','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090294','宋淑伟','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090295','宋淑伟','r0000','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090296','宋淑伟','r0001','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090297','宋淑伟','r0002','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_admin` (`id`,`name`,`password`) VALUES ('1630090298','宋淑伟','e10adc3949') [ RunTime:0.0008s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_leader` (`id`,`name`,`sid`,`password`) VALUES ('1630090299','宋淑伟','r0000','e10adc3949') [ RunTime:0.0008s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_teacher` (`id`,`name`,`sid`,`password`) VALUES ('1630090300','宋淑伟','r0005','e10adc3949') [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090301','张三','r0007','e10adc3949') [ RunTime:0.0009s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+SQL: INSERT INTO `paper_student` (`id`,`name`,`sid`,`password`) VALUES ('1630090302','周八','r0007','e10adc3949') [ RunTime:0.0014s ]
+NOTIC: [2] unlink(./Public/upload/02b90535156475ed50f43db0c9653e0b.xlsx): No such file or directory /home/bae/app/Application/Admin/Controller/UserController.class.php 第 242 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/UserController.class.php on line 250 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004525s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000305s ]
+
+[ 2019-11-28T21:14:00+08:00 ] 222.135.77.242 /index.php/Admin/User/intoUser/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000251s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/UserController.class.php on line 252 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/9785a95946922cc9c5fd79e126b3cb29.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000104s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000252s ]
+
+[ 2019-11-28T21:14:03+08:00 ] 222.135.77.242 /index.php/Admin/Teacher/intoRelation
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/TeacherController.class.php on line 52 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/4fbdd2c9933e98a723209aea16f6f593.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004992s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000337s ]
+
+[ 2019-11-28T21:14:03+08:00 ] 222.135.77.242 /index.php/Admin/Teacher/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:14:16+08:00 ] 222.135.77.242 /index.php/Admin/Teacher/intoRelation/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000230s ]
+SQL: SHOW COLUMNS FROM `paper_teacher` [ RunTime:0.0009s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090205,1630000000' WHERE ( id=1630090135 ) [ RunTime:0.0016s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090297,1630090293' WHERE ( id=1630090208 ) [ RunTime:0.0013s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090209' WHERE ( id=1630090212 ) [ RunTime:0.0012s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090213' WHERE ( id=1630090216 ) [ RunTime:0.0011s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090217' WHERE ( id=1630090220 ) [ RunTime:0.0017s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090221' WHERE ( id=1630090224 ) [ RunTime:0.0011s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090225,1630090277' WHERE ( id=1630090228 ) [ RunTime:0.0012s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090229,1630090281' WHERE ( id=1630090232 ) [ RunTime:0.0011s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090233,1630090285' WHERE ( id=1630090236 ) [ RunTime:0.0011s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090237,1630090289' WHERE ( id=1630090240 ) [ RunTime:0.0011s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090241' WHERE ( id=1630090244 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090245' WHERE ( id=1630090248 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090249' WHERE ( id=1630090252 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090253' WHERE ( id=1630090256 ) [ RunTime:0.0009s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090257' WHERE ( id=1630090260 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090261' WHERE ( id=1630090264 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090265' WHERE ( id=1630090268 ) [ RunTime:0.0010s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090269' WHERE ( id=1630090272 ) [ RunTime:0.0009s ]
+SQL: UPDATE `paper_teacher` SET `member`='1630090273' WHERE ( id=1630090276 ) [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/TeacherController.class.php on line 49 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003742s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003764s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000308s ]
+
+[ 2019-11-28T21:14:16+08:00 ] 222.135.77.242 /index.php/Admin/Teacher/intoRelation/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/TeacherController.class.php on line 52 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+NOTIC: [8] Undefined variable: data /home/bae/app/Application/Runtime/Cache/Admin/4fbdd2c9933e98a723209aea16f6f593.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003795s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003811s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000261s ]
+
+[ 2019-11-28T21:14:19+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000267s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `paper_student` LIMIT 0,20   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000396s ]
+
+[ 2019-11-28T21:14:20+08:00 ] 222.135.77.242 /index.php/Admin/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000210s ]
+ERR: 非法操作:js
+
+[ 2019-11-28T21:14:28+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `paper_student` LIMIT 20,20   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004564s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000269s ]
+
+[ 2019-11-28T21:14:28+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade/p/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000224s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `paper_student` LIMIT 0,20   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004437s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004456s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000257s ]
+
+[ 2019-11-28T21:14:30+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade/p/%3Cdiv%3E%20%3Ca%20class=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `paper_student` LIMIT 0,20   [ RunTime:0.0007s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004551s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000263s ]
+
+[ 2019-11-28T21:14:30+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade/p/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `paper_student` LIMIT 0,20   [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004118s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004138s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000093s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000261s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2019-11-28T21:14:38+08:00 ] 222.135.77.242 /index.php/Admin/Student/showGrade
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `paper_student` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `paper_student` LIMIT 0,20   [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in /home/bae/app/Application/Admin/Controller/StudentController.class.php on line 19 and defined /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content /home/bae/app/ThinkPHP/Library/Think/Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004036s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000273s ]
+
+[ 2019-11-28T21:14:38+08:00 ] 222.135.77.242 /index.php/Admin/Student/js/raphael-min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+ERR: 非法操作:js
+

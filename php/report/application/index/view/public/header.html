@@ -57,13 +57,13 @@
             </a>
             <div class="aw-dropdown dropdown-list pull-right">
                 <ul class="aw-dropdown-list">
-                    <li><a href="http://www.tousuyun.com/account/logout/"><i class="icon icon-logout"></i> 退出</a></li>
+                    <li><a href="{:url('index/logout')}"><i class="icon icon-logout"></i> 退出</a></li>
                 </ul>
             </div>
             {else/}
             <a class="btn-primary btnst " href="{:url('index/login')}">登录</a>
             <span class="or">or</span>
-            <a class="register btn-success btnst" href="{:url('index/register')}"></a>
+            <a class="register btn-success btnst" href="{:url('index/register')}">注册</a>
             {/if}
         </div>
         <!-- end 用户栏 -->

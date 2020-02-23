@@ -1,0 +1,488 @@
+[ 2019-12-01T09:33:42+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+
+[ 2019-12-01T09:33:42+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=584f9a0e785dd9e5ce36d85030c16233215ba530&timestamp=1575164022&nonce=2062777541&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+
+[ 2019-12-01T11:56:03+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T11:56:19+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T12:03:38+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=ec021faaadd89c166d930646e5f0652fc4578267&timestamp=1575173017&nonce=789137830&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001063s ]
+
+[ 2019-12-01T12:03:40+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo?nsukey=1WS%2BwPMQ2DBsACzhJ8kokD2MJOWNuFqwPtF1rjUFdp6gEUudn7c3r0bwb5fH6nO9OMnrHCJzWGWtgcdf3Jmzl%2BCJ9sVdoW4WMW9ziHxlaw7be1wOVymnirteZ3l6Nmyprwq6g7Ux9beBvbT%2FB42ZORk6ii7poaD3hB9z79AF4pdJSKAIhhaGYuUVSf5IbAGR3TIm%2Fse1L%2BDa%2BjnmamJvvw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+
+[ 2019-12-01T12:03:43+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=0215FNLe2G8QfJ0g0UMe27TNLe25FNLM&state=123&nsukey=TABgxXqwbBRUc%2Bwk3bnktxUIFNAZskGbpvrttVkAitD7bKxj%2FA63zHmFSGfupTIgWLbWC8kmBCkOUM8QnzoXuKTBA9nDG01SCF9MwLDwk7e3%2F3UcOfbMVgITXl20tSW5y2PLsnSKGUBVrQrZxm%2FHJnJjgHYoz5kRY%2FmwWEW%2FRlZrsKvjApGi8usPnG2UJklaeIHmQVJJKXuQxqQcc1skVw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+
+[ 2019-12-01T12:03:43+08:00 ] 220.194.106.93 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T12:03:45+08:00 ] 112.224.71.27 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+
+[ 2019-12-01T12:03:56+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+
+[ 2019-12-01T12:03:56+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000192s ]
+
+[ 2019-12-01T12:03:57+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=081aDamS1azbF51FnOkS16XlmS1aDamu&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+
+[ 2019-12-01T12:03:57+08:00 ] 220.194.106.93 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-12-01T12:04:08+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T12:04:12+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+
+[ 2019-12-01T12:04:13+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=5074b9d55206f9e874c280c20b553fcde12f6d5d&timestamp=1575173053&nonce=1400508056&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+
+[ 2019-12-01T12:04:19+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+
+[ 2019-12-01T12:04:19+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=82afe3bc42cf591de14b84b3c175ace7bc7caf0b&timestamp=1575173059&nonce=1637699431&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+
+[ 2019-12-01T12:04:24+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-12-01T12:04:24+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=dc19ef5349cea87fa8d594f791e863b4b469f242&timestamp=1575173064&nonce=425236377&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+
+[ 2019-12-01T12:04:30+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg2/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+
+[ 2019-12-01T12:04:31+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=12a24207b78bf9a28757e7b516edfd79c8fa97d0&timestamp=1575173070&nonce=1299080662&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+
+[ 2019-12-01T12:04:36+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+
+[ 2019-12-01T12:04:37+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=f088cb9a77e249a28c1e6a766e91cb6b7848a746&timestamp=1575173077&nonce=11319166&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+
+[ 2019-12-01T12:04:40+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+
+[ 2019-12-01T12:04:41+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=22b8a5c1e4e9a2c56f03c8559110ed8d0906179a&timestamp=1575173080&nonce=710035852&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+
+[ 2019-12-01T12:04:50+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+
+[ 2019-12-01T12:04:50+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=cede1d5de516b7e03e1d8689f08680a9507dc8be&timestamp=1575173090&nonce=1556688704&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+
+[ 2019-12-01T12:04:56+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg2/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T12:04:57+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=7647e9102fe704783c415ae8f10655cd3e8e0177&timestamp=1575173097&nonce=1173808219&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+
+[ 2019-12-01T12:05:20+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+
+[ 2019-12-01T12:05:21+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=b8c18b53a54792767126353d6f0c0eb430595dd9&timestamp=1575173121&nonce=1490368339&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-12-01T12:06:50+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg5/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+
+[ 2019-12-01T12:06:51+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=4e4e6da7c14fc54699f0d137ad993a834b39785c&timestamp=1575173211&nonce=2120131058&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T12:08:26+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg4/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-12-01T12:08:27+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=aa757cf7293bd079d9c0fda101819c9a8ccbae81&timestamp=1575173306&nonce=1975349544&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+
+[ 2019-12-01T15:15:03+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=5cbb1f6d26c22a8e2b27f2b1cf55780aa1414980&timestamp=1575184503&nonce=223300493&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+
+[ 2019-12-01T15:15:08+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo?nsukey=s03lAc2l%2BnipmYQ8y8ncdywg7GYJdgXxW15L7yzxevpHXYKNGwBc1KBUO0TpXuT8Tqr%2B32NsfoZQkvLq%2F%2FLTLL17qiWgqNUnoANWmFDQNM2X%2F7%2B8fQQ8bQpa5qLx50aTZIonfbnUJeX3ezAJazzmRk26dPMlhAj714CaSdbBNR6T%2BLel8rL%2Fomk2Z9Dg3Yh%2F3FQDQiXhMzR7YVU8Iv8yMw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T15:15:10+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=071xHHlN1lxCBa1D0OoN1NhDlN1xHHl2&state=123&nsukey=lnrckllzsQwW8JNwQkFCePzPa5viEk%2FT0YXVdzrFTyipyTLaa6cbDY8edts2VccD55QpSe8VwFwIt5F8z%2BKbvLLeokK2ZBzQANbs9fQ%2FoVl2UA744x17htJbmVdPj7mSfbD87q36Xqr%2Fvv%2FxTLYxdc01DKqwpFYPzuw2A6GgyRc7uj0zW3GeFxw%2BfnwwEc76VPi4hJXO2uauB4%2B5UFHCkg%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+
+[ 2019-12-01T15:15:10+08:00 ] 220.194.106.93 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T15:15:12+08:00 ] 123.151.77.132 /index.php/Wx/Index/quxiao
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+
+[ 2019-12-01T15:15:12+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+
+[ 2019-12-01T15:15:13+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=081zq6zN1Pyqfa1iOxBN1jtWyN1zq6zg&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+
+[ 2019-12-01T15:15:13+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-12-01T15:15:14+08:00 ] 112.224.71.27 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T15:15:26+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T15:15:29+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T15:25:15+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T15:25:21+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T15:25:28+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+ERR: 参数错误或者未定义:keyidd
+
+[ 2019-12-01T15:26:34+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=7488ce5c82094bff49493e3eb274a315453923ec&timestamp=1575185194&nonce=83391257&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T15:26:36+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo?nsukey=XmKVfCZjMKTW6oPevPxTF0c2FG4Km7ZpkGG%2FOgg%2BZibfeHkvLKEYhTlJWZg6ZDZ50LZTVxmuktUZB1oPcsUeY6reBC59PR0e%2FlERuc3aggQicxljhW5lq1KHen30su2yLE8nR1Lahg%2BfLaQMZ178ugVj3udoAIfQe4OvFzfnkvt%2BAV1Gv6OdLYUQAxWYuLti0V1u%2B%2Bg%2F%2BVHH%2FawBQ%2FdMYQ%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+
+[ 2019-12-01T15:26:50+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=0819T0WY1HyQmU0WzlUY1GUiWY19T0Wz&state=123&nsukey=UcpkZmWw%2FUcnD8aGjSdNBWvkPr5bBnY2IbJXUV%2FnjXMu%2B49OCcJJ282oseTAbCOIsHFnh%2B1%2B1STIM4cql7A3O39IR9FXIDLdyUhNc2QdA%2BaskXwVIzX%2FaIroBV6bKL4Ftkv0X5miSEmYT%2Bk8HtDjfxnTjtLbdjc7TNNqEtEnpV99lPPymblagp1JusblfdsJSF3bx%2BT4Fn83iawhPMEBpw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+
+[ 2019-12-01T15:26:51+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+
+[ 2019-12-01T15:26:51+08:00 ] 112.224.71.27 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000162s ]
+
+[ 2019-12-01T15:27:02+08:00 ] 123.151.77.132 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+
+[ 2019-12-01T15:27:02+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-12-01T15:27:03+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=021OkqQI1KpIv407KIOI1sGxQI1OkqQF&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+
+[ 2019-12-01T15:27:04+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+
+[ 2019-12-01T15:27:12+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+
+[ 2019-12-01T15:27:12+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=9d707dd122c41538c1ffc21514a96dc6f85208bf&timestamp=1575185232&nonce=1496164336&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T15:29:54+08:00 ] 220.194.106.93 /index.php/Wx/Index/quxiao
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+
+[ 2019-12-01T15:29:54+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+
+[ 2019-12-01T15:29:55+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=061LV8Uw11NKpg01gyVw1pi8Uw1LV8UK&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000165s ]
+
+[ 2019-12-01T15:29:55+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+
+[ 2019-12-01T15:30:18+08:00 ] 123.151.77.132 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+
+[ 2019-12-01T15:30:19+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T15:30:20+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=021BPum51ynKCS1tEKo514sNm51BPumk&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+
+[ 2019-12-01T15:30:20+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-12-01T15:31:41+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T15:31:41+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=3fdff2df946c9fa6ad280979227b12a91e2681a2&timestamp=1575185501&nonce=321407156&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-12-01T15:31:45+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+
+[ 2019-12-01T15:31:46+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=8c3202afbaaaed5cc7f740797a665b74e63dd31f&timestamp=1575185506&nonce=1375533952&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+
+[ 2019-12-01T21:27:41+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=19a762d06ff9114f494555333b92ae259c84e607&timestamp=1575206861&nonce=948156435&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+
+[ 2019-12-01T21:27:47+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo?nsukey=%2BP4EotqMG25c6uq6ZIqPCmGjKO7XMvyf0W1kVCCdnDnvu%2FLAhRmliX2GfkIUBeG%2F4qIUC5%2FUrCaKPSiVnp1s2xSAU%2Fx84UR4jB%2FFPwPBLCBxDAafUo2Le61ASPSXkGleHFtNFwgFX5%2FubcDzz%2FvcVGQNjBB34V87ow0ujzHBppaDCYd78QlkfCl7l3%2BSb2uY5t68WpWYXS38mYRo%2FWsO4Q%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000163s ]
+
+[ 2019-12-01T21:27:50+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=0613NsvS1s7ny51G33sS1ojvvS13Nsvr&state=123&nsukey=zy37y98BiXydJos3qkCFa9MhUfF1ZEvNCOMRzK1cSDuJ96EwPFN6LQ3zgKhLX9DkQbr1HT8gcKJFJYBtfGCzTjtosVFGlq5fNpL5ifgOJHTQ2ip6a2wzHlCG5k%2BcxlT0jls%2FWX3OrU1iTS97VNyCo97fst%2BLPSSPKOnbIJoxLAGaSeMfmNM0wnY632qKc3pxoKtJOpypW42yjq6tqip8gw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+
+[ 2019-12-01T21:27:50+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+
+[ 2019-12-01T21:27:51+08:00 ] 112.224.71.27 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+
+[ 2019-12-01T21:28:03+08:00 ] 123.151.77.132 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T21:28:04+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+
+[ 2019-12-01T21:28:05+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=071QtXhp18Nrjj0r5xkp1JDLhp1QtXh9&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+
+[ 2019-12-01T21:28:05+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+
+[ 2019-12-01T21:29:01+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+
+[ 2019-12-01T21:29:02+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=bac9de63acfe305c9d391e867f3dc2591e057a2d&timestamp=1575206942&nonce=638842470&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000166s ]
+
+[ 2019-12-01T21:29:09+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg3/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+
+[ 2019-12-01T21:29:10+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=4de5cdb44146141530ac3366324260f8ae90dc9d&timestamp=1575206950&nonce=266146853&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+
+[ 2019-12-01T21:29:13+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg1/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+
+[ 2019-12-01T21:29:14+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=c06a5ea2cd3f71d66b418fc586e538e781edb521&timestamp=1575206954&nonce=1762631430&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000160s ]
+
+[ 2019-12-01T21:30:25+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg5/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+
+[ 2019-12-01T21:30:25+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=6cb306319aad255c6cc9aeb52bd51e993993d89d&timestamp=1575207025&nonce=1977206271&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+
+[ 2019-12-01T21:31:32+08:00 ] 222.135.77.242 /index.php/Wx/Index/sendTemplateMsg4/keyidd/ofrczvzQH2Ejb5ck_6G6jEgFLOig.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+
+[ 2019-12-01T21:31:32+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=7f4bdbce523000040ae6f773f965bb0f00fee9e0&timestamp=1575207092&nonce=1190282786&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000167s ]
+
+[ 2019-12-01T22:49:35+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=55f95faa64134da717e44f9f2abfba30c84743d1&timestamp=1575211775&nonce=1342839839&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+
+[ 2019-12-01T22:49:46+08:00 ] 123.151.77.132 /index.php/Wx/Index/getBaseInfo?nsukey=o9oQ94xND40IeMKKrHqCBGdN%2BdeMRlvJsTFdY2CmxQEGJNKTKhdVTuefDPX39ZUnL8%2B%2BFNyjoqa7IxIn5f46ClsTvCkpe42LCfW%2BjYJWVNSoOVnW1gdAdX8bLZ8xW5S%2Bt%2BmFEAEgCzR%2FVOMkZcSL48gUdbAc3Mr5s23gWIv2P6flIl5YD5rzCtIvTQ1qpD5izRnk41my2ogLg6O1LSAO1A%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+
+[ 2019-12-01T22:49:51+08:00 ] 123.151.77.132 /index.php/Wx/Index/getUserOpenId?code=081gU6nX0uB6YV1opqkX0S1lnX0gU6nC&state=123&nsukey=bajm62G86wuQL4T%2BjS67oDbp%2BMecFU4spk8OhPESDRkb77hsUxeB%2Be6WQXKr60NeA62%2BB2x33tpX0EhvMPueb5L%2F6BLuCL1BsymPmI8a8CmzXSkINO0KYU9EXu0ssM0eQ6yHzyDzj21IWDogdX0zOcHcDbpEa05eIK8wZiJYXAwoQWerze2yW6D6Xazm%2FvN3HDk8k7Pp7FfT3spxNbSbWw%3D%3D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000164s ]
+
+[ 2019-12-01T22:49:52+08:00 ] 123.151.77.132 /index.php/Wx/Index/web.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+

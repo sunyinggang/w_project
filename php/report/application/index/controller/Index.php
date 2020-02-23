@@ -1,6 +1,7 @@
 <?php
 namespace app\index\controller;
 
+use app\common\model\Sort;
 use think\Controller;
 
 class Index extends Controller
@@ -61,9 +62,39 @@ class Index extends Controller
         }
         return $this->fetch();
     }
+    public function changePassword()
+    {
+        if (request()->isPost()) {
+            $data = input('post.');
+            $user = session('user','','user');
+            if(md5($data["password"])!=$user["password"]){
+                return $this->error('当前密码错误！');
+            }elseif ($data["newpassword"] != $data["newpasswordt"]) {
+                return $this->error('两次密码不一致！');
+            }else{
+                $model = model('User');
+                $data["password"] = md5($data["newpassword"]);
+                $res = $model->updateById($data,$user["id"]);
+                if($res){
+                    session('user', null,'user');
+                    $this->success('修改成功，重新登录','index/login');
+                }else{
+                    $this->error('修改失败');
+                }
+            }
+        }
+        return $this->fetch();
+    }
+    public function logout() {
+        // 清除session
+        session('user', null,'user');
+        $this->redirect('index/index');
+    }
     public function index()
     {
+        $res = Sort::with('scam')->with('rumor')->with('infringement')->with('harass')->with('illwebsite')->with('spite')->with('leakage')->with('clue')->with('illegal')->with('other')->paginate(5);
        return $this->fetch('',[
+           'res' => $res
        ]);
     }
     public function exposure(){
@@ -115,6 +146,10 @@ class Index extends Controller
         ]);
     }
     public function reportIndex(){
+        $user = session('user', '','user');
+        if(!$user){
+            return $this->error('登陆后发布举报！','index/login');
+        }
         $sort = model('Sort');
         $res = $sort->select();
         return $this->fetch('',[
@@ -354,6 +389,67 @@ class Index extends Controller
         }else{
             $this->error('举报失败，请重新输入');
         }
+    }
+    public function commit($sort_id,$id){
+        $model = model('Sort')->where('id','=',$sort_id)->find();
+        $res = model( ucwords($model["ano_name"]))->selectById($id);
+        return $this->fetch('',[
+            'res' => $res
+        ]);
+    }
+    public function edit($ikey,$id){
+        $model = model('Sort')->where('id','=',$ikey)->find();
+        $sort = $model["ano_name"];
+        $res = model(ucwords($model["ano_name"]))->selectById($id);
+        if($ikey==1){
+            $title="诈骗类有害信息举报";
+            $select = array("中奖信息","招工兼职","虚拟财产交易","代刷信用","冒充好友","网上传销","其他诈骗");
+            $type = 1;
+        }elseif ($ikey==2){
+            $title="侵权类有害信息举报";
+            $select = array("音乐作品","计算机软件作品","录像作品","摄影作品","其他作品");
+            $type = 1;
+        }elseif ($ikey==3){
+            $title="骚扰类有害信息举报";
+            $select = array("电话骚扰","短信轰炸","其他骚扰");
+            $type = 1;
+        }elseif ($ikey==4){
+            $title="违法网站举报";
+            $select = array("电话骚扰","网络赌博","钓鱼及诈骗","反动及政治敏感","其他违法");
+            $type = 1;
+        }elseif ($ikey==5){
+            $title="谣言类有害信息举报";
+            $select = "";
+            $type = 2;
+        }elseif ($ikey==6){
+            $title="恶意手机应用举报";
+            $select = "";
+            $type = 3;
+        }elseif ($ikey==7){
+            $title="个人信息泄露举报";
+            $select = "";
+            $type = 4;
+        }elseif ($ikey==8){
+            $title="违法犯罪线索举报";
+            $select = "";
+            $type = 5;
+        }elseif ($ikey==9){
+            $title="违法违纪举报";
+            $select = "";
+            $type = 6;
+        }else{
+            $title="其它违法举报";
+            $select = "";
+            $type = 6;
+        }
+        return $this->fetch('',[
+            'title' => $title,
+            'select' => $select,
+            'type' => $type,
+            'sort' => $sort,
+            'ikey' => $ikey,
+            'res'  => $res
+        ]);
     }
 
 }

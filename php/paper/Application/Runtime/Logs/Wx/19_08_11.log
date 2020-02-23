@@ -1,0 +1,28 @@
+[ 2019-08-11T15:17:54+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=0a99d6d56695c988a23620b95918a17d4e268712&timestamp=1565507874&nonce=1954550661&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2019-08-11T15:18:08+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=0b9a863f0ae67e38ddfbfc773a80d5880b4a2efe&timestamp=1565507888&nonce=539346961&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000301s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 670 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+

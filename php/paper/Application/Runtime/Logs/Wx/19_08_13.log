@@ -1,0 +1,725 @@
+[ 2019-08-13T10:51:07+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=c2810bd536d392601aa1574b326171816d16262a&timestamp=1565664667&nonce=347171835&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000873s ]
+
+[ 2019-08-13T10:51:08+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001601s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001644s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2019-08-13T10:51:09+08:00 ] 112.224.75.109 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+
+[ 2019-08-13T10:51:21+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2019-08-13T10:51:21+08:00 ] 123.151.77.73 /index.php/Wx/Index/test1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2019-08-13T10:52:36+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T10:52:37+08:00 ] 123.151.77.73 /index.php/Wx/Index/test1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 731 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2019-08-13T10:53:02+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T10:53:03+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000299s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2019-08-13T10:53:04+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=081SYKI80JY3jF12SxG801D9J80SYKIi&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column '$id' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $id = $data )
+ERR: 1054:Unknown column '$id' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $id = $data )
+
+[ 2019-08-13T10:55:25+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2019-08-13T10:55:26+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000365s ]
+
+[ 2019-08-13T10:55:27+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=081ncgnW1zrFP01p6ypW1I02nW1ncgnX&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column '$id' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $id = $data )
+ERR: 1054:Unknown column '$id' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $id = $data )
+
+[ 2019-08-13T10:55:53+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T10:55:54+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2019-08-13T10:55:55+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=021hInm017mFkY17x7k01Pbmm01hInmG&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( id = $data )
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( id = $data )
+
+[ 2019-08-13T10:57:21+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+ERR: syntax error, unexpected 'category' (T_STRING), expecting ',' or ')'
+
+[ 2019-08-13T10:59:11+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2019-08-13T10:59:12+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2019-08-13T10:59:13+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=071MMpFo1mnBkj0EJpHo1ORbFo1MMpFR&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0012s ]
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $data )
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $data )
+
+[ 2019-08-13T11:00:46+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:00:47+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2019-08-13T11:00:48+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=021XmffA06ftMd1OwldA0GWlfA0XmffM&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $data )
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='$keyid' WHERE ( $data )
+
+[ 2019-08-13T11:02:53+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=6a477e1e1f3b58374177d931944dc4c65bcfc605&timestamp=1565665373&nonce=77421767&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000285s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2019-08-13T11:02:53+08:00 ] 220.194.106.93 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004630s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000334s ]
+
+[ 2019-08-13T11:02:53+08:00 ] 112.224.75.109 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000222s ]
+
+[ 2019-08-13T11:03:05+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:03:05+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2019-08-13T11:03:07+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=021ahc4z0io2Re1VjA3z04D14z0ahc4P&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000317s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE ( id ) [ RunTime:0.0020s ]
+
+[ 2019-08-13T11:03:07+08:00 ] 123.151.77.73 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003912s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000336s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2019-08-13T11:04:15+08:00 ] 101.91.60.80 /index.php/Wx/Index/index?signature=719771bbdb3665c6c8abe0434f254a1fdb1fcf78&timestamp=1565665455&nonce=218418020&openid=ofrczvzQH2Ejb5ck_6G6jEgFLOig
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000626s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2019-08-13T11:04:15+08:00 ] 123.151.77.73 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003258s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000412s ]
+
+[ 2019-08-13T11:04:15+08:00 ] 112.224.75.109 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+
+[ 2019-08-13T11:04:24+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:04:25+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000425s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2019-08-13T11:04:26+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=081Wxcaw0hCpPb1Ea9aw0Ligaw0WxcaN&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE ( id ) [ RunTime:0.0016s ]
+
+[ 2019-08-13T11:04:26+08:00 ] 123.151.77.73 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000051s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002597s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000331s ]
+
+[ 2019-08-13T11:05:30+08:00 ] 220.194.106.93 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:05:30+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000330s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000359s ]
+
+[ 2019-08-13T11:05:31+08:00 ] 220.194.106.93 /index.php/Wx/Index/getUserOpenId?code=081eqMgj1W5Mou095Xhj1lT0hj1eqMgD&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0008s ]
+SQL: UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE ( id ) [ RunTime:0.0015s ]
+
+[ 2019-08-13T11:05:32+08:00 ] 123.151.77.73 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000047s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002890s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2019-08-13T11:09:39+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:09:39+08:00 ] 220.194.106.93 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-13T11:09:41+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=07143nSz1xSpWc0HIATz1mXCSz143nSh&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE ( id = $data )
+ERR: 1054:Unknown column '$data' in 'where clause'
+ [ SQL语句 ] : UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE ( id = $data )
+
+[ 2019-08-13T11:16:50+08:00 ] 123.151.77.73 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090205' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:16:50+08:00 ] 123.151.77.73 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000421s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2019-08-13T11:16:52+08:00 ] 123.151.77.73 /index.php/Wx/Index/getUserOpenId?code=061YbJgW1t09TX032xfW1FBxgW1YbJgP&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: UPDATE `paper_student` SET `keyid`='ofrczvzQH2Ejb5ck_6G6jEgFLOig' WHERE `id` = '1630090205' [ RunTime:0.0015s ]
+
+[ 2019-08-13T11:16:52+08:00 ] 123.151.77.73 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000447s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000482s ]
+
+[ 2019-08-13T11:17:57+08:00 ] 101.91.60.101 /index.php/Wx/Index/index?signature=6203baa71747956b425404a257e282a9cef4c5e6&timestamp=1565666277&nonce=1115396427&openid=ofrczv_mhtlVHQRlWOMouh3c0ry0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2019-08-13T11:18:01+08:00 ] 101.91.60.101 /index.php/Wx/Index/index?signature=9602b2f7c68dac33867c27484479375b38120c20&timestamp=1565666281&nonce=1557787664&openid=ofrczv_mhtlVHQRlWOMouh3c0ry0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000417s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+NOTIC: [8] Undefined index: echostr /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 24 行.
+NOTIC: [8] Undefined variable: Content /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 391 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000379s ]
+
+[ 2019-08-13T11:18:03+08:00 ] 123.151.77.123 /index.php/Wx/Index/get
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003255s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003279s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000300s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2019-08-13T11:18:05+08:00 ] 112.224.65.77 /index.php/Wx/Index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+
+[ 2019-08-13T11:18:18+08:00 ] 125.39.132.94 /index.php/Wx/Index/Login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000313s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `paper_student` WHERE `id` = '1630090209' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2019-08-13T11:18:18+08:00 ] 125.39.132.94 /index.php/Wx/Index/getBaseInfo.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2019-08-13T11:18:20+08:00 ] 125.39.132.94 /index.php/Wx/Index/getUserOpenId?code=071yEOHu1WTVHe03nsIu1f3PHu1yEOH5&state=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+SQL: SHOW COLUMNS FROM `paper_student` [ RunTime:0.0009s ]
+SQL: UPDATE `paper_student` SET `keyid`='ofrczv_mhtlVHQRlWOMouh3c0ry0' WHERE `id` = '1630090209' [ RunTime:0.0017s ]
+
+[ 2019-08-13T11:18:20+08:00 ] 125.39.132.94 /index.php/Wx/Index/index1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000309s ]
+NOTIC: [2] Declaration of Wx\Controller\IndexController::get() should be compatible with Think\Controller::get($name = '') /home/bae/app/Application/Wx/Controller/IndexController.class.php 第 732 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000023s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003226s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+

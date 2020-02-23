@@ -1,0 +1,72 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<div class="cl pd-5 bg-1 bk-gray mt-20" style="margin-left: 1000px;">
+	<a class="btn-primary" href="{:url('sort/status',['sort_id'=>$res.sort_id,'id'=>$res.id,'status'=>1])}">审核通过</a>
+	<a class="btn-danger" href="{:url('sort/addCommit',['sort_id'=>$res.sort_id,'id'=>$res.id])}">审核不通过</a>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="aw-content-wrap clearfix">
+			<div class="col-sm-12 col-md-9 aw-main-content aw-article-content">
+				<div class="aw-mod aw-question-detail">
+					<div class="mod-head" style="margin-left: 300px;">
+						<h1>{$res.title}</h1>
+					</div>
+					{if condition="$res.sort_id eq 1 OR $res.sort_id eq 2 OR $res.sort_id eq 3 OR $res.sort_id eq 4"}
+					<div class="mod-head" style="">
+						<h4>举报类型:{$res.type}</h4>
+					</div>
+					<div class="mod-head" style="">
+						<h4>网站地址:{$res.web_address}</h4>
+					</div>
+					{elseif condition="$res.sort_id eq 5"}
+					<div class="mod-head" style="">
+						<h4>网站地址:{$res.web_address}</h4>
+					</div>
+					{elseif condition="$res.sort_id eq 6"}
+					<div class="mod-head" style="">
+						<h4>应用名称:{$res.name}</h4>
+					</div>
+					<div class="mod-head" style="">
+						<h4>下载地址:{$res.download}</h4>
+					</div>
+					{elseif condition="$res.sort_id eq 7"}
+					<div class="mod-head" style="">
+						<h4>举报对象:{$res.object}</h4>
+					</div>
+					<div class="mod-head" style="">
+						<h4>网站地址:{$res.web_address}</h4>
+					</div>
+					{elseif condition="$res.sort_id eq 8 OR $res.sort_id eq 9"}
+					<div class="mod-head" style="">
+						<h4>举报对象:{$res.object}</h4>
+					</div>
+					{else/}
+					{/if}
+					<div class="mod-body">
+						<h4>举报描述如下:</h4>
+						<div class="content markitup-box" style="margin-left: 20px;">
+							{$res.description|htmlspecialchars_decode}
+						</div>
+
+					</div>
+					{if condition="$res.commit neq NULL"}
+					<h4>审核不通过原因:</h4><br>
+					<textarea name="commit" style="height: 100px;width: 300px;" class="form-control">{$res.commit}</textarea>
+					{/if}
+					<div class="meta clearfix">
+                            <span class="pull-right  more-operate">
+                              <em class="text-color-999">举报时间：{$res.update_time}</em>
+                            </span>
+					</div>
+					<div class="mod-footer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{include file="public/footer" /}
+
+</body>
+</html>
