@@ -1,14 +1,14 @@
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">车辆管理系统</a>
+        <a class="navbar-brand" href="{:url('index/index')}">车辆管理系统</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
+        <ul class="nav navbar-nav side-nav left-sidenav left-sidenav-menu">
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  信息审核 <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  <span>信息审核</span> <span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{:url('index/reviewList',['key'=>6])}">行驶证基本信息</a></li>
                     <li><a href="{:url('index/reviewList',['key'=>7])}">行驶证副业基本信息</a></li>
@@ -20,12 +20,12 @@
                     <li><a href="{:url('index/reviewList',['key'=>1])}">车辆外观</a></li>
                 </ul>
             </li>
-            <li><a href="{:url('index/processStatus',['status'=>1])}">已受理审核列表</a></li>
-            <li><a href="{:url('index/processStatus',['status'=>0])}">未受理审核列表</a></li>
-            <li><a href="{:url('index/processStatus',['status'=>2])}">错误信息列表</a></li>
-            <li><a href="{:url('index/processToday')}">今日审核信息列表</a></li>
+            <li><a href="{:url('index/processStatus',['status'=>1])}"><i class="glyphicon glyphicon-eye-open"></i>已受理审核列表</a></li>
+            <li><a href="{:url('index/processStatus',['status'=>0])}"><i class="glyphicon glyphicon-eye-close"></i>未受理审核列表</a></li>
+            <li><a href="{:url('index/processStatus',['status'=>2])}"><i class="glyphicon glyphicon-exclamation-sign"></i>错误信息列表</a></li>
+            <li><a href="{:url('index/processToday')}"><i class="glyphicon glyphicon-ok-circle"></i>今日审核信息列表</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  车主信息统计 <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>  车主信息统计<span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{:url('index/userInfo',['type'=>1])}">车主年龄统计</a></li>
                   <li><a href="{:url('index/userInfo',['type'=>2])}">车主车龄统计</a></li>
