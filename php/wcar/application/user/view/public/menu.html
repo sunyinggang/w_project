@@ -6,27 +6,42 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav side-nav">
+        <ul class="nav navbar-nav side-nav left-sidenav left-sidenav-menu">
+            <li><a href="{:url('index/carerInfo')}"><i class="glyphicon glyphicon-user"></i>  我的信息</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-desktop"></i>  我的信息 <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-file"></i>  行驶证信息审核 <span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{:url('index/carerInfo')}">车主基本信息</a></li>
                     <li><a href="{:url('index/travelCard')}">行驶证基本信息</a></li>
                     <li><a href="{:url('index/travelSubpage')}">行驶证副业基本信息</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-list-alt"></i>  驾驶证信息审核 <span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                <ul class="dropdown-menu">
                     <li><a href="{:url('index/driveCard')}">驾驶证基本信息</a></li>
                     <li><a href="{:url('index/driveSubpage')}">驾驶证副页基本信息</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-credit-card"></i>  身份证信息审核 <span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                <ul class="dropdown-menu">
                     <li><a href="{:url('index/idCard')}">身份证基本信息（正页）</a></li>
                     <li><a href="{:url('index/idSubpage')}">身份证基本信息(副页)</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-road"></i>  车辆信息审核 <span class="menu-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                <ul class="dropdown-menu">
                     <li><a href="{:url('index/car')}">车辆页</a></li>
                     <li><a href="{:url('index/carShow')}">车辆外观</a></li>
                 </ul>
             </li>
-            <li><a href="{:url('index/reviewProgress')}">信息审核进度</a></li>
+            <li><a href="{:url('index/reviewProgress')}"><i class="glyphicon glyphicon-time"></i>信息审核进度</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right navbar-user">
             <li class="dropdown user-dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {$user["name"]}<b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 欢迎您，{$user["name"]}<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="{:url('index/user')}"><i class="fa fa-gear"></i> 审核人信息</a></li>
                     <li><a href="{:url('index/changePassword')}"><i class="fa fa-gear"></i> 修改密码</a></li>

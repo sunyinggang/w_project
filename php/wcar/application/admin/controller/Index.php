@@ -11,7 +11,16 @@ use app\common\model\User;
 class Index extends BaseController
 {
     public function index(){
-        return $this->fetch();
+        $count0 = $this->processCountByStatus(0);
+        $count1 = $this->processCountByStatus(1);
+        $count2 = $this->processCountByStatus(2);
+        $countToday = $this->processTodayCount();
+        return $this->fetch('',[
+            'count0' => $count0,
+            'count1' => $count1,
+            'count2' =>$count2,
+            'countToday' => $countToday
+        ]);
     }
     public function car($id,$key,$status=0,$suggest=''){
         $car = model('Car');
@@ -216,14 +225,14 @@ class Index extends BaseController
             $title = $data['title'];
             $status = $data['status'];
         }
-        $car = model('Car')->selectByStatus($title,$status);
-        $carShow = model('CarShow')->selectByStatus($title,$status);
-        $driveCard = model('DriveCard')->selectByStatus($title,$status);
-        $driveSubpage = model('DriveSubpage')->selectByStatus($title,$status);
-        $idCard = model('IdCard')->selectByStatus($title,$status);
-        $idSubpage = model('IdSubpage')->selectByStatus($title,$status);
-        $travelCard = model('TravelCard')->selectByStatus($title,$status);
-        $travelSubpage = model('TravelSubpage')->selectByStatus($title,$status);
+        $car = model('Car')->selectByTitleAndStatus($title,$status);
+        $carShow = model('CarShow')->selectByTitleAndStatus($title,$status);
+        $driveCard = model('DriveCard')->selectByTitleAndStatus($title,$status);
+        $driveSubpage = model('DriveSubpage')->selectByTitleAndStatus($title,$status);
+        $idCard = model('IdCard')->selectByTitleAndStatus($title,$status);
+        $idSubpage = model('IdSubpage')->selectByTitleAndStatus($title,$status);
+        $travelCard = model('TravelCard')->selectByTitleAndStatus($title,$status);
+        $travelSubpage = model('TravelSubpage')->selectByTitleAndStatus($title,$status);
         $res = array(
             $car,
             $carShow,
@@ -357,5 +366,31 @@ class Index extends BaseController
             }
         }
         return $this->fetch();
+    }
+    public function processCountByStatus($status){
+        $car = model('Car')->selectByStatus($status);
+        $carShow = model('CarShow')->selectByStatus($status);
+        $driveCard = model('DriveCard')->selectByStatus($status);
+        $driveSubpage = model('DriveSubpage')->selectByStatus($status);
+        $idCard = model('IdCard')->selectByStatus($status);
+        $idSubpage = model('IdSubpage')->selectByStatus($status);
+        $travelCard = model('TravelCard')->selectByStatus($status);
+        $travelSubpage = model('TravelSubpage')->selectByStatus($status);
+        $res=array_merge($car,$carShow,$driveCard,$driveSubpage,$idCard,$idSubpage,$travelCard,$travelSubpage);
+        $count = count($res);
+        return $count;
+    }
+    public function processTodayCount(){
+        $car = model('Car')->selectByUpdateTime();
+        $carShow = model('CarShow')->selectByUpdateTime();
+        $driveCard = model('DriveCard')->selectByUpdateTime();
+        $driveSubpage = model('DriveSubpage')->selectByUpdateTime();
+        $idCard = model('IdCard')->selectByUpdateTime();
+        $idSubpage = model('IdSubpage')->selectByUpdateTime();
+        $travelCard = model('TravelCard')->selectByUpdateTime();
+        $travelSubpage = model('TravelSubpage')->selectByUpdateTime();
+        $res=array_merge($car,$carShow,$driveCard,$driveSubpage,$idCard,$idSubpage,$travelCard,$travelSubpage);
+        $count = count($res);
+        return $count;
     }
 }
