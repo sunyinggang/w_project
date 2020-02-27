@@ -1,101 +1,434 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://tms.cheoa.cn/#/app/home -->
+<html lang="zh-CN" data-ng-app="qcoa" class="no-js ng-scope">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>轨迹回放</title>
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
-    <style>
-        html, body, #container {
-            height: 100%;
-            width: 100%;
-        }
+    <meta name="keywords" content="g7,汽车在线,途强在线,GPS定位,汽车GPS定位器,车队管理软件,车辆管理系统,车辆调度软件,车队调度系统,车载视频监控系统,">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>车队管家_GPS定位器_车辆调度系统_车载视频监控_汽车在线</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
 
-        .input-card .btn{
-            margin-right: 1.2rem;
-            width: 9rem;
-        }
+.menu-ul {display: none;}
 
-        .input-card .btn:last-child{
-            margin-right: 0;
-        }
-    </style>
+</style>
 </head>
 <body>
-<div id="container"></div>
-<div class="input-card">
-    <h4>轨迹回放控制</h4>
-    <div class="input-item">
-        <input type="button" class="btn" value="开始动画" id="start" onclick="startAnimation()"/>
-        <input type="button" class="btn" value="暂停动画" id="pause" onclick="pauseAnimation()"/>
+<div class="app ng-scope">
+<div class="container-fluid ng-scope">
+    <div class="row">
+        <div class="menu-container">
+            <div>
+                <img src="images/logo.png" height="100">
+            </div>
+            <div id="cheoa-menu">
+                <div class="card">
+                    <div class="card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/selector-home.png">
+                                <span style="font-size: 16px" class="ng-binding text-white">首页</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/base.png">
+                                <span style="font-size: 16px" class="ng-binding">基础信息</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/base.png">
+                                <span style="font-size: 16px" class="ng-binding">基础信息</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 m-0">
+            <div class="row mx-3 my-2 action-bar justify-content-between align-items-center">
+                <div class="row p-0 m-0">
+                    <div class="row m-0 p-0 align-items-center" ng-click="toggleMenu()" style="cursor: pointer;">
+                        <span ng-class="isCloseMenu?&#39;glyphicon glyphicon-chevron-right&#39;:&#39;glyphicon glyphicon-chevron-left&#39;" class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>
+                    </div>
+                    <span class="row p-0 m-0 ml-2 align-items-center" id="broadcast-view">
+                        <span class="text-warning glyphicon glyphicon-volume-up"></span>
+                        <div id="broadcast-div">
+                            <ul class="pl-1" id="broadcast-ul" style="margin-top: 0px;"><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/8fzdAKQnueki91nTb-7Qnw" class="text-warning text-decoration-none">ADAS报警！您车队的司机老汪在高速路上开车睡着了！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://m.huya.com/20596749" class="text-warning text-decoration-none">排班调度模块的视频教学，亲们请点击观看！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/WMv1gx5goj2M4ZAgic1fnA" class="text-warning text-decoration-none">【提醒功能优化】所有车队都用得到，戳进来看看</a></div></div></li></ul>
+                        </div>
+                    </span>
+                </div>
+                <div class="row mr-2 ml-2">
+                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">
+                        <span style="color: #88A4E8">消息</span> <span class="badge badge-danger ng-binding">2</span>
+                    </a>
+                    <img class="ml-3 user-avatar" src="images/user-avatar.png">
+                    <div class="btn-group ml-3">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                            <span class="ng-binding">孙迎港</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="https://tms.cheoa.cn/#/app/account/changepwd">修改密码</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" style="cursor: pointer;">退出账号</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容 -->
+            <div class="content-center-div">
+                <div class="app-content-body fade-in-up ng-scope">
+            
+                    <div class="px-3 ng-scope">
+                        <div class="row align-items-center my-3 mx-2">
+                            <div class="title-icon-style mr-2"></div>
+                            <span style="color: #88A4E8; ">日常管理</span>
+                        </div>
+                        <div class="row">
+                            <div class="col" ui-sref="app.scheduling.list" href="#/app/scheduling/list">
+                                <div class="daily-manager">
+                                    <img src="images/home-banner-bg.png" class="h-100 w-100">
+                                    <img class="daily-icon" src="images/home-banner-task.png">
+                                    <div class="daily-manager-title">
+                                        <font>排班调度</font>
+                                        <img src="images/home-banner-next.png">
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="col" ui-sref="app.monitor" href="#/app/monitor">
+                                <div class="daily-manager">
+                                    <img src="images/home-banner-bg.png" class="h-100 w-100">
+                                    <img class="daily-icon" src="images/home-banner-location.png">
+                                    <div class="daily-manager-title">
+                                        <font>定位监控</font>
+                                        <img src="images/home-banner-next.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.expense.list" href="#/app/expense/list">
+                                <div class="daily-manager">
+                                    <img src="images/home-banner-bg.png" class="h-100 w-100">
+                                    <img class="daily-icon" src="images/home-banner-finance.png">
+                                    <div class="daily-manager-title">
+                                        <font>财务结算</font>
+                                        <img src="images/home-banner-next.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.violation.query" href="#/app/violation/query">
+                                <div class="daily-manager">
+                                    <img src="images/home-banner-bg.png" class="h-100 w-100">
+                                    <img class="daily-icon" src="images/home-banner-count.png">
+                                    <div class="daily-manager-title">
+                                        <font>违章查询</font>
+                                        <img src="images/home-banner-next.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.remind.list" href="#/app/remind/list">
+                                <div class="daily-manager">
+                                    <img src="images/home-banner-bg.png" class="h-100 w-100">
+                                    <img class="daily-icon" src="images/home-banner-remind.png">
+                                    <div class="daily-manager-title">
+                                        <font>提醒</font>
+                                        <img src="images/home-banner-next.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    <div class="row" style="padding: 0.9375rem;">
+        <div class="card col home-card">
+            <div class="card-header home-card-header p-2">排班数据报表</div>
+            <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                <div class="mb-2">
+                    <img src="images/icon_title.png">
+					<font class="ml-2" color="white" size="2">近6个月的累计排班</font>
+                </div>
+                <canvas id="halfYearSchedules" width="324" height="162" class="chartjs-render-monitor" style="display: block; width: 324px; height: 162px;"></canvas>
+                <div class="dropdown-divider" style="border-top: 1px solid rgb(15,45,115);"></div>
+                <div>
+					<table class="table text-center table-sm table-borderless">
+						<tbody><tr>
+							<td>
+								<div class="s-today-tomorrow-view">
+									今日排班
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+								</div>
+								
+							</td>
+							<td>
+								<img src="images/icon_scheduling-task_car.png" width="48">
+							</td>
+							<td>
+								<div class="s-today-tomorrow-view">
+									明日排班
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+								</div>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">未分配司机</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">未通知司机</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已发送任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已接受任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已通知客户</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已到达起点</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已完成任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+                </div>
+            </div>
+        </div>
+        <div class="card col ml-3 mr-3 home-card">
+            <div class="card-header home-card-header p-2">监控数据报表</div>
+            <div class="card-body">
+                <div class="mb-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+					<div class="row justify-content-between mb-2">
+						<div>
+							<img src="images/icon_title.png">
+							<font class="ml-2" color="white" size="2">近6个月累积里程和行驶时长</font>
+						</div>
+						<div>
+							<img src="images/home-icon-m.png" width="24"><font size="1" class="ml-1">里程(公里)</font>
+							<img src="images/home-icon-t.png" width="24" class="ml-1"><font size="1" class="ml-1">时长(小时)</font>
+						</div>
+					</div>
+                    <canvas id="travelSummary" width="324" height="162" style="display: block; width: 324px; height: 162px;" class="chartjs-render-monitor"></canvas>
+                    <div class="dropdown-divider" style="border-top: 1px solid rgb(15,45,115);"></div>
+					<div class="row justify-content-between align-items-center">
+						<div>
+							<img src="images/icon_title.png">
+							<font class="ml-2" color="white" size="2">车辆监控</font>
+						</div>
+						<div class="">
+							<font size="2">全部车辆 <b class="ng-binding">1</b> 辆</font>
+						</div>
+					</div>
+                    <canvas class="mt-3 chartjs-render-monitor" id="carMonitorChart" width="324" height="162" style="display: block; width: 324px; height: 162px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="card col home-card">
+            <div class="card-header home-card-header p-2">财务数据报表</div>
+            <div class="card-body">
+                <div class="mb-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+					<div class="row justify-content-between">
+						<div>
+							 <img src="images/icon_title.png">
+							 <font class="ml-2" color="white" size="2">近6个月利润、收入、支出</font>
+						</div>
+						<div class="row p-0 m-0 align-items-center">
+							<span class="div-circle"></span><font size="1" class="ml-1">利润</font>
+							<span class="div-circle ml-2" style="background: rgb(38, 247, 206);"></span><font size="1" class="ml-1">收入</font>
+							<span class="div-circle ml-2" style="background: rgb(1, 168, 250);"></span><font size="1" class="ml-1">支出</font>
+						</div>
+					</div>
+                   
+                    <canvas id="financialChart" width="324" height="324" class="chartjs-render-monitor" style="display: block; width: 324px; height: 324px;"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="input-item">
-        <input type="button" class="btn" value="继续动画" id="resume" onclick="resumeAnimation()"/>
-        <input type="button" class="btn" value="停止动画" id="stop" onclick="stopAnimation()"/>
-    </div>
+	<!-- ngIf: showPromotion --><!-- end ngIf: showPromotion -->
 </div>
-<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=dfdf4bf6d790e5d80a248168446dfe75"></script>
+</div>
+				<div class="footer-message-main text-center offset-1">
+				    <font size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33010602004310号</font>
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- scripts -->
+<!-- build:js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
 <script>
-    var marker, lineArr = [[116.478935,39.997761],[116.478939,39.997825],[116.478912,39.998549],[116.478912,39.998549],[116.478998,39.998555],[116.478998,39.998555],[116.479282,39.99856],[116.479658,39.998528],[116.480151,39.998453],[116.480784,39.998302],[116.480784,39.998302],[116.481149,39.998184],[116.481573,39.997997],[116.481863,39.997846],[116.482072,39.997718],[116.482362,39.997718],[116.483633,39.998935],[116.48367,39.998968],[116.484648,39.999861]];
-
-    var map = new AMap.Map("container", {
-        resizeEnable: true,
-        center: [116.397428, 39.90923],
-        zoom: 17
-    });
-
-    marker = new AMap.Marker({
-        map: map,
-        position: [116.478935,39.997761],
-        icon: "https://webapi.amap.com/images/car.png",
-        offset: new AMap.Pixel(-26, -13),
-        autoRotation: true,
-        angle:-90,
-    });
-
-    // 绘制轨迹
-    var polyline = new AMap.Polyline({
-        map: map,
-        path: lineArr,
-        showDir:true,
-        strokeColor: "#28F",  //线颜色
-        // strokeOpacity: 1,     //线透明度
-        strokeWeight: 6,      //线宽
-        // strokeStyle: "solid"  //线样式
-    });
-
-    var passedPolyline = new AMap.Polyline({
-        map: map,
-        // path: lineArr,
-        strokeColor: "#AF5",  //线颜色
-        // strokeOpacity: 1,     //线透明度
-        strokeWeight: 6,      //线宽
-        // strokeStyle: "solid"  //线样式
-    });
-
-
-    marker.on('moving', function (e) {
-        passedPolyline.setPath(e.passedPath);
-    });
-
-    map.setFitView();
-
-    function startAnimation () {
-        marker.moveAlong(lineArr, 200);
-    }
-
-    function pauseAnimation () {
-        marker.pauseMove();
-    }
-
-    function resumeAnimation () {
-        marker.resumeMove();
-    }
-
-    function stopAnimation () {
-        marker.stopMove();
-    }
+    $(function(){
+        $('.menu-child').on('click', function(){
+            console.log(1);
+            $(this).next().children().children('ul').slideToggle();
+        })
+    })
 </script>
+<!-- <script src="js/all.min.js"></script> -->
+
+<!-- <script charset="UTF-8" src="js/PlaceSearchRender.js"></script>
+<script charset="UTF-8" src="js/aliyun-oss-sdk-4.4.4.min.js"></script>
+<script src="js/group.controller.js"></script>
+<script src="js/group.service.js"></script>
+<script src="js/login.controller.js"></script>
+<script src="js/login.service.js"></script>
+<script src="js/home.controller.js"></script>
+<script src="js/home.service.js"></script>
+<script src="js/scheduling.service.js"></script>  -->
 </body>
 </html>

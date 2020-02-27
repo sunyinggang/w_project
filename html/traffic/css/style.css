@@ -1,0 +1,106 @@
+#broadcast-div{
+    height: 18px;
+    overflow: hidden;
+    font-size: 12px;
+}
+#broadcast-div li{
+    list-style-type: none;
+}
+.dropdown-item:hover{
+    background-color: #f4f4f4;
+}
+
+/*首页内容*/
+.content-center-div{
+  background: transparent;
+}
+.footer-message-main{
+  background: #051d4d;
+  color: #88A4E8;
+}
+.s-today-tomorrow-view{
+  background-color: #082561;
+  text-align: center;
+  border: 1px solid #103481;
+  font-size: 12px;
+  color: #018dfe;
+}
+.s-today{
+  width: 0px;
+  height: 14px;
+  background: -webkit-linear-gradient(left, #02d0fa , #018dfe); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right,#02d0fa , #018dfe); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #02d0fa , #018dfe); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #02d0fa , #018dfe); /* 标准的语法（必须放在最后） */
+}
+.s-tomorrow{
+  width: 0px;
+  height: 14px;
+  background: -webkit-linear-gradient(left, #44f0a6 , #06fdfa); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(right,#44f0a6 , #06fdfa); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(right, #44f0a6 , #06fdfa); /* Firefox 3.6 - 15 */
+  background: linear-gradient(to right, #44f0a6 , #06fdfa); /* 标准的语法（必须放在最后） */
+}
+.title-icon-style{
+  background: #88A4E8;
+  border-radius: 3px;
+}
+.div-circle{
+  width: 14px;
+  height: 14px;
+  background-color: rgb(255, 142, 100);
+  border-radius: 100%;
+}
+.promotion-div{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.7);
+}
+#shop_pp{
+  -webkit-animation:run 6s linear 0s infinite;
+  animation:run 6s linear 0s infinite;
+  -moz-animation:run 6s linear 0s infinite;
+  -o-animation:run 6s linear 0s infinite;
+}
+@-webkit-keyframes run {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-o-keyframes run {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes run {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes run {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+#promotion-close{
+  cursor:pointer;
+  color: #999;
+  font-size: 20px
+}
+#promotion-close:hover{
+  color: white;
+}
