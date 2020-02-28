@@ -74,7 +74,7 @@ input[type=radio]:checked {
 }
 
 input[type=radio]:checked::after {
-	content: url(../images/"../images/icon_radio.png");
+	content: url("../images/icon_radio.png");
 	display: block;
 	position: absolute;
 	top: 1px;
@@ -82,7 +82,7 @@ input[type=radio]:checked::after {
 }
 
 input[type=checkbox]:checked::after {
-	content: url(../images/"../images/icon_checked.png");
+	content: url("../images/icon_checked.png");
 	display: block;
 	position: absolute;
 	top: -5px;

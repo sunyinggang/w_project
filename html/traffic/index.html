@@ -389,7 +389,6 @@
 							<span class="div-circle ml-2" style="background: rgb(1, 168, 250);"></span><font size="1" class="ml-1">支出</font>
 						</div>
 					</div>
-                   
                     <canvas id="financialChart" width="324" height="324" class="chartjs-render-monitor" style="display: block; width: 324px; height: 324px;"></canvas>
                 </div>
             </div>
@@ -419,16 +418,101 @@
         })
     })
 </script>
-<!-- <script src="js/all.min.js"></script> -->
-
-<!-- <script charset="UTF-8" src="js/PlaceSearchRender.js"></script>
-<script charset="UTF-8" src="js/aliyun-oss-sdk-4.4.4.min.js"></script>
-<script src="js/group.controller.js"></script>
-<script src="js/group.service.js"></script>
-<script src="js/login.controller.js"></script>
-<script src="js/login.service.js"></script>
-<script src="js/home.controller.js"></script>
-<script src="js/home.service.js"></script>
-<script src="js/scheduling.service.js"></script>  -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+    var ctx1 = document.getElementById('halfYearSchedules').getContext('2d');
+        var chart = new Chart(ctx1, {
+            // The type of chart we want to create
+            type: 'bar',
+            // The data for our dataset
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [{
+                    label: '次数',
+                    backgroundColor: 'rgb(42, 222, 96)',
+                    borderColor: 'rgb((42, 222, 96)',
+                    data: [1, 10, 5, 2, 20, 30]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx2 = document.getElementById('travelSummary').getContext('2d');
+        var myLineChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: "里程(公里)",
+                        borderColor: "rgb(43, 144, 255)",//路径颜色
+                        pointBackgroundColor: "rgb(43, 144, 255)",//定点填充色
+                        data: [0, 0, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "时长(小时)",
+                        borderColor: "rgb(255, 174, 0)",//路径颜色
+                        pointBackgroundColor: "rgb(255, 174, 0)",//定点填充色
+                        data: [0, 0, 66, 78, 56, 55, 40]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx3 = document.getElementById('carMonitorChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['行驶车辆', '静止车辆', '离线车辆', '过期车辆'],
+                datasets: [
+                    {
+                        backgroundColor: ["rgb(52,207,104)", "rgb(40,174,219)", "rgb(222,71,29)", "rgb(212,222,29)"],
+                        data: [5, 12, 80, 81]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+    var ctx4 = document.getElementById('financialChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx4, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: '利润',
+                        data: [10, 20, 30, 50, 80, 40],
+                        backgroundColor: "rgb(255, 142, 100)"
+                    },
+                    {
+                        label: '收入',
+                        data: [10, 80, 30, 40, 30, 40],
+                        backgroundColor: "rgb(38, 247, 206)"
+                    },
+                    {
+                        label: '支出',
+                        data: [-50, -50, -50, -10,0,-100],
+                        backgroundColor: "rgb(1, 168, 250)"
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+</script>
 </body>
 </html>

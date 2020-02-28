@@ -4,7 +4,6 @@ from wtforms.validators import DataRequired
 
 from app.models import Class
 
-classList = Class.query.all()
 
 class ClassForm(FlaskForm):
     class_name = SelectField(
@@ -12,7 +11,6 @@ class ClassForm(FlaskForm):
         validators=[
             DataRequired("请选择班级！")
         ],
-        choices=[(v.id, v.name) for v in classList],
         render_kw={
             "class": "form-control"
         },
@@ -24,3 +22,7 @@ class ClassForm(FlaskForm):
             "class": "btn btn-primary"
         }
     )
+
+    def __init__(self, *args, **kwargs):
+        super(ClassForm, self).__init__(*args, **kwargs)
+        self.class_name.choices = [(v.id, v.name) for v in Class.query.all()]

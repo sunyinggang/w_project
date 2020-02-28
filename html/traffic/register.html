@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://tms.cheoa.cn/#/register -->
+<html lang="zh-CN" data-ng-app="qcoa" class="no-js ng-scope"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="
+　　车队管家，专业智能的车队管理系统。产品涵盖GPS定位监控系统、车载视频监控系统、车辆调度系统、违章查询系统等整套系统服务。产品旨在帮助车队脱离手工操作，实现电子化移动办公，降低车辆空置率，直观统计单车成本及效益，帮助企业实现透明化管理。
+    ">
+    <meta name="keywords" content="g7,汽车在线,途强在线,GPS定位,汽车GPS定位器,车队管理软件,车辆管理系统,车辆调度软件,车队调度系统,车载视频监控系统,">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>车队管家_GPS定位器_车辆调度系统_车载视频监控_汽车在线</title>
+    <link rel="stylesheet" href="css/all.min.css"/>
+</head>
+<body>
+<!-- uiView:  --><div class="app ng-scope" id="app" ui-view="" style="">
+<script class="ng-scope">
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-135756370-1', {
+        'page_title': 'register',
+        'page_path': '/register'
+    });
+</script>
+<div class="container-fluid ng-scope" ng-controller="RegisterController" ng-init="app.settings.container = false;">
+    <img src="images/login_bg.png" class="w-100 bg-container">
+    <div class="row" style="padding: 0.9375rem;">
+        <div class="col">
+            <img src="images/cheoa_white_logo.png">
+        </div>
+        <div class="col" align="right" style="vertical-align: middle;">
+            <img src="images/icon_mobile.png"><font color="white" style="margin-left: 0.625rem;">4000-961-926</font>
+        </div>
+    </div>
+    <div class="text-white admin-container row align-items-center justify-content-center">
+        <div class="col-4 form-container bg-white row justify-content-center">
+            <h6><font color="black">欢迎注册车队管家</font></h6>
+            <div class="input-group mb-3 mt-3">
+                <input id="companyName" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入贵公司全称" ng-model="user.companyName">
+            </div>
+            <div class="input-group mb-3">
+                <input id="nickname" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入您的姓名" ng-model="user.nickname">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <div class="dropdown">
+                                <span style="cursor: pointer;" class="dropdown-toggle ng-binding" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    +86
+                                </span>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <!-- ngRepeat: item in countries --><button style="cursor: pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+86  中国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+66  泰国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+81  日本</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+82  韩国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+852  中国香港</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+853  中国澳门</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+886  中国台湾</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+84  越南</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+855  柬埔寨</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+65  新加坡</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+60  马来西亚</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+62  印度尼西亚</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+61  澳大利亚</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+64  新西兰</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+91  印度</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+7  俄罗斯</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+856  老挝</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+95  缅甸</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+976  蒙古</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+1  美国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+1  加拿大</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+44  英国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+49  德国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+33  法国</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+31  荷兰</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+32  比利时</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+46  瑞典</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+41  瑞士</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+43  奥地利</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+45  丹麦</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+358  芬兰</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+30  希腊</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+36  匈牙利</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+972  以色列</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+353  爱尔兰</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+370  立陶宛</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+352  卢森堡</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+52  墨西哥</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+47  挪威</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+48  波兰</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+351  葡萄牙</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+420  捷克</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+421  斯洛伐克</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+27  南非</button><!-- end ngRepeat: item in countries --><button style="cursor:pointer;" ng-repeat="item in countries" class="dropdown-item ng-binding ng-scope" ng-click="itemClickCountry(item)">+34  西班牙</button><!-- end ngRepeat: item in countries -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input id="phone" type="text" class="form-control mobile ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入手机号码" ng-model="user.phone">
+            </div>
+
+            <div class="input-group mb-3">
+                <input id="code" type="text" class="form-control validate-code ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入验证码" ng-model="user.code">
+                <div class="input-group-append">
+                    <!-- ngIf: timer -->
+                    <!-- ngIf: !timer --><button ng-if="!timer" class="btn btn-primary ng-scope" ng-click="getSmsCode()">获取验证码</button><!-- end ngIf: !timer -->
+                </div>
+            </div>
+            <div class="input-group mb-3 text-black-50 text-left">
+                <span style="font-size: 14px">
+                    注册即表示您同意我们的
+                    <a href="https://www.cheoa.cn/user_agreement.html" target="_blank">《用户协议》</a>
+                    <a href="https://www.cheoa.cn/user_conceal.html" target="_blank">《隐私政策》</a>
+                </span>
+            </div>
+            <div class="w-100 mb-2">
+                <button type="button" class="btn btn-primary w-100" ng-click="register()">
+                    <!-- ngIf: !isRegister --><font ng-if="!isRegister" class="ng-scope">免费注册</font><!-- end ngIf: !isRegister -->
+                    <!-- ngIf: isRegister -->
+                </button>
+            </div>
+            <div class="row col-12 justify-content-between m-0 p-0">
+                <div>
+                    <a href="https://www.cheoa.cn/" target="_blank"><font color="gray" size="2">官方首页</font></a>
+                </div>
+                <div>
+                    <a ui-sref="login" class="ml-2" href="https://tms.cheoa.cn/#/login"><font size="2">返回登录</font></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center footer-message">
+        <font color="#666666" size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33011002013938号</font>
+    </div>
+</div>
+
+</div>
+<!-- scripts -->
+<!-- build:js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+</body></html>
