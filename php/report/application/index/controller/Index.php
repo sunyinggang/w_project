@@ -93,6 +93,38 @@ class Index extends Controller
     public function index()
     {
         $res = Sort::with('scam')->with('rumor')->with('infringement')->with('harass')->with('illwebsite')->with('spite')->with('leakage')->with('clue')->with('illegal')->with('other')->paginate(5);
+        foreach ($res as $sort) {
+            foreach ($sort["scam"] as $data) {
+               $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["rumor"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["infringement"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["harass"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["illwebsite"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["spite"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["leakage"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["clue"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["illegal"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+            foreach ($sort["other"] as $data) {
+                $data['img'] = $this->addImg($data);
+            }
+        }
        return $this->fetch('',[
            'res' => $res
        ]);
@@ -208,12 +240,15 @@ class Index extends Controller
         }elseif ($type == 11){
             $res = model('Exposure')->selectById($id);
             $res["description"] = $res["content"];
+            $res["sort_id"] = 10;
         }elseif ($type == 12){
             $res = model('Reward')->selectById($id);
             $res["description"] = $res["content"];
+            $res["sort_id"] = 10;
         }else{
             $res = model('Safety')->selectById($id);
             $res["description"] = $res["content"];
+            $res["sort_id"] = 10;
         }
         return $this->fetch('',[
             'res' => $res,
@@ -450,6 +485,15 @@ class Index extends Controller
             'ikey' => $ikey,
             'res'  => $res
         ]);
+    }
+    public function addImg($data){
+        preg_match_all("/src=([\"|']?)([^\"'>]+\.(gif|jpg|jpeg|bmp|png))\\1/i", $data["description"],$matches);
+        if($matches[2]!=null){
+            $img = $matches[2][0];
+        }else{
+            $img = $matches[2];
+        }
+        return $img;
     }
 
 }

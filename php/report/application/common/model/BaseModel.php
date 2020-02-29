@@ -9,8 +9,12 @@ use think\Model;
 class BaseModel extends Model
 {
     public function add($data){
-        //allowField(true)自动过滤非表中字段
-        return $this->data($data)->allowField(true)->insert($data,true);
+        if(array_key_exists('id',$data)){
+            //allowField(true)自动过滤非表中字段
+            return $this->data($data)->allowField(true)->insert($data,true);
+        }else{
+            return $this->data($data)->allowField(true)->save();
+        }
     }
     //根据id更新数据
     public function updateById($data, $id) {

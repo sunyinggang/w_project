@@ -16,235 +16,565 @@
 						<div class="mod-body">
 							<div class="aw-common-list">
 								{volist  name="res" id="data"}
-								 {volist name="data.scam" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{volist name="data.scam" id="vo"}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.rumor" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.infringement" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.harass" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.illwebsite" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.spite" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.leakage" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.clue" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.illegal" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{volist name="data.other" id="vo"}
-								<div class="aw-item">
-									<div class="aw-user-imgs">
-
-									</div>
-									<div class="aw-question-content">
-										<h4>
-											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
-										</h4>
-										<div class="inner clearfix">
-											<div class="inner clearfix question-text" style="color: #666; font-size:13px;">
-												<a  class="detail" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
-													{$vo.description|htmlspecialchars_decode}
-												</a>
-											</div>
-											<div class="inner clearfix">
-												<span class="text-color-999">{$vo.update_time}
+								{if condition="$vo.status eq 1"}
+								{if condition="$vo.img neq null"}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="aw-article-text col-md-4">
+											<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+												<img class="img-polaroid kltu" src={$vo.img} />
+											</a>
+										</div>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+											<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+												<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
 												</span>
 											</div>
 										</div>
-									</div>
-								</div>
+									</li>
+								</ul>
+								{else/}
+								<ul class="col-md-12 aw-article-list">
+									<li>
+										<div class="col-md-8 foxo">
+											<h1>
+												<a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+											</h1>
+										</div>
+										<div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+										</div>
+										<div class="mod-body col-md-12 clearfix kl">
+											<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								</span>
+												<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+								{/if}
+								{/if}
 								{/volist}
 								{/volist}
 							</div>

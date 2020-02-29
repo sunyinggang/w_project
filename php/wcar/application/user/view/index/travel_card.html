@@ -13,46 +13,46 @@
           <div class="col-lg-4">
             <form method="post" action="{:url('index/travelCard')}" role="form">
               <h1>行驶证基本信息</h1>
-              <input type="hidden" value="行驶证基本信息" name="title">
+              <input type="hidden" value="行驶证基本信息" name="title" required>
               <div class="form-group">
                 <label>车辆号码</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['number']}" name="number">
+                <input type="text" class="form-control" placeholder="" value="{$res['number']}" name="number" required>
               </div>
               <div class="form-group">
                 <label>车辆类型</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['car_type']}" name="car_type">
+                <input type="text" class="form-control" placeholder="" value="{$res['car_type']}" name="car_type" required>
               </div>
               <div class="form-group">
                 <label>所有人</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['car_user']}" name="car_user">
+                <input type="text" class="form-control" placeholder="" value="{$res['car_user']}" name="car_user" required>
               </div>
               <div class="form-group">
                 <label>地址</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['address']}" name="address">
+                <input type="text" class="form-control" placeholder="" value="{$res['address']}" name="address" required>
               </div>
               <div class="form-group">
                 <label>使用性质</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['user_nature']}" name="user_nature">
+                <input type="text" class="form-control" placeholder="" value="{$res['user_nature']}" name="user_nature" required>
               </div>
               <div class="form-group">
                 <label>品牌型号</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['logo']}" name="logo">
+                <input type="text" class="form-control" placeholder="" value="{$res['logo']}" name="logo" required>
               </div>
               <div class="form-group">
                 <label>车辆识别代码</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['identify_code']}" name="identify_code">
+                <input type="text" class="form-control" placeholder="" value="{$res['identify_code']}" name="identify_code" required>
               </div>
               <div class="form-group">
                 <label>发动机号码</label>
-                <input type="text" class="form-control" placeholder="" value="{$res['engine_num']}" name="engine_num">
+                <input type="text" class="form-control" placeholder="" value="{$res['engine_num']}" name="engine_num" required>
               </div>
               <div class="form-group">
                 <label>注册日期</label>
-                <input type="text" class="form-control" placeholder="如：2020-02-22" value="{$res['register_date']}" name="register_date">
+                <input type="text" class="form-control" placeholder="如：2020-02-22" value="{$res['register_date']}" name="register_date" required>
               </div>
               <div class="form-group">
                 <label>发证日期</label>
-                <input type="text" class="form-control" placeholder="如：2020-02-22" value="{$res['send_date']}" name="send_date">
+                <input type="text" class="form-control" placeholder="如：2020-02-22" value="{$res['send_date']}" name="send_date" required>
               </div>
               <div class="form-group">
                 <label>插入行驶证图片</label>

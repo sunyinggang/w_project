@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://tms.cheoa.cn/#/app/home -->
+<html lang="zh-CN" data-ng-app="qcoa" class="no-js ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="g7,汽车在线,途强在线,GPS定位,汽车GPS定位器,车队管理软件,车辆管理系统,车辆调度软件,车队调度系统,车载视频监控系统,">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>车队管家_GPS定位器_车辆调度系统_车载视频监控_汽车在线</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="app ng-scope">
+<div class="container-fluid ng-scope">
+    <div class="row">
+        <div class="menu-container">
+            <div>
+                <img src="images/logo.png" height="100">
+            </div>
+            <div id="cheoa-menu">
+                <div class="card">
+                    <div class="card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/selector-home.png">
+                                <span style="font-size: 16px" class="ng-binding text-white">首页</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/base.png">
+                                <span style="font-size: 16px" class="ng-binding">基础信息</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">司机</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="images/base.png">
+                                <span style="font-size: 16px" class="ng-binding">排班调度</span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 m-0">
+            <div class="row mx-3 my-2 action-bar justify-content-between align-items-center">
+                <div class="row p-0 m-0">
+                    <div class="row m-0 p-0 align-items-center" ng-click="toggleMenu()" style="cursor: pointer;">
+                        <span ng-class="isCloseMenu?&#39;glyphicon glyphicon-chevron-right&#39;:&#39;glyphicon glyphicon-chevron-left&#39;" class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>
+                    </div>
+                    <!-- <span class="row p-0 m-0 ml-2 align-items-center" id="broadcast-view">
+                        <span class="text-warning glyphicon glyphicon-volume-up"></span>
+                        <div id="broadcast-div">
+                            <ul class="pl-1" id="broadcast-ul" style="margin-top: 0px;"><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/8fzdAKQnueki91nTb-7Qnw" class="text-warning text-decoration-none">ADAS报警！您车队的司机老汪在高速路上开车睡着了！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://m.huya.com/20596749" class="text-warning text-decoration-none">排班调度模块的视频教学，亲们请点击观看！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/WMv1gx5goj2M4ZAgic1fnA" class="text-warning text-decoration-none">【提醒功能优化】所有车队都用得到，戳进来看看</a></div></div></li></ul>
+                        </div>
+                    </span> -->
+                </div>
+                <div class="row mr-2 ml-2">
+                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">
+                        <span style="color: #88A4E8">消息</span> <span class="badge badge-danger ng-binding">2</span>
+                    </a>
+                    <img class="ml-3 user-avatar" src="images/user-avatar.png">
+                    <div class="btn-group ml-3">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                            <span class="ng-binding">孙迎港</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="https://tms.cheoa.cn/#/app/account/changepwd">修改密码</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" style="cursor: pointer;">退出账号</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容 -->
+            <div class="content-center-div" id="content-center-div">
+                <!-- <div ui-butterbar></div> -->
+                <!-- <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a> -->
+                <!-- uiView:  --><div class="app-content-body fade-in-up ng-scope" ui-view="" style=""><!-- uiView:  --><div ui-view="" ng-controller="driverController" class="ng-scope"><style class="ng-scope">
+	table{
+		font-size: 10px;
+	}
+</style>
+<div class="page-container ng-scope" ng-controller="driverListController">
+    <div class="row align-items-center">
+        <div class="title-icon-style mr-2"></div>
+        <font color="#4c4c4c">司机列表</font>
+    </div>
+    <div class="w-100 bg-white card mt-2 page-card">
+        <div class="row justify-content-between mt-2">
+            <div class="row align-items-center">
+                <div class="">
+                    <button type="button" class="btn btn-primary btn-sm" ng-click="newDriver()">添加司机</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-upload">
+                        <input type="file" class="btn-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="application/vnd.ms-excel" ng-model="importFile" fileread="">
+                        批量导入
+                    </button>
+                    <a class="btn btn-primary btn-sm" href="https://oss.cheoa.cn/doc/%E5%8F%B8%E6%9C%BA%E6%A8%A1%E6%9D%BF.xls" target="_blank">
+                        下载导入模板
+                    </a>
+                </div>
+                <form class="form-inline ml-1 input-group-sm ng-pristine ng-valid">
+                    <input type="text" class="form-control mr-sm-2 ng-pristine ng-untouched ng-valid ng-empty" placeholder="司机姓名/手机号码" ng-model="params.keyword" ng-keypress="enterSearch($event)">
+                    <button type="button" ng-click="refreshDataList(true)" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索
+                    </button>
+                </form>
+            </div>
+    
+            <div>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="exportAll(-1)">导出</button>
+            </div>
+        </div>
+        <div class="mt-3 table-sticky-view">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th sort-by-key="" sortkey="USER_NAME" sortable-column="" name="司机姓名"><div class="row m-0 undefined" style="cursor: pointer;">司机姓名<div class="ml-1"></div></div></th>
+                    <th scope="col">电话</th>
+                    <th scope="col">分组</th>
+                    <th sort-by-key="" sortkey="USER_TYPE" sortable-column="" name="类型"><div class="row m-0 undefined" style="cursor: pointer;">类型<div class="ml-1"></div></div></th>
+                    <th scope="col">车辆</th>
+                    <th scope="col" class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="driver in drivers" class="ng-scope" style="">
+                    <td><font ng-click="seeDriver(driver.id)" class="text-primary ng-binding">测试司机</font></td>
+                    <td class="ng-binding">86-15688708938</td>
+                    <td class="ng-binding">全部分组</td>
+                    <td class="ng-binding">自有司机</td>
+                    <td><span ng-click="seeVehicle(driver.vehicleId)" class="text-primary ng-binding">测A08938</span></td>
+                    <td>
+                        <div class="text-primary row justify-content-center align-items-center">
+                            <div style="cursor: pointer;">
+								<span ng-show="!isEmpty(driver.remark)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="">
+									<img src="assets/images/icon_remark.png" class="mr-1">
+									<font color="">备注</font>
+								</span>
+                                <span ng-show="isEmpty(driver.remark)" data-toggle="" aria-haspopup="true" aria-expanded="false" class="ng-hide">
+									<img src="assets/images/icon_remark_gray.png" class="mr-1">
+									<font color="#999">备注</font>
+								</span>
+                                <div class="dropdown-menu ng-binding" style="padding: 0.625rem;width: 12.5rem;">
+                                    注册时自动生成的司机
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm ml-1" ng-click="seeDriver(driver.id)">
+                                详情
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
+                <tr>
+                    <!-- ngIf: !toEnd -->
+                    <!-- ngIf: toEnd --><td colspan="9" ng-if="toEnd" class="ng-scope">
+                        <div class="row justify-content-center tab-footer-loading-div"><font color="#CCCCCC">已经到底了</font>
+                        </div>
+                    </td><!-- end ngIf: toEnd -->
+                </tr>
+                </tfoot><!-- end ngIf: !emptyList -->
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" ng-show="!emptyList">
+        共有<font color="red" class="ng-binding">0</font>条数据
+    </div>
+</div>
+</div></div>
+				<div class="footer-message-main text-center offset-1">
+				    <font size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33010602004310号</font>
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
+</div>
+<!-- scripts -->
+<!-- build:js -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function(){
+        $('.menu-child').on('click', function(){
+            console.log(1);
+            $(this).next().children().children('ul').slideToggle();
+        })
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script>
+    var ctx1 = document.getElementById('halfYearSchedules').getContext('2d');
+        var chart = new Chart(ctx1, {
+            // The type of chart we want to create
+            type: 'bar',
+            // The data for our dataset
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [{
+                    label: '次数',
+                    backgroundColor: 'rgb(42, 222, 96)',
+                    borderColor: 'rgb((42, 222, 96)',
+                    data: [1, 10, 5, 2, 20, 30]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx2 = document.getElementById('travelSummary').getContext('2d');
+        var myLineChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: "里程(公里)",
+                        borderColor: "rgb(43, 144, 255)",//路径颜色
+                        pointBackgroundColor: "rgb(43, 144, 255)",//定点填充色
+                        data: [0, 0, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "时长(小时)",
+                        borderColor: "rgb(255, 174, 0)",//路径颜色
+                        pointBackgroundColor: "rgb(255, 174, 0)",//定点填充色
+                        data: [0, 0, 66, 78, 56, 55, 40]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx3 = document.getElementById('carMonitorChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['行驶车辆', '静止车辆', '离线车辆', '过期车辆'],
+                datasets: [
+                    {
+                        backgroundColor: ["rgb(52,207,104)", "rgb(40,174,219)", "rgb(222,71,29)", "rgb(212,222,29)"],
+                        data: [5, 12, 80, 81]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+    var ctx4 = document.getElementById('financialChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx4, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: '利润',
+                        data: [10, 20, 30, 50, 80, 40],
+                        backgroundColor: "rgb(255, 142, 100)"
+                    },
+                    {
+                        label: '收入',
+                        data: [10, 80, 30, 40, 30, 40],
+                        backgroundColor: "rgb(38, 247, 206)"
+                    },
+                    {
+                        label: '支出',
+                        data: [-50, -50, -50, -10,0,-100],
+                        backgroundColor: "rgb(1, 168, 250)"
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+</script>
+</body>
+</html>

@@ -183,6 +183,14 @@ class Index extends BaseController
         $res = $idSubpage->where('user_id','=',$user["id"])->find();
         if(request()->isPost()) {
             $data = input('post.');
+            if(!preg_match('/^(\d{6})+(\d{4})+(\d{2})+(\d{2})+(\d{3})([0-9]|X)$/', $data["number"]))
+            {
+                $this->error('您所输入的身份证号格式不正确');
+            }
+            if(!preg_match('/^[\x{4e00}-\x{9fa5}]+$/u', $data["name"]))
+            {
+                $this->error('您所输入的姓名格式不正确');
+            }
             if(!$res){
                 $data["user_id"] = $user["id"];
                 $data["status"] = 0;
@@ -263,6 +271,10 @@ class Index extends BaseController
         $res = $travelSubpage->where('user_id','=',$user["id"])->find();
         if(request()->isPost()) {
             $data = input('post.');
+            if(!preg_match('/^[1-9]\\d*$/', $data["people"]))
+            {
+                $this->error('车载人数为正整数');
+            }
             if(!$res){
                 $data["user_id"] = $user["id"];
                 $data["status"] = 0;

@@ -41,7 +41,7 @@
 
 					<!-- Start Sign In Form -->
 					<form method="post" action="{:url('login/login')}" class="fh5co-form animate-box" data-animate-effect="fadeIn">
-						<h2>登录</h2>
+						<h2 style="margin-left: 120px;">登录</h2>
 						<div class="form-group">
 							<label for="phone" class="sr-only">手机号</label>
 							<input name="phone" type="text" class="form-control" id="phone" placeholder="手机号" autocomplete="off">
@@ -58,10 +58,12 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<p> <a href="{:url('login/register')}">去注册</a> </p>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="登录" class="btn btn-primary">
+							<div>
+								<input type="submit" value="登录" class="btn btn-primary">
+								<a style="margin-left: 170px;" href="{:url('login/register')}">去注册</a>
+							</div>
 						</div>
 					</form>
 					<!-- END Sign In Form -->
