@@ -355,3 +355,6 @@ table{
 .menu-hidden {
 	display: none !important;
 }
+.s-right {
+	margin-left: 45px;
+}
