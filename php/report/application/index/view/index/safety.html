@@ -3,9 +3,9 @@
 <div class="aw-container-wrap">
 
 	<div class="container">
-		<div class="row" style="margin-left: 100px;">
+		<div class="row" style="margin-left: 100px;background-color: #fff;">
 			<div class="aw-content-wrap">
-				<div class="col-sm-12 col-md-9 aw-main-content">
+				<div class="aw-main-content">
 					<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
 						<h2 class="hidden-xs"><i class="icon icon-list"></i> 安全警示栏</h2>
 					</ul>
@@ -70,19 +70,10 @@
 						{/if}
 						{/volist}
 					</div>
-					<div class="mod-body col-md-12 clearfix">
-						<div class="mod-footer pull-right">
+					<div class="aw-mod aw-explore-list">
+						<div class="mod-footer">
 							<div class="page-control">
-								<ul class="pagination pull-right">
-									<li><a href="">&lt;&lt;</a></li>
-									<li><a href="">&lt;</a></li>
-									<li class="active"><a href="">1</a></li class="active">
-									<li><a href="javascript:;">2</a></li>
-									<li><a href="">3</a></li>
-									<li><a href="">4</a></li>
-									<li><a href="">&gt;</a></li>
-									<li><a href="">&gt;&gt;</a></li>
-								</ul>
+								{$res->render()}
 							</div>
 						</div>
 					</div>

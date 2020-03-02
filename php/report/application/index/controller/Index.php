@@ -495,5 +495,8 @@ class Index extends Controller
         }
         return $img;
     }
+    public function rule(){
+        return $this->fetch();
+    }
 
 }

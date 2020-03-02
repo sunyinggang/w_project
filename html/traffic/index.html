@@ -546,21 +546,8 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.js"></script>
-<script>
-    $(function(){
-        $('.menu-child').on('click', function(){
-            $(this).next().children().children('ul').slideToggle();
-            $(this).children().children().children("span").last().toggleClass("glyphicon-chevron-down");
-        })
-    })
-    $(function(){
-        $('#menu-open').on('click', function(){
-            $(this).children().children("span:first").toggleClass("glyphicon-chevron-right");
-            $(this).parent().parent().prev().toggleClass("menu-hidden");       
-        })
-    })
-</script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="js/commin.js"></script>
+<script src="js/Chart.js"></script>
 <script>
     var ctx1 = document.getElementById('halfYearSchedules').getContext('2d');
         var chart = new Chart(ctx1, {

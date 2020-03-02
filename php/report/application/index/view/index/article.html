@@ -4,10 +4,15 @@
     <div class="container">
         <div class="row">
             <div class="aw-content-wrap clearfix">
-                <div class="col-sm-12 col-md-9 aw-main-content aw-article-content">
+                <div class="aw-main-content aw-article-content">
                     <div class="aw-mod aw-question-detail">
-                        <div class="mod-head" style="margin-left: 300px;">
-                          <h1>{$res.title}</h1>
+                        <div class="mod-head" style="margin-left: 425px;">
+                          <h1 style="font-weight:bold;">{$res.title}</h1>
+                        </div>
+                        <div class="meta clearfix">
+                            <span class="pull-right  more-operate">
+                              <em class="text-color-999">{$res.update_time}</em>
+                            </span>
                         </div>
                         {if condition="$res.sort_id eq 1 OR $res.sort_id eq 2 OR $res.sort_id eq 3 OR $res.sort_id eq 4"}
                         <div class="mod-head" style="">
@@ -45,11 +50,6 @@
                           <div class="content markitup-box">
 							  {$res.description|htmlspecialchars_decode}
                          </div>
-                          <div class="meta clearfix">
-                            <span class="pull-right  more-operate">
-                              <em class="text-color-999">{$res.update_time}</em>
-                            </span>
-                          </div>
                         </div>
                         <div class="mod-footer"></div>
                     </div>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-ng-app="qcoa" class="no-js ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/title_icon_cheoa.jpg') }}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>车队管家_GPS定位器_车辆调度系统_车载视频监控_汽车在线</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/all.min.css') }}"/>
+</head>
+<body>
+<div class="app ng-scope" id="app">
+    <div class="container-fluid ng-scope" ng-controller="LoginController">
+    <img src="{{ url_for('static',filename='admin/images/login_bg.png') }}" class="w-100 bg-container">
+    <div class="row" style="padding: 0.9375rem;">
+        <div class="col">
+            <img src="{{ url_for('static',filename='admin/images/cheoa_white_logo.png') }}">
+        </div>
+        <div class="col" align="right" style="vertical-align: middle;">
+            <img src="{{ url_for('static',filename='admin/images/icon_mobile.png') }}"><font color="white" style="margin-left: 0.625rem;">4000-961-926</font>
+        </div>
+        <div class="text-white admin-container row align-items-center">
+            <div class="col-4 offset-2">
+                <h2>车队管家，调度监控专家</h2>
+                <p style="margin-top: 30px;">
+                    车队类型全面，适用多类调度场景，为您提供一站式服务
+                </p>
+                <p>
+                    完整的调度体系服务，提高企业运营效率，节省成本
+                </p>
+                <p>
+                    新年祝福短信，10000个手机号码，10秒钟提交发送
+                </p>
+                <p>
+                    多种定位监控设备，提供专业平台
+                </p>
+            </div>
+            <div class="col-3 form-container bg-white offset-1 row justify-content-center">
+                <form method="post" style="width:280px;">
+                <h6 style="margin-left:100px;"><font color="black">密码登录</font></h6>
+                <div class="input-group mb-3 mt-3">
+                    {{ form.phone }}
+                </div>
+                <div class="input-group mb-3">
+                    {{ form.password }}
+                </div>
+                <div class="w-100 mb-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                    	{{ form.submit }}
+						{{ form.csrf_token }}
+                    </button>
+                </div>
+                <div class="row col-12 justify-content-between m-0 p-0">
+                    <div>
+                    </div>
+                    <div>
+                        <a ui-sref="forgetpwd" href="https://tms.cheoa.cn/#/forgetpwd"><font color="gray" size="2">忘记密码</font></a>
+                        <a ui-sref="register" class="ml-2" href="https://tms.cheoa.cn/#/register"><font size="2">免费注册</font></a>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center footer-message">
+            <font color="#666666" size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33011002013938号</font>
+        </div>
+    </div>
+</div>
+</div>
+{% for msg in get_flashed_messages(category_filter=["ok"]) %}
+<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:14px">
+    <div id="alert-div-556508" class="toast fade show" style="min-width: 256px">
+        <div class="toast-header">
+            <img src="{{ url_for('static',filename='admin/images/title_icon_cheoa.jpg') }}" width="24" height="24" class="rounded mr-2">
+            <strong class="mr-auto">温馨提示</strong>
+            <small></small>
+            <button type="button" class="ml-2 mb-1 close">
+                <span>×</span>
+            </button>
+        </div>
+        <div class="toast-body text-success">{{ msg }}</div>
+    </div>
+</div>
+{% endfor %}
+{% for msg in get_flashed_messages(category_filter=["err"]) %}
+<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:14px">
+    <div id="alert-div-556508" class="toast fade show" style="min-width: 256px">
+        <div class="toast-header">
+            <img src="{{ url_for('static',filename='admin/images/title_icon_cheoa.jpg') }}" width="24" height="24" class="rounded mr-2">
+            <strong class="mr-auto">温馨提示</strong>
+            <small></small>
+            <button type="button" class="ml-2 mb-1 close">
+                <span>×</span>
+            </button>
+        </div>
+        <div class="toast-body text-danger">{{ msg }}</div>
+    </div>
+</div>
+{% endfor %}
+<script src="{{ url_for('static',filename='admin/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/popper.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/bootstrap.js') }}"></script>
+<script>
+$(document).ready(
+function(){
+$("#toast-div").delay(3000).hide(0);
+}
+)
+</script>
+</body>
+</html>

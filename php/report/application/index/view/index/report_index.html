@@ -25,21 +25,14 @@
                         <div class="mod-body clearfix">
                             {volist name="res" id="data"}
                             <div class="aw-item">
-                                <!-- end 话题图片 -->
                                 <p class="clearfix">
-                                    <!-- 话题内容 -->
                                     <span class="topic-tag">
-                                        <a class="text" href="{:url('index/question',['ikey'=>$data['id'],'sort'=>$data['ano_name']])}">{$data["name"]}</a>
+                                        <a class="text" style="height:50px;line-height:45px;" href="{:url('index/question',['ikey'=>$data['id'],'sort'=>$data['ano_name']])}">{$data["name"]}</a>
                                     </span>
-                                    <!-- end 话题内容 -->
                                 </p>
                             </div>
                             {/volist}
                         </div>
-                        <div class="mod-footer clearfix">
-                            <div class="page-control"><ul class="pagination pull-right"><li class="active"><a href="javascript:;">1</a></li><li><a href="http://www.tousuyun.com/topic/page-2">2</a></li><li><a href="http://www.tousuyun.com/topic/page-3">3</a></li><li><a href="http://www.tousuyun.com/topic/page-4">4</a></li><li><a href="http://www.tousuyun.com/topic/page-2">&gt;</a></li><li><a href="http://www.tousuyun.com/topic/page-561">&gt;&gt;</a></li></ul></div>                        </div>
-                    </div>
-                    <!-- end 我关注的话题 -->
                 </div>
             </div>
         </div>

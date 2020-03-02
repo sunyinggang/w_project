@@ -1,0 +1,209 @@
+
+<div class="menu-container">
+            <div>
+                <img src="{{ url_for('static',filename='admin/images/logo.png') }}" height="100">
+            </div>
+            <div id="cheoa-menu">
+                <div class="card">
+                    <div class="card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/selector-home.png') }}">
+                                <span style="font-size: 16px" class="ng-binding text-white">首页</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/base.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">基础信息</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">司机</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/task.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">排班调度</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/monitor.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">定位监控</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/expense.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">财务结算</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">财务结算</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">费用类型</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">费用审批</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/leave.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">考勤管理</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="menu-child card-header row align-items-center justify-content-between m-0 p-1">
+                        <a class="btn btn-link">
+                            <div class="row align-items-center p-0 m-0">
+                                <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/broadcast.png') }}">
+                                <span style="font-size: 16px" class="ng-binding">公告发布</span>
+                                <span class="glyphicon glyphicon-chevron-right s-right"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body ml-4 p-1">
+                            <ul class="nav flex-column menu-ul">
+                                <!-- ngRepeat: subItem in item.subItems -->
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

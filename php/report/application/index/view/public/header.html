@@ -51,12 +51,13 @@
         <!-- 用户栏 -->
         <div class="aw-user-nav">
             {if condition="$user neq null"}
-            <a href="{:url('index/user')}" class="aw-user-nav-dropdown" style="color: #fff;margin-top: 8px;" >
+            <a href="#" class="aw-user-nav-dropdown" style="color: #fff;margin-top: 8px;" >
 
                 {$user.name}
             </a>
             <div class="aw-dropdown dropdown-list pull-right">
                 <ul class="aw-dropdown-list">
+                    <li><a href="{:url('index/user')}"><i class="icon icon-user"></i> 个人中心</a></li>
                     <li><a href="{:url('index/logout')}"><i class="icon icon-logout"></i> 退出</a></li>
                 </ul>
             </div>

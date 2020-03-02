@@ -1,0 +1,413 @@
+{% extends "admin/home.html" %}
+{% block content %}
+{% include "admin/menu.html" %}
+<div class="col p-0 m-0">
+            <div class="row mx-3 my-2 action-bar justify-content-between align-items-center">
+                <div class="row p-0 m-0" id="menu-open">
+                    <div class="row m-0 p-0 align-items-center" style="cursor: pointer;">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>
+                    </div>
+                    <!-- <span class="row p-0 m-0 ml-2 align-items-center" id="broadcast-view">
+                        <span class="text-warning glyphicon glyphicon-volume-up"></span>
+                        <div id="broadcast-div">
+                            <ul class="pl-1" id="broadcast-ul" style="margin-top: 0px;"><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/8fzdAKQnueki91nTb-7Qnw" class="text-warning text-decoration-none">ADAS报警！您车队的司机老汪在高速路上开车睡着了！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://m.huya.com/20596749" class="text-warning text-decoration-none">排班调度模块的视频教学，亲们请点击观看！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/WMv1gx5goj2M4ZAgic1fnA" class="text-warning text-decoration-none">【提醒功能优化】所有车队都用得到，戳进来看看</a></div></div></li></ul>
+                        </div>
+                    </span> -->
+                </div>
+                <div class="row mr-2 ml-2">
+                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">
+                        <span style="color: #88A4E8">消息</span> <span class="badge badge-danger ng-binding">2</span>
+                    </a>
+                    <img class="ml-3 user-avatar" src="{{ url_for('static',filename='admin/images/user-avatar.png') }}">
+                    <div class="btn-group ml-3">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
+                            <span class="ng-binding">孙迎港</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="https://tms.cheoa.cn/#/app/account/changepwd">修改密码</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" style="cursor: pointer;">退出账号</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容 -->
+            <div class="content-center-div">
+                <div class="app-content-body fade-in-up ng-scope">
+
+                    <div class="px-3 ng-scope">
+                        <div class="row align-items-center my-3 mx-2">
+                            <div class="title-icon-style mr-2"></div>
+                            <span style="color: #88A4E8; ">日常管理</span>
+                        </div>
+                        <div class="row">
+                            <div class="col" ui-sref="app.scheduling.list" href="#/app/scheduling/list">
+                                <div class="daily-manager">
+                                    <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
+                                    <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-task.png') }}">
+                                    <div class="daily-manager-title">
+                                        <font>排班调度</font>
+                                        <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col" ui-sref="app.monitor" href="#/app/monitor">
+                                <div class="daily-manager">
+                                    <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
+                                    <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-location.png') }}">
+                                    <div class="daily-manager-title">
+                                        <font>定位监控</font>
+                                        <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.expense.list" href="#/app/expense/list">
+                                <div class="daily-manager">
+                                    <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
+                                    <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-finance.png') }}">
+                                    <div class="daily-manager-title">
+                                        <font>财务结算</font>
+                                        <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.violation.query" href="#/app/violation/query">
+                                <div class="daily-manager">
+                                    <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
+                                    <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-count.png') }}">
+                                    <div class="daily-manager-title">
+                                        <font>违章查询</font>
+                                        <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" ui-sref="app.remind.list" href="#/app/remind/list">
+                                <div class="daily-manager">
+                                    <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
+                                    <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-remind.png') }}">
+                                    <div class="daily-manager-title">
+                                        <font>提醒</font>
+                                        <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    <div class="row" style="padding: 0.9375rem;">
+        <div class="card col home-card">
+            <div class="card-header home-card-header p-2">排班数据报表</div>
+            <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                <div class="mb-2">
+                    <img src="{{ url_for('static',filename='admin/images/icon_title.png') }}">
+					<font class="ml-2" color="white" size="2">近6个月的累计排班</font>
+                </div>
+                <canvas id="halfYearSchedules" width="324" height="162" class="chartjs-render-monitor" style="display: block; width: 324px; height: 162px;"></canvas>
+                <div class="dropdown-divider" style="border-top: 1px solid rgb(15,45,115);"></div>
+                <div>
+					<table class="table text-center table-sm table-borderless">
+						<tbody><tr>
+							<td>
+								<div class="s-today-tomorrow-view">
+									今日排班
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+								</div>
+
+							</td>
+							<td>
+								<img src="{{ url_for('static',filename='admin/images/icon_scheduling-task_car.png') }}" width="48">
+							</td>
+							<td>
+								<div class="s-today-tomorrow-view">
+									明日排班
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">未分配司机</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">未通知司机</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已发送任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已接受任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已通知客户</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已到达起点</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="row justify-content-end align-items-center m-0 p-0">
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<div class="s-today" style="width: NaN%;"></div>
+								</div>
+							</td>
+							<td>
+								<font class="" size="1" color="#F4F4F4">已完成任务</font>
+							</td>
+							<td>
+								<div class="row align-items-center m-0 p-0">
+									<div class="s-tomorrow" style="width: NaN%;"></div>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+                </div>
+            </div>
+        </div>
+        <div class="card col ml-3 mr-3 home-card">
+            <div class="card-header home-card-header p-2">监控数据报表</div>
+            <div class="card-body">
+                <div class="mb-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+					<div class="row justify-content-between mb-2">
+						<div>
+							<img src="{{ url_for('static',filename='admin/images/icon_title.png') }}">
+							<font class="ml-2" color="white" size="2">近6个月累积里程和行驶时长</font>
+						</div>
+						<div>
+							<img src="{{ url_for('static',filename='admin/images/home-icon-m.png') }}" width="24"><font size="1" class="ml-1">里程(公里)</font>
+							<img src="{{ url_for('static',filename='admin/images/home-icon-t.png') }}" width="24" class="ml-1"><font size="1" class="ml-1">时长(小时)</font>
+						</div>
+					</div>
+                    <canvas id="travelSummary" width="324" height="162" style="display: block; width: 324px; height: 162px;" class="chartjs-render-monitor"></canvas>
+                    <div class="dropdown-divider" style="border-top: 1px solid rgb(15,45,115);"></div>
+					<div class="row justify-content-between align-items-center">
+						<div>
+							<img src="{{ url_for('static',filename='admin/images/icon_title.png') }}">
+							<font class="ml-2" color="white" size="2">车辆监控</font>
+						</div>
+						<div class="">
+							<font size="2">全部车辆 <b class="ng-binding">1</b> 辆</font>
+						</div>
+					</div>
+                    <canvas class="mt-3 chartjs-render-monitor" id="carMonitorChart" width="324" height="162" style="display: block; width: 324px; height: 162px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="card col home-card">
+            <div class="card-header home-card-header p-2">财务数据报表</div>
+            <div class="card-body">
+                <div class="mb-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+					<div class="row justify-content-between">
+						<div>
+							 <img src="{{ url_for('static',filename='admin/images/icon_title.png') }}">
+							 <font class="ml-2" color="white" size="2">近6个月利润、收入、支出</font>
+						</div>
+						<div class="row p-0 m-0 align-items-center">
+							<span class="div-circle"></span><font size="1" class="ml-1">利润</font>
+							<span class="div-circle ml-2" style="background: rgb(38, 247, 206);"></span><font size="1" class="ml-1">收入</font>
+							<span class="div-circle ml-2" style="background: rgb(1, 168, 250);"></span><font size="1" class="ml-1">支出</font>
+						</div>
+					</div>
+                    <canvas id="financialChart" width="324" height="324" class="chartjs-render-monitor" style="display: block; width: 324px; height: 324px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+				<div class="footer-message-main text-center offset-1">
+				    <font size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33010602004310号</font>
+				</div>
+            </div>
+		</div>
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static',filename='admin/js/Chart.js') }}"></script>
+<script>
+    var ctx1 = document.getElementById('halfYearSchedules').getContext('2d');
+        var chart = new Chart(ctx1, {
+            // The type of chart we want to create
+            type: 'bar',
+            // The data for our dataset
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [{
+                    label: '次数',
+                    backgroundColor: 'rgb(42, 222, 96)',
+                    borderColor: 'rgb((42, 222, 96)',
+                    data: [1, 10, 5, 2, 20, 30]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx2 = document.getElementById('travelSummary').getContext('2d');
+        var myLineChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: "里程(公里)",
+                        borderColor: "rgb(43, 144, 255)",//路径颜色
+                        pointBackgroundColor: "rgb(43, 144, 255)",//定点填充色
+                        data: [0, 0, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "时长(小时)",
+                        borderColor: "rgb(255, 174, 0)",//路径颜色
+                        pointBackgroundColor: "rgb(255, 174, 0)",//定点填充色
+                        data: [0, 0, 66, 78, 56, 55, 40]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    var ctx3 = document.getElementById('carMonitorChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: ['行驶车辆', '静止车辆', '离线车辆', '过期车辆'],
+                datasets: [
+                    {
+                        backgroundColor: ["rgb(52,207,104)", "rgb(40,174,219)", "rgb(222,71,29)", "rgb(212,222,29)"],
+                        data: [5, 12, 80, 81]
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+    var ctx4 = document.getElementById('financialChart').getContext('2d');
+        var myDoughnutChart = new Chart(ctx4, {
+            type: 'horizontalBar',
+            data: {
+                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
+                datasets: [
+                    {
+                        label: '利润',
+                        data: [10, 20, 30, 50, 80, 40],
+                        backgroundColor: "rgb(255, 142, 100)"
+                    },
+                    {
+                        label: '收入',
+                        data: [10, 80, 30, 40, 30, 40],
+                        backgroundColor: "rgb(38, 247, 206)"
+                    },
+                    {
+                        label: '支出',
+                        data: [-50, -50, -50, -10,0,-100],
+                        backgroundColor: "rgb(1, 168, 250)"
+                    }
+                ]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+</script>
+{% endblock %}

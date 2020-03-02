@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-ng-app="qcoa" class="no-js ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>车队管家</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='admin/images/title_icon_cheoa.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/index.css') }}">
+{% block css %}{% endblock %}
+</head>
+<body>
+<div class="app ng-scope">
+<div class="container-fluid ng-scope">
+    <div class="row">
+        {% block content %}{% endblock %}
+	</div>
+</div>
+</div>
+<!-- scripts -->
+<!-- build:js -->
+<script src="{{ url_for('static',filename='admin/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/popper.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/commin.js') }}"></script>
+{% block js %}{% endblock %}
+</body>
+</html>
