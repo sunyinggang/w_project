@@ -92,41 +92,11 @@ class Index extends Controller
     }
     public function index()
     {
-        $res = Sort::with('scam')->with('rumor')->with('infringement')->with('harass')->with('illwebsite')->with('spite')->with('leakage')->with('clue')->with('illegal')->with('other')->paginate(5);
-        foreach ($res as $sort) {
-            foreach ($sort["scam"] as $data) {
-               $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["rumor"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["infringement"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["harass"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["illwebsite"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["spite"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["leakage"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["clue"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["illegal"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-            foreach ($sort["other"] as $data) {
-                $data['img'] = $this->addImg($data);
-            }
-        }
+        $safety = model('Safety')->order('create_time desc')->limit(6)->select();
+        $reward = model('Reward')->order('create_time desc')->limit(6)->select();
        return $this->fetch('',[
-           'res' => $res
+           'safety' => $safety,
+           'reward' => $reward
        ]);
     }
     public function exposure(){
@@ -190,6 +160,9 @@ class Index extends Controller
     }
     public function user(){
         $user = session('user','','user');
+        if(!$user){
+            return $this->error('登陆后查看举报！','index/login');
+        }
         $res1 = model('Scam')->selectByUserId($user["id"]);
         $res2 = model('Infringement')->selectByUserId($user["id"]);
         $res3 = model('Harass')->selectByUserId($user["id"]);

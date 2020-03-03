@@ -1,30 +1,24 @@
 {include file="public/header" /}
-	
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/user.css" />
 
 <div class="aw-container-wrap">
-    <div class="container">
+    <div class="container" style="background: #fff;">
         <div class="row">
             <div class="aw-content-wrap clearfix">
                 <div class="col-sm-12 col-md-9 aw-main-content">
                     <!-- 用户数据内容 -->
                     <div class="aw-mod aw-user-detail-box">
-                        <div class="mod-head uc_top_bg">
-
-                            <span class="pull-right operate">
-                            </span>
-                            <h1 style="color:#fff;"></h1>
-                            <p class="text-color-000"></p>
-                            <p class="aw-user-flag">
-                                                                                                                            </p>
-                        </div>
                         <div class="mod-footer">
-                            <ul class="nav nav-tabs aw-nav-tabs">
-                                <li><a href="#" id="page_questions" data-toggle="tab">我的举报<span class="badge">{$count}</span></a></li>
+                            <ul class="nav nav-tabs aw-nav-tabs" id="tab-ul">
+                                <li tabid="1" class="tab-li choice">未受理<span class="badge">{$count}</span></li>
+                                <li tabid="2" class="tab-li">已解决<span class="badge">{$count}</span></li>
+                                <li tabid="3" class="tab-li">不合格<span class="badge">{$count}</span></li>
                             </ul>
                         </div>
                     </div>
                    <!-- 我的举报 -->
-                    <div class="aw-user-center-tab">
+                    <div class="tab-content">
+                    <div id="aw-tab-0" class="aw-user-center-tab show">
                         <div class="aw-common-list">
                             {volist name="res" id="vo"}
                             {if condition="$vo.img neq null"}
@@ -105,10 +99,13 @@
                             {/volist}
                         </div>
                     </div>
+                    <div id="aw-tab-1" class="aw-user-center-tab">2</div>
+                    <div id="aw-tab-2" class="aw-user-center-tab">3</div>
+                    </div>
                 </div>
 
                 <!-- 侧边栏 -->
-                <div class="col-sm-12 col-md-3 aw-side-bar">
+                <div class="col-sm-12 col-md-3 aw-side-bar" >
                     <div class="aw-mod people-following">
                         <div class="mod-body">
                             <span>姓名:{$user["name"]}</span>
@@ -144,6 +141,193 @@
             </div>
         </div>
     </div>
+    <div class="container" style="min-height: 179px; box-sizing: border-box;">
+        <div class="user-content">
+            <!-- 用户信息 -->
+            <div id="userInfo"></div>
+            <div class="user-content">
+                <!-- 侧边栏 -->
+                <div class="user_left" id="user_left">
+
+                    <div class="user-info-block">
+                        <div class="wrap-info">
+                            <div class="user-img-wrap">
+
+                                <img class="user-img" src="http://qzapp.qlogo.cn/qzapp/211423/7CA5FED4CB9EB5035A84C98F9E1FDCA8/100" alt="个人头像">
+
+                            </div>
+
+                            <div class="user-name">
+                                别回头
+                            </div>
+                            <div class="user-type">
+                                普通用户
+
+
+                            </div>
+                            <div class="tousu-btn" id="tousu_btn_imgInfo">我要投诉</div>
+                            <a class="btn-upgrade" href="//ts.21cn.com/meiti/apply" onclick="_uxt.push(['_trackEvent', 'PC端个人中心页', '点击', '申请媒体账号点击次数'])">
+                            </a><div class="apply-wrap"><a class="btn-upgrade" href="//ts.21cn.com/meiti/apply" onclick="_uxt.push(['_trackEvent', 'PC端个人中心页', '点击', '申请媒体账号点击次数'])">
+                            <div class="btn-wrap">
+                                <img class="apply-img" src="/static_pc/images/userCenter/meidium.png" alt="">
+                                <div class="btn-type">申请媒体</div>
+                            </div>
+                        </a>
+                            <a class="btn-upgrade" href="//ts.21cn.com/expert/teamaf" onclick="_uxt.push(['_trackEvent', 'PC端个人中心页', '点击', '申请专家账号点击次数'])">
+                                <div class="btn-wrap">
+                                    <img class="apply-img" src="/static_pc/images/userCenter/expert.png" alt="">
+                                    <div class="btn-type">申请专家</div>
+                                </div>
+                            </a>
+                            <a class="btn-upgrade" href="//ts.21cn.com/merchant/apply" onclick="_uxt.push(['_trackEvent', 'PC端个人中心页', '点击', '申请商家账号点击次数'])">
+                                <div class="btn-wrap">
+                                    <img class="apply-img" src="/static_pc/images/userCenter/merchant.png" alt="">
+                                    <div class="btn-type">申请商家</div>
+                                </div>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="member_ldiv">
+                        <dl class="member_left">
+
+                            <a href="?type=mypost" class="mytson" id="mytson" onclick="_uxt.push([&quot;_trackEvent&quot;,&quot;V3.3.4_PC端媒体个人中心页&quot;,&quot;媒体用户_侧栏_个人投诉&quot;,&quot;成功&quot;,&quot;1&quot;])">
+                                <dd class="tousu hover">
+                                    个人投诉
+                                </dd>
+                            </a>
+                            <a href="?type=collective" class="mypl myart" id="Mypart" onclick="_uxt.push([&quot;_trackEvent&quot;,&quot;V3.3.4_PC端媒体个人中心页&quot;,&quot;媒体用户_侧栏_集体投诉&quot;,&quot;成功&quot;,&quot;1&quot;])">
+                                <dd class="wenzhang">
+                                    集体投诉
+                                </dd>
+                            </a>
+                            <a href="?type=myreply" class="mypl myre" id="myComment" onclick="_uxt.push([&quot;_trackEvent&quot;,&quot;V3.3.4_PC端媒体个人中心页&quot;,&quot;媒体用户_侧栏_我的评论&quot;,&quot;成功&quot;,&quot;1&quot;])">
+                                <dd class="pinglun">
+
+                                    我的评论
+
+                                </dd>
+                            </a>
+                            <!--  -->
+
+                            <a href="?type=selfInfo" class="selfInfo-wrap" onclick="_uxt.push([&quot;_trackEvent&quot;,&quot;V3.3.4_PC端媒体个人中心页&quot;,&quot;媒体用户_侧栏_我的资料&quot;,&quot;成功&quot;,&quot;1&quot;])">
+                                <dd class="selfInfo">
+                                    我的资料
+                                </dd>
+                            </a>
+                        </dl>
+                    </div>
+                </div>
+                <!-- 内容 -->
+                <div class="user_right" id="user_right">
+                    <div class="contentClt complainClts" style="display: block;">
+
+                        <div class="fenlan" id="fenLan">
+                            <div class="clear"></div>
+
+                            <div class="fenlan-wrapper">
+                                <ul class="clearfix">
+                                    <li rel="followed" class="followed hover">
+                                        处理中
+                                        <span id="followedCount">（0）</span>
+                                    </li>
+                                    <li rel="replyed" class="replyed">
+                                        已回复
+                                        <span id="replyedCount">（0）</span>
+                                    </li>
+                                    <li rel="finished" class="finished">
+                                        已解决
+                                        <span id="finishedCount">（0）</span>
+                                    </li>
+                                    <li rel="invalid" class="invalid">
+                                        已无效
+                                        <span id="invalidCount">（0）</span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="complain-content">
+                            <div class="complaintList" id="complaintList">
+
+                                <div class="complain-item">
+
+                                    <div class="no-data"><i></i><p>暂无投诉</p></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contentClt commentClts" style="display: none;">
+                        <div class="commentList" id="commentList"></div>
+                    </div>
+                    <div class="contentClt collectiveClts" style="display: none;">
+                        <div class="collectiveList" id="collectiveList"></div>
+                    </div>
+                    <div class="contentClt toInterviewClts" style="display: none;">
+                        <div class="search-box" id="searchBox"></div>
+                        <div class="fenlan" id="fenLan">
+                            <div class="clear"></div>
+
+                            <div class="fenlan-wrapper">
+                                <ul class="clearfix">
+                                    <li rel="followed" class="followed hover">
+                                        处理中
+                                        <span id="followedCount"></span>
+                                    </li>
+                                    <li rel="replyed" class="replyed">
+                                        已回复
+                                        <span id="replyedCount"></span>
+                                    </li>
+                                    <li rel="finished" class="finished">
+                                        已解决
+                                        <span id="finishedCount"></span>
+                                    </li>
+                                    <li rel="invalid" class="invalid">
+                                        已无效
+                                        <span id="invalidCount"></span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="toInterviewList" id="toInterviewList"></div>
+                    </div>
+                    <div class="contentClt myInterviewClts" style="display: none;">
+                        <div class="fenlan" id="fenLan">
+                            <div class="clear"></div>
+
+                            <div class="fenlan-wrapper">
+                                <ul class="clearfix">
+                                    <li rel="followed" class="followed hover">
+                                        处理中
+                                        <span id="followedCount"></span>
+                                    </li>
+                                    <li rel="replyed" class="replyed">
+                                        已回复
+                                        <span id="replyedCount"></span>
+                                    </li>
+                                    <li rel="finished" class="finished">
+                                        已解决
+                                        <span id="finishedCount"></span>
+                                    </li>
+                                    <li rel="invalid" class="invalid">
+                                        已无效
+                                        <span id="invalidCount"></span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="myInterviewList" id="myInterviewList"></div>
+                    </div>
+                    <div id="customPush_loading"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -154,5 +338,18 @@
         dd[i].innerText=str;
     }
 </script>
-
+<script type="text/javascript" src="__STATIC__/index/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#tab-ul li").each(function(index) {
+            $(this).click(function() {
+                $(".show").removeClass("show");
+                $(".choice").removeClass("choice");
+                var str = "#aw-tab-"+index;
+                $(str).addClass("show");
+                $(this).addClass("choice")
+            });
+        })
+    })
+</script>
 {include file="public/footer" /}

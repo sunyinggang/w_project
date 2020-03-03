@@ -4,43 +4,35 @@
     <div style="width: 1024px; margin: 0 auto;">
         <img style="width: 1024px;" src="__STATIC__/index/common/index_head.png">
     </div>
-    <div class="container" style="width:1024px!important;background: #fff;">
+    <div class="container" style="width:1024px!important;background: #fff;margin-top: 10px;">
         <div class="con_left">
             <div class="index_focusnews">
-                <div class="right_widget_title"><span style="font-family:microsoft yahei;font-size:16px">全站推荐</span></div>
+                <div class="right_widget_title">
+                    <span style="font-family:microsoft yahei;font-size:16px">安全警示栏</span>
+                    <a href="{:url('index/safety')}" class="pull-right" style="font-family:microsoft yahei;">更多 &gt;</a>
+                </div>
                 <div class="grecom" style="font-family:microsoft yahei;font-weight:bold;">
                     <ul>
+                        {volist name="safety" id="vo"}
                         <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
+                            <a class="t-list" href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
                         </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
+                        {/volist}
                     </ul>
                 </div>
             </div>
             <div class="index_focusnews">
-                <div class="right_widget_title"><span style="font-family:microsoft yahei;font-size:16px">全站推荐</span></div>
+                <div class="right_widget_title">
+                    <span style="font-family:microsoft yahei;font-size:16px">悬赏公告栏</span>
+                    <a href="{:url('index/reward')}" class="pull-right" style="font-family:microsoft yahei;">更多 &gt;</a>
+                </div>
                 <div class="grecom" style="font-family:microsoft yahei;font-weight:bold;">
                     <ul>
+                        {volist name="reward" id="vo"}
                         <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
+                            <a class="t-list" href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
                         </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
-                        <li class="qz lightHigh">
-                            <a href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">多人投诉：趣影视App收取97元会员费后疑跑路</a>
-                        </li>
+                        {/volist}
                     </ul>
                 </div>
             </div>
@@ -48,23 +40,13 @@
         <div class="sidebar-container" style="float: right;margin-top: 50px;">
             <div class="sidebar">
                 <div class="complaint-btn">
-                    <button class="sidebar-complain" id="sidebarComplain" onclick="_uxt.push(['_trackEvent', 'PC端右栏', '点击', '我要投诉点击次数'])">我要投诉</button>
-                    <button class="sidebar-member" id="sidebarMember" onclick="_uxt.push(['_trackEvent', 'PC端右栏', '点击', '查看我的投诉点击次数'])">查看我的投诉</button>
+                    <button class="sidebar-complain" id="sidebarComplain" onclick="javascrtpt:window.location.href='{:url('index/reportIndex')}'">我要举报</button>
+                    <button class="sidebar-member" id="sidebarMember" onclick="javascrtpt:window.location.href='{:url('index/user')}'">查看我的举报</button>
                 </div>
                 <div class="count-mid">
-                    <div class="sidebar-title"><em class="sidebar-line"></em><span>投诉统计</span></div>
+                    <div class="sidebar-title"><em class="sidebar-line"></em><span>举报统计</span></div>
                     <div class="count-mid-con">
                         <div class="count-content sidebar-count-con">
-                            <div class="count-item">
-                                <p>合作商家平均解决率
-                                    <span>83.83%</span>
-                                    <!-- <span id="cooperateFinishRate">--</span> -->
-                                </p>
-                                <p>普通商家平均解决率
-                                    <span>44.62%</span>
-                                    <!-- <span id="normalFinishRate">--</span> -->
-                                </p>
-                            </div>
                             <div class="count-item">
                                 <p>今日有效投诉
                                     <span>4169</span>
@@ -77,20 +59,6 @@
                                 <p>昨日投诉解决
                                     <span>2269</span>
                                     <!-- <span id="yesterdayFinishCount">--</span> -->
-                                </p>
-                            </div>
-                            <div class="count-item">
-                                <p>上月有效投诉
-                                    <span>106423</span>
-                                    <!-- <span id="lastMonthValidCount">--</span> -->
-                                </p>
-                                <p>上月投诉解决
-                                    <span>38293</span>
-                                    <!-- <span id="lastMonthFinishCount">--</span> -->
-                                </p>
-                                <p>上月无效投诉
-                                    <span>930</span>
-                                    <!-- <span id="lastMonthInvalidCount">--</span> -->
                                 </p>
                             </div>
                             <div class="count-item">
@@ -110,7 +78,16 @@
         </div>
     </div>
 </div>
-
+<script>
+    var dd = document.getElementsByClassName("t-list");
+    for (var i = 0; i < dd.length; i++) {
+        var s= dd[i].innerText;
+        if(s.length > 18){
+            str = s.substr(0,18) + '...' ;
+            dd[i].innerText=str;
+        }
+    }
+</script>
 {include file="public/footer" /}
 
 

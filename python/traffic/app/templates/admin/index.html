@@ -1,40 +1,10 @@
 {% extends "admin/home.html" %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/index.css') }}">
+{% endblock %}
 {% block content %}
-{% include "admin/menu.html" %}
-<div class="col p-0 m-0">
-            <div class="row mx-3 my-2 action-bar justify-content-between align-items-center">
-                <div class="row p-0 m-0" id="menu-open">
-                    <div class="row m-0 p-0 align-items-center" style="cursor: pointer;">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="glyphicon glyphicon-th-list"></span>
-                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>
-                    </div>
-                    <!-- <span class="row p-0 m-0 ml-2 align-items-center" id="broadcast-view">
-                        <span class="text-warning glyphicon glyphicon-volume-up"></span>
-                        <div id="broadcast-div">
-                            <ul class="pl-1" id="broadcast-ul" style="margin-top: 0px;"><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/8fzdAKQnueki91nTb-7Qnw" class="text-warning text-decoration-none">ADAS报警！您车队的司机老汪在高速路上开车睡着了！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://m.huya.com/20596749" class="text-warning text-decoration-none">排班调度模块的视频教学，亲们请点击观看！</a></div></div></li><li><div class="row m-0 p-0 align-items-center"><div class="text-truncate pl-1" style="max-width: 500px"><a target="_blank" href="https://mp.weixin.qq.com/s/WMv1gx5goj2M4ZAgic1fnA" class="text-warning text-decoration-none">【提醒功能优化】所有车队都用得到，戳进来看看</a></div></div></li></ul>
-                        </div>
-                    </span> -->
-                </div>
-                <div class="row mr-2 ml-2">
-                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">
-                        <span style="color: #88A4E8">消息</span> <span class="badge badge-danger ng-binding">2</span>
-                    </a>
-                    <img class="ml-3 user-avatar" src="{{ url_for('static',filename='admin/images/user-avatar.png') }}">
-                    <div class="btn-group ml-3">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-                            <span class="ng-binding">孙迎港</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="https://tms.cheoa.cn/#/app/account/changepwd">修改密码</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" style="cursor: pointer;">退出账号</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 内容 -->
-            <div class="content-center-div">
+      <!-- 内容 -->
+      <div class="content-center-div">
                 <div class="app-content-body fade-in-up ng-scope">
 
                     <div class="px-3 ng-scope">
@@ -307,11 +277,7 @@
 
 </div>
 </div>
-				<div class="footer-message-main text-center offset-1">
-				    <font size="3">© 2016-2020 Copyright. 杭州圆点科技有限公司 浙ICP备16002765号-3 浙公网安备 33010602004310号</font>
-				</div>
             </div>
-		</div>
 {% endblock %}
 {% block js %}
     <script src="{{ url_for('static',filename='admin/js/Chart.js') }}"></script>

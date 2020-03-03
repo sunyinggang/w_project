@@ -33,5 +33,46 @@ class LoginForm(FlaskForm):
         }
     )
 
+class ChangeForm(FlaskForm):
+    password = PasswordField(
+        label="旧密码",
+        validators=[
+            DataRequired("旧密码不能为空！")
+        ],
+        description="旧密码",
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入旧密码"
+        }
+    )
+    newpassword = PasswordField(
+        label="新密码",
+        validators=[
+            DataRequired("新密码不能为空！")
+        ],
+        description="新密码",
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder" : "请输入6~15位新密码"
+        }
+    )
+    newpasswordt = PasswordField(
+        label="密码",
+        validators=[
+            DataRequired("密码不能为空！")
+        ],
+        description="密码",
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请确认新密码"
+        }
+    )
+    submit = SubmitField(
+        "确认修改",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )
+
 
 
