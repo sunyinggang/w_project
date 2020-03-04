@@ -46,20 +46,25 @@ class Sort extends Base
             $this->error('删除失败');
         }
     }
-    public function addCommit($sort_id,$id){
+    public function addCommit($sort_id,$id,$pass){
         $model = model('Sort')->where('id','=',$sort_id)->find();
         $res = model(ucwords($model["ano_name"]))->selectById($id);
         return $this->fetch('',[
             'res' => $res,
             'sort_id' => $sort_id,
             'id' => $id,
+            'pass' => $pass
         ]);
     }
     public function add(){
         $form = input('post.');
         $model = model('Sort')->where('id','=',$form["sort_id"])->find();
         $res = model(ucwords($model["ano_name"]))->selectById($form["id"]);
-        $data["status"] = 2;
+        if($form["pass"] == 1){
+            $data["status"] = 1;
+        }else{
+            $data["status"] = 2;
+        }
         $data["commit"] = $form["commit"];
         $res = $res->updateById($data,$res["id"]);
         if($res){

@@ -94,12 +94,14 @@ def fileOne():
     del list[0]  # 删掉第一行，第一行获取的是文件的头，一般不用插到数据库里面
 
     for a in list:
-        teachers = Teacher()
-        teachers.username = a[0]
-        teachers.name = a[1]
-        teachers.password = generate_password_hash("123456")
-        db.session.add(teachers)
-        db.session.commit()
+        count = Teacher.query.filter_by(username=a[0]).count()
+        if count == 0:
+            teachers = Teacher()
+            teachers.username = a[0]
+            teachers.name = a[1]
+            teachers.password = generate_password_hash("123456")
+            db.session.add(teachers)
+            db.session.commit()
     flash("导入成功！")
     return redirect(url_for('admin.ateacher',page = 1))
 
@@ -123,12 +125,14 @@ def fileTow():
     del list[0]  # 删掉第一行，第一行获取的是文件的头，一般不用插到数据库里面
 
     for a in list:
-        students = Student()
-        students.username = a[0]
-        students.name = a[1]
-        students.password = generate_password_hash("123456")
-        db.session.add(students)
-        db.session.commit()
+        count = Student.query.filter_by(username=a[0]).count()
+        if count == 0:
+            students = Student()
+            students.username = a[0]
+            students.name = a[1]
+            students.password = generate_password_hash("123456")
+            db.session.add(students)
+            db.session.commit()
     flash("导入成功！")
     return redirect(url_for('admin.astudent',page = 1))
 
@@ -142,6 +146,13 @@ def astudent(page=None):
         Student.class_id == Class.id
     ).paginate(page=page,per_page=5)
     return render_template("admin/astudent.html",student_list=student_list)
+
+@admin.route("/astudent/noclass/<int:page>/",methods=["GET"])
+def astudentNoclass(page=None):
+    if page is None:
+        page = 1
+    student_list = Student.query.filter_by(class_id=0).paginate(page=page,per_page=5)
+    return render_template("admin/astudent_noclass.html",student_list=student_list)
 
 @admin.route("/astudent/del/<id>/",methods=["GET","POST"])
 def studentDel(id=None):

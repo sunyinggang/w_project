@@ -22,7 +22,11 @@ class BaseModel extends Model
     }
     //根据user_id查询数据
     public function selectByUserId($user_id) {
-        return $this->where('user_id','=',$user_id)->select();
+    return $this->where('user_id','=',$user_id)->select();
+}
+    //根据user_id和举报信息状态查询数据
+    public function selectByUserIdAndStatus($user_id,$status) {
+        return $this->where('user_id','=',$user_id)->where('status','=',$status)->select();
     }
     //根据id查询
     public function selectById($id){

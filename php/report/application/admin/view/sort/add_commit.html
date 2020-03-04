@@ -5,15 +5,20 @@
         <div class="aw-content-wrap clearfix">
             <div class="col-sm-12 col-md-9 aw-main-content aw-article-content">
                 <div class="aw-mod aw-question-detail">
-                    <div class="mod-head" style="margin-left: 300px;">
-                        <h1>{$res.title}</h1>
+                    <div class="mod-head" style="margin:40px 0;color:#393A44;font-size:22px;font-weight:bold;text-align:center;">
+                        {$res.title}
                     </div>
                     <form action="{:url('sort/add')}" method="post">
                         <div class="aw-mod aw-mod-publish">
                             <div class="mod-body" style="margin-left: 250px;">
+                                {if condition="$pass eq 1"}
+                                <label>审核通过反馈:</label><br>
+                                {else/}
                                 <label>审核不通过原因:</label><br>
+                                {/if}
                                 <textarea name="commit" style="height: 100px;width: 300px;" class="form-control"></textarea>
                                 <input type="hidden" name="sort_id" value="{$sort_id}" />
+                                <input type="hidden" name="pass" value="{$pass}" />
                                 <input type="hidden" name="id" value="{$id}" /><br>
                                 <button style="margin-top: 20px;" type="submit" class="btn btn-primary">确认添加</button>
                             </div>

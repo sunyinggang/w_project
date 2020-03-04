@@ -65,12 +65,17 @@ def selectrSearch(page=None):
 
 @student.route("/select/experiment/<id>/",methods=["GET","POST"])
 def selectExp(id=None):
-    select = Select(
+    select = Select.query.filter_by(student_id=session["id"]).all()
+    for i in range(len(select)):
+        if select[i].experiment_id == int(id):
+            flash("已选择此实验！")
+            return redirect(url_for('student.score', page=1))
+    sel = Select(
         experiment_id = id,
         student_id = session["id"],
         select_time= datetime.datetime.now()
     )
-    db.session.add(select)
+    db.session.add(sel)
     db.session.commit()
     flash("选择成功！")
     return redirect(url_for('student.score',page=1))

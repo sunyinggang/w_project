@@ -15,7 +15,7 @@
                     <ul>
                         {volist name="safety" id="vo"}
                         <li class="qz lightHigh">
-                            <a class="t-list" href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
+                            <a class="t-list" href="{:url('index/article',['type'=>13,'id'=>$vo.id])}" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
                         </li>
                         {/volist}
                     </ul>
@@ -30,7 +30,7 @@
                     <ul>
                         {volist name="reward" id="vo"}
                         <li class="qz lightHigh">
-                            <a class="t-list" href="https://weibo.com/3056092137/Iwa4mlMrf" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
+                            <a class="t-list" href="{:url('index/article',['type'=>12,'id'=>$vo.id])}" target="_blank">&nbsp;&nbsp;{$vo.title}</a>
                         </li>
                         {/volist}
                     </ul>
@@ -48,26 +48,22 @@
                     <div class="count-mid-con">
                         <div class="count-content sidebar-count-con">
                             <div class="count-item">
-                                <p>今日有效投诉
-                                    <span>4169</span>
+                                <p>今日有效举报
+                                    <span>{$allcountday}</span>
                                     <!-- <span id="todayValidCount">--</span> -->
                                 </p>
-                                <p>昨日有效投诉
-                                    <span>3752</span>
+                                <p>今日举报解决
+                                    <span>{$count1day}</span>
                                     <!-- <span id="yesterdayValidCount">--</span> -->
-                                </p>
-                                <p>昨日投诉解决
-                                    <span>2269</span>
-                                    <!-- <span id="yesterdayFinishCount">--</span> -->
                                 </p>
                             </div>
                             <div class="count-item">
-                                <p>累计有效投诉
-                                    <span>1515800</span>
+                                <p>累计有效举报
+                                    <span>{$allcount}</span>
                                     <!-- <span id="allValidCount">--</span> -->
                                 </p>
-                                <p>累计投诉解决
-                                    <span>701910</span>
+                                <p>累计举报解决
+                                    <span>{$count1}</span>
                                     <!-- <span id="allFinishCount">--</span> -->
                                 </p>
                             </div>

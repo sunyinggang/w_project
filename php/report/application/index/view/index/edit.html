@@ -85,10 +85,21 @@
                                     <div class="mod-head">
                                         <div class="formControls col-xs-8 col-sm-9">
                                             <textarea name="description" id="editor" style="width: 660px;"> {$res['description']}</textarea>
+                                            {if condition="$res['status'] eq 1"}
+                                            <h3>反馈内容:</h3>
+                                            {$res.commit}
+                                            {else/}
                                             <h3>未通过审核原因:</h3>
-                                             {$res.commit}
+                                            {$res.commit}
+                                            <h3>验证码:</h3>
+                                            <div class="aw-publish-title active">
+                                                <div>
+                                                    <img style="margin-bottom: 10px;" src="{:captcha_src()}" alt="captcha" id="code" />
+                                                    <input style="width:250px;" type="text" placeholder="输入上面验证码（字母不区分大小写）" name="captcha" class="form-control" required></div>
+
+                                            </div>
                                             <div class="mod-footer clearfix" style="margin-left: 50px;">
-                                                <a href="" target="_blank">[举报须知]</a>
+                                                <a href="{:url('index/rule')}" target="_blank">[举报须知]</a>
                                                 <span class="aw-anonymity">
 									<label><input type="checkbox" class="pull-left" value="1" name="anonymous">
 										已阅，同意</label>
@@ -96,6 +107,7 @@
                                                 <input type="hidden" value="{$res['id']}" placeholder="" name="id" class="form-control" >
                                                 <button type="submit" class="btn btn-large btn-success btn-publish-submit">确认再次提交</button>
                                             </div>
+                                            {/if}
                                         </div>
 
                                     </div>
@@ -128,5 +140,10 @@
         });
     });
 </script>
-
+<script type="text/javascript">
+var code = document.getElementById("code");
+code.onclick = function(){
+    this.src = this.src+'?'+Math.random();
+}
+</script>
 {include file="public/footer" /}

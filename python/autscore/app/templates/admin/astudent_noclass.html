@@ -31,7 +31,6 @@
                   <tr>
                     <th>学号<i class="fa"></i></th>
                     <th>姓名<i class="fa"></i></th>
-                    <th>班级<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
                 </thead>
@@ -40,7 +39,6 @@
                   <tr>
                     <td>{{ v.username }}</td>
                     <td>{{ v.name }}</td>
-                    <td>{{ v.class.name }}</td>
                     <td>
                       <a class="btn btn-primary" href="{{ url_for('admin.studentEdit',id=v.id) }}" role="button">恢复密码</a>
                       <a class="btn btn-danger" href="{{ url_for('admin.studentDel',id=v.id) }}" role="button">删除</a>
@@ -51,15 +49,15 @@
               </table>
             </div>
             <div class="box-footer clearfix">
-              {{ pg.page(student_list,'admin.astudent') }}
+              {{ pg.page(student_list,'admin.astudentNoclass') }}
             </div>
           </div>
           <div class="clo-lg-6">
             <div class="col-lg-4 alert alert-dismissable alert-info">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-                学生列表为仅展示已选择班级的学生<br>
+                学生列表为未选择班级的学生<br>
                 恢复密码为初始密码：123456<br>
-                <a href="{{ url_for('admin.astudentNoclass',page=1) }}">查看未选择班级学生列表</a>
+                <a href="{{ url_for('admin.astudent',page=1) }}">查看已选择班级学生列表</a>
             </div>
           </div>
         </div><!-- /.row -->

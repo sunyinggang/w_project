@@ -53,13 +53,13 @@
                     {% if v.word_url == None  %}
                     <td>
                        <form action="{{ url_for('student.addWord',id=v.id) }}" method="post" enctype="multipart/form-data">
-                       <input name="file" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">上传</button>
+                       <input name="file"  accept=".docx" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">上传</button>
                        </form>
                     </td>
                     {% else %}
                     <td>
                        <form action="{{ url_for('student.addWord',id=v.id) }}" method="post" enctype="multipart/form-data">
-                       <input name="file" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">重新上传</button>
+                       <input name="file" accept=".docx" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">重新上传</button>
                        </form>
                     </td>
                     {% endif %}
