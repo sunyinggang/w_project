@@ -1,3 +1,5 @@
+import json
+import os
 import re
 from functools import wraps
 
@@ -5,8 +7,9 @@ from flask import render_template, flash, redirect, url_for, session, request
 from werkzeug.security import generate_password_hash
 
 from . import admin
-from .forms import LoginForm, ChangeForm
-from .. import db
+from .forms import LoginForm, ChangeForm, DriverForm
+from .. import db,app
+from ..lib.functions import change_filename
 from ..models import Admin
 
 
@@ -75,7 +78,25 @@ def index():
 def driverList():
     return render_template("admin/driver_list.html")
 
-@admin.route("/driver/add/")
+@admin.route("/driver/add/",methods=["GET","POST"])
 @admin_login_req
 def driverAdd():
-    return render_template("admin/driver_add.html")
+    form = DriverForm()
+    return render_template("admin/driver_add.html",form=form)
+
+@admin.route('/upload/',methods=['GET', 'POST'])
+def upload():
+    if request.method == 'POST':
+        f = request.files.get('img')
+        if not os.path.exists(app.config['UPLOADED_PATH']):
+            os.makedirs(app.config['UPLOADED_PATH'])
+            os.chmod(app.config['UPLOADED_PATH'],"rw")
+        f_new_name = change_filename(f.filename)
+        print(f_new_name)
+        f.save(os.path.join(app.config['UPLOADED_PATH'], f_new_name))
+        d = {
+            'path' : f_new_name
+        }
+        print(d)
+        print(json.dumps(d))
+        return json.dumps(d)

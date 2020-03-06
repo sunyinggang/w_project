@@ -1,0 +1,97 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<style>
+table{
+	font-size: 10px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+     <div class="app-content-body fade-in-up ng-scope" ui-view="" style="">
+         <div ui-view="" ng-controller="driverController" class="ng-scope">
+
+<div class="page-container ng-scope" ng-controller="driverListController">
+    <div class="row align-items-center">
+        <div class="title-icon-style mr-2"></div>
+        <font color="#4c4c4c">司机列表</font>
+    </div>
+    <div class="w-100 bg-white card mt-2 page-card">
+        <div class="row justify-content-between mt-2">
+            <div class="row align-items-center">
+                <div class="">
+                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.driverAdd") }}">添加司机</a>
+                    <button type="button" class="btn btn-primary btn-sm btn-upload">
+                        <input type="file" class="btn-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="application/vnd.ms-excel" ng-model="importFile" fileread="">
+                        批量导入
+                    </button>
+                    <a class="btn btn-primary btn-sm" href="https://oss.cheoa.cn/doc/%E5%8F%B8%E6%9C%BA%E6%A8%A1%E6%9D%BF.xls" target="_blank">
+                        下载导入模板
+                    </a>
+                </div>
+                <form class="form-inline ml-1 input-group-sm ng-pristine ng-valid">
+                    <input type="text" class="form-control mr-sm-2 ng-pristine ng-untouched ng-valid ng-empty" placeholder="司机姓名/手机号码" ng-model="params.keyword" ng-keypress="enterSearch($event)">
+                    <button type="button" ng-click="refreshDataList(true)" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="exportAll(-1)">导出</button>
+            </div>
+        </div>
+        <div class="mt-3 table-sticky-view">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th sort-by-key="" sortkey="USER_NAME" sortable-column="" name="司机姓名"><div class="row m-0 undefined" style="cursor: pointer;">司机姓名<div class="ml-1"></div></div></th>
+                    <th scope="col">电话</th>
+                    <th scope="col">分组</th>
+                    <th sort-by-key="" sortkey="USER_TYPE" sortable-column="" name="类型"><div class="row m-0 undefined" style="cursor: pointer;">类型<div class="ml-1"></div></div></th>
+                    <th scope="col">车辆</th>
+                    <th scope="col" class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="driver in drivers" class="ng-scope" style="">
+                    <td><font ng-click="seeDriver(driver.id)" class="text-primary ng-binding">测试司机</font></td>
+                    <td class="ng-binding">86-15688708938</td>
+                    <td class="ng-binding">全部分组</td>
+                    <td class="ng-binding">自有司机</td>
+                    <td><span ng-click="seeVehicle(driver.vehicleId)" class="text-primary ng-binding">测A08938</span></td>
+                    <td>
+                        <div class="text-primary row justify-content-center align-items-center">
+                            <div style="cursor: pointer;">
+								<span ng-show="!isEmpty(driver.remark)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="">
+									<img src="assets/images/icon_remark.png" class="mr-1">
+									<font color="">备注</font>
+								</span>
+                            </div>
+                            <button type="button" class="btn btn-outline-primary btn-sm ml-1" ng-click="seeDriver(driver.id)">
+                                详情
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+                <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
+                <tr>
+                    <!-- ngIf: !toEnd -->
+                    <!-- ngIf: toEnd --><td colspan="9" ng-if="toEnd" class="ng-scope">
+                        <div class="row justify-content-center tab-footer-loading-div"><font color="#CCCCCC">已经到底了</font>
+                        </div>
+                    </td><!-- end ngIf: toEnd -->
+                </tr>
+                </tfoot><!-- end ngIf: !emptyList -->
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" ng-show="!emptyList">
+        共有<font color="red" class="ng-binding">0</font>条数据
+    </div>
+</div>
+</div></div>
+            </div>
+{% endblock %}
+{% block js %}
+{% endblock %}

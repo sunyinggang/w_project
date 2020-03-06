@@ -1,0 +1,291 @@
+{% extends "admin/home.html" %}
+{% block css %}
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+              <!-- <div ui-butterbar></div> -->
+              <!-- <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a> -->
+              <!-- uiView:  -->
+    <div class="app-content-body fade-in-up ng-scope" ui-view="" style=""><!-- uiView:  -->
+        <div ui-view="" ng-controller="vehicleController" class="ng-scope" style="">
+            <style class="ng-scope">
+.dropdown-item-select{
+  cursor: pointer;
+}
+.dropdown-item-select:hover{
+  color: #2da0f0;
+}
+.car-div{
+  cursor: pointer;
+}
+.car-div:hover{
+  background: #f4f4f4;
+}
+</style>
+<div class="page-container ng-scope" ng-controller="vehicleAddController">
+<div class="card page-card">
+  <div class="row align-items-center">
+    <div class="title-icon-style mr-2"></div>
+    <font color="#4c4c4c" class="ng-binding">新建车辆</font>
+    <button type="button" class="btn btn-outline-secondary btn-sm ml-3" ng-click="cancel()">返回上层</button>
+  </div>
+  <div class="dropdown-divider"></div>
+  <form name="form" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern">
+    <div class="form-group row justify-content-center">
+      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>车牌号码:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.plateNo" name="plateNo" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required is-invalid" placeholder="请输入车牌号码" required="" ng-class="form.plateNo.$invalid?&#39;is-invalid&#39;:&#39;&#39;">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">别名:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.vehicleName" name="vehicleName" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入车辆别名，如1号车">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">车辆容量:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.capacity" name="capacity" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入车辆载客量/载货量">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">型号:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.vehicleModel" name="vehicleModel" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入车辆型号">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">车架号:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.vin" name="vin" autocomplete="off" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入车架号">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">发动机号:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.engineNo" name="engineNo" autocomplete="off" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入发动机号">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">车辆图标:</label>
+      <div class="col-8">
+        <input data-toggle="dropdown" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请选择车辆图标" ng-model="vehicle.vehicleIconName" name="vehicleIconName" autocomplete="off">
+        <div class="dropdown-menu p-0">
+          <div class="row text-center">
+            <!-- ngRepeat: type in ICON_CAR --><div class="px-4 py-2 car-div ng-scope" ng-repeat="type in ICON_CAR" ng-click="selectVehicleIcon(type)">
+              <div style="height: 88px;" class="row m-0 p-0 align-items-center">
+                <img ng-src="assets/images/car/icon_car_blue_w.png" width="36px" src="./123_files/icon_car_blue_w.png">
+              </div>
+              <div class="mt-1 ng-binding">
+                小轿车
+              </div>
+            </div><!-- end ngRepeat: type in ICON_CAR --><div class="px-4 py-2 car-div ng-scope" ng-repeat="type in ICON_CAR" ng-click="selectVehicleIcon(type)">
+              <div style="height: 88px;" class="row m-0 p-0 align-items-center">
+                <img ng-src="assets/images/car/icon_lorry_blue.png" width="36px" src="./123_files/icon_lorry_blue.png">
+              </div>
+              <div class="mt-1 ng-binding">
+                货车
+              </div>
+            </div><!-- end ngRepeat: type in ICON_CAR --><div class="px-4 py-2 car-div ng-scope" ng-repeat="type in ICON_CAR" ng-click="selectVehicleIcon(type)">
+              <div style="height: 88px;" class="row m-0 p-0 align-items-center">
+                <img ng-src="assets/images/car/icon_bus_blue.png" width="36px" src="./123_files/icon_bus_blue.png">
+              </div>
+              <div class="mt-1 ng-binding">
+                巴士
+              </div>
+            </div><!-- end ngRepeat: type in ICON_CAR --><div class="px-4 py-2 car-div ng-scope" ng-repeat="type in ICON_CAR" ng-click="selectVehicleIcon(type)">
+              <div style="height: 88px;" class="row m-0 p-0 align-items-center">
+                <img ng-src="assets/images/car/icon_tank_blue.png" width="36px" src="./123_files/icon_tank_blue.png">
+              </div>
+              <div class="mt-1 ng-binding">
+                工程车
+              </div>
+            </div><!-- end ngRepeat: type in ICON_CAR -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">违章查询车辆类型:</label>
+      <div class="col-8">
+        <input data-toggle="dropdown" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入违章查询车辆类型" ng-model="vehicle.vioName" name="vioType" autocomplete="off">
+        <div class="dropdown-menu">
+          <!-- ngRepeat: type in VIO_TYPE --><div class="dropdown-item dropdown-item-select ng-binding ng-scope" ng-repeat="type in VIO_TYPE" ng-click="selectVioType(type)">
+            大车
+          </div><!-- end ngRepeat: type in VIO_TYPE --><div class="dropdown-item dropdown-item-select ng-binding ng-scope" ng-repeat="type in VIO_TYPE" ng-click="selectVioType(type)">
+            小车
+          </div><!-- end ngRepeat: type in VIO_TYPE --><div class="dropdown-item dropdown-item-select ng-binding ng-scope" ng-repeat="type in VIO_TYPE" ng-click="selectVioType(type)">
+            新能源大车
+          </div><!-- end ngRepeat: type in VIO_TYPE --><div class="dropdown-item dropdown-item-select ng-binding ng-scope" ng-repeat="type in VIO_TYPE" ng-click="selectVioType(type)">
+            新能源小车
+          </div><!-- end ngRepeat: type in VIO_TYPE -->
+          <div class="dropdown-divider"></div>
+          <p class="pl-4 pr-4" style="color: #666666;font-size: 14px">
+            1. 大车：号牌为<span class="text-warning">黄底黑字黑框线</span>。中型（含）以上载客、载货汽车和专项作业车；半挂牵引车；电车；全挂车和不与牵引车固定使用的半挂车。
+          </p>
+          <p class="pl-4 pr-4" style="color: #666666;font-size: 14px">
+            2. 小车：号牌为<span class="text-primary">蓝底白字白框线</span>。中型以下载客、载货汽车和专项作业车。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">行驶证照片</label>
+      <div class="col-8 row">
+        <div class="img-upload" title="vehicle.drivingLicense"><input type="file" class="img-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="image" ng-model="vehicle.drivingLicense" fileread="">
+          <img class="img-upload-file" ng-src="../../../assets/images/image_add.png" src="./123_files/image_add.png"><!-- ngIf: vehicle.drivingLicense=='img-upload-ing' --><!-- ngIf: vehicle.drivingLicense && vehicle.drivingLicense!='img-upload-ing' --></div></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div>
+      <div class="offset-1"><b>状态/类型信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">分组权限:</label>
+      <div class="col-8">
+         <div class="dropdown bootstrap-select show-tick multiple-select-picker form-control-sm form-control ng-pristine ng-untouched ng-valid ng-empty" style="width: 100%;"><select multiple="" ng-multiple="true" ng-model="groupsName" class="multiple-select-picker form-control-sm form-control ng-pristine ng-untouched ng-valid ng-empty" title="请选择分组" tabindex="-98">
+           <!-- ngRepeat: group in gOptions --><option ng-repeat="group in gOptions" value="全部分组" class="ng-binding ng-scope" style="">全部分组</option><!-- end ngRepeat: group in gOptions --><option ng-repeat="group in gOptions" value="默认分组" class="ng-binding ng-scope">默认分组</option><!-- end ngRepeat: group in gOptions -->
+         </select><button type="button" class="btn dropdown-toggle btn-light bs-placeholder" data-toggle="dropdown" role="button" title="请选择分组"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">请选择分组</div></div> </div></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+      </div>
+    </div>
+
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>类型:</label>
+      <div class="col-8">
+        <select ng-model="vehicle.vehicleType" class="custom-select form-control-sm custom-select-sm ng-pristine ng-untouched ng-valid ng-not-empty">
+          <option value="1">自有车辆</option>
+          <option value="2">外援车辆</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>状态:</label>
+      <div class="col-8">
+        <select ng-model="vehicle.vehicleStatus" name="vehicleStatus" value="1" class="custom-select form-control-sm custom-select-sm ng-pristine ng-untouched ng-valid ng-not-empty">
+          <option value="1">正常</option>
+                      <option value="2">暂停</option>
+        </select>
+      </div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div>
+      <div class="offset-1"><b>默认司机信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">默认司机姓名:</label>
+      <div class="col-8">
+        <input data-toggle="dropdown" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入姓名/手机号码" ng-model="vehicle.driverName" name="driverName" autocomplete="off">
+        <div class="dropdown-menu">
+          <!-- ngRepeat: driver in ds --><div class="dropdown-item ng-binding ng-scope" ng-repeat="driver in ds" ng-click="selectDriver(driver)" style="">
+            测试司机&nbsp;|&nbsp;15688708938
+          </div><!-- end ngRepeat: driver in ds -->
+        </div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">国家区号:</label>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">司机电话:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.driverPhone" name="driverPhone" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入司机电话">
+      </div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div>
+      <div class="offset-1"><b>车辆保养信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+              <label class="col-2 col-form-label col-form-label-sm text-right">累计里程数(km):</label>
+      <div class="col-8">
+        <input ng-model="vehicle.totalTravel" name="totalTravel" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入累计里程数，用于保养提醒">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">加油类型:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.oilType" name="oilType" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请输入加油类型，如92#">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">购置日期:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.dateOfPurchase" data-date-format="yyyy-mm-dd" type="text" class="form-control form-control-sm input-date-picker ng-pristine ng-untouched ng-valid ng-empty" placeholder="请选择日期">
+      </div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div>
+      <div class="offset-1"><b>GPS设备信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+              <label class="col-2 col-form-label col-form-label-sm text-right">GPS设备IMEI/SN码:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.imei" name="imei" autocomplete="off" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="请请输入 imei/sn 码">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">超速报警(km/h):</label>
+      <div class="col-8">
+        <input ng-model="vehicle.speedLimit" ng-pattern="/^\d*$/" type="text" name="speedLimit" ng-disabled="isEmpty(vehicle.imei)" autocomplete="off" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern" placeholder="请输入速度上限(需配合车载 gps 硬件)，0-150 km/h" ng-class="form.speedLimit.$invalid?&#39;is-invalid&#39;:&#39;&#39;" disabled="disabled">
+      </div>
+    </div>
+          <div class="form-group row justify-content-center mt-3">
+              <label class="col-2 col-form-label col-form-label-sm text-right">疲劳驾驶报警(分钟):</label>
+              <div class="col-8">
+                  <input ng-model="vehicle.fatigueLimit" ng-pattern="/^\d*$/" ng-disabled="isEmpty(vehicle.imei)" name="fatigueLimit" type="text" autocomplete="off" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern" placeholder="请输入连续驾驶时间上限(需配合车载 gps 硬件)，10-300 分钟" ng-class="form.fatigueLimit.$invalid?&#39;is-invalid&#39;:&#39;&#39;" disabled="disabled">
+              </div>
+          </div>
+          <div class="form-group row justify-content-center mt-3">
+              <label class="col-2 col-form-label col-form-label-sm text-right">静止超时报警(分钟):</label>
+              <div class="col-8">
+                  <input ng-model="vehicle.stopLimit" ng-pattern="/^\d*$/" ng-disabled="isEmpty(vehicle.imei)" name="stopLimit" type="text" autocomplete="off" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern" placeholder="请输入静止时间上限(需配合车载 gps 硬件)，10-300 分钟" ng-class="form.stopLimit.$invalid?&#39;is-invalid&#39;:&#39;&#39;" disabled="disabled">
+              </div>
+          </div>
+    <div class="dropdown-divider"></div>
+    <div>
+      <div class="offset-1"><b>附加信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">营运许可证照片</label>
+      <div class="col-8 row">
+         <div class="img-upload" title="vehicle.operatingLicense"><input type="file" class="img-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="image/*" ng-model="vehicle.operatingLicense" fileread=""><img class="img-upload-file" ng-src="../../../assets/images/image_add.png" src="./123_files/image_add.png"><!-- ngIf: vehicle.operatingLicense=='img-upload-ing' --><!-- ngIf: vehicle.operatingLicense && vehicle.operatingLicense!='img-upload-ing' --></div></div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">其他照片</label>
+      <div class="col-8 row">
+           <div>
+            <div class="img-upload" title="vehicle.pic1"><input type="file" class="img-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="image/*" ng-model="vehicle.pic1" fileread=""><img class="img-upload-file" ng-src="../../../assets/images/image_add.png" src="./123_files/image_add.png"><!-- ngIf: vehicle.pic1=='img-upload-ing' --><!-- ngIf: vehicle.pic1 && vehicle.pic1!='img-upload-ing' --></div></div>
+           <div class="ml-3">
+            <div class="img-upload" title="vehicle.pic2"><input type="file" class="img-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="image/*" ng-model="vehicle.pic2" fileread=""><img class="img-upload-file" ng-src="../../../assets/images/image_add.png" src="./123_files/image_add.png"><!-- ngIf: vehicle.pic2=='img-upload-ing' --><!-- ngIf: vehicle.pic2 && vehicle.pic2!='img-upload-ing' --></div></div>
+           <div class="ml-3">
+            <div class="img-upload" title="vehicle.pic3"><input type="file" class="img-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="image/*" ng-model="vehicle.pic3" fileread=""><img class="img-upload-file" ng-src="../../../assets/images/image_add.png" src="./123_files/image_add.png"><!-- ngIf: vehicle.pic3=='img-upload-ing' --><!-- ngIf: vehicle.pic3 && vehicle.pic3!='img-upload-ing' --></div></div>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">备注:</label>
+      <div class="col-8">
+        <input ng-model="vehicle.remark" name="remark" autocomplete="off" type="text" class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty" placeholder="更多备注信息">
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+              <button type="submit" class="btn btn-primary btn-sm btn-sub-save" ng-disabled="form.$invalid" ng-click="add()" disabled="disabled">保存
+              </button>
+      <!-- ngIf: !vehicle.id --><button type="submit" ng-if="!vehicle.id" class="btn btn-primary btn-sm ml-3 btn-sub-save ng-scope" ng-disabled="form.$invalid" ng-click="addAndNew()" disabled="disabled">保存并新建
+      </button><!-- end ngIf: !vehicle.id -->
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}
