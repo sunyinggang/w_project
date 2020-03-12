@@ -1,0 +1,134 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<style>
+table{
+	font-size: 10px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+     <div class="app-content-body fade-in-up ng-scope" ui-view="" style="">
+         <div ui-view="" ng-controller="driverController" class="ng-scope">
+
+<div class="page-container ng-scope" ng-controller="driverListController">
+    <div class="row align-items-center">
+        <div class="title-icon-style mr-2"></div>
+        <font color="#4c4c4c">公告列表</font>
+    </div>
+    <div class="w-100 bg-white card mt-2 page-card">
+        <div class="row justify-content-between mt-2">
+            <div class="row align-items-center">
+                <div class="">
+                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.noticeAdd") }}">添加公告</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 table-sticky-view">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">序号</th>
+                    <th scope="col">内容</th>
+                    <th scope="col">发布时间</th>
+                    <th scope="col" class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for v in notice_list %}
+                  <tr class="ng-scope">
+                    <td><font class="text-primary ng-binding">{{ v.id }}</font></td>
+                    <td class="ng-binding">{{ v.content }}</td>
+                    <td class="ng-binding">{{ v.add_time }}</td>
+                    <td>
+                        <div class="text-primary row justify-content-center align-items-center">
+                            <button type="button" data-toggle="modal" data-target="#Modal" onclick="addContent('{{ v.content }}')" class="btn btn-outline-primary btn-sm ml-1">详情</button>
+                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')"  class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+                <!-- Modal -->
+                <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+                     aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">公告内容</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="content"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal2Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认删除此信息</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <input type="hidden" id="delId">
+                <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
+                <tr>
+                    <!-- ngIf: !toEnd -->
+                    <!-- ngIf: toEnd --><td colspan="9" ng-if="toEnd" class="ng-scope">
+                        <div class="row justify-content-center tab-footer-loading-div"><font color="#CCCCCC">已经到底了</font>
+                        </div>
+                    </td><!-- end ngIf: toEnd -->
+                </tr>
+                </tfoot><!-- end ngIf: !emptyList -->
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" ng-show="!emptyList">
+        共有<font color="red" class="ng-binding">0</font>条数据
+    </div>
+</div>
+</div></div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+function addContent(content) {
+    $("#content").text(content);
+}
+function addId(id) {
+    $("#delId").val(id);
+}
+function delNotice() {
+    id = $("#delId").val();
+    $.ajax({
+        type: "get",
+        url: "{{ url_for("admin.noticeDel") }}",
+        data: {"id":id},
+        async: true,
+        success: function () {
+            window.location.href = window.location.href;
+        }
+    });
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.noticeDel")}}?id=";
+    location.href =str+id;
+}
+</script>
+{% endblock %}

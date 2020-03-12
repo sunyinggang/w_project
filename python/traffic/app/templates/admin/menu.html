@@ -6,7 +6,7 @@
             <div id="cheoa-menu">
                 <div class="card">
                     <div class="card-header row align-items-center justify-content-between m-0 p-1">
-                        <a class="btn btn-link">
+                        <a class="btn btn-link" href="{{ url_for("admin.index") }}" style="text-decoration:none;">
                             <div class="row align-items-center p-0 m-0">
                                 <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/selector-home.png') }}">
                                 <span style="font-size: 16px" class="ng-binding text-white">首页</span>
@@ -29,10 +29,13 @@
                             <ul class="nav flex-column menu-ul">
                                 <!-- ngRepeat: subItem in item.subItems -->
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                    <a class="nav-link" href="{{ url_for("admin.carList") }}"><span class="ng-binding">车辆</span></a>
                                 </li>
                                 <li class="nav-item ng-scope">
                                     <a class="nav-link" href="{{ url_for("admin.driverList") }}"><span class="ng-binding">司机</span></a>
+                                </li>
+                                <li class="nav-item ng-scope">
+                                    <a class="nav-link" href="{{ url_for("admin.driverList") }}"><span class="ng-binding">账号</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -56,10 +59,7 @@
                                     <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
                                 </li>
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排版报表</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -80,13 +80,10 @@
                             <ul class="nav flex-column menu-ul">
                                 <!-- ngRepeat: subItem in item.subItems -->
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">定位监控</span></a>
                                 </li>
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">查看轨迹</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -124,7 +121,7 @@
                         <a class="btn btn-link">
                             <div class="row align-items-center p-0 m-0">
                                 <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/leave.png') }}">
-                                <span style="font-size: 16px" class="ng-binding">考勤管理</span>
+                                <span style="font-size: 16px" class="ng-binding">考勤统计</span>
                                 <span class="glyphicon glyphicon-chevron-right s-right"></span>
                             </div>
                         </a>
@@ -134,29 +131,10 @@
                             <ul class="nav flex-column menu-ul">
                                 <!-- ngRepeat: subItem in item.subItems -->
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">请假审批</span></a>
                                 </li>
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body ml-4 p-1">
-                            <ul class="nav flex-column menu-ul">
-                                <!-- ngRepeat: subItem in item.subItems -->
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">请假统计</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -167,7 +145,7 @@
                         <a class="btn btn-link">
                             <div class="row align-items-center p-0 m-0">
                                 <img style="width: 16px;height: auto" class="mr-2" src="{{ url_for('static',filename='admin/images/broadcast.png') }}">
-                                <span style="font-size: 16px" class="ng-binding">公告发布</span>
+                                <span style="font-size: 16px" class="ng-binding">公告提醒</span>
                                 <span class="glyphicon glyphicon-chevron-right s-right"></span>
                             </div>
                         </a>
@@ -177,29 +155,7 @@
                             <ul class="nav flex-column menu-ul">
                                 <!-- ngRepeat: subItem in item.subItems -->
                                 <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body ml-4 p-1">
-                            <ul class="nav flex-column menu-ul">
-                                <!-- ngRepeat: subItem in item.subItems -->
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">排班调度</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
-                                </li>
-                                <li class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">车辆</span></a>
+                                    <a class="nav-link" href="{{ url_for("admin.noticeList") }}"><span class="ng-binding">公告列表</span></a>
                                 </li>
                             </ul>
                         </div>

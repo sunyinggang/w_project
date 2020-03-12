@@ -21,7 +21,7 @@
                     <div class="row m-0 p-0 align-items-center" ng-click="toggleMenu()" style="cursor: pointer;">
                         <span ng-class="isCloseMenu?&#39;glyphicon glyphicon-chevron-right&#39;:&#39;glyphicon glyphicon-chevron-left&#39;" class="glyphicon glyphicon-chevron-left"></span>
                         <span class="glyphicon glyphicon-th-list"></span>
-                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>
+{#                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>#}
                     </div>
                     <!-- <span class="row p-0 m-0 ml-2 align-items-center" id="broadcast-view">
                         <span class="text-warning glyphicon glyphicon-volume-up"></span>
@@ -31,9 +31,12 @@
                     </span> -->
                 </div>
                 <div class="row mr-2 ml-2">
-                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">
-                        <span style="color: #88A4E8">消息</span> <span class="badge badge-danger ng-binding">2</span>
-                    </a>
+{#                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">#}
+{#                        <span style="color: #88A4E8">请假消息</span> <span class="badge badge-danger ng-binding">2</span>#}
+{#                    </a>#}
+{#                    <a ui-sref="app.message.list" class="text-decoration-none" href="https://tms.cheoa.cn/#/app/message/list">#}
+{#                        <span style="color: #88A4E8">费用消息</span> <span class="badge badge-danger ng-binding">2</span>#}
+{#                    </a>#}
                     <img class="ml-3 user-avatar" src="{{ url_for('static',filename='admin/images/user-avatar.png') }}">
                     <div class="btn-group ml-3">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
@@ -50,7 +53,7 @@
         {% block content %}{% endblock %}
     </div>
     <div class="footer-message-main text-center offset-1">
-            <font size="3">© 2016-2020 Copyright. 杭州科技有限公司 浙ICP备16002765号-3 浙公网安备 33010602004310号</font>
+            <font size="3">© 2019-2020 Copyright. 车队管家</font>
         </div>
 	</div>
 </div>
@@ -63,7 +66,7 @@
             <strong class="mr-auto">温馨提示</strong>
             <small></small>
             <button type="button" class="ml-2 mb-1 close">
-                <span>×</span>
+                {#                <span>×</span>#}
             </button>
         </div>
         <div class="toast-body text-success">{{ msg }}</div>
@@ -78,7 +81,7 @@
             <strong class="mr-auto">温馨提示</strong>
             <small></small>
             <button type="button" class="ml-2 mb-1 close">
-                <span>×</span>
+{#                <span>×</span>#}
             </button>
         </div>
         <div class="toast-body text-danger">{{ msg }}</div>

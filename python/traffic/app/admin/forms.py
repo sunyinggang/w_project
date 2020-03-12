@@ -1,6 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, HiddenField
+from wtforms import StringField, SubmitField, PasswordField, HiddenField, SelectField, TextAreaField
 from wtforms.validators import DataRequired
+
+from app.models import Driver
 
 
 class LoginForm(FlaskForm):
@@ -135,3 +137,91 @@ class DriverForm(FlaskForm):
         }
     )
 
+class CarForm(FlaskForm):
+    number = StringField(
+        label="车牌号码",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入车牌号码"
+        }
+    )
+    nickname = StringField(
+        label="别名",
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入车辆别名，如1号车"
+        }
+    )
+    capacity = StringField(
+        label="车辆容量",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入车辆载客量/载货量"
+        }
+    )
+    model = StringField(
+        label="车辆型号",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入车辆型号"
+        }
+    )
+    img_url = HiddenField(
+        render_kw={
+            "id": "path-1"
+        }
+    )
+    # driver_id = SelectField(
+    #     label="默认司机",
+    #     validators=[
+    #         DataRequired()
+    #     ],
+    #     render_kw={
+    #         "class": "form-control"
+    #     },
+    #     coerce=int
+    # )
+    content = StringField(
+        label="备注",
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "更多备注信息"
+        }
+    )
+    submit = SubmitField(
+        "确认添加",
+        render_kw={
+            "class": "btn btn-primary btn-sm ml-3 btn-sub-save"
+        }
+    )
+
+    # def __init__(self, *args, **kwargs):
+    #     super(CarForm, self).__init__(*args, **kwargs)
+    #     self.driver_id.choices = [(v.id, v.name) for v in Driver.query.all()]
+
+class NoticeForm(FlaskForm):
+    content = TextAreaField(
+        label="公告内容",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入公告内容"
+        }
+    )
+    submit = SubmitField(
+        "确认添加",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )

@@ -7,10 +7,10 @@ from flask import render_template, flash, redirect, url_for, session, request
 from werkzeug.security import generate_password_hash
 
 from . import admin
-from .forms import LoginForm, ChangeForm, DriverForm
+from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm
 from .. import db,app
 from ..lib.functions import change_filename
-from ..models import Admin
+from ..models import Admin, Driver, Car, Notice
 
 
 def admin_login_req(f):
@@ -76,13 +76,95 @@ def index():
 @admin.route("/driver/list/")
 @admin_login_req
 def driverList():
-    return render_template("admin/driver_list.html")
+    driver_list = Driver.query.all()
+    print(driver_list)
+    return render_template("admin/driver_list.html",driver_list = driver_list)
 
 @admin.route("/driver/add/",methods=["GET","POST"])
 @admin_login_req
 def driverAdd():
     form = DriverForm()
+    if form.validate_on_submit():
+        data = form.data
+        if data['idcardz'] == '' or data['idcardf'] == '' or data['drivercardz'] == '' or data['drivercardf'] == '':
+            flash("信息填写不完整",'err')
+        driver = Driver(
+            name=data["name"],
+            phone=data["phone"],
+            address=data["address"],
+            idcardz=data["idcardz"],
+            idcardf=data["idcardz"],
+            drivercardz=data["drivercardz"],
+            drivercardf=data["drivercardf"],
+            content=data["content"]
+        )
+        db.session.add(driver)
+        db.session.commit()
+        flash("添加成功", "ok")
+        return redirect(url_for("admin.driverList"))
     return render_template("admin/driver_add.html",form=form)
+
+@admin.route("/car/list/")
+@admin_login_req
+def carList():
+    car_list = Car.query.all()
+    print(car_list)
+    return render_template("admin/car_list.html",car_list = car_list)
+
+@admin.route("/car/add/",methods=["GET","POST"])
+@admin_login_req
+def carAdd():
+    form = CarForm()
+    if form.validate_on_submit():
+        data = form.data
+        if data['img_url'] == '':
+            flash("未上传车辆图片",'err')
+        else:
+            car = Car(
+                number=data["number"],
+                nickname=data["nickname"],
+                capacity=data["capacity"],
+                model=data["model"],
+                img_url=data["img_url"],
+                content=data["content"]
+            )
+            db.session.add(car)
+            db.session.commit()
+            flash("添加成功", "ok")
+            return redirect(url_for("admin.carList"))
+    return render_template("admin/car_add.html",form=form)
+
+@admin.route("/notice/list/")
+@admin_login_req
+def noticeList():
+    notice_list = Notice.query.all()
+    return render_template("admin/notice_list.html",notice_list = notice_list)
+
+@admin.route("/notice/add/",methods=["GET","POST"])
+@admin_login_req
+def noticeAdd():
+    form = NoticeForm()
+    if form.validate_on_submit():
+        data = form.data
+        notice = Notice(
+            content=data["content"],
+        )
+        db.session.add(notice)
+        db.session.commit()
+        flash("添加成功", "ok")
+        return redirect(url_for("admin.noticeList"))
+    return render_template("admin/notice_add.html",form=form)
+
+@admin.route("/notice/del/")
+@admin_login_req
+def noticeDel():
+    id = request.args.get("id")
+    print(id)
+    notice = Notice.query.filter_by(id=id).first_or_404()
+    db.session.delete(notice)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.noticeList'))
 
 @admin.route('/upload/',methods=['GET', 'POST'])
 def upload():
@@ -92,11 +174,8 @@ def upload():
             os.makedirs(app.config['UPLOADED_PATH'])
             os.chmod(app.config['UPLOADED_PATH'],"rw")
         f_new_name = change_filename(f.filename)
-        print(f_new_name)
         f.save(os.path.join(app.config['UPLOADED_PATH'], f_new_name))
         d = {
             'path' : f_new_name
         }
-        print(d)
-        print(json.dumps(d))
         return json.dumps(d)
