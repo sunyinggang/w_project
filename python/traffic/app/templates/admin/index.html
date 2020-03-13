@@ -376,4 +376,10 @@
             }
         });
 </script>
+<script>
+    $(document).ready(function () {
+        $("#g-1 img").attr('src','{{ url_for('static',filename='admin/images/selector-home.png') }}');
+        $("#g-1 span").addClass("text-white");
+    })
+</script>
 {% endblock %}

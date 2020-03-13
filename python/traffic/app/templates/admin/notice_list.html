@@ -113,22 +113,19 @@ function addContent(content) {
 function addId(id) {
     $("#delId").val(id);
 }
-function delNotice() {
-    id = $("#delId").val();
-    $.ajax({
-        type: "get",
-        url: "{{ url_for("admin.noticeDel") }}",
-        data: {"id":id},
-        async: true,
-        success: function () {
-            window.location.href = window.location.href;
-        }
-    });
-}
 function del() {
     var id = $("#delId").val();
     var str = "{{url_for("admin.noticeDel")}}?id=";
     location.href =str+id;
 }
+</script>
+<script>
+    $(document).ready(function () {
+        $("#g-7 img").attr('src','{{ url_for('static',filename='admin/images/selector-broadcast.png') }}');
+        $("#g-7 span:eq(0)").addClass("text-white");
+        $("#g-7 span:eq(1)").addClass("glyphicon-chevron-down text-white");
+        $("#g-7-1 span").addClass("text-white");
+        $("#g-7-1").parent().css('display','block');
+    })
 </script>
 {% endblock %}

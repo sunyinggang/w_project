@@ -166,6 +166,11 @@ def noticeDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.noticeList'))
 
+@admin.route("/monitor/")
+@admin_login_req
+def monitor():
+    return render_template("admin/monitor.html")
+
 @admin.route('/upload/',methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
