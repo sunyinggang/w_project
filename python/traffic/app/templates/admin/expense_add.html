@@ -1,0 +1,119 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static',filename='admin/css/fileinput.css') }}">
+<link href="{{ url_for('static',filename='admin/css/bootstrap-datetimepicker.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+              <!-- <div ui-butterbar></div> -->
+              <!-- <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a> -->
+              <!-- uiView:  -->
+    <div class="app-content-body fade-in-up ng-scope" ui-view="" style=""><!-- uiView:  -->
+        <div ui-view="" ng-controller="vehicleController" class="ng-scope" style="">
+            <style class="ng-scope">
+.dropdown-item-select{
+  cursor: pointer;
+}
+.dropdown-item-select:hover{
+  color: #2da0f0;
+}
+.car-div{
+  cursor: pointer;
+}
+.car-div:hover{
+  background: #f4f4f4;
+}
+</style>
+<div class="page-container">
+<div class="card page-card">
+  <div class="row align-items-center">
+    <div class="title-icon-style mr-2"></div>
+    <font color="#4c4c4c" class="ng-binding">添加费用</font>
+    <a type="button" class="btn btn-outline-secondary btn-sm ml-3" href="{{ url_for("admin.expenseList") }}">返回上层</a>
+  </div>
+  <div class="dropdown-divider"></div>
+  <form name="form" method="post">
+     <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.expense_type.label }}:</label>
+      <div class="col-8">
+        {{ form.expense_type}}
+      </div>
+    </div>
+     <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.content.label }}:</label>
+      <div class="col-8">
+        {{ form.content}}
+      </div>
+    </div>
+     <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.money.label }}:</label>
+      <div class="col-8">
+        {{ form.money}}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.add_time.label }}:</label>
+      <div class="col-8">
+        {{ form.add_time}}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>附件（发票）:</label>
+      <div class="col-8">
+       <input type="file" id="input-1" name="img" accept="image/*">
+           {{ form.img_url }}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">{{ form.note.label }}:</label>
+      <div class="col-8">
+        {{ form.note}}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+        {{ form.submit }}
+		{{ form.csrf_token }}
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static',filename='admin/js/fileinput.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/fileinput_locale_zh.js') }}"></script>
+<script>
+        $(document).ready(function(){
+            $("#path-1").attr("value","");
+        });
+        $("#input-1").fileinput({
+            language: "zh",
+            showCaption: false, // 不显示本地文件名
+            allowedFileTypes: ['image'], // 只允许上传图片
+            allowedFileExtensions: ["jpg", "jpeg", "png", "gif"],
+            initialPreview: [
+                '<img class="file-preview-image kv-preview-data" src='+'"">'
+            ],
+            uploadUrl: "{{url_for('admin.upload')}}" //上传图片的服务器地址
+        }).on("fileuploaded", function (event, data, previewId, index){
+            $("#path-1").attr("value",data.response["path"]);
+        });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#g-5 img").attr('src','{{ url_for('static',filename='admin/images/selector-finance.png') }}');
+        $("#g-5 span:eq(0)").addClass("text-white");
+        $("#g-5 span:eq(1)").addClass("glyphicon-chevron-down text-white");
+        $("#g-5-1 span").addClass("text-white");
+        $("#g-5-1").parent().css('display','block');
+    })
+</script>
+<script type="text/javascript" src="{{ url_for('static',filename='admin/js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
+<script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+</script>
+{% endblock %}

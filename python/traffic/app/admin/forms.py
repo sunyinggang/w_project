@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, HiddenField, SelectField, TextAreaField
 from wtforms.validators import DataRequired
 
-from app.models import Driver
+from app.models import Driver, ExpenseType
 
 
 class LoginForm(FlaskForm):
@@ -225,3 +225,205 @@ class NoticeForm(FlaskForm):
             "class": "btn btn-primary btn-sm btn-sub-save"
         }
     )
+
+class ScheduleForm(FlaskForm):
+    unit = StringField(
+        label="用车单位",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入用车单位"
+        }
+    )
+    user = StringField(
+        label="用车人",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入用车人姓名"
+        }
+    )
+    phone = StringField(
+        label="用车人电话",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入用车人电话"
+        }
+    )
+    start_point = StringField(
+        label="起点",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入起点"
+        }
+    )
+    end_point = StringField(
+        label="终点",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入终点"
+        }
+    )
+    start_time = StringField(
+        label="出发时间",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "id": "datetimepicker",
+            "value": "2020-01-01 00:00"
+        }
+    )
+    end_time = StringField(
+        label="结束时间",
+        validators=[
+            DataRequired("Please input Departure Time！")
+        ],
+        description="Departure Time",
+        render_kw={
+            "class": "form-control",
+            "id": "datetimepicker2",
+            "value": "2020-01-01 00:00"
+        }
+    )
+    money = StringField(
+        label="用车费用",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入用车费用"
+        }
+    )
+    driver_money = StringField(
+        label="司机费用",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入司机费用"
+        }
+    )
+    content = TextAreaField(
+        label="备注",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入备注"
+        }
+    )
+    submit = SubmitField(
+        "确认添加",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )
+
+class ExpenseTypeForm(FlaskForm):
+    name = StringField(
+        label="费用类型名称",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入费用类型名称"
+        }
+    )
+    type = SelectField(
+        label="收入/支出",
+        choices=[('收入', '收入'), ('支出', '支出')],
+        render_kw={
+            "class": "form-control",
+        }
+    )
+    content = TextAreaField(
+        label="备注",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入备注内容"
+        }
+    )
+    submit = SubmitField(
+        "确认添加",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )
+
+class ExpenseForm(FlaskForm):
+    expense_type = SelectField(
+        label="费用类型",
+        render_kw={
+            "class": "form-control"
+        },
+        coerce=int
+    )
+    content = StringField(
+        label="内容",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入费用内容，如更换轮胎"
+        }
+    )
+    money = StringField(
+        label="金额",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入费用金额"
+        }
+    )
+    add_time = StringField(
+        label="日期",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "id": "datetimepicker",
+            "value": "2020-01-01 00:00"
+        }
+    )
+    note = TextAreaField(
+        label="备注",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入备注内容"
+        }
+    )
+    img_url = HiddenField(
+        render_kw={
+            "id": "path-1"
+        }
+    )
+    submit = SubmitField(
+        "确认添加",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(ExpenseForm, self).__init__(*args, **kwargs)
+        self.expense_type.choices = [(v.id, v.name) for v in ExpenseType.query.all()]

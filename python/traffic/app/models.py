@@ -39,6 +39,24 @@ class Car(db.Model):
     content = Column(String)
     status = Column(Integer, default=0)
 
+class Expense(db.Model):
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer)
+    user_type = Column(Integer)
+    expense_type = Column(Integer)
+    content = Column(String)
+    money = Column(Integer)
+    status = Column(Integer, default=0)
+    add_time = Column(db.DateTime, default=datetime.now)
+    note = Column(Text)
+    img_url = Column(String)
+
+class ExpenseType(db.Model):
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    type = Column(String)
+    content = Column(Text)
+
 class Notice(db.Model):
     id = Column(Integer, primary_key=True)
     content = Column(String)

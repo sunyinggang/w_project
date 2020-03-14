@@ -7,10 +7,10 @@ from flask import render_template, flash, redirect, url_for, session, request
 from werkzeug.security import generate_password_hash
 
 from . import admin
-from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm
+from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
 from .. import db,app
 from ..lib.functions import change_filename
-from ..models import Admin, Driver, Car, Notice
+from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense
 
 
 def admin_login_req(f):
@@ -133,6 +133,79 @@ def carAdd():
             flash("添加成功", "ok")
             return redirect(url_for("admin.carList"))
     return render_template("admin/car_add.html",form=form)
+
+@admin.route("/schedule/list/")
+@admin_login_req
+def scheduleList():
+    car_list = Car.query.all()
+    return render_template("admin/schedule_list.html",car_list = car_list)
+
+@admin.route("/schedule/add/",methods=["GET","POST"])
+@admin_login_req
+def scheduleAdd():
+    form = ScheduleForm()
+    return render_template("admin/schedule_add.html",form=form)
+
+@admin.route("/expense/list/")
+@admin_login_req
+def expenseList():
+    expense_list = Expense.query.all()
+    return render_template("admin/expense_list.html",expense_list = expense_list)
+
+@admin.route("/expense/add/",methods=["GET","POST"])
+@admin_login_req
+def expenseAdd():
+    form = ExpenseForm()
+    if form.validate_on_submit():
+        data = form.data
+        expense = Expense(
+            user_id=session["id"],
+            user_type=0,
+            expense_type=data["expense_type"],
+            content=data["content"],
+            money=data["money"],
+            add_time=data["add_time"],
+            note=data["note"],
+            img_url=data["img_url"],
+        )
+        db.session.add(expense)
+        db.session.commit()
+        flash("添加成功", "ok")
+        return redirect(url_for("admin.expenseList"))
+    return render_template("admin/expense_add.html",form = form)
+
+@admin.route("/expense/type/")
+@admin_login_req
+def expenseType():
+    type_list = ExpenseType.query.all()
+    return render_template("admin/expense_type.html",type_list = type_list)
+
+@admin.route("/expense/addType/",methods=["GET","POST"])
+@admin_login_req
+def expenseAddType():
+    form = ExpenseTypeForm()
+    if form.validate_on_submit():
+        data = form.data
+        expense_type = ExpenseType(
+            name=data["name"],
+            type=data["type"],
+            content=data["content"],
+        )
+        db.session.add(expense_type)
+        db.session.commit()
+        flash("添加成功", "ok")
+        return redirect(url_for("admin.expenseType"))
+    return render_template("admin/expense_addType.html",form=form)
+
+@admin.route("/expense/delType/")
+@admin_login_req
+def expenseTypeDel():
+    id = request.args.get("id")
+    cost_type = ExpenseType.query.filter_by(id=id).first_or_404()
+    db.session.delete(cost_type)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.expenseType'))
 
 @admin.route("/notice/list/")
 @admin_login_req
