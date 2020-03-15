@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash
 from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
 from .. import db,app
-from ..lib.functions import change_filename
+from ..lib.functions import change_filename,curl
 from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense
 
 
@@ -120,8 +120,14 @@ def carAdd():
         if data['img_url'] == '':
             flash("未上传车辆图片",'err')
         else:
+            params = {
+                'sid':118476,
+                'name':data["number"]
+            }
+            response = curl('terminal/add', params, 'POST')
             car = Car(
                 number=data["number"],
+                tid = response['data']['tid'],
                 nickname=data["nickname"],
                 capacity=data["capacity"],
                 model=data["model"],
@@ -257,3 +263,9 @@ def upload():
             'path' : f_new_name
         }
         return json.dumps(d)
+
+@admin.route("/test/")
+def test():
+    params = {}
+    response = curl('service/list',params,'GET')
+    return response

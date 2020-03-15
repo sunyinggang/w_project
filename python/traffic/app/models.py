@@ -30,6 +30,7 @@ class Driver(db.Model):
 
 class Car(db.Model):
     id = Column(Integer, primary_key=True)
+    tid = Column(Integer)
     number = Column(String)
     nickname = Column(String)
     capacity = Column(String)
