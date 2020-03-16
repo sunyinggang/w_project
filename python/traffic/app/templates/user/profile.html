@@ -1,0 +1,114 @@
+﻿{% extends "user/home.html" %}
+{% block content %}
+    <main class="content_wrapper">
+				<!--page title start-->
+				<div class="page-heading">
+					<div class="container-fluid">
+						<div class="row d-flex align-items-center">
+							<div class="col-12">
+								<div class="page-breadcrumb">
+								</div>
+							</div>
+							<div class="col-12  d-md-flex">
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--page title end-->
+				<div class="container-fluid">
+					<!-- state start-->
+					<div class="row">
+						<div class="col-12">
+							<div class="panel profile-cover">
+								<div class="profile-cover__img">
+									<img src="{{ url_for('static',filename='user/images/01_150x150.png') }}" alt="">
+                                    <h3 class="h3">李晓明</h3>
+								</div>
+								<div class="profile-cover__action bg--img" data-overlay="0.3"></div>
+								<div class="profile-cover__info">
+									<ul class="nav">
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">个人信息</h3>
+								</div>
+								<div class="panel-content panel-about">
+									<table>
+										<tbody>
+                                        	<tr>
+												<th>
+													<i class="fa fa-mobile-phone"></i>手机号码</th>
+												<td>
+													<a href="#" class="btn-link">732-839-7510</a>
+												</td>
+											</tr>
+											<tr>
+												<th>
+													<i class="fa fa-map-marker"></i>住址</th>
+												<td>123 Lorem Steet, NY, United States.</td>
+											</tr>
+											<tr>
+												<th>
+													<i class="fa fa-id-card-o"></i>身份证(正页)</th>
+												<td>
+														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}" onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+												</td>
+											</tr>
+                                            <tr>
+												<th>
+													<i class="fa fa-id-card-o"></i>身份证(副页)</th>
+												<td>
+														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+												</td>
+											</tr>
+                                            <tr>
+												<th>
+													<i class="fa fa-address-card-o"></i>驾驶证(正页)</th>
+												<td>
+														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+												</td>
+											</tr>
+                                            <tr>
+												<th>
+													<i class="fa fa-address-card-o"></i>驾驶证(副页)</th>
+												<td>
+														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<button type="button" class="btn btn-info btn-lg btn-block"><i class="icon-settings"></i>&nbsp;&nbsp;修改密码</button>
+							<button type="button" class="btn btn-danger btn-lg btn-block"><i class="icon-logout"></i>&nbsp;&nbsp;退出登录</button>
+						</div>
+					</div>
+					<!-- state end-->
+				</div>
+			</main>
+    <!-- 放大图片-->
+    ﻿<div id="ShowImage_Form" class="modal hide">
+         <div class="modal-header">
+             <button data-dismiss="modal" class="close" type="button"></button>
+         </div>
+           <div class="modal-body">
+            <div id="img_show">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+<script>
+function showimage(source)
+     {
+         $("#ShowImage_Form").find("#img_show").html("<image src='"+source+"' class='carousel-inner img-responsive img-rounded' />");
+         $("#ShowImage_Form").modal();
+     }
+</script>
+{% endblock %}

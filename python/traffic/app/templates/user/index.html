@@ -1,0 +1,108 @@
+﻿{% extends "user/home.html" %}
+{% block content %}
+    <div class="content_wrapper">
+		<div class="container-fluid">
+					<!-- breadcrumb -->
+					<div class="page-heading">
+						<div class="row d-flex align-items-center">
+							<div class="col-12">
+								<div class="page-breadcrumb">
+									<h1>Dashboard</h1>
+								</div>
+							</div>
+							<div class="col-12  d-md-flex">
+								<div class="breadcrumb_nav">
+									<ol class="breadcrumb">
+										<li>
+											<i class="fa fa-home"></i>
+											<a class="parent-item" href="index.html">Home</a>
+											<i class="fa fa-angle-right"></i>
+										</li>
+										<li class="active">
+											Dashboard
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- breadcrumb_End -->
+
+					<!-- Section -->
+					<section class="chart_section">
+						<div class="row">
+							<div class="col-12">
+								<div class="alert alert-primary border-0" role="alert">
+									<i class="fa fa-bullhorn pr-2"></i><span style="font-size:17px;">最新公告!</span>
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									<p>
+										Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+									</p>
+								</div>
+							</div>
+							<div class="col-12 card-group mb-4">
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-12">
+												<div class="float-right">
+													<i class="fa fa-truck f30 opacity-3 " aria-hidden="true"></i>
+												</div>
+												<h3 class="text-success">234</h3>
+											</div>
+											<div class="col-12">
+												<div class="text-muted f20">
+													<h5 class="card-subtitle text-muted fw-500">订单</h5>
+												</div>
+										</div>
+										</div>
+									</div>
+								</div>
+								<!-- Column -->
+								<!-- Column -->
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-12">
+												<div class="float-right">
+													<i class="fa fa-meh-o f30 opacity-3" aria-hidden="true"></i>
+												</div>
+												<h3 class="text-primary">5</h3>
+											</div>
+											<div class="col-12">
+													<div class="text-muted f20">
+														<h5 class="card-subtitle text-muted fw-500">请假</h5>
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Column -->
+								<!-- Column -->
+								<div class="card">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-12">
+												<div class="float-right">
+													<i class="fa fa-rmb f30 opacity-3" aria-hidden="true"></i>
+												</div>
+												<h3 class="text-danger">￥ 123423</h3>
+											</div>
+											<div class="col-12">
+												<div class="text-muted f20">
+													<h5 class="card-subtitle text-muted fw-500">收入</h5>
+												</div>
+											</div>
+										</div>
+		
+									</div>
+								</div>
+							</div>
+                        </div>
+					</section>
+					<!-- Section_End -->
+				</div>
+			</div>
+{% endblock %}
