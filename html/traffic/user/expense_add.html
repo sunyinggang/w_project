@@ -1,28 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Popovers & Tooltips</title>
-	
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>添加费用</title>
+    
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <!--fullcalendar-->
+    <link href="assets/css/fullcalendar.css" rel='stylesheet' />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
-<body><div id="loader_wrpper">
+<body>
+  <div id="loader_wrpper">
 		<div class="loader_style"></div>
 	</div>
 	<div class="wrapper">
-		<!-- header -->
+        <!-- header -->
 			<header class="main-header">
 			<div class="container_header">
 				<div class="logo d-flex align-items-center">
@@ -132,8 +135,8 @@
 
 		</header>
 			<!-- header_End -->
-		<!-- Content_right -->
-		<div class="container_full">
+        <!-- Content_right -->
+        <div class="container_full">
 
 				<div class="side_bar dark_blue side_bg_img scroll_auto">
 				 <ul id="dc_accordion" class="sidebar-menu tree">
@@ -244,7 +247,7 @@
 								<a href="#">Form Control <span class="icon-arrow-down styleicon"></span> </a>
 								<ul class="down_menu lavel3">
 									<li>
-										<a href="form-basic-input.html">Basic Input</a>
+										<a href="form-basic-input.html">添加费用</a>
 									</li>
 									<li>
 										<a href="form-input-group.html">Input Group</a>
@@ -333,129 +336,93 @@
 
 
 
-			<!--main contents start-->
-			<main class="content_wrapper">
-				<!--page title start-->
-				<div class="page-heading">
-					<div class="container-fluid">
-						<div class="row d-flex align-items-center">
-							<div class="col-12">
-								<div class="page-breadcrumb">
-									<h1>Popovers & Tooltips</h1>
-								</div>
-							</div>
-							<div class="col-12  d-md-flex">
-								<div class="breadcrumb_nav">
-									<ol class="breadcrumb">
-										<li>
-											<i class="fa fa-home"></i>
-											<a class="parent-item" href="index.html">Home</a>
-											<i class="fa fa-angle-right"></i>
-										</li>
-										<li class="active">
-											Popovers & Tooltips
-										</li>
-									</ol>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--page title end-->
+            <!--main contents start-->
+            <main class="content_wrapper">
+                <!--page title start-->
+                <div class="page-heading">
+                    <div class="container-fluid">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12">
+                                <div class="page-breadcrumb">
+                                    <h1>添加费用</h1>
+                                </div>
+                            </div>
+                            <div class="col-12  d-md-flex">
+                                <div class="breadcrumb_nav">
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <i class="fa fa-home"></i>
+                                            <a class="parent-item" href="index.html">Home</a>
+                                            <i class="fa fa-angle-right"></i>
+                                        </li>
+                                        <li class="active">
+                                            添加费用
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--page title end-->
 
 
-				<div class="container-fluid">
+                <div class="container-fluid">
+                    <!-- state start-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-shadow mb-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                      添加费用
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="exampleFormControlSelect10">费用类型</label>
+                                        <span class="select-wrapper form-control-pill">
+                                            <select class="form-control" id="exampleFormControlSelect11">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </span>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail11">金额</label>
+                                        <input type="email" class="form-control form-control-pill" id="exampleInputEmail11" aria-describedby="emailHelp" placeholder="Enter email">
+                                      </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail11">支出时间</label>
+                                            <input type="email" class="form-control form-control-pill" id="exampleInputEmail11" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleFormControlTextarea1">备注</label>
+                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                          <div class="col-12">
+                                              <button type="submit" class="btn btn-info">提交</button>
+                                          </div>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- state end-->
+                </div>
 
-					<!-- state start-->
-					<div class="row">
-						<div class=" col-12">
-							<div class="card card-shadow mb-4">
-								<div class="card-header">
-									<div class="card-title">
-										Popovers
-									</div>
-								</div>
-								<div class="card-body">
-									<div class="mb-4">
-										<p class="fw-500">Live demo </p>
-										<button type="button" class="btn btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-									</div>
+            </main>
+            <!--main contents end-->
 
-									<div class="mb-4">
-										<p class="fw-500">Four directions </p>
-										<button type="button" class="btn btn-primary mb-2" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-											Popover on top
-										</button>
-
-										<button type="button" class="btn btn-secondary mb-2" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-											Popover on right
-										</button>
-										<br/>
-
-										<button type="button" class="btn btn-success mb-2" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-        	    sagittis lacus vel augue laoreet rutrum faucibus.">
-											Popover on bottom
-										</button>
-
-										<button type="button" class="btn btn-info mb-2" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-											Popover on left
-										</button>
-									</div>
-
-									<div class=" ">
-										<p class="fw-500">Dismiss on next click </p>
-										<a tabindex="0" class="btn btn-lg btn-warning" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover"
-										    data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
-									</div>
-
-								</div>
-							</div>
-						</div>
-						<div class=" col-12">
-							<div class="card card-shadow mb-4">
-								<div class="card-header">
-									<div class="card-title">
-										Tooltips
-									</div>
-								</div>
-								<div class="card-body">
-
-									<div class="mb-4">
-										<p class="fw-500">Default </p>
-										<a href="#" data-toggle="tooltip" title="" data-original-title="Default tooltip">Default link</a>
-										<button type="button" class="btn btn-info mb-2 ml-3" data-toggle="tooltip" title="" data-original-title="Default tooltip">
-											Default Button
-										</button>
-									</div>
-
-									<p class="fw-500">Four directions </p>
-									<button type="button" class="btn btn-info mb-2" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-										Tooltip on top
-									</button>
-									<button type="button" class="btn btn-success mb-2" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-										Tooltip on right
-									</button>
-									<br/>
-									<button type="button" class="btn btn-warning mb-2" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-										Tooltip on bottom
-									</button>
-									<button type="button" class="btn btn-danger mb-2" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
-										Tooltip on left
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- state end-->
-
-				</div>
-			</main>
-			<!--main contents end-->
-
-		</div>
-		<!-- Content_right_End -->
-		<!-- Footer -->
-		<footer class="footer ptb-20">
+        </div>
+        <!-- Content_right_End -->
+        <!-- Footer -->
+        <footer class="footer ptb-20">
 			<div class="row">
 				<div class="col-12 text-center">
 					<div class="copy_right">
@@ -468,14 +435,14 @@
 				</div>
 			</div>
 		</footer>
-		<!-- Footer_End -->
-	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/popper.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="assets/js/custom.js" type="text/javascript"></script>
+        <!-- Footer_End -->
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/custom.js" type="text/javascript"></script>
 </body>
 
 </html>

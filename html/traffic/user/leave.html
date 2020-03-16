@@ -1,30 +1,31 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Form jQuery Validation</title>
-	
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-	<!--form semantic style-->
-	<link rel="stylesheet" href="assets/css/semantic.min.css" />
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>添加请假</title>
+    
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <!--fullcalendar-->
+    <link href="assets/css/fullcalendar.css" rel='stylesheet' />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
 </head>
 
-<body><div id="loader_wrpper">
+<body>
+  <div id="loader_wrpper">
 		<div class="loader_style"></div>
 	</div>
 	<div class="wrapper">
-		<!-- header -->
+        <!-- header -->
 			<header class="main-header">
 			<div class="container_header">
 				<div class="logo d-flex align-items-center">
@@ -134,8 +135,8 @@
 
 		</header>
 			<!-- header_End -->
-		<!-- Content_right -->
-		<div class="container_full">
+        <!-- Content_right -->
+        <div class="container_full">
 
 				<div class="side_bar dark_blue side_bg_img scroll_auto">
 				 <ul id="dc_accordion" class="sidebar-menu tree">
@@ -246,7 +247,7 @@
 								<a href="#">Form Control <span class="icon-arrow-down styleicon"></span> </a>
 								<ul class="down_menu lavel3">
 									<li>
-										<a href="form-basic-input.html">Basic Input</a>
+										<a href="form-basic-input.html">添加请假</a>
 									</li>
 									<li>
 										<a href="form-input-group.html">Input Group</a>
@@ -334,181 +335,94 @@
 			</div>
 
 
-			<!--main contents start-->
-			<main class="content_wrapper">
-				<!--page title start-->
-				<div class="page-heading">
-					<div class="container-fluid">
-						<div class="row d-flex align-items-center">
-							<div class="col-12">
-								<div class="page-breadcrumb">
-									<h1>Form jQuery Validation</h1>
-								</div>
-							</div>
-							<div class="col-12  d-md-flex">
-								<div class="breadcrumb_nav">
-									<ol class="breadcrumb">
-										<li>
-											<i class="fa fa-home"></i>
-											<a class="parent-item" href="index.html">Home</a>
-											<i class="fa fa-angle-right"></i>
-										</li>
-										<li class="active">
-											Form jQuery Validation
-										</li>
-									</ol>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--page title end-->
-				<div class="container-fluid">
-					<!-- state start-->
-					<div class="row">
-						<div class=" col-12">
-							<div class="card card-shadow mb-4">
-								<div class="card-header">
-									<div class="card-title">
-										Basic Validation
-									</div>
-								</div>
-								<div class="card-body">
-									<form id="signupForm" method="post" class=" right-text-label-form" action="#">
-										<div class="form-group row">
-											<label class="col-12 control-label" for="firstname">First name</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="lastname">Last name</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="username">Username</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="username" name="username" placeholder="Username" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="email">Email</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="email" name="email" placeholder="Email" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="password">Password</label>
-											<div class="col-12">
-												<input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="confirm_password">Confirm password</label>
-											<div class="col-12">
-												<input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm password"
-												/>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="col-12 ml-auto">
-												<div class="checkbox">
-													<label>
-														<input type="checkbox" id="agree" name="agree" value="agree" /> Please agree to our policy </label>
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="col-12 ml-auto">
-												<button type="submit" class="btn btn-primary" name="signup" value="Sign up">
-													Sign up
-												</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class=" col-12">
-							<div class="card card-shadow mb-4">
-								<div class="card-header">
-									<div class="card-title">
-										Using feedback icons
-									</div>
-								</div>
-								<div class="card-body">
-									<form id="signupForm1" method="post" class=" right-text-label-form feedback-icon-form" action="#">
-										<div class="form-group row">
-											<label class="col-12 control-label" for="firstname1">First name</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="firstname1" name="firstname1" placeholder="First name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="lastname1">Last name</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="lastname1" name="lastname1" placeholder="Last name" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="username1">Username</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="username1" name="username1" placeholder="Username" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="email1">Email</label>
-											<div class="col-12">
-												<input type="text" class="form-control" id="email1" name="email1" placeholder="Email" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="password1">Password</label>
-											<div class="col-12">
-												<input type="password" class="form-control" id="password1" name="password1" placeholder="Password" />
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label" for="confirm_password1">Confirm password</label>
-											<div class="col-12">
-												<input type="password" class="form-control" id="confirm_password1" name="confirm_password1" placeholder="Confirm password"
-												/>
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-12 control-label"> </label>
-											<div class="col-12 ">
-												<div class="checkbox">
-													<label>
-														<input type="checkbox" id="agree1" name="agree1" value="agree" /> Please agree to our policy </label>
-												</div>
-											</div>
-										</div>
-										<div class="form-group row">
-											<div class="col-12 ml-auto">
-												<button type="submit" class="btn btn-info" name="signup1" value="Sign up">
-													Sign up
-												</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
 
-					<!-- state end-->
-				</div>
-			</main>
-			<!--main contents end-->
-		</div>
-		<!-- Content_right_End -->
-		<!-- Footer -->
-		<footer class="footer ptb-20">
+            <!--main contents start-->
+            <main class="content_wrapper">
+                <!--page title start-->
+                <div class="page-heading">
+                    <div class="container-fluid">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12">
+                                <div class="page-breadcrumb">
+                                    <h1>添加请假</h1>
+                                </div>
+                            </div>
+                            <div class="col-12  d-md-flex">
+                                <div class="breadcrumb_nav">
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <i class="fa fa-home"></i>
+                                            <a class="parent-item" href="index.html">Home</a>
+                                            <i class="fa fa-angle-right"></i>
+                                        </li>
+                                        <li class="active">
+                                            添加请假
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--page title end-->
+
+
+                <div class="container-fluid">
+                    <!-- state start-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-shadow mb-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                        Form Pill
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="exampleFormControlSelect10">请假类型</label>
+                                        <span class="select-wrapper form-control-pill">
+                                            <select class="form-control" id="exampleFormControlSelect11">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </span>
+                                      </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail11">开始时间</label>
+                                            <input type="email" class="form-control form-control-pill" id="exampleInputEmail11" aria-describedby="emailHelp" placeholder="Enter email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword11">结束时间</label>
+                                            <input type="password" class="form-control form-control-pill" id="exampleInputPassword11" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="exampleFormControlTextarea1">请假事由</label>
+                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                          <div class="col-12">
+                                              <button type="submit" class="btn btn-info">提交</button>
+                                          </div>
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- state end-->
+                </div>
+
+            </main>
+            <!--main contents end-->
+
+        </div>
+        <!-- Content_right_End -->
+        <!-- Footer -->
+        <footer class="footer ptb-20">
 			<div class="row">
 				<div class="col-12 text-center">
 					<div class="copy_right">
@@ -521,16 +435,14 @@
 				</div>
 			</div>
 		</footer>
-		<!-- Footer_End -->
-	</div>
-	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/popper.min.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
-	<script src="assets/js/jquery-validate-init.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="assets/js/custom.js" type="text/javascript"></script>
+        <!-- Footer_End -->
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/custom.js" type="text/javascript"></script>
 </body>
 
 </html>
