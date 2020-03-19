@@ -28,6 +28,9 @@ class Driver(db.Model):
     content = Column(Text)
     status = Column(Integer, default=0)
 
+    def check_pwd(self, pwd):
+        return check_password_hash(self.password, pwd)
+
 class Car(db.Model):
     id = Column(Integer, primary_key=True)
     tid = Column(Integer)
@@ -41,10 +44,11 @@ class Car(db.Model):
     status = Column(Integer, default=0)
 
 class Expense(db.Model):
+    __tablename__ = "expense"
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer)
     user_type = Column(Integer)
-    expense_type = Column(Integer)
+    type_id = Column(Integer,db.ForeignKey('expense_type.id'))
     content = Column(String)
     money = Column(Integer)
     status = Column(Integer, default=0)
@@ -53,10 +57,12 @@ class Expense(db.Model):
     img_url = Column(String)
 
 class ExpenseType(db.Model):
+    __tablename__ = "expense_type"
     id = Column(Integer, primary_key=True)
     name = Column(String)
     type = Column(String)
     content = Column(Text)
+    expense = db.relationship('Expense', backref='expense_type')
 
 class Notice(db.Model):
     id = Column(Integer, primary_key=True)

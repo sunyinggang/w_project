@@ -1,0 +1,19 @@
+{% macro page(data,url) -%}
+{% if data %}
+<ul class="pagination">
+    <li class="paginate_button page-item previous"><a href="{{ url_for(url,page=1) }}" class="page-link">首页</a></li>
+        {% for v in data.iter_pages() %}
+    {% if v %}
+       {% if v == data.page %}
+        <li class="paginate_button page-item active"><a href="#" class="page-link">{{ v }}</a></li>
+       {% else %}
+       <li class="paginate_button page-item"><a href="{{ url_for(url,page=v) }}" class="page-link">{{ v }}</a></li>
+       {% endif %}
+    {% else %}
+    <li><a href="#" class="page-link">&hellip;</a></li>
+    {% endif %}
+    {% endfor %}
+    <li class="paginate_button page-item next"><a href="{{ url_for(url,page=data.pages) }}" class="page-link">尾页</a></li>
+</ul>
+{% endif %}
+{%- endmacro %}
