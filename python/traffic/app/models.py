@@ -68,3 +68,13 @@ class Notice(db.Model):
     id = Column(Integer, primary_key=True)
     content = Column(String)
     add_time = Column(db.DateTime, default=datetime.now)
+
+class Leave(db.Model):
+    id = Column(Integer, primary_key=True)
+    driver_id = Column(Integer)
+    content = Column(Text)
+    status = Column(Integer, default=0)
+    start_time = Column(db.DateTime, default=datetime.now)
+    end_time = Column(db.DateTime, default=datetime.now)
+    note = Column(Text)
+    pass_time = Column(db.DateTime, default=datetime.now)

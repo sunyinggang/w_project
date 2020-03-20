@@ -94,3 +94,50 @@ class ExpenseForm(FlaskForm):
     def __init__(self, *args, **kwargs):
         super(ExpenseForm, self).__init__(*args, **kwargs)
         self.type_id.choices = [(v.id, v.name) for v in ExpenseType.query.all() if v.type == '支出']
+
+class LeaveForm(FlaskForm):
+    content = TextAreaField(
+        label="请假原因",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control form-control-sm",
+            "placeholder": "请输入请假原因"
+        }
+    )
+    start_time = StringField(
+        label="开始时间",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "id": "datetimepicker",
+            "value": "2020-01-01 00:00"
+        }
+    )
+    end_time = StringField(
+        label="结束时间",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "id": "datetimepicker2",
+            "value": "2020-01-01 00:00"
+        }
+    )
+    note = TextAreaField(
+        label="备注",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入备注内容"
+        }
+    )
+    submit = SubmitField(
+        "确认请假",
+        render_kw={
+            "class": "btn btn-success btn-sub-save"
+        }
+    )

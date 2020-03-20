@@ -67,14 +67,17 @@
 			<div class="side_bar dark_blue side_bg_img scroll_auto">
 				 <ul id="dc_accordion" class="sidebar-menu tree">
 					<li class="menu_title">菜单</li>
-					<li class="menu_sub">
-						<a href="{{ url_for("user.expenseAdd") }}"> <i class="fa fa-newspaper-o"></i> <span>添加费用</span></a>
+                    <li class="menu_sub">
+						<a href="{{ url_for("user.index") }}"> <i class="fa fa-newspaper-o"></i> <span>首页</span></a>
 					</li>
 					<li class="menu_sub">
-						<a href="{{ url_for("user.expenseAdd") }}"> <i class="fa fa-newspaper-o"></i> <span>系统公告</span> <span class="badge badge-pill badge-danger float-right">New</span>  </a>
+						<a href="{{ url_for("user.expenseList",page=1) }}"> <i class="fa fa-newspaper-o"></i> <span>费用列表</span></a>
 					</li>
 					<li class="menu_sub">
-						<a href="{{ url_for("user.leaveAdd") }}"> <i class="fa fa-newspaper-o"></i> <span>申请请假</span> <span class="badge badge-pill badge-danger float-right">New</span>  </a>
+						<a href="{{ url_for("user.noticeList",page=1) }}"> <i class="fa fa-newspaper-o"></i> <span>系统公告</span></a>
+					</li>
+					<li class="menu_sub">
+						<a href="{{ url_for("user.leaveList",page=1) }}"> <i class="fa fa-newspaper-o"></i> <span>请假列表</span> </a>
 					</li>
 					<li class="menu_sub">
 						<a href="{{ url_for("user.orderList") }}"> <i class="fa fa-newspaper-o"></i> <span>历史订单</span></a>

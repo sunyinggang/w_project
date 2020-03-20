@@ -6,14 +6,14 @@
                     <div class="page-heading">
                         <div class="container-fluid">
                             <div class="row d-flex align-items-center">
-                                <div class="col-8">
+                                 <div class="col-8">
                                     <div class="page-breadcrumb">
-                                        <h1>费用列表</h1>
+                                        <h1>请假列表</h1>
                                     </div>
                                 </div>
                                 <div class="btn-demo col-4">
-                                    <a href="{{ url_for("user.expenseAdd") }}">
-                                      <button type="button" class="btn btn-info"><i class="icon-plus"></i> 添加费用</button>
+                                    <a href="{{ url_for("user.leaveAdd") }}">
+                                      <button type="button" class="btn btn-info"><i class="icon-plus"></i> 添加请假</button>
                                     </a>
                                 </div>
                             </div>
@@ -28,23 +28,21 @@
                               <table class="table table-hover">
                                 <thead>
                                   <tr>
-                                    <th>类型</th>
-                                    <th>时间</th>
-                                    <th>金额</th>
+                                    <th>请假原因</th>
+                                    <th>开始时间</th>
+                                    <th>结束时间</th>
                                     <th>状态</th>
                                     <th>操作</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                {% for v in expense_list.items %}
+                                {% for v in leave_list.items %}
                                   <tr>
                                     <td>
-                                      <span class="weight-500">{{ v.expense_type.name }}</span>
+                                      <span class="weight-500">{{ v.content }}</span>
                                     </td>
-                                    <td>{{ v.add_time }}</td>
-                                    <td>
-                                      <span class="weight-500">￥{{ v.money }}</span>
-                                    </td>
+                                    <td>{{ v.start_time }}</td>
+                                    <td>{{ v.start_time }}</td>
                                     <td>
                                       {% if v.status == 0 %}
                                           <span class="label label-default">未审核</span>
@@ -55,9 +53,7 @@
                                       {% endif %}
                                     </td>
                                     <td>
-                                      <span class="txt-success">
-                                        {{ v.money }}
-                                      </span>
+                                      <button type="button" data-toggle="modal" data-target="#Modal" onclick="addContent('{{ v.content }}')" class="btn btn-outline-info btn-sm ml-1">详情</button>
                                     </td>
                                   </tr>
                                 {% endfor %}
@@ -69,7 +65,7 @@
                             <div class="row">
                               <div class="col-sm-12 col-md-7">
                                 <div class="dataTables_paginate paging_simple_numbers" id="bs4-table_paginate">
-                                  {{ pg.page(expense_list,'user.expenseList') }}
+                                  {{ pg.page(leave_list,'user.leaveList') }}
                                 </div>
                                 </div>
                               </div>
@@ -79,4 +75,28 @@
                     </div>
 
                 </main>
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+                     aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">请假内容</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="content"></div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
+{% block js %}
+<script>
+function addContent(content) {
+    $("#content").text(content);
+}
+</script>
 {% endblock %}

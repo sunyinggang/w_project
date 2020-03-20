@@ -14,13 +14,15 @@ table{
 <div class="page-container ng-scope" ng-controller="driverListController">
     <div class="row align-items-center">
         <div class="title-icon-style mr-2"></div>
-        <font color="#4c4c4c">财务结算</font>
+        <font color="#4c4c4c">请假审批</font>
     </div>
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center">
                 <div class="">
-                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseAdd") }}">添加费用</a>
+                    <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseAdd") }}">全部审批</a>
+                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseAdd") }}">待我审批</a>
+                    <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseAdd") }}">审批完成</a>
                 </div>
             </div>
         </div>
@@ -28,11 +30,12 @@ table{
             <table class="table table-hover">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">类型</th>
-                    <th scope="col">收/付款人</th>
-                    <th scope="col">金额</th>
-                    <th scope="col">日期</th>
-                    <th scope="col">是否结清</th>
+                    <th scope="col">申请时间</th>
+                    <th scope="col">申请人</th>
+                    <th scope="col">联系电话</th>
+                    <th scope="col">开始时间</th>
+                    <th scope="col">结束时间</th>
+                    <th scope="col">审批状态</th>
                     <th scope="col" class="text-center">操作</th>
                 </tr>
                 </thead>

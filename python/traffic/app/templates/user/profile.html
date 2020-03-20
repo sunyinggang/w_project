@@ -22,7 +22,7 @@
 							<div class="panel profile-cover">
 								<div class="profile-cover__img">
 									<img src="{{ url_for('static',filename='user/images/01_150x150.png') }}" alt="">
-                                    <h3 class="h3">李晓明</h3>
+                                    <h3 class="h3">{{ driver.name }}</h3>
 								</div>
 								<div class="profile-cover__action bg--img" data-overlay="0.3"></div>
 								<div class="profile-cover__info">
@@ -43,40 +43,40 @@
 												<th>
 													<i class="fa fa-mobile-phone"></i>手机号码</th>
 												<td>
-													<a href="#" class="btn-link">732-839-7510</a>
+													<a href="#" class="btn-link">{{ driver.phone }}</a>
 												</td>
 											</tr>
 											<tr>
 												<th>
 													<i class="fa fa-map-marker"></i>住址</th>
-												<td>123 Lorem Steet, NY, United States.</td>
+												<td>{{ driver.address }}</td>
 											</tr>
 											<tr>
 												<th>
 													<i class="fa fa-id-card-o"></i>身份证(正页)</th>
 												<td>
-														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}" onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+														<img src="{{ url_for('static',filename='uploads/'+driver.idcardz) }}" onclick="javascript:showimage('{{ url_for('static',filename='uploads/'+driver.idcardz) }}');" />
 												</td>
 											</tr>
                                             <tr>
 												<th>
 													<i class="fa fa-id-card-o"></i>身份证(副页)</th>
 												<td>
-														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+														<img src="{{ url_for('static',filename='uploads/'+driver.idcardf) }}"  onclick="javascript:showimage('{{ url_for('static',filename='uploads/'+driver.idcardf) }}');" />
 												</td>
 											</tr>
                                             <tr>
 												<th>
 													<i class="fa fa-address-card-o"></i>驾驶证(正页)</th>
 												<td>
-														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+														<img src="{{ url_for('static',filename='uploads/'+driver.drivercardz) }}"  onclick="javascript:showimage('{{ url_for('static',filename='uploads/'+driver.drivercardz) }}');" />
 												</td>
 											</tr>
                                             <tr>
 												<th>
 													<i class="fa fa-address-card-o"></i>驾驶证(副页)</th>
 												<td>
-														<img src="{{ url_for('static',filename='user/images/01_40x40.png') }}"  onclick="javascript:showimage('{{ url_for('static',filename='user/images/01_40x40.png') }}');" />
+														<img src="{{ url_for('static',filename='uploads/'+driver.drivercardf) }}"  onclick="javascript:showimage('{{ url_for('static',filename='uploads/'+driver.drivercardf) }}');" />
 												</td>
 											</tr>
 										</tbody>
