@@ -15,6 +15,7 @@ def change_filename(filename):
 def curl(url, params, type):
     baseUrl = 'https://tsapi.amap.com/v1/track/'
     url = baseUrl + url
+    params["sid"] = 118476
     params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
     if type == 'GET':
         response = requests.get(url, params)

@@ -43,6 +43,22 @@ class Car(db.Model):
     content = Column(String)
     status = Column(Integer, default=0)
 
+class Schedule(db.Model):
+    id = Column(Integer, primary_key=True)
+    unit = Column(String)
+    user = Column(String)
+    phone = Column(String)
+    start_point = Column(String)
+    end_point = Column(String)
+    start_time = Column(db.DateTime, default=datetime.now)
+    end_time = Column(db.DateTime, default=datetime.now)
+    content = Column(Text)
+    driver_id = Column(Integer)
+    car_id = Column(Integer)
+    money = Column(Integer)
+    driver_money = Column(Integer)
+    status = Column(Integer, default=0)
+
 class Expense(db.Model):
     __tablename__ = "expense"
     id = Column(Integer, primary_key=True)

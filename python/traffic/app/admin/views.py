@@ -10,7 +10,7 @@ from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
 from .. import db,app
 from ..lib.functions import change_filename,curl
-from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense
+from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule
 
 
 def admin_login_req(f):
@@ -108,7 +108,6 @@ def driverAdd():
 @admin_login_req
 def carList():
     car_list = Car.query.all()
-    print(car_list)
     return render_template("admin/car_list.html",car_list = car_list)
 
 @admin.route("/car/add/",methods=["GET","POST"])
@@ -120,37 +119,79 @@ def carAdd():
         if data['img_url'] == '':
             flash("未上传车辆图片",'err')
         else:
-            params = {
-                'sid':118476,
-                'name':data["number"]
-            }
-            response = curl('terminal/add', params, 'POST')
-            car = Car(
-                number=data["number"],
-                tid = response['data']['tid'],
-                nickname=data["nickname"],
-                capacity=data["capacity"],
-                model=data["model"],
-                img_url=data["img_url"],
-                content=data["content"]
-            )
-            db.session.add(car)
-            db.session.commit()
-            flash("添加成功", "ok")
-            return redirect(url_for("admin.carList"))
+            count = Car.query.filter_by(number=data["number"]).count()
+            if count == 1:
+                flash("车牌号码已存在", 'err')
+            else:
+                params = {
+                    'name': data["number"]
+                }
+                response = curl('terminal/add', params, 'POST')
+                car = Car(
+                    number=data["number"],
+                    tid=response['data']['tid'],
+                    nickname=data["nickname"],
+                    capacity=data["capacity"],
+                    model=data["model"],
+                    img_url=data["img_url"],
+                    content=data["content"]
+                )
+                db.session.add(car)
+                db.session.commit()
+                flash("添加成功", "ok")
+                return redirect(url_for("admin.carList"))
     return render_template("admin/car_add.html",form=form)
 
 @admin.route("/schedule/list/")
 @admin_login_req
 def scheduleList():
-    car_list = Car.query.all()
-    return render_template("admin/schedule_list.html",car_list = car_list)
+    schedule_list = Schedule.query.all()
+    return render_template("admin/schedule_list.html",schedule_list = schedule_list)
 
 @admin.route("/schedule/add/",methods=["GET","POST"])
 @admin_login_req
 def scheduleAdd():
     form = ScheduleForm()
-    return render_template("admin/schedule_add.html",form=form)
+    driver_list = Driver.query.filter_by(status=0).all()
+    car_list = Car.query.filter_by(status=0).all()
+    if form.validate_on_submit():
+        data = form.data
+        driver_id = request.form.get('driver_id')
+        car_id = request.form.get('car_id')
+        selectDC = request.form.get('selectDC')
+        if selectDC is None or driver_id is None or car_id is None:
+            schedule = Schedule(
+                unit=data["unit"],
+                user=data["user"],
+                phone=data["phone"],
+                start_point=data["start_point"],
+                end_point=data["end_point"],
+                start_time=data["start_time"],
+                end_time=data["end_time"],
+                content=data["content"],
+                money=data["money"],
+                driver_money=data["driver_money"]
+            )
+        else:
+            schedule = Schedule(
+                unit=data["unit"],
+                user=data["user"],
+                phone=data["phone"],
+                start_point=data["start_point"],
+                end_point=data["end_point"],
+                start_time=data["start_time"],
+                end_time=data["end_time"],
+                content=data["content"],
+                driver_id=driver_id,
+                car_id=car_id,
+                money=data["money"],
+                driver_money=data["driver_money"]
+            )
+        db.session.add(schedule)
+        db.session.commit()
+        flash("添加成功", "ok")
+        return redirect(url_for("admin.scheduleList"))
+    return render_template("admin/schedule_add.html",form=form,driver_list=driver_list,car_list=car_list)
 
 @admin.route("/expense/list/")
 @admin_login_req

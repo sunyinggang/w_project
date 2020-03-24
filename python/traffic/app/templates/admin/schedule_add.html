@@ -79,6 +79,37 @@
         {{ form.end_time}}
       </div>
     </div>
+     <div class="dropdown-divider"></div>
+    <div>
+    <div class="offset-1"><b>车辆/司机信息</b></div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">选择司机:</label>
+      <div class="col-8">
+        <select class="form-control" name="driver_id">
+            {% for v in driver_list %}
+            <option value="{{ v.id }}">{{ v.name}}|{{ v.phone }} </option>
+            {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">选择车辆:</label>
+      <div class="col-8">
+        <select class="form-control" name="car_id">
+            {% for v in car_list %}
+            <option value="{{ v.id }}">{{ v.number}}|{{ v.nickname }} </option>
+            {% endfor %}
+        </select>
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">暂不选择司机与车辆:</label>
+      <div class="col-8">
+         <input type="checkbox" class="form-check-input" name="selectDC">
+      </div>
+    </div>
     <div class="dropdown-divider"></div>
     <div>
     <div class="offset-1"><b>费用信息</b></div>
