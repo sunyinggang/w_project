@@ -87,21 +87,33 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">选择司机:</label>
       <div class="col-8">
-        <select class="form-control" name="driver_id">
+        {% if driver_list|length == 0 %}
+            <select class="form-control">
+            <option value="1">暂无空闲司机</option>
+            </select>
+        {% else %}
+             <select class="form-control" name="driver_id">
             {% for v in driver_list %}
             <option value="{{ v.id }}">{{ v.name}}|{{ v.phone }} </option>
             {% endfor %}
-        </select>
+            </select>
+        {% endif %}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">选择车辆:</label>
       <div class="col-8">
-        <select class="form-control" name="car_id">
+       {% if car_list|length == 0 %}
+            <select class="form-control">
+            <option value="1">暂无空闲车辆</option>
+            </select>
+        {% else %}
+            <select class="form-control" name="car_id">
             {% for v in car_list %}
             <option value="{{ v.id }}">{{ v.number}}|{{ v.nickname }} </option>
             {% endfor %}
-        </select>
+            </select>
+        {% endif %}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
