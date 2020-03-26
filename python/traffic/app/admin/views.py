@@ -9,8 +9,8 @@ from werkzeug.security import generate_password_hash
 from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
 from .. import db,app
-from ..lib.functions import change_filename,curl
-from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule
+from ..lib.functions import change_filename, curl, geocode_curl, driving_curl
+from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track
 
 
 def admin_login_req(f):
@@ -156,37 +156,55 @@ def scheduleAdd():
     car_list = Car.query.filter_by(status=0).all()
     if form.validate_on_submit():
         data = form.data
+        origin = geocode_curl(data["start_point"])
+        destination = geocode_curl(data["end_point"])
+        track_data = driving(origin,destination)
+        track = Track(
+            origin=origin,
+            destination=destination,
+            distance=track_data['distance'],
+            duration=track_data['duration'],
+            steps=json.dumps(track_data['steps']),
+            start_time = data["start_time"],
+            end_time = data["end_time"]
+        )
+        db.session.add(track)
+        db.session.flush()
         driver_id = request.form.get('driver_id')
         car_id = request.form.get('car_id')
         selectDC = request.form.get('selectDC')
-        if selectDC is None or driver_id is None or car_id is None:
-            schedule = Schedule(
-                unit=data["unit"],
-                user=data["user"],
-                phone=data["phone"],
-                start_point=data["start_point"],
-                end_point=data["end_point"],
-                start_time=data["start_time"],
-                end_time=data["end_time"],
-                content=data["content"],
-                money=data["money"],
-                driver_money=data["driver_money"]
-            )
-        else:
-            schedule = Schedule(
-                unit=data["unit"],
-                user=data["user"],
-                phone=data["phone"],
-                start_point=data["start_point"],
-                end_point=data["end_point"],
-                start_time=data["start_time"],
-                end_time=data["end_time"],
-                content=data["content"],
-                driver_id=driver_id,
-                car_id=car_id,
-                money=data["money"],
-                driver_money=data["driver_money"]
-            )
+        if selectDC is None:
+            if driver_id is None or car_id is None:
+                schedule = Schedule(
+                    unit=data["unit"],
+                    user=data["user"],
+                    phone=data["phone"],
+                    start_point=data["start_point"],
+                    end_point=data["end_point"],
+                    start_time=data["start_time"],
+                    end_time=data["end_time"],
+                    content=data["content"],
+                    money=data["money"],
+                    driver_money=data["driver_money"],
+                    track_id=track.id
+                )
+            else:
+                schedule = Schedule(
+                    unit=data["unit"],
+                    user=data["user"],
+                    phone=data["phone"],
+                    start_point=data["start_point"],
+                    end_point=data["end_point"],
+                    start_time=data["start_time"],
+                    end_time=data["end_time"],
+                    content=data["content"],
+                    driver_id=driver_id,
+                    car_id=car_id,
+                    money=data["money"],
+                    driver_money=data["driver_money"],
+                    status=1,
+                    track_id=track.id
+                )
         db.session.add(schedule)
         db.session.commit()
         flash("添加成功", "ok")
@@ -310,3 +328,21 @@ def test():
     params = {}
     response = curl('service/list',params,'GET')
     return response
+
+def driving(origin,destination):
+    params = {
+        'origin': origin,
+        'destination': destination
+    }
+    driving = driving_curl(params)
+    k = driving['route']['paths'][0]['steps']
+    paths = [['116.964624', '36.614668']]
+    for m in k:
+        pp = m['polyline'].split(';')[0].split(',')
+        paths.append(pp)
+    paths.append(['116.48303839', '39.990633'])
+    data = {}
+    data['distance'] = driving['route']['paths'][0]['distance']
+    data['duration'] = driving['route']['paths'][0]['duration']
+    data['steps'] = paths
+    return data

@@ -16,6 +16,7 @@ class Admin(db.Model):
         return check_password_hash(self.password, pwd)
 
 class Driver(db.Model):
+    __tablename__ = "driver"
     id = Column(Integer, primary_key=True)
     name = Column(String)
     phone = Column(String)
@@ -27,11 +28,13 @@ class Driver(db.Model):
     drivercardf = Column(String)
     content = Column(Text)
     status = Column(Integer, default=0)
+    schedule = db.relationship('Schedule',backref='driver')
 
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)
 
 class Car(db.Model):
+    __tablename__ = "car"
     id = Column(Integer, primary_key=True)
     tid = Column(Integer)
     number = Column(String)
@@ -42,8 +45,10 @@ class Car(db.Model):
     driver_id = Column(Integer)
     content = Column(String)
     status = Column(Integer, default=0)
+    schedule = db.relationship('Schedule', backref='car')
 
 class Schedule(db.Model):
+    __tablename__ = "schedule"
     id = Column(Integer, primary_key=True)
     unit = Column(String)
     user = Column(String)
@@ -53,11 +58,12 @@ class Schedule(db.Model):
     start_time = Column(db.DateTime, default=datetime.now)
     end_time = Column(db.DateTime, default=datetime.now)
     content = Column(Text)
-    driver_id = Column(Integer)
-    car_id = Column(Integer)
+    driver_id = Column(Integer, db.ForeignKey('driver.id'))
+    car_id = Column(Integer, db.ForeignKey('car.id'))
     money = Column(Integer)
     driver_money = Column(Integer)
     status = Column(Integer, default=0)
+    track_id = Column(Integer)
 
 class Expense(db.Model):
     __tablename__ = "expense"
@@ -94,3 +100,13 @@ class Leave(db.Model):
     end_time = Column(db.DateTime, default=datetime.now)
     note = Column(Text)
     pass_time = Column(db.DateTime, default=datetime.now)
+
+class Track(db.Model):
+    id = Column(Integer, primary_key=True)
+    origin = Column(String)
+    destination = Column(String)
+    distance = Column(String)
+    duration = Column(String)
+    steps = Column(Text)
+    start_time = Column(db.DateTime)
+    end_time = Column(db.DateTime)

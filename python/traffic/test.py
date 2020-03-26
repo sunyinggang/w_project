@@ -40,16 +40,23 @@ def driving_curl(params):
 # print(t)
 # t = geocode_curl('北京市朝阳区阜通东大街6号')
 # print(t)
+origin = '116.964624,36.614668'
+destination = '116.483038,39.990633'
 params = {
-    'origin' : '116.964624,36.614668',
-    'destination' : '116.483038,39.990633'
+    'origin' : origin,
+    'destination' : destination
 }
 t = driving_curl(params)
 k = t['route']['paths'][0]['steps']
-paths = [['116.964624','36.614668']]
+start_point = origin.split(',')
+end_point = destination.split(',')
+paths = [start_point]
 for m in k:
     pp = m['polyline'].split(';')[0].split(',')
-    print(pp)
     paths.append(pp)
-paths.append(['116.48303839','39.990633'])
-print(paths)
+paths.append(end_point)
+data = {}
+data['distance'] = t['route']['paths'][0]['distance']
+data['duration'] = t['route']['paths'][0]['duration']
+data['steps'] = paths
+print(data)

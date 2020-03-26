@@ -102,6 +102,18 @@ $("#toast-div").delay(4000).hide(0);
 }
 )
 </script>
+<script type="text/javascript" src="{{ url_for('static',filename='admin/js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='admin/js/bootstrap-datetimepicker.zh-CN.js') }}" charset="UTF-8"></script>
+<script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii',
+      language:'zh-CN'
+    });
+    $('#datetimepicker2').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii',
+      language:'zh-CN'
+    });
+</script>
 {% block js %}{% endblock %}
 </body>
 </html>
