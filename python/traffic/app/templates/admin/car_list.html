@@ -59,12 +59,25 @@ table{
                     <td class="ng-binding">{{ v.nickname }}</td>
                     <td><span class="text-primary ng-binding">{{ v.capacity }}</span></td>
                     <td class="ng-binding">{{ v.model }}</td>
-                    <td class="ng-binding">{{ v.status }}</td>
+                    <td class="ng-binding">
+                         {% if v.status == 0 %}
+                            <div style="color:#36b73c" class="ng-binding">空闲中</div>
+                        {% elif v.status == 1 %}
+                            <div style="color:#2e69ff" class="ng-binding">行驶中</div>
+                        {% else %}
+                            <div style="color:#889195" class="ng-binding">检修中</div>
+                        {% endif %}
+                    </td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
-                            <button type="button" class="btn btn-outline-primary btn-sm ml-1">详情</button>
-                            <button type="button" class="btn btn-outline-primary btn-sm ml-1">恢复密码</button>
-                            <button type="button" class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.carEdit',id=v.id) }}'"  class="btn btn-outline-primary btn-sm ml-1">详情</button>
+                            {% if v.status == 0 %}
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.carStatus',id=v.id) }}'"  class="btn btn-outline-primary btn-sm ml-1">检修</button>
+                            {% elif v.status == 2 %}
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.carStatus',id=v.id) }}'"  class="btn btn-outline-primary btn-sm ml-1">取消检修</button>
+                            {% else %}
+                            {% endif %}
+                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-outline-danger btn-sm ml-1">删除</button>
                         </div>
                     </td>
                 </tr>
@@ -88,6 +101,24 @@ table{
 </div>
 </div></div>
             </div>
+                <input type="hidden" id="delId">
+                <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal2Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认删除此信息</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 {% endblock %}
 {% block js %}
 <script>
@@ -98,5 +129,15 @@ table{
         $("#g-2-1 span").addClass("text-white");
         $("#g-2-1").parent().css('display','block');
     })
+</script>
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.carDel")}}?id=";
+    location.href =str+id;
+}
 </script>
 {% endblock %}

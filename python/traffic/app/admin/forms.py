@@ -300,20 +300,6 @@ class ScheduleForm(FlaskForm):
             "value": "2020-01-01 00:00"
         }
     )
-    # driver_id = SelectField(
-    #     label="选择司机",
-    #     render_kw={
-    #         "class": "form-control"
-    #     },
-    #     coerce=int
-    # )
-    # car_id = SelectField(
-    #     label="选择车辆",
-    #     render_kw={
-    #         "class": "form-control"
-    #     },
-    #     coerce=int
-    # )
     money = StringField(
         label="用车费用",
         validators=[
@@ -347,11 +333,6 @@ class ScheduleForm(FlaskForm):
             "class": "btn btn-primary btn-sm btn-sub-save"
         }
     )
-
-    # def __init__(self, *args, **kwargs):
-    #     super(ScheduleForm, self).__init__(*args, **kwargs)
-    #     self.driver_id.choices = [(v.id, v.name) for v in Driver.query.all()]
-    #     self.car_id.choices = [(v.id, v.number) for v in Car.query.all()]
 
 
 class ExpenseTypeForm(FlaskForm):

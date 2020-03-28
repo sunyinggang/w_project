@@ -21,23 +21,16 @@ table{
             <div class="row align-items-center">
                 <div class="">
                     <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.driverAdd") }}">添加司机</a>
-                    <button type="button" class="btn btn-primary btn-sm btn-upload">
-                        <input type="file" class="btn-upload-input ng-pristine ng-untouched ng-valid ng-empty" accept="application/vnd.ms-excel" ng-model="importFile" fileread="">
-                        批量导入
-                    </button>
-                    <a class="btn btn-primary btn-sm" href="https://oss.cheoa.cn/doc/%E5%8F%B8%E6%9C%BA%E6%A8%A1%E6%9D%BF.xls" target="_blank">
-                        下载导入模板
-                    </a>
                 </div>
-                <form class="form-inline ml-1 input-group-sm ng-pristine ng-valid">
+
+            </div>
+
+            <div>
+                 <form class="form-inline ml-1 input-group-sm ng-pristine ng-valid">
                     <input type="text" class="form-control mr-sm-2 ng-pristine ng-untouched ng-valid ng-empty" placeholder="司机姓名/手机号码" ng-model="params.keyword" ng-keypress="enterSearch($event)">
                     <button type="button" ng-click="refreshDataList(true)" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索
                     </button>
                 </form>
-            </div>
-
-            <div>
-                <button type="button" class="btn btn-primary btn-sm" ng-click="exportAll(-1)">导出</button>
             </div>
         </div>
         <div class="mt-3 table-sticky-view">
@@ -57,12 +50,22 @@ table{
                     <td><font class="text-primary ng-binding">{{ v.name }}</font></td>
                     <td class="ng-binding">{{ v.phone }}</td>
                     <td><span class="text-primary ng-binding">{{ v.address }}</span></td>
-                    <td class="ng-binding">{{ v.status }}</td>
+                    <td class="ng-binding">
+                         {% if v.status == 0 %}
+                            <div style="color:#36b73c" class="ng-binding">空闲中</div>
+                        {% elif v.status == 1 %}
+                            <div style="color:red" class="ng-binding">工作中</div>
+                        {% elif v.status == 2 %}
+                            <div style="color:#3b8cff" class="ng-binding">请假待审批</div>
+                        {% else %}
+                            <div style="color:#889195" class="ng-binding">请假中</div>
+                        {% endif %}
+                    </td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
-                            <button type="button" class="btn btn-outline-primary btn-sm ml-1">详情</button>
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.driverEdit',id=v.id) }}'" class="btn btn-outline-primary btn-sm ml-1">详情</button>
                             <button type="button" class="btn btn-outline-primary btn-sm ml-1">恢复密码</button>
-                            <button type="button" class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-outline-danger btn-sm ml-1">删除</button>
                         </div>
                     </td>
                 </tr>
@@ -86,6 +89,24 @@ table{
 </div>
 </div></div>
             </div>
+                <input type="hidden" id="delId">
+                <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal2Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认删除此信息</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 {% endblock %}
 {% block js %}
 <script>
@@ -96,5 +117,15 @@ table{
         $("#g-2-2 span").addClass("text-white");
         $("#g-2-2").parent().css('display','block');
     })
+</script>
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.driverDel")}}?id=";
+    location.href =str+id;
+}
 </script>
 {% endblock %}

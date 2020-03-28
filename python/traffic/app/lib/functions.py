@@ -12,7 +12,7 @@ def change_filename(filename):
     return filename
 
 
-#  模拟post/get请求
+#  鹰眼轨迹服务
 def curl(url, params, type):
     baseUrl = 'https://tsapi.amap.com/v1/track/'
     url = baseUrl + url

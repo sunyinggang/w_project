@@ -60,7 +60,7 @@
 </div>
 </div>
 {% for msg in get_flashed_messages(category_filter=["ok"]) %}
-<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:14px">
+<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:18px">
     <div id="alert-div-556508" class="toast fade show" style="min-width: 256px">
         <div class="toast-header">
             <img src="{{ url_for('static',filename='admin/images/title_icon_cheoa.jpg') }}" width="24" height="24" class="rounded mr-2">
@@ -75,7 +75,7 @@
 </div>
 {% endfor %}
 {% for msg in get_flashed_messages(category_filter=["err"]) %}
-<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:14px">
+<div id="toast-div" style="position:absolute;z-index:2147483647;top:60px;right:18px">
     <div id="alert-div-556508" class="toast fade show" style="min-width: 256px">
         <div class="toast-header">
             <img src="{{ url_for('static',filename='admin/images/title_icon_cheoa.jpg') }}" width="24" height="24" class="rounded mr-2">

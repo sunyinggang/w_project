@@ -27,7 +27,7 @@
 <div class="card page-card">
   <div class="row align-items-center">
     <div class="title-icon-style mr-2"></div>
-    <font color="#4c4c4c" class="ng-binding">添加排班</font>
+    <font color="#4c4c4c" class="ng-binding">修改排班</font>
     <a type="button" class="btn btn-outline-secondary btn-sm ml-3" href="{{ url_for("admin.scheduleList") }}">返回上层</a>
   </div>
   <div class="dropdown-divider"></div>
@@ -35,19 +35,19 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.unit.label }}:</label>
       <div class="col-8">
-        {{ form.unit}}
+        {{ form.unit(value=schedule.unit)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.user.label }}:</label>
       <div class="col-8">
-        {{ form.user}}
+        {{ form.user(value=schedule.user)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.phone.label }}:</label>
       <div class="col-8">
-        {{ form.phone}}
+        {{ form.phone(value=schedule.phone)}}
       </div>
     </div>
     <div class="dropdown-divider"></div>
@@ -58,25 +58,25 @@
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.start_point.label }}:</label>
       <div class="col-8">
-        {{ form.start_point}}
+        {{ form.start_point(value=schedule.start_point)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.end_point.label }}:</label>
       <div class="col-8">
-        {{ form.end_point}}
+        {{ form.end_point(value=schedule.end_point)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.start_time.label }}:</label>
       <div class="col-8">
-        {{ form.start_time}}
+        {{ form.start_time(value=schedule.start_time)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.end_time.label }}:</label>
       <div class="col-8">
-        {{ form.end_time}}
+        {{ form.end_time(value=schedule.end_time)}}
       </div>
     </div>
      <div class="dropdown-divider"></div>
@@ -87,6 +87,7 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">选择司机:</label>
       <div class="col-8">
+        {% if schedule.driver_id == None %}
         {% if driver_list|length == 0 %}
             <select class="form-control">
             <option value="1">暂无空闲司机</option>
@@ -98,11 +99,19 @@
             {% endfor %}
             </select>
         {% endif %}
+        {% else %}
+            {% for v in driver_list %}
+                {% if schedule.driver_id == v.id %}
+                <input class="form-control" value="{{ v.name}}|{{ v.phone }}"  readonly="readonly" />
+                {% endif %}
+            {% endfor %}
+        {% endif %}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">选择车辆:</label>
       <div class="col-8">
+       {% if schedule.car_id == None %}
        {% if car_list|length == 0 %}
             <select class="form-control">
             <option value="1">暂无空闲车辆</option>
@@ -113,6 +122,13 @@
             <option value="{{ v.id }}">{{ v.number}}|{{ v.nickname }} </option>
             {% endfor %}
             </select>
+        {% endif %}
+        {% else %}
+         {% for v in car_list %}
+                {% if schedule.car_id == v.id %}
+                <input class="form-control" value="{{ v.number}}|{{ v.nickname }}"  readonly="readonly" />
+                {% endif %}
+            {% endfor %}
         {% endif %}
       </div>
     </div>
@@ -130,13 +146,13 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.money.label }}（元）:</label>
       <div class="col-8">
-        {{ form.money }}
+        {{ form.money(value=schedule.money) }}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.driver_money.label }}（元）:</label>
       <div class="col-8">
-        {{ form.driver_money }}
+        {{ form.driver_money(value=schedule.driver_money) }}
       </div>
     </div>
     <div class="dropdown-divider"></div>
@@ -147,11 +163,14 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">{{ form.content.label }}:</label>
       <div class="col-8">
-        {{ form.content }}
+        {{ form.content(value=schedule.content) }}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
-        {{ form.submit }}
+         {% if schedule.status == 0 or schedule.status == 1 %}
+             {{ form.submit(value='确认修改') }}
+         {% else %}
+         {% endif %}
 		{{ form.csrf_token }}
     </div>
   </form>

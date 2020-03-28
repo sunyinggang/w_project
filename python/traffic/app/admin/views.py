@@ -104,6 +104,40 @@ def driverAdd():
         return redirect(url_for("admin.driverList"))
     return render_template("admin/driver_add.html",form=form)
 
+@admin.route("/driver/edit/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def driverEdit(id=None):
+    form = DriverForm()
+    driver = Driver.query.get_or_404(id)
+    if form.validate_on_submit():
+        data = form.data
+        driver.name = data["name"]
+        driver.phone = data["phone"]
+        driver.address = data["address"]
+        driver.idcardz = data["idcardz"]
+        driver.idcardf = data["idcardz"]
+        driver.drivercardz = data["drivercardz"]
+        driver.drivercardf = data["drivercardf"]
+        driver.content = data["content"]
+        db.session.add(driver)
+        db.session.commit()
+        flash("修改成功", "ok")
+        return redirect(url_for("admin.driverList"))
+    return render_template("admin/driver_edit.html",form=form,driver=driver)
+
+@admin.route("/driver/del/")
+@admin_login_req
+def driverDel():
+    id = request.args.get("id")
+    driver = Driver.query.filter_by(id=id).first_or_404()
+    if driver.status != 0:
+        flash("司机暂不能删除！", 'err')
+        return redirect(url_for("admin.driverList"))
+    db.session.delete(driver)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.driverList'))
+
 @admin.route("/car/list/")
 @admin_login_req
 def carList():
@@ -142,10 +176,69 @@ def carAdd():
                 return redirect(url_for("admin.carList"))
     return render_template("admin/car_add.html",form=form)
 
+@admin.route("/car/edit/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def carEdit(id=None):
+    form = CarForm()
+    car = Car.query.get_or_404(id)
+    if form.validate_on_submit():
+        data = form.data
+        if data["number"] != car.number:
+            count = Car.query.filter_by(number=data["number"]).count()
+            if count == 1:
+                flash("车牌号码已存在", 'err')
+                return redirect(url_for("admin.carList"))
+            else:
+                params = {
+                    'name': data["number"],
+                    'tid': car.tid
+                }
+                response = curl('terminal/update', params, 'POST')
+                print(response)
+        car.number = data["number"]
+        car.nickname = data["nickname"]
+        car.capacity = data["capacity"]
+        car.model = data["model"]
+        car.img_url = data["img_url"]
+        car.content = data["content"]
+        db.session.add(car)
+        db.session.commit()
+        flash("修改成功", "ok")
+        return redirect(url_for("admin.carList"))
+    return render_template("admin/car_edit.html",form=form,car=car)
+
+@admin.route("/car/del/")
+@admin_login_req
+def carDel():
+    id = request.args.get("id")
+    car = Car.query.filter_by(id=id).first_or_404()
+    if car.status != 0:
+        flash("车辆暂不能删除！", 'err')
+        return redirect(url_for("admin.carList"))
+    db.session.delete(car)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.carList'))
+
+@admin.route("/car/status/<int:id>/")
+@admin_login_req
+def carStatus(id=None):
+    car = Car.query.get_or_404(id)
+    if car.status == 0:
+        car.status=2
+    else:
+        car.status=0
+    db.session.add(car)
+    db.session.commit()
+    flash("状态修改成功", "ok")
+    return redirect(url_for("admin.carList"))
+
 @admin.route("/schedule/list/")
 @admin_login_req
 def scheduleList():
-    schedule_list = Schedule.query.all()
+    schedule_list = Schedule.query.order_by(
+        Schedule.start_time.desc()
+    ).all()
     return render_template("admin/schedule_list.html",schedule_list = schedule_list)
 
 @admin.route("/schedule/add/",methods=["GET","POST"])
@@ -189,6 +282,12 @@ def scheduleAdd():
                     track_id=track.id
                 )
             else:
+                driver = Driver.query.get_or_404(driver_id)
+                car = Car.query.get_or_404(car_id)
+                driver.status = 1
+                db.session.add(driver)
+                car.status = 1
+                db.session.add(car)
                 schedule = Schedule(
                     unit=data["unit"],
                     user=data["user"],
@@ -210,6 +309,74 @@ def scheduleAdd():
         flash("添加成功", "ok")
         return redirect(url_for("admin.scheduleList"))
     return render_template("admin/schedule_add.html",form=form,driver_list=driver_list,car_list=car_list)
+
+@admin.route("/schedule/edit/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def scheduleEdit(id=None):
+    form = ScheduleForm()
+    driver_list = Driver.query.filter_by(status=0).all()
+    car_list = Car.query.filter_by(status=0).all()
+    schedule = Schedule.query.get_or_404(id)
+    if form.validate_on_submit():
+        data = form.data
+        print(data)
+        track = Track.query.filter_by(id=schedule.track_id).first_or_404()
+        origin = geocode_curl(data["start_point"])
+        destination = geocode_curl(data["end_point"])
+        track_data = driving(origin,destination)
+        track.origin=origin
+        track.destination=destination
+        track.distance=track_data['distance']
+        track.duration=track_data['duration']
+        track.steps=json.dumps(track_data['steps'])
+        track.start_time = data["start_time"]
+        track.end_time = data["end_time"]
+        db.session.add(track)
+        db.session.flush()
+        driver_id = request.form.get('driver_id')
+        car_id = request.form.get('car_id')
+        selectDC = request.form.get('selectDC')
+        if selectDC is None:
+            if driver_id is None or car_id is None:
+                schedule.unit=data["unit"]
+                schedule.user=data["user"]
+                schedule.phone=data["phone"]
+                schedule.start_point=data["start_point"]
+                schedule.end_point=data["end_point"]
+                schedule.start_time=data["start_time"]
+                schedule.end_time=data["end_time"]
+                schedule.content=data["content"]
+                schedule.money=data["money"]
+                schedule.driver_money=data["driver_money"]
+            else:
+                schedule.unit = data["unit"],
+                schedule.user = data["user"],
+                schedule.phone = data["phone"],
+                schedule.start_point = data["start_point"],
+                schedule.end_point = data["end_point"],
+                schedule.start_time = data["start_time"],
+                schedule.end_time = data["end_time"],
+                schedule.content = data["content"],
+                schedule.driver_id = driver_id,
+                schedule.car_id = car_id,
+                schedule.money = data["money"],
+                schedule.driver_money = data["driver_money"],
+                schedule.status = 1,
+        db.session.add(schedule)
+        db.session.commit()
+        flash("修改成功", "ok")
+        return redirect(url_for("admin.scheduleList"))
+    return render_template("admin/schedule_edit.html",form=form,driver_list=driver_list,car_list=car_list,schedule=schedule)
+
+@admin.route("/schedule/del/")
+@admin_login_req
+def scheduleDel():
+    id = request.args.get("id")
+    schedule = Schedule.query.filter_by(id=id).first_or_404()
+    db.session.delete(schedule)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.scheduleList'))
 
 @admin.route("/expense/list/")
 @admin_login_req
