@@ -4,13 +4,14 @@ import re
 from functools import wraps
 
 from flask import render_template, flash, redirect, url_for, session, request
+from sqlalchemy import or_
 from werkzeug.security import generate_password_hash
 
 from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
 from .. import db,app
 from ..lib.functions import change_filename, curl, geocode_curl, driving_curl
-from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track
+from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track, Leave
 
 
 def admin_login_req(f):
@@ -438,6 +439,41 @@ def expenseTypeDel():
     db.session.commit()
     flash("删除成功！",'ok')
     return redirect(url_for('admin.expenseType'))
+
+@admin.route("/leave/list/<int:type>/")
+@admin_login_req
+def leaveList(type=None):
+    if type is None:
+        type = 1
+    if type == 0:
+        leave_list = Leave.query.filter_by(status=0).all()
+    elif type == 1:
+        leave_list = Leave.query.filter(or_(Leave.status == 1, Leave.status == 2)).all()
+    else:
+        leave_list = Leave.query.all()
+    return render_template("admin/leave_list.html",leave_list=leave_list,type=type)
+
+@admin.route("/leave/status/")
+@admin_login_req
+def leaveStatus():
+    id = request.args.get("id")
+    status = request.args.get("status")
+    leave = Leave.query.filter_by(id=id).first_or_404()
+    leave.status = status
+    db.session.add(leave)
+    db.session.commit()
+    flash("操作成功！",'ok')
+    return redirect(url_for('admin.leaveList',type=0))
+
+@admin.route("/leave/del/")
+@admin_login_req
+def leaveDel():
+    id = request.args.get("id")
+    leave = Leave.query.filter_by(id=id).first_or_404()
+    db.session.delete(leave)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.leaveList',type=0))
 
 @admin.route("/notice/list/")
 @admin_login_req

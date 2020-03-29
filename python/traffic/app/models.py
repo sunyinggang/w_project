@@ -29,6 +29,7 @@ class Driver(db.Model):
     content = Column(Text)
     status = Column(Integer, default=0)
     schedule = db.relationship('Schedule',backref='driver')
+    leave = db.relationship('Leave', backref='driver')
 
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)
@@ -92,8 +93,9 @@ class Notice(db.Model):
     add_time = Column(db.DateTime, default=datetime.now)
 
 class Leave(db.Model):
+    __tablename__ = "leave"
     id = Column(Integer, primary_key=True)
-    driver_id = Column(Integer)
+    driver_id = Column(Integer,db.ForeignKey('driver.id'))
     content = Column(Text)
     status = Column(Integer, default=0)
     start_time = Column(db.DateTime, default=datetime.now)

@@ -20,9 +20,14 @@ table{
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center">
                 <div class="">
-                    <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseAdd") }}">全部审批</a>
-                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseAdd") }}">待我审批</a>
-                    <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseAdd") }}">审批完成</a>
+                    {% if type == 0 %}
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.leaveList",type=0) }}">待我审批</a>
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.leaveList",type=1) }}">审批完成</a>
+                    {% else %}
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.leaveList",type=0) }}">待我审批</a>
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.leaveList",type=1) }}">审批完成</a>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
@@ -30,7 +35,7 @@ table{
             <table class="table table-hover">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">申请时间</th>
+                    <th scope="col">序号</th>
                     <th scope="col">申请人</th>
                     <th scope="col">联系电话</th>
                     <th scope="col">开始时间</th>
@@ -40,16 +45,27 @@ table{
                 </tr>
                 </thead>
                 <tbody>
-                {% for v in expense_list %}
+                {% for v in leave_list %}
                   <tr class="ng-scope">
-                    <td class="ng-binding">{{ v.expense_type.name }}</td>
-                    <td class="ng-binding">{{ v.user_id }}</td>
-                    <td class="ng-binding">{{ v.money }}</td>
-                    <td class="ng-binding">{{ v.add_time }}</td>
-                    <td class="ng-binding">{{ v.status }}</td>
+                    <td class="ng-binding">{{ loop.index}}</td>
+                    <td class="ng-binding">{{ v.driver.name }}</td>
+                    <td class="ng-binding">{{ v.driver.phone }}</td>
+                    <td class="ng-binding">{{ v.start_time }}</td>
+                    <td class="ng-binding">{{ v.end_time }}</td>
+                    <td class="ng-binding">
+                    {% if v.status == 0 %}
+                        <div style="color:#15ff13" class="ng-binding">待审核</div>
+                    {% elif v.status == 1 %}
+                        <div style="color:#3b8cff" class="ng-binding">审核通过</div>
+                    {% elif v.status == 2 %}
+                        <div style="color:red" class="ng-binding">审核不通过</div>
+                    {% else %}
+                        <div style="color:#889195" class="ng-binding">已结束</div>
+                    {% endif %}
+                    </td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
-                            <button type="button" data-toggle="modal" data-target="#Modal" onclick="addContent('{{ v.content }}')" class="btn btn-outline-primary btn-sm ml-1">查看备注</button>
+                            <button type="button" data-toggle="modal" data-target="#Modal" onclick="addContent('{{ v.content }}','{{ v.notice }}','{{ v.id }}')" class="btn btn-outline-primary btn-sm ml-1">查看详情</button>
                             <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')"  class="btn btn-outline-danger btn-sm ml-1">删除</button>
                         </div>
                     </td>
@@ -63,13 +79,16 @@ table{
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">费用备注</h5>
+                                <h5 class="modal-title" id="ModalLabel">请假详情</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body" id="content"></div>
+                            <h6 style="margin-left: 10px;">请假原因：</h6><div class="modal-body" id="content"></div>
+                            <h6 style="margin-left: 10px;">备注：</h6><div class="modal-body" id="notice"></div>
                             <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="editStatus('1')">同意</button>
+                                <button type="button" class="btn btn-danger" onclick="editStatus('2')">不同意</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                             </div>
                         </div>
@@ -93,6 +112,7 @@ table{
                     </div>
                 </div>
             <input type="hidden" id="delId">
+            <input type="hidden" id="leave_id">
                 <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
                 <tr>
                     <!-- ngIf: !toEnd -->
@@ -114,25 +134,32 @@ table{
 {% endblock %}
 {% block js %}
 <script>
-function addContent(content) {
+function addContent(content,notice,id) {
     $("#content").text(content);
+    $("#notice").text(notice);
+    $("#leave_id").val(id);
 }
 function addId(id) {
     $("#delId").val(id);
 }
 function del() {
     var id = $("#delId").val();
-    var str = "{{url_for("admin.expenseTypeDel")}}?id=";
+    var str = "{{url_for("admin.leaveDel")}}?id=";
     location.href =str+id;
+}
+function editStatus(status) {
+    var id = $("#leave_id").val();
+    var str = "{{url_for("admin.leaveStatus")}}?id=";
+    location.href =str+id+'&status='+status;
 }
 </script>
 <script>
     $(document).ready(function () {
-        $("#g-5 img").attr('src','{{ url_for('static',filename='admin/images/selector-finance.png') }}');
-        $("#g-5 span:eq(0)").addClass("text-white");
-        $("#g-5 span:eq(1)").addClass("glyphicon-chevron-down text-white");
-        $("#g-5-1 span").addClass("text-white");
-        $("#g-5-1").parent().css('display','block');
+        $("#g-6 img").attr('src','{{ url_for('static',filename='admin/images/selector-finance.png') }}');
+        $("#g-6 span:eq(0)").addClass("text-white");
+        $("#g-6 span:eq(1)").addClass("glyphicon-chevron-down text-white");
+        $("#g-6-1 span").addClass("text-white");
+        $("#g-6-1").parent().css('display','block');
     })
 </script>
 {% endblock %}
