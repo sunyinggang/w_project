@@ -59,7 +59,6 @@ def expenseAdd():
         data = form.data
         expense = Expense(
             user_id=session["driver_id"],
-            user_type=1,
             type_id=data["type_id"],
             content=data["content"],
             money=data["money"],
@@ -80,8 +79,6 @@ def expenseList(page=None):
         page = 1
     expense_list = Expense.query.join(
         ExpenseType
-    ).filter(
-        Expense.user_type == 1
     ).filter(
         Expense.user_id == session["driver_id"]
     ).filter(

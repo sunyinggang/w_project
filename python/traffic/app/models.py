@@ -30,6 +30,7 @@ class Driver(db.Model):
     status = Column(Integer, default=0)
     schedule = db.relationship('Schedule',backref='driver')
     leave = db.relationship('Leave', backref='driver')
+    expense = db.relationship('Expense', backref='driver')
 
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)
@@ -69,14 +70,14 @@ class Schedule(db.Model):
 class Expense(db.Model):
     __tablename__ = "expense"
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer)
-    user_type = Column(Integer)
+    user_id = Column(Integer,db.ForeignKey('driver.id'))
     type_id = Column(Integer,db.ForeignKey('expense_type.id'))
     content = Column(String)
     money = Column(Integer)
     status = Column(Integer, default=0)
     add_time = Column(db.DateTime, default=datetime.now)
     note = Column(Text)
+    because = Column(Text)
     img_url = Column(String)
 
 class ExpenseType(db.Model):

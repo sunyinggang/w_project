@@ -428,3 +428,21 @@ class ExpenseForm(FlaskForm):
     def __init__(self, *args, **kwargs):
         super(ExpenseForm, self).__init__(*args, **kwargs)
         self.expense_type.choices = [(v.id, v.name) for v in ExpenseType.query.all()]
+
+class BecauseForm(FlaskForm):
+    because = TextAreaField(
+        label="原因",
+        validators=[
+            DataRequired()
+        ],
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入未通过原因"
+        }
+    )
+    submit = SubmitField(
+        "确认",
+        render_kw={
+            "class": "btn btn-primary btn-sm btn-sub-save"
+        }
+    )

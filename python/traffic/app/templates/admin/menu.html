@@ -104,13 +104,13 @@
                             <ul class="nav flex-column menu-ul">
                                 <!-- ngRepeat: subItem in item.subItems -->
                                 <li id="g-5-1" class="nav-item ng-scope">
-                                    <a class="nav-link" href="{{ url_for("admin.expenseList") }}"><span class="ng-binding">财务结算</span></a>
+                                    <a class="nav-link" href="{{ url_for("admin.expenseList",type=0) }}"><span class="ng-binding">费用审批</span></a>
                                 </li>
                                 <li id="g-5-2" class="nav-item ng-scope">
                                     <a class="nav-link" href="{{ url_for("admin.expenseType") }}"><span class="ng-binding">费用类型</span></a>
                                 </li>
                                 <li id="g-5-3" class="nav-item ng-scope">
-                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">费用审批</span></a>
+                                    <a class="nav-link" href="#/app/vehicle/list"><span class="ng-binding">财务报表</span></a>
                                 </li>
                             </ul>
                         </div>

@@ -14,13 +14,19 @@ table{
 <div class="page-container ng-scope" ng-controller="driverListController">
     <div class="row align-items-center">
         <div class="title-icon-style mr-2"></div>
-        <font color="#4c4c4c">财务结算</font>
+        <font color="#4c4c4c">费用审批</font>
     </div>
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center">
                 <div class="">
-                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseAdd") }}">添加费用</a>
+                    {% if type == 0 %}
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseList",type=0) }}">待我审批</a>
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseList",type=1) }}">审批完成</a>
+                    {% else %}
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseList",type=0) }}">待我审批</a>
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseList",type=1) }}">审批完成</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -29,10 +35,10 @@ table{
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">类型</th>
-                    <th scope="col">收/付款人</th>
+                    <th scope="col">提交人/手机号</th>
                     <th scope="col">金额</th>
                     <th scope="col">日期</th>
-                    <th scope="col">是否结清</th>
+                    <th scope="col">状态</th>
                     <th scope="col" class="text-center">操作</th>
                 </tr>
                 </thead>
@@ -40,13 +46,21 @@ table{
                 {% for v in expense_list %}
                   <tr class="ng-scope">
                     <td class="ng-binding">{{ v.expense_type.name }}</td>
-                    <td class="ng-binding">{{ v.user_id }}</td>
+                    <td class="ng-binding">{{ v.driver.name }}/{{ v.driver.phone }}</td>
                     <td class="ng-binding">{{ v.money }}</td>
                     <td class="ng-binding">{{ v.add_time }}</td>
-                    <td class="ng-binding">{{ v.status }}</td>
+                    <td class="ng-binding">
+                    {% if v.status == 0 %}
+                        <div style="color:#747577" class="ng-binding">未审核</div>
+                    {% elif v.status == 1 %}
+                        <div style="color:#3b8cff" class="ng-binding">已结清</div>
+                    {% else %}
+                        <div style="color:#e22c1f" class="ng-binding">未通过</div>
+                    {% endif %}
+                    </td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
-                            <button type="button" data-toggle="modal" data-target="#Modal" onclick="addContent('{{ v.content }}')" class="btn btn-outline-primary btn-sm ml-1">查看备注</button>
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.expenseDetail',id=v.id) }}'" class="btn btn-outline-primary btn-sm ml-1">查看详情</button>
                             <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')"  class="btn btn-outline-danger btn-sm ml-1">删除</button>
                         </div>
                     </td>
@@ -55,23 +69,6 @@ table{
 
                 </tbody>
                 <!-- Modal -->
-                <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
-                     aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="ModalLabel">费用备注</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body" id="content"></div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
                      aria-labelledby="Modal2Label" aria-hidden="true">
                     <div class="modal-dialog" role="document">

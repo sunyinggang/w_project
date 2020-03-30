@@ -28,33 +28,33 @@
 <div class="card page-card">
   <div class="row align-items-center">
     <div class="title-icon-style mr-2"></div>
-    <font color="#4c4c4c" class="ng-binding">添加费用</font>
-    <a type="button" class="btn btn-outline-secondary btn-sm ml-3" href="{{ url_for("admin.expenseList") }}">返回上层</a>
+    <font color="#4c4c4c" class="ng-binding">费用详情</font>
+    <a type="button" class="btn btn-outline-secondary btn-sm ml-3" href="{{ url_for("admin.expenseList",type=0) }}">返回上层</a>
   </div>
   <div class="dropdown-divider"></div>
   <form name="form" method="post">
      <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.expense_type.label }}:</label>
       <div class="col-8">
-        {{ form.expense_type}}
+        <input class="form-control form-control-sm" type="text" value="{{expense.expense_type.name}}">
       </div>
     </div>
      <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.content.label }}:</label>
       <div class="col-8">
-        {{ form.content}}
+        {{ form.content(value=expense.content)}}
       </div>
     </div>
      <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.money.label }}:</label>
       <div class="col-8">
-        {{ form.money}}
+        {{ form.money(value=expense.money)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.add_time.label }}:</label>
       <div class="col-8">
-        {{ form.add_time}}
+        {{ form.add_time(value=expense.add_time)}}
       </div>
     </div>
     <div class="form-group row justify-content-center mt-3">
@@ -67,12 +67,22 @@
     <div class="form-group row justify-content-center mt-3">
       <label class="col-2 col-form-label col-form-label-sm text-right">{{ form.note.label }}:</label>
       <div class="col-8">
-        {{ form.note}}
+        {{ form.note(value=expense.note)}}
       </div>
     </div>
+    {% if expense.status == 2 %}
+      <div class="form-group row justify-content-center mt-3">
+      <label class="col-2 col-form-label col-form-label-sm text-right">未通过审核原因:</label>
+      <div class="col-8">
+        {{ expense.because }}
+       </div>
+      </div>
+    {% else %}
+    {% endif %}
     <div class="form-group row justify-content-center mt-3">
-        {{ form.submit }}
-		{{ form.csrf_token }}
+    <button type="button" onclick="window.location.href ='{{ url_for('admin.expenseApproval',id=expense.id) }}'" class="btn btn-primary">确认结算</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" data-toggle="modal" data-target="#Modal" class="btn btn-danger">不通过</button>
     </div>
   </form>
 </div>
@@ -80,13 +90,34 @@
 </div>
 </div>
 </div>
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+                     aria-labelledby="ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ModalLabel">未通过原因</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form method="post">
+                                 <h6 style="margin-left: 10px;">{{ becauseForm.because.label }}：</h6>
+                                 <div class="modal-body" id="content">{{ becauseForm.because }}</div>
+                                 <div class="modal-footer">
+                                    {{ becauseForm.submit }}
+		                            {{ becauseForm.csrf_token }}
+                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 {% endblock %}
 {% block js %}
 <script src="{{ url_for('static',filename='admin/js/fileinput.js') }}"></script>
 <script src="{{ url_for('static',filename='admin/js/fileinput_locale_zh.js') }}"></script>
 <script>
         $(document).ready(function(){
-            $("#path-1").attr("value","");
+            $("#path-1").attr("value","{{ expense.img_url }}");
         });
         $("#input-1").fileinput({
             language: "zh",
@@ -94,7 +125,7 @@
             allowedFileTypes: ['image'], // 只允许上传图片
             allowedFileExtensions: ["jpg", "jpeg", "png", "gif"],
             initialPreview: [
-                '<img class="file-preview-image kv-preview-data" src='+'"">'
+                '<img class="file-preview-image kv-preview-data" src='+'"{{ url_for('static',filename='uploads/'+expense.img_url) }}">'
             ],
             uploadUrl: "{{url_for('admin.upload')}}" //上传图片的服务器地址
         }).on("fileuploaded", function (event, data, previewId, index){

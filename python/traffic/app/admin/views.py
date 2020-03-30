@@ -8,7 +8,8 @@ from sqlalchemy import or_
 from werkzeug.security import generate_password_hash
 
 from . import admin
-from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm
+from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm, \
+    BecauseForm
 from .. import db,app
 from ..lib.functions import change_filename, curl, geocode_curl, driving_curl
 from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track, Leave
@@ -320,7 +321,6 @@ def scheduleEdit(id=None):
     schedule = Schedule.query.get_or_404(id)
     if form.validate_on_submit():
         data = form.data
-        print(data)
         track = Track.query.filter_by(id=schedule.track_id).first_or_404()
         origin = geocode_curl(data["start_point"])
         destination = geocode_curl(data["end_point"])
@@ -379,33 +379,46 @@ def scheduleDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.scheduleList'))
 
-@admin.route("/expense/list/")
+@admin.route("/expense/list/<int:type>/")
 @admin_login_req
-def expenseList():
-    expense_list = Expense.query.all()
-    return render_template("admin/expense_list.html",expense_list = expense_list)
+def expenseList(type=None):
+    if type is None:
+        type = 0
+    if type == 0:
+        expense_list = Expense.query.filter_by(status=0).all()
+    else:
+        expense_list = Expense.query.filter(or_(Expense.status == 1, Expense.status == 2)).all()
+    return render_template("admin/expense_list.html",expense_list = expense_list,type=type)
 
-@admin.route("/expense/add/",methods=["GET","POST"])
+@admin.route("/expense/detail/<int:id>/",methods=["GET","POST"])
 @admin_login_req
-def expenseAdd():
+def expenseDetail(id=None):
+    if id is None:
+        id = 1
     form = ExpenseForm()
-    if form.validate_on_submit():
-        data = form.data
-        expense = Expense(
-            user_id=session["id"],
-            user_type=0,
-            expense_type=data["expense_type"],
-            content=data["content"],
-            money=data["money"],
-            add_time=data["add_time"],
-            note=data["note"],
-            img_url=data["img_url"],
-        )
+    becauseForm = BecauseForm()
+    expense = Expense.query.get_or_404(id)
+    if becauseForm.validate_on_submit():
+        data = becauseForm.data
+        expense.because = data["because"]
+        expense.status = 2
         db.session.add(expense)
         db.session.commit()
-        flash("添加成功", "ok")
-        return redirect(url_for("admin.expenseList"))
-    return render_template("admin/expense_add.html",form = form)
+        flash("提交成功", "ok")
+        return redirect(url_for("admin.expenseList",type=1))
+    return render_template("admin/expense_detail.html",form=form,expense=expense,becauseForm=becauseForm)
+
+@admin.route("/expense/approval/<int:id>/")
+@admin_login_req
+def expenseApproval(id=None):
+    if id is None:
+       id = 1
+    expense = Expense.query.get_or_404(id)
+    expense.status = 1
+    db.session.add(expense)
+    db.session.commit()
+    flash("修改成功", "ok")
+    return redirect(url_for("admin.expenseList",type=1))
 
 @admin.route("/expense/type/")
 @admin_login_req
@@ -444,7 +457,7 @@ def expenseTypeDel():
 @admin_login_req
 def leaveList(type=None):
     if type is None:
-        type = 1
+        type = 0
     if type == 0:
         leave_list = Leave.query.filter_by(status=0).all()
     elif type == 1:
