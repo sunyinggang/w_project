@@ -420,6 +420,16 @@ def expenseApproval(id=None):
     flash("修改成功", "ok")
     return redirect(url_for("admin.expenseList",type=1))
 
+@admin.route("/expense/del/")
+@admin_login_req
+def expenseDel():
+    id = request.args.get("id")
+    expense = Expense.query.filter_by(id=id).first_or_404()
+    db.session.delete(expense)
+    db.session.commit()
+    flash("删除成功！",'ok')
+    return redirect(url_for('admin.expenseList',type=0))
+
 @admin.route("/expense/type/")
 @admin_login_req
 def expenseType():

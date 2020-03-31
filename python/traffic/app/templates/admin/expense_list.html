@@ -108,15 +108,12 @@ table{
 {% endblock %}
 {% block js %}
 <script>
-function addContent(content) {
-    $("#content").text(content);
-}
 function addId(id) {
     $("#delId").val(id);
 }
 function del() {
     var id = $("#delId").val();
-    var str = "{{url_for("admin.expenseTypeDel")}}?id=";
+    var str = "{{url_for("admin.expenseDel")}}?id=";
     location.href =str+id;
 }
 </script>

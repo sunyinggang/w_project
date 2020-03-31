@@ -1,0 +1,105 @@
+{% extends "user/home.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static',filename='admin/css/fileinput.css') }}">
+<link href="{{ url_for('static',filename='admin/css/bootstrap-datetimepicker.css') }}" rel="stylesheet" media="screen">
+{% endblock %}
+{% block content %}
+  <main class="content_wrapper">
+                <!--page title start-->
+                <div class="page-heading">
+                    <div class="container-fluid">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-12">
+                                <div class="page-breadcrumb">
+                                    <h1>添加费用</h1>
+                                </div>
+                            </div>
+                            <div class="col-12  d-md-flex">
+                                <div class="breadcrumb_nav">
+                                    <ol class="breadcrumb">
+                                        <li>
+                                            <i class="fa fa-home"></i>
+                                            <a class="parent-item" href="index.html">Home</a>
+                                            <i class="fa fa-angle-right"></i>
+                                        </li>
+                                        <li class="active">
+                                            添加费用
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--page title end-->
+
+
+                <div class="container-fluid">
+                    <!-- state start-->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-shadow mb-4">
+                                <div class="card-header">
+                                    <div class="card-title">
+                                      排班详情
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form method="post">
+                                      <div class="form-group">
+                                        <label>用车单位：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.unit }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>用车人：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.user }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>用车人电话：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.phone }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>起点：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.start_point }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>终点：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.end_point }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>出发时间：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.start_time }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>结束时间：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.end_time }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>费用：</label>
+                                        <input class="form-control form-control-sm"  type="text" value="{{ schedule.driver_money }}">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>备注：</label>
+                                        <textarea class="form-control">{{ schedule.content }}</textarea>
+                                      </div>
+                                      <div class="form-group">
+                                        <input class="btn btn-success btn-sub-save" type="submit" value="确认发车">
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- state end-->
+                </div>
+
+            </main>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static',filename='admin/js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
+<script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+</script>
+{% endblock %}

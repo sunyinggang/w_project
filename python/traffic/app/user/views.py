@@ -1,11 +1,12 @@
 from functools import wraps
 
 from flask import render_template, flash, redirect, url_for, session, request
+from sqlalchemy import or_
 
 from . import user
 from .forms import LoginForm, ExpenseForm, LeaveForm
 from .. import db
-from ..models import Driver, Expense, ExpenseType, Notice, Leave
+from ..models import Driver, Expense, ExpenseType, Notice, Leave, Schedule
 
 
 def admin_login_req(f):
@@ -20,7 +21,11 @@ def admin_login_req(f):
 @admin_login_req
 def index():
     notice = Notice.query.order_by(Notice.add_time.desc()).first()
-    return render_template("user/index.html",notice=notice)
+    schedule = Schedule.query.filter(
+        Schedule.driver_id == session["driver_id"]
+    ).filter(or_(Schedule.status == 1, Schedule.status == 2)).first()
+    print(schedule)
+    return render_template("user/index.html",notice=notice,schedule=schedule)
 
 @user.route("/profile/")
 @admin_login_req
@@ -46,10 +51,18 @@ def login():
         return redirect(request.args.get("next") or url_for("user.index"))
     return render_template("user/login.html",form=form)
 
-@user.route("/order/list/")
+@user.route("/schedule/list/")
 @admin_login_req
-def orderList():
-    return render_template("user/order_list.html")
+def scheduleList():
+    return render_template("user/schedule_list.html")
+
+@user.route("/schedule/detail/<int:id>/")
+@admin_login_req
+def scheduleDetail(id=None):
+    if id is None:
+        id = 1
+    schedule = Schedule.query.filter_by(id=id).first()
+    return render_template("user/schedule_detail.html",schedule=schedule)
 
 @user.route("/expense/add/",methods=["GET","POST"])
 @admin_login_req
