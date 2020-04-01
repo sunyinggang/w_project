@@ -54,7 +54,7 @@
                                         {% if schedule.status == 1 %}
                                             <span class="float-right"><a href="{{ url_for("user.scheduleDetail",id=schedule.id) }}">未开始 ></a></span>
                                         {% else %}
-                                            <span class="float-right">正在进行 ></span>
+                                            <span class="float-right"><a href="{{ url_for("user.scheduleDetail",id=schedule.id) }}">正在进行 ></a></span>
                                         {% endif %}
 									</div>
 									<div class="col-12">

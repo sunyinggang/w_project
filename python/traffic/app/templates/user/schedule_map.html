@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <style>
+        html,body,#container{
+            height:100%;
+        }
+        .btn{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            width: 11rem
+        }
+    </style>
+</head>
+<body>
+    <div id="container" ></div>
+    <input type='button' class="btn" style="right:180px;font-size: 15px;" onclick="javascript:history.back(-1);" value='返回排班详情页面'/>
+    <input type='button' id='callApp' style="font-size: 15px;" class="btn" value='点击调起高德地图'/>
+    
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=dfdf4bf6d790e5d80a248168446dfe75&plugin=AMap.ToolBar"/></script>
+    <script>
+        var map = new AMap.Map("container");
+        AMap.plugin(["AMap.Driving"], function() {
+            var drivingOption = {
+                policy:AMap.DrivingPolicy.LEAST_TIME,
+                map:map
+            };
+            var driving = new AMap.Driving(drivingOption); //构造驾车导航类
+            //根据起终点坐标规划驾车路线
+            driving.search([{keyword:'{{schedule.start_point}}'},{keyword:'{{schedule.end_point}}'}],function(status,result){
+                button.onclick = function(){
+                    driving.searchOnAMAP({
+                        origin:result.origin,
+                        destination:result.destination
+                    });
+                } 
+            });
+            
+        });
+        map.addControl(new AMap.ToolBar());
+        
+        var button = document.getElementById('callApp');
+        if(AMap.UA.mobile){
+            document.getElementsByClassName('info')[0].style.display='none';
+            button.style.fontSize = '16px';
+        }else{
+            button.style.marginRight = '10px';
+        }
+    </script>
+</body>
+</html>

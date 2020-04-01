@@ -31,29 +31,29 @@
 
 
 				<div class="container-fluid">
-
-					<!--state widget start-->
+                    {% for v in schedule_list %}
 					<div class="row">
 						<div class="col-12 mb-4">
 							<div class="card card-shadow">
 								<div class="card-body text-secondary">
 									<div class="col-12">
 										<i class="fa fa-clock-o" aria-hidden="true"></i>
-										<span>12月20日 20:00</span>
-										<span class="float-right">已完成 ></span>
+										<span>{{ v.start_time }}</span>
+                                        <span class="float-right"><a href="{{ url_for("user.scheduleDetail",id=v.id) }}">已完成 ></a></span>
 									</div>
 									<div class="col-12">
 										<i class="fa fa-telegram text-success" aria-hidden="true"></i>
-										<span>北京</span>
+										<span>{{ v.start_point }}</span>
 									</div>
 									<div class="col-12">
 										<i class="fa fa-telegram text-warning" aria-hidden="true"></i>
-										<span>上海</span>
+										<span>{{ v.end_point }}</span>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+                    {% endfor %}
 				</div>
 
 			</main>

@@ -1,11 +1,14 @@
+import re
 from functools import wraps
 
 from flask import render_template, flash, redirect, url_for, session, request
 from sqlalchemy import or_
+from werkzeug.security import generate_password_hash
 
 from . import user
 from .forms import LoginForm, ExpenseForm, LeaveForm
 from .. import db
+from ..admin.forms import ChangeForm
 from ..models import Driver, Expense, ExpenseType, Notice, Leave, Schedule
 
 
@@ -24,7 +27,6 @@ def index():
     schedule = Schedule.query.filter(
         Schedule.driver_id == session["driver_id"]
     ).filter(or_(Schedule.status == 1, Schedule.status == 2)).first()
-    print(schedule)
     return render_template("user/index.html",notice=notice,schedule=schedule)
 
 @user.route("/profile/")
@@ -51,10 +53,42 @@ def login():
         return redirect(request.args.get("next") or url_for("user.index"))
     return render_template("user/login.html",form=form)
 
+@user.route("/changePwd/",methods=["GET","POST"])
+@admin_login_req
+def changePwd():
+    form = ChangeForm()
+    if form.validate_on_submit():
+        data = form.data
+        admin = Driver.query.filter_by(id=session["driver_id"]).first()
+        if not admin.check_pwd(data["password"]):
+            flash("旧密码错误！", "err")
+            return redirect(url_for("user.changePwd"))
+        rule = re.match("^\S{6,10}$", data["newpassword"])
+        if not rule:
+            flash("新密码为6~15位！", "err")
+            return redirect(url_for("user.changePwd"))
+        if data["newpassword"] != data["newpasswordt"]:
+            flash("两次新密码不同！", "err")
+            return redirect(url_for("user.changePwd"))
+        admin.password = generate_password_hash(data["newpassword"])
+        db.session.add(admin)
+        db.session.commit()
+        flash("密码修改成功,请重新登录！", "ok")
+        return redirect(url_for("user.logout"))
+    return render_template("user/changepwd.html",form=form)
+
+@user.route("/logout/")
+@admin_login_req
+def logout():
+    session.pop("driver_name",None)
+    session.pop("driver_id", None)
+    return redirect(url_for("user.login"))
+
 @user.route("/schedule/list/")
 @admin_login_req
 def scheduleList():
-    return render_template("user/schedule_list.html")
+    schedule_list = Schedule.query.filter(Schedule.driver_id == session["driver_id"]).filter(Schedule.status == 3).all()
+    return render_template("user/schedule_list.html",schedule_list=schedule_list)
 
 @user.route("/schedule/detail/<int:id>/")
 @admin_login_req
@@ -63,6 +97,29 @@ def scheduleDetail(id=None):
         id = 1
     schedule = Schedule.query.filter_by(id=id).first()
     return render_template("user/schedule_detail.html",schedule=schedule)
+
+@user.route("/schedule/map/<int:id>/")
+@admin_login_req
+def scheduleMap(id=None):
+    if id is None:
+        id = 1
+    schedule = Schedule.query.filter_by(id=id).first()
+    return render_template("user/schedule_map.html",schedule=schedule)
+
+@user.route("/schedule/status/<int:id>/<int:sta>/")
+@admin_login_req
+def scheduleStatus(id=None,sta=None):
+    if id is None:
+        id = 1
+    schedule = Schedule.query.filter_by(id=id).first()
+    schedule.status = sta
+    db.session.add(schedule)
+    db.session.commit()
+    if sta == 2:
+        flash("发车成功", "ok")
+    else:
+        flash("成功结束", "ok")
+    return redirect(url_for("user.index"))
 
 @user.route("/expense/add/",methods=["GET","POST"])
 @admin_login_req

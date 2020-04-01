@@ -85,8 +85,8 @@
 							</div>
 						</div>
 						<div class="col-12">
-							<button type="button" class="btn btn-info btn-lg btn-block"><i class="icon-settings"></i>&nbsp;&nbsp;修改密码</button>
-							<button type="button" class="btn btn-danger btn-lg btn-block"><i class="icon-logout"></i>&nbsp;&nbsp;退出登录</button>
+							<button type="button" onclick="window.location.href ='{{ url_for('user.changePwd') }}'"  class="btn btn-info btn-lg btn-block"><i class="icon-settings"></i>&nbsp;&nbsp;修改密码</button>
+							<button type="button" onclick="window.location.href ='{{ url_for('user.logout') }}'" class="btn btn-danger btn-lg btn-block"><i class="icon-logout"></i>&nbsp;&nbsp;退出登录</button>
 						</div>
 					</div>
 					<!-- state end-->
