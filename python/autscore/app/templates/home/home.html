@@ -25,7 +25,42 @@
     <div id="wrapper">
       {% block content %}{% endblock %}
     </div><!-- /#wrapper -->
-
+                <input type="hidden" id="editId">
+                <div class="modal fade" id="Modal1" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal1Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal1Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认恢复密码</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="edit()">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="delId">
+                <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal2Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认删除此信息</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     <!-- JavaScript -->
     <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>

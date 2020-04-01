@@ -21,6 +21,7 @@
               <table class="table table-bordered table-hover tablesorter">
                 <thead>
                   <tr>
+                    <th>班级编号<i class="fa"></i></th>
                     <th>班级名<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
@@ -28,8 +29,11 @@
                 <tbody>
                 {%  for v in class_list.items %}
                   <tr>
+                    <td>{{ v.number }}</td>
                     <td>{{ v.name }}</td>
-                    <td><a class="btn btn-danger" href="{{ url_for('admin.classDel',id=v.id) }}" role="button">删除</a></td>
+                    <td>
+                        <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-danger">删除</button>
+                    </td>
                   </tr>
                 {% endfor %}
                 </tbody>
@@ -43,12 +47,22 @@
             <div class="col-lg-4"><a class="btn btn-primary" href="{{ url_for('admin.classAdd') }}" role="button">添加班级</a></div>
             <div class="col-lg-4 alert alert-dismissable alert-info">
               <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <strong>注意!</strong>请勿重复添加班级名
+              <strong>注意!</strong>请勿重复添加班级名或班级号
             </div>
           </div>
         </div><!-- /.row -->
 
       </div><!-- /#page-wrapper -->
-
 {% endblock %}
-
+{% block js %}
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.classDel")}}?id=";
+    location.href =str+id;
+}
+</script>
+{% endblock %}

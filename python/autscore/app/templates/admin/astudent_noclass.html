@@ -40,8 +40,8 @@
                     <td>{{ v.username }}</td>
                     <td>{{ v.name }}</td>
                     <td>
-                      <a class="btn btn-primary" href="{{ url_for('admin.studentEdit',id=v.id) }}" role="button">恢复密码</a>
-                      <a class="btn btn-danger" href="{{ url_for('admin.studentDel',id=v.id) }}" role="button">删除</a>
+                      <button type="button" data-toggle="modal" data-target="#Modal1" onclick="editId('{{ v.id }}')" class="btn btn-primary">恢复密码</button>
+                      <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-danger">删除</button>
                     </td>
                   </tr>
                 {% endfor %}
@@ -64,4 +64,24 @@
 
       </div><!-- /#page-wrapper -->
 
+{% endblock %}
+{% block js %}
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.studentDel")}}?id=";
+    location.href =str+id;
+}
+function editId(id) {
+    $("#editId").val(id);
+}
+function edit() {
+    var id = $("#editId").val();
+    var str = "{{url_for("admin.studentEdit")}}?id=";
+    location.href =str+id;
+}
+</script>
 {% endblock %}

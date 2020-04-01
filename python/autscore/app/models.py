@@ -36,6 +36,7 @@ class Class(db.Model):
     __tablename__ = "class"
     id = Column(Integer, primary_key=True)
     name = Column(String)
+    number = Column(String)
     student = db.relationship('Student', backref='class')
 
 class Experiment(db.Model):

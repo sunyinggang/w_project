@@ -48,8 +48,13 @@ def classAdd():
         if aclass == 1:
             flash("班级名已存在!")
             return redirect(url_for("admin.classAdd"))
+        aclass = Class.query.filter_by(number=data["number"]).count()
+        if aclass == 1:
+            flash("班级编号已存在!")
+            return redirect(url_for("admin.classAdd"))
         aclass = Class(
-            name=data["name"]
+            name=data["name"],
+            number=data["number"]
         )
         db.session.add(aclass)
         db.session.commit()
@@ -57,8 +62,9 @@ def classAdd():
         return redirect(url_for("admin.aclass",page=1))
     return render_template("admin/addclass.html",form=form)
 
-@admin.route("/aclass/del/<id>/",methods=["GET","POST"])
-def classDel(id=None):
+@admin.route("/aclass/del/")
+def classDel():
+    id = request.args.get("id")
     aclass = Class.query.filter_by(id=id).first_or_404()
     db.session.delete(aclass)
     db.session.commit()
@@ -154,8 +160,9 @@ def astudentNoclass(page=None):
     student_list = Student.query.filter_by(class_id=0).paginate(page=page,per_page=5)
     return render_template("admin/astudent_noclass.html",student_list=student_list)
 
-@admin.route("/astudent/del/<id>/",methods=["GET","POST"])
-def studentDel(id=None):
+@admin.route("/astudent/del/",methods=["GET","POST"])
+def studentDel():
+    id = request.args.get("id")
     student = Student.query.filter_by(id=id).first_or_404()
     db.session.delete(student)
     db.session.commit()
@@ -172,8 +179,9 @@ def studentSearch(page=None):
         student_list = student_list.filter(Student.username==username).paginate(page=page,per_page=5)
     return render_template("admin/astudent.html",student_list = student_list)
 
-@admin.route("/astudent/edit/<id>/",methods=["GET","POST"])
-def studentEdit(id=None):
+@admin.route("/astudent/edit/",methods=["GET","POST"])
+def studentEdit():
+    id = request.args.get("id")
     student = Student.query.filter_by(id=id).first_or_404()
     student.password = generate_password_hash("123456")
     db.session.add(student)
@@ -189,8 +197,9 @@ def ateacher(page=None):
     teacher_list = Teacher.query.paginate(page=page,per_page=5)
     return render_template("admin/ateacher.html",teacher_list = teacher_list)
 
-@admin.route("/ateacher/del/<id>/",methods=["GET","POST"])
-def ateacherDel(id=None):
+@admin.route("/ateacher/del/",methods=["GET","POST"])
+def ateacherDel():
+    id = request.args.get("id")
     teacher = Teacher.query.filter_by(id=id).first_or_404()
     db.session.delete(teacher)
     db.session.commit()
@@ -207,8 +216,9 @@ def teacherSearch(page=None):
         teacher_list = teacher_list.filter(Teacher.username==username).paginate(page=page,per_page=5)
     return render_template("admin/ateacher.html",teacher_list = teacher_list)
 
-@admin.route("/ateacher/edit/<id>/",methods=["GET","POST"])
-def teacherEdit(id=None):
+@admin.route("/ateacher/edit/",methods=["GET","POST"])
+def teacherEdit():
+    id = request.args.get("id")
     teacher = Teacher.query.filter_by(id=id).first_or_404()
     teacher.password = generate_password_hash("123456")
     db.session.add(teacher)

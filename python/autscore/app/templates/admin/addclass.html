@@ -13,6 +13,15 @@
 					</div>
                   <h1>添加班级</h1>
                   <div class="form-group">
+                      <label>班级编号</label>
+                    {{ form.number }}
+							{% for err in form.number.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
                       <label>班级名</label>
                     {{ form.name }}
 							{% for err in form.name.errors %}

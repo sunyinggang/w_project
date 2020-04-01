@@ -23,6 +23,9 @@
                   <h4>姓名：{{ student.name }}</h4>
               </div>
               <div class="row">
+                  <h4>班级编号：{{ student.class.number }}</h4>
+              </div>
+              <div class="row">
                   <h4>班级：{{ student.class.name }}</h4>
                   <a class="btn btn-primary" href="{{ url_for('student.selectClass') }}" role="button">修改班级</a>
               </div>
