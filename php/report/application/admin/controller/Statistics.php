@@ -6,6 +6,7 @@ namespace app\admin\controller;
 
 class Statistics extends Base
 {
+    //举报统计
     public function index(){
         $res1 = model('Scam')->select();
         $res2 = model('Infringement')->select();

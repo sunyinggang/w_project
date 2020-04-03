@@ -41,7 +41,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                {volist name="res" id="vo"}
+                {volist name="res" id="vo" key="k"}
                 {volist name="vo" id="data"}
                 {if condition="$data neq null"}
                   <tr>
@@ -55,7 +55,7 @@
                     {else /}
                     <td><span class="label label-danger">未修改</span></td>
                     {/if}
-                    <td><a class="btn btn-primary" href="{:url('index/middleWare',['key'=>$key,'id'=>$data['id']])}" role="button">查看</a></td>
+                    <td><a class="btn btn-primary" href="{:url('index/middleWare',['key'=>$k-1,'id'=>$data['id']])}" role="button">查看</a></td>
                   </tr>
                 {/if}
                 {/volist}

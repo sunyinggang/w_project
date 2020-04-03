@@ -6,6 +6,7 @@ use think\Controller;
 
 class Login extends Controller
 {
+    // 登录
     public function login(){
         if(request()->isPost()) {
             $data = input('post.');
@@ -39,10 +40,12 @@ class Login extends Controller
             return $this->fetch();
         }
     }
+    // 打开注册页面
     public function register()
     {
         return $this->fetch();
     }
+    // 注册
     public function add(){
         $data = input('post.');
         if($data['password']!=$data['passwordt']){
@@ -86,6 +89,7 @@ class Login extends Controller
             }
         }
     }
+    // 退出
     public function logout($role) {
         if($role==0){
             // 清除session

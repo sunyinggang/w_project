@@ -2,15 +2,17 @@
 
 namespace app\admin\controller;
 use think\Controller;
+// 悬赏公告管理
 class Reward extends Controller
 {
-
+    // 悬赏公告列表
     public function index(){
         $res = model('Reward')->paginate(5);
         return $this->fetch('',[
             'res' => $res
         ]);
     }
+    // 悬赏公告添加或修改
     public function add()
     {
         if (request()->isPost()) {
@@ -38,12 +40,14 @@ class Reward extends Controller
         }
         return $this->fetch();
     }
+    // 悬赏公告查看
     public function edit($id){
         $res = model('Reward')->selectById($id);
         return $this->fetch('',[
             'res' => $res
         ]);
     }
+    // 悬赏公告删除
     public function del($id){
         $model = model('Reward')->selectById($id);
         $res = $model->delete();

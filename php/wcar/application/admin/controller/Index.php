@@ -10,6 +10,7 @@ use app\common\model\User;
 
 class Index extends BaseController
 {
+    // 管理员首页
     public function index(){
         $count0 = $this->processCountByStatus(0);
         $count1 = $this->processCountByStatus(1);
@@ -22,6 +23,7 @@ class Index extends BaseController
             'countToday' => $countToday
         ]);
     }
+    // 车辆页
     public function car($id,$key,$status=0,$suggest=''){
         $car = model('Car');
         $res = $car->where('id','=',$id)->find();
@@ -32,6 +34,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 车辆外观
     public function carShow($id,$key,$status=0,$suggest=''){
         $carShow = model('CarShow');
         $res = $carShow->where('id','=',$id)->find();
@@ -42,6 +45,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 车主基本信息
     public function carerInfo($id,$key,$status=0,$suggest=''){
         $carerInfo = model('CarerInfo');
         $res = $carerInfo->where('id','=',$id)->find();
@@ -52,6 +56,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 驾驶证基本信息
     public function driveCard($id,$key,$status=0,$suggest=''){
         $driveCard = model('DriveCard');
         $res = $driveCard->where('id','=',$id)->find();
@@ -62,6 +67,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 驾驶证副页基本信息
     public function driveSubpage($id,$key,$status=0,$suggest=''){
         $driveSubpage = model('DriveSubpage');
         $res = $driveSubpage->where('id','=',$id)->find();
@@ -72,6 +78,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 身份证基本信息（正页）
     public function idCard($id,$key,$status=0,$suggest=''){
         $idCard = model('IdCard');
         $res = $idCard->where('id','=',$id)->find();
@@ -82,6 +89,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 身份证基本信息(副页)
     public function idSubpage($id,$key,$status=0,$suggest=''){
         $idSubpage = model('IdSubpage');
         $res = $idSubpage->where('id','=',$id)->find();
@@ -92,6 +100,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 行驶证基本信息
     public function travelCard($id,$key,$status=0,$suggest=''){
         $travelCard = model('TravelCard');
         $res = $travelCard->where('id','=',$id)->find();
@@ -102,6 +111,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 行驶证副业基本信息
     public function travelSubpage($id,$key,$status=0,$suggest=''){
         $travelSubpage = model('TravelSubpage');
         $res = $travelSubpage->where('id','=',$id)->find();
@@ -112,6 +122,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 上传图片
     public function upload(){
         $file = request()->file("img");
 //移动文件到框架应用更目录的public/uploads/
@@ -129,6 +140,7 @@ class Index extends BaseController
             return $this->error($file->getError());
         }
     }
+    // 根据类型跳转至某类型信息页面
     public function middleWare($key,$id,$status=0,$suggest=''){
         if($key == 0){
                 $this->redirect('index/car',['id' => $id,'key' => $key,'status' => $status,'$suggest' => $suggest]);
@@ -148,6 +160,7 @@ class Index extends BaseController
             $this->redirect('index/travelSubpage',['id' => $id,'key' => $key,'status' => $status,'$suggest' => $suggest]);
         }
     }
+    // 添加修改建议
     public function suggest($key=10,$id=0){
         if(request()->isPost()) {
             $data = input('post.');
@@ -158,6 +171,7 @@ class Index extends BaseController
             'key' => $key,
         ]);
     }
+    // 各类信息列表，根据传入参数key区分查询信息种类
     public function reviewList($key){
         if($key == 0){
             $model = model('Car');
@@ -198,6 +212,7 @@ class Index extends BaseController
             'title' => $title
         ]);
     }
+    // 修改审核信息状态
     public function statusEdit($res,$key,$status=0,$suggest=''){
         if($status==1){
             $res["status"] = 1;
@@ -218,6 +233,7 @@ class Index extends BaseController
             }
         }
     }
+    // 各种信息审核列表（暂时无用）
     public function processStatus($status){
         $title = '';
         if(request()->isPost()) {
@@ -256,6 +272,7 @@ class Index extends BaseController
             'status' => $status
         ]);
     }
+    // 今日审核列表信息
     public function processToday(){
         $car = model('Car')->selectByUpdateTime();
         $carShow = model('CarShow')->selectByUpdateTime();
@@ -280,6 +297,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 车主信息统计
     public function userInfo($type){
         if($type==1){
             $title = "车主年龄统计";
@@ -303,6 +321,7 @@ class Index extends BaseController
             'type' => $type
         ]);
     }
+    // 计算年龄或车龄
     public function age($time,$type){
         if ($type==1){
             $date = strtotime(substr($time,6,8));
@@ -324,6 +343,7 @@ class Index extends BaseController
         }
         return $age;
     }
+    // 查看某车主信息审核进度
     public function reviewProgress($userId){
         $car = model('Car')->selectByUserId($userId);
         $carShow = model('CarShow')->selectByUserId($userId);
@@ -347,6 +367,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    //修改密码
     public function changePassword()
     {
         if (request()->isPost()) {
@@ -367,6 +388,7 @@ class Index extends BaseController
         }
         return $this->fetch();
     }
+    // 查看不同状态信息的信息数量
     public function processCountByStatus($status){
         $car = model('Car')->selectByStatus($status);
         $carShow = model('CarShow')->selectByStatus($status);
@@ -380,6 +402,7 @@ class Index extends BaseController
         $count = count($res);
         return $count;
     }
+    // 查看今天审核数量
     public function processTodayCount(){
         $car = model('Car')->selectByUpdateTime();
         $carShow = model('CarShow')->selectByUpdateTime();

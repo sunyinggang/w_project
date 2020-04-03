@@ -6,10 +6,12 @@ use think\Controller;
 
 class Index extends Controller
 {
+    // 初始化
     public function _initialize(){
         $user = session('user','','user');
         $this->assign('user',$user);
     }
+    // 登录
     public function login(){
         if(request()->isPost()) {
             $data = input('post.');
@@ -28,6 +30,7 @@ class Index extends Controller
             }
         return $this->fetch();
     }
+    // 注册
     public function register(){
         if(request()->isPost()) {
             $data = input('post.');
@@ -62,6 +65,7 @@ class Index extends Controller
         }
         return $this->fetch();
     }
+    // 修改密码
     public function changePassword()
     {
         if (request()->isPost()) {
@@ -85,11 +89,13 @@ class Index extends Controller
         }
         return $this->fetch();
     }
+    // 退出登录
     public function logout() {
         // 清除session
         session('user', null,'user');
         $this->redirect('index/index');
     }
+    // 首页
     public function index()
     {
         $safety = model('Safety')->order('create_time desc')->limit(6)->select();
@@ -131,8 +137,9 @@ class Index extends Controller
            'count1day' => $count1day
        ]);
     }
+    // 曝光栏
     public function exposure(){
-        $res = model('Exposure')->paginate(5);
+        $res = model('Exposure')->order('create_time', 'desc')->paginate(5);
         foreach ($res as $data){
             $data["description"] = $data["content"];
             preg_match_all("/src=([\"|']?)([^\"'>]+\.(gif|jpg|jpeg|bmp|png))\\1/i", $data["content"],$matches);
@@ -147,8 +154,9 @@ class Index extends Controller
             'type' => 11
         ]);
     }
+    // 悬赏栏
     public function reward(){
-        $res = model('Reward')->paginate(5);
+        $res = model('Reward')->order('create_time', 'desc')->paginate(5);
         foreach ($res as $data){
             $data["description"] = $data["content"];
             preg_match_all("/src=([\"|']?)([^\"'>]+\.(gif|jpg|jpeg|bmp|png))\\1/i", $data["content"],$matches);
@@ -163,8 +171,9 @@ class Index extends Controller
             'type' => 12
         ]);
     }
+    // 安全警示栏
     public function safety(){
-        $res = model('Safety')->paginate(5);
+        $res = model('Safety')->order('create_time', 'desc')->paginate(5);
         foreach ($res as $data){
             $data["description"] = $data["content"];
             preg_match_all("/src=([\"|']?)([^\"'>]+\.(gif|jpg|jpeg|bmp|png))\\1/i", $data["content"],$matches);
@@ -179,6 +188,7 @@ class Index extends Controller
             'type' => 13
         ]);
     }
+    // 举报入口
     public function reportIndex(){
         $user = session('user', '','user');
         if(!$user){
@@ -190,6 +200,7 @@ class Index extends Controller
             'res' => $res
         ]);
     }
+    // 个人中心
     public function user(){
         $user = session('user','','user');
         if(!$user){
@@ -213,6 +224,7 @@ class Index extends Controller
             'count2' => $count2
         ]);
     }
+    // 文章详情
     public function article($type,$id){
         if ($type == 1){
             $res = model('Scam')->selectById($id);
@@ -252,6 +264,7 @@ class Index extends Controller
             'type' => $type
         ]);
     }
+    // 填写举报信息页面
     public function question($ikey,$sort){
         if($ikey==1){
             $title="诈骗类有害信息举报";
@@ -302,6 +315,7 @@ class Index extends Controller
             'ikey' => $ikey
         ]);
     }
+    // 填写诈骗类有害信息举报信息
     public function scam(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -317,6 +331,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写侵权类有害信息举报信息
     public function infringement(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -332,6 +347,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写骚扰类有害信息举报信息
     public function harass(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -347,6 +363,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写违法网站举报信息
     public function illwebsite(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -362,6 +379,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写谣言类有害信息举报信息
     public function rumor(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -377,6 +395,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写恶意手机应用举报信息
     public function spite(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -392,6 +411,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写个人信息泄露举报信息
     public function leakage(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -407,6 +427,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写违法犯罪线索举报信息
     public function clue(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -422,6 +443,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写违法违纪举报信息
     public function illegal(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -437,6 +459,7 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
+    // 填写其它违法举报信息
     public function other(){
         $data = input('post.');
         if(!captcha_check($data["captcha"])){
@@ -452,13 +475,15 @@ class Index extends Controller
             $this->error('举报失败，请重新输入');
         }
     }
-    public function commit($sort_id,$id){
-        $model = model('Sort')->where('id','=',$sort_id)->find();
-        $res = model( ucwords($model["ano_name"]))->selectById($id);
-        return $this->fetch('',[
-            'res' => $res
-        ]);
-    }
+    // 无用代码，系统没有问题删除就行
+//    public function commit($sort_id,$id){
+//        $model = model('Sort')->where('id','=',$sort_id)->find();
+//        $res = model( ucwords($model["ano_name"]))->selectById($id);
+//        return $this->fetch('',[
+//            'res' => $res
+//        ]);
+//    }
+    // 举报信息修改页面
     public function edit($ikey,$id){
         $model = model('Sort')->where('id','=',$ikey)->find();
         $sort = $model["ano_name"];
@@ -513,6 +538,7 @@ class Index extends Controller
             'res'  => $res
         ]);
     }
+    // 举报内容中提取第一个图片作为列表图片缩略图
     public function addImg($res){
         foreach ($res as $data){
             preg_match_all("/src=([\"|']?)([^\"'>]+\.(gif|jpg|jpeg|bmp|png))\\1/i", $data["description"],$matches);
@@ -524,9 +550,11 @@ class Index extends Controller
         }
         return $res;
     }
+    // 举报规则
     public function rule(){
         return $this->fetch();
     }
+    // 根据用户id与状态查询所有举报信息
     public function reportByUser($user,$status){
         $res1 = model('Scam')->selectByUserIdAndStatus($user["id"],$status);
         $res2 = model('Infringement')->selectByUserIdAndStatus($user["id"],$status);

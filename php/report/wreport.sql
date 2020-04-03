@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-03-01 14:28:12
+Date: 2020-03-10 13:55:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -61,6 +61,7 @@ DROP TABLE IF EXISTS `exposure`;
 CREATE TABLE `exposure` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `from` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
@@ -70,10 +71,10 @@ CREATE TABLE `exposure` (
 -- ----------------------------
 -- Records of exposure
 -- ----------------------------
-INSERT INTO `exposure` VALUES ('7', '测试一', '<p>爱仕达sad</p>', '2020-02-17 21:12:36', '2020-02-17 21:12:36');
-INSERT INTO `exposure` VALUES ('4', '测试二', '<p>					</p><p style=\"text-align: center;\">萨德</p><p>&nbsp; &nbsp; 萨德撒多士大夫发</p><p><img src=\"/report/public/upload/image/20200217/1581939426.jpg\" title=\"1581939426.jpg\" alt=\"22.jpg\"/></p><p>				</p>', '2020-02-17 19:14:00', '2020-02-17 19:37:09');
-INSERT INTO `exposure` VALUES ('6', '测试四', '<p>sadsa</p><p><img src=\"/report/public/upload/image/20200217/1581940194.jpg\" title=\"1581940194.jpg\" alt=\"22.jpg\"/><img src=\"/report/public/upload/image/20200217/1581940199.jpg\" title=\"1581940199.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 19:50:01', '2020-02-17 19:50:01');
-INSERT INTO `exposure` VALUES ('5', '测试三', '<p>车费萨达顺风车<br/></p><p style=\"white-space: normal;\">萨达顺风车</p><p style=\"white-space: normal;\">沙发但是第四个</p><p>沙发但是第四个</p><p><img src=\"/report/public/upload/image/20200217/1581939386.jpg\" title=\"1581939386.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 19:36:29', '2020-02-17 19:36:29');
+INSERT INTO `exposure` VALUES ('7', '测试一', '新华网', '<p>爱仕达sad</p>', '2020-02-17 21:12:36', '2020-02-17 21:12:36');
+INSERT INTO `exposure` VALUES ('4', '测试二', '新华网', '<p>					</p><p style=\"text-align: center;\">萨德</p><p>&nbsp; &nbsp; 萨德撒多士大夫发</p><p><img src=\"/report/public/upload/image/20200217/1581939426.jpg\" title=\"1581939426.jpg\" alt=\"22.jpg\"/></p><p>				</p>', '2020-02-17 19:14:00', '2020-02-17 19:37:09');
+INSERT INTO `exposure` VALUES ('6', '测试四', '新华网', '<p>sadsa</p><p><img src=\"/report/public/upload/image/20200217/1581940194.jpg\" title=\"1581940194.jpg\" alt=\"22.jpg\"/><img src=\"/report/public/upload/image/20200217/1581940199.jpg\" title=\"1581940199.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 19:50:01', '2020-02-17 19:50:01');
+INSERT INTO `exposure` VALUES ('5', '测试三', '新华网', '<p>车费萨达顺风车<br/></p><p style=\"white-space: normal;\">萨达顺风车</p><p style=\"white-space: normal;\">沙发但是第四个</p><p>沙发但是第四个</p><p><img src=\"/report/public/upload/image/20200217/1581939386.jpg\" title=\"1581939386.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 19:36:29', '2020-02-17 19:36:29');
 
 -- ----------------------------
 -- Table structure for `harass`
@@ -92,11 +93,12 @@ CREATE TABLE `harass` (
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of harass
 -- ----------------------------
+INSERT INTO `harass` VALUES ('1', '电话骚扰', '测试245', '<p>爱仕达</p>', null, '0', '3', '1', 'www.abc.com', '2020-03-04 17:18:39', '2020-03-04 17:18:39');
 
 -- ----------------------------
 -- Table structure for `illegal`
@@ -217,16 +219,22 @@ DROP TABLE IF EXISTS `reward`;
 CREATE TABLE `reward` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `from` varchar(255) DEFAULT NULL,
   `content` text NOT NULL,
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of reward
 -- ----------------------------
-INSERT INTO `reward` VALUES ('1', '测试悬赏公告', '<p>测试</p><p><img src=\"/ueditor/php/upload/image/20200217/1581934052.jpg\" title=\"1581934052.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 18:07:34', '2020-02-17 18:07:34');
+INSERT INTO `reward` VALUES ('1', '测试悬赏公告', '新华网', '<p>测试</p><p><img src=\"/ueditor/php/upload/image/20200217/1581934052.jpg\" title=\"1581934052.jpg\" alt=\"22.jpg\"/></p>', '2020-02-17 18:07:34', '2020-02-17 18:07:34');
+INSERT INTO `reward` VALUES ('2', '在测试悬赏', '测试网', '<p>&nbsp; &nbsp; &nbsp; &nbsp;萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达萨达</p>', '2020-03-04 15:24:10', '2020-03-04 15:24:10');
+INSERT INTO `reward` VALUES ('3', '测试1265', '新华网', '<p>&nbsp; &nbsp; &nbsp;新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网</p>', '2020-03-04 17:47:23', '2020-03-04 17:47:23');
+INSERT INTO `reward` VALUES ('4', '新华网测试', '新华网', '<p>新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网</p>', '2020-03-04 17:47:35', '2020-03-04 17:47:35');
+INSERT INTO `reward` VALUES ('5', '新华网124', '新华网', '<p>新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网</p>', '2020-03-04 17:47:47', '2020-03-04 17:47:47');
+INSERT INTO `reward` VALUES ('6', '萨达撒旦', '新华网', '<p>新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网新华网</p>', '2020-03-04 17:48:00', '2020-03-04 17:48:00');
 
 -- ----------------------------
 -- Table structure for `rumor`
@@ -249,7 +257,7 @@ CREATE TABLE `rumor` (
 -- ----------------------------
 -- Records of rumor
 -- ----------------------------
-INSERT INTO `rumor` VALUES ('4', '测试34', '<p>cekgfhaa</p>', null, '1', '5', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `rumor` VALUES ('4', '测试34', '<p>cekgfhaa</p>', '审核通过，问题已解决', '1', '5', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-03-04 17:16:54');
 
 -- ----------------------------
 -- Table structure for `safety`
@@ -258,16 +266,23 @@ DROP TABLE IF EXISTS `safety`;
 CREATE TABLE `safety` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `from` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of safety
 -- ----------------------------
-INSERT INTO `safety` VALUES ('1', '测试安全警示', '<p>					</p><p>sad<img src=\"/ueditor/php/upload/image/20200217/1581934172.jpg\" title=\"1581934172.jpg\" alt=\"22.jpg\"/></p><p>				</p>', '2020-02-17 18:09:34', '2020-02-17 18:09:51');
+INSERT INTO `safety` VALUES ('1', '测试安全警示', '新华网', '<p>					</p><p>sad<img src=\"/ueditor/php/upload/image/20200217/1581934172.jpg\" title=\"1581934172.jpg\" alt=\"22.jpg\"/></p><p>				</p>', '2020-02-17 18:09:34', '2020-02-17 18:09:51');
+INSERT INTO `safety` VALUES ('3', '测试1234', '新华网', '<p>啥防辐射阿斯顿撒多</p>', '2020-03-03 18:31:39', '2020-03-03 18:31:39');
+INSERT INTO `safety` VALUES ('4', '测试测试1234', '新华网', '<p>瓦切多撒地方</p>', '2020-03-03 18:31:56', '2020-03-03 18:31:56');
+INSERT INTO `safety` VALUES ('5', '测试873', '新华网', '<p>vc想办法第三十</p>', '2020-03-03 18:32:14', '2020-03-03 18:32:14');
+INSERT INTO `safety` VALUES ('6', '测试9345', '新华网', '<p>sad撒多的收费多少GV查询胜多负少的</p>', '2020-03-03 18:32:30', '2020-03-03 18:32:30');
+INSERT INTO `safety` VALUES ('7', '长标题测试长标题测试长标题测试长标题测试长标题测试', '新华网', '<p>&nbsp; &nbsp; &nbsp; &nbsp;长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试长标题测试</p>', '2020-03-03 18:32:53', '2020-03-03 18:32:53');
+INSERT INTO `safety` VALUES ('8', '测试8732', '新华网', '<p>&nbsp; &nbsp; &nbsp; &nbsp;按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大按顺序大</p>', '2020-03-03 18:33:08', '2020-03-03 18:33:08');
 
 -- ----------------------------
 -- Table structure for `scam`
@@ -286,18 +301,18 @@ CREATE TABLE `scam` (
   `create_time` datetime NOT NULL,
   `update_time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of scam
 -- ----------------------------
-INSERT INTO `scam` VALUES ('3', '中奖信息', '测试2', '<p>asd</p>', null, '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `scam` VALUES ('4', '中奖信息', '测试', '<p>哒哒哒哒哒哒多多多多</p>', null, '0', '1', '1', 'www.abc.com', '2020-02-23 18:46:53', '2020-02-23 18:46:53');
-INSERT INTO `scam` VALUES ('5', '代刷信用', '代刷信用测试', '<p>代刷信用测试</p>', null, '0', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `scam` VALUES ('6', '其他诈骗', '快乐赞卡单不退款', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; &nbsp;客服态度非常不好不给予正面回答问题打太极拖延时间导致我每天都在损失金钱入账&nbsp;快乐赞平台只有一个仲裁却仲裁了近一周还未解决现要求全额退款并解释说明道歉。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954249.jpg\" title=\"1582954249.jpg\" alt=\"1bf5dc61faaa91a361a1d476fea83f6e.jpg\"/></span></p>', null, '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `scam` VALUES ('7', '虚拟财产交易', '辽宁汇铂网络科技有限公司理财app非法集资', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; &nbsp;汇鼎理财app于2020年1月份左右突然无法正常提现，后于2月10日发布了因疫情防控延迟复工公告，后又于2月20日发布了暂停公司运营的公告。此app原由浙江汇铂资产管理有限公司负责，现转移为辽宁汇铂网络科技有限公司，此app法定代表人邵建国非法集资，恶意关闭旗下理财是app数据，未受本地金融部门监管，运营不善还持续收纳出借款，恶意吸收公众储蓄，请警方介入调查，还我们受害人一个公道！</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954470.jpg\" title=\"1582954470.jpg\" alt=\"12.jpg\"/></span></p>', null, '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-02-29 17:12:43');
-INSERT INTO `scam` VALUES ('8', '虚拟财产交易', '百消丹云麒不发货不退款，恶意销售，客服电话为空号！', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; 百消丹云麒&nbsp;微信商城下单，不发货，不退款，申请退款后给我自动取消，变更为发货中，但是物流信息查询不到，客服不回消息，客服电话四个号码三个为空号，明显欺骗。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954717.jpg\" title=\"1582954717.jpg\" alt=\"123.jpg\"/></span></p>', null, '0', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `scam` VALUES ('9', '虚拟财产交易', '百消丹云麒不发货不退款，恶意销售，客服电话为空号！', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; 百消丹云麒&nbsp;微信商城下单，不发货，不退款，申请退款后给我自动取消，变更为发货中，但是物流信息查询不到，客服不回消息，客服电话四个号码三个为空号，明显欺骗。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954717.jpg\" title=\"1582954717.jpg\" alt=\"123.jpg\"/></span></p>', null, '0', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `scam` VALUES ('3', '中奖信息', '测试2', '<p>asd</p>', '审核通过，问题已解决', '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `scam` VALUES ('4', '中奖信息', '测试', '<p>哒哒哒哒哒哒多多多多</p>', '审核通过，问题已解决', '1', '1', '1', 'www.abc.com', '2020-02-23 18:46:53', '2020-03-04 17:09:38');
+INSERT INTO `scam` VALUES ('5', '代刷信用', '代刷信用测试', '<p>代刷信用测试</p>', '审核通过，问题已解决', '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-03-04 17:13:40');
+INSERT INTO `scam` VALUES ('6', '其他诈骗', '快乐赞卡单不退款', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; &nbsp;客服态度非常不好不给予正面回答问题打太极拖延时间导致我每天都在损失金钱入账&nbsp;快乐赞平台只有一个仲裁却仲裁了近一周还未解决现要求全额退款并解释说明道歉。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954249.jpg\" title=\"1582954249.jpg\" alt=\"1bf5dc61faaa91a361a1d476fea83f6e.jpg\"/></span></p>', '审核通过，问题已解决', '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `scam` VALUES ('7', '虚拟财产交易', '辽宁汇铂网络科技有限公司理财app非法集资', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; &nbsp;汇鼎理财app于2020年1月份左右突然无法正常提现，后于2月10日发布了因疫情防控延迟复工公告，后又于2月20日发布了暂停公司运营的公告。此app原由浙江汇铂资产管理有限公司负责，现转移为辽宁汇铂网络科技有限公司，此app法定代表人邵建国非法集资，恶意关闭旗下理财是app数据，未受本地金融部门监管，运营不善还持续收纳出借款，恶意吸收公众储蓄，请警方介入调查，还我们受害人一个公道！</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954470.jpg\" title=\"1582954470.jpg\" alt=\"12.jpg\"/></span></p>', '审核通过，问题已解决', '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-02-29 17:12:43');
+INSERT INTO `scam` VALUES ('8', '虚拟财产交易', '百消丹云麒不发货不退款，恶意销售，客服电话为空号！', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; 百消丹云麒&nbsp;微信商城下单，不发货，不退款，申请退款后给我自动取消，变更为发货中，但是物流信息查询不到，客服不回消息，客服电话四个号码三个为空号，明显欺骗。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954717.jpg\" title=\"1582954717.jpg\" alt=\"123.jpg\"/></span></p>', '问题已解决', '1', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-03-04 17:15:29');
+INSERT INTO `scam` VALUES ('9', '虚拟财产交易', '百消丹云麒不发货不退款，恶意销售，客服电话为空号！', '<p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; 百消丹云麒&nbsp;微信商城下单，不发货，不退款，申请退款后给我自动取消，变更为发货中，但是物流信息查询不到，客服不回消息，客服电话四个号码三个为空号，明显欺骗。</span></p><p><span style=\"color: rgb(102, 102, 102); font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-size: 15px; background-color: rgb(255, 255, 255);\"><img src=\"/report/public/upload/image/20200229/1582954717.jpg\" title=\"1582954717.jpg\" alt=\"123.jpg\"/></span></p>', '审核文通过', '2', '1', '1', 'www.abc.com', '0000-00-00 00:00:00', '2020-03-04 17:15:43');
 INSERT INTO `scam` VALUES ('10', '虚拟财产交易', '咸鱼交易骗单', '<h1 style=\"box-sizing: border-box; margin: 0px; font-size: 20px; font-family: &quot;Helvetica Neue&quot;, STHeiti, 微软雅黑, &quot;Microsoft YaHei&quot;, Helvetica, Arial, sans-serif; font-weight: 500; line-height: 30px; color: rgb(51, 51, 51); max-width: 500px; white-space: normal; background-color: rgb(255, 255, 255);\">&nbsp; &nbsp; &nbsp; 闲鱼交易骗单 假物流 发起退货申请 不给退款 发起投诉后 卖家威胁帮他解封后退款 但迟迟未退 订单已经到自动确认收货了</h1><p><br/></p>', 'sad', '2', '1', '1', 'www.abc.com', '2020-02-29 13:54:06', '2020-02-29 17:22:51');
 
 -- ----------------------------

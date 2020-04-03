@@ -1,18 +1,19 @@
 <?php
 
-  namespace app\admin\controller;
-  use think\Controller;
-   class Exposure extends Controller
-    {
-
-       public function index(){
+namespace app\admin\controller;
+use think\Controller;
+// 曝光栏管理
+class Exposure extends Controller
+{
+    // 曝光栏列表
+    public function index(){
            $res = model('Exposure')->paginate(5);
            return $this->fetch('',[
                'res' => $res
            ]);
-       }
-       public function add()
-       {
+    }
+    // 添加或修改曝光信息
+    public function add(){
            if (request()->isPost()) {
                $data = input('post.');
                if (empty($data['title'])) {
@@ -38,13 +39,15 @@
            }
            return $this->fetch();
        }
+    // 查看曝光信息
 	public function edit($id){
         $res = model('Exposure')->selectById($id);
 		return $this->fetch('',[
 		    'res' => $res
         ]);
 	}
-       public function del($id){
+	// 删除曝光信息
+    public function del($id){
            $model = model('Exposure')->selectById($id);
            $res = $model->delete();
            if ($res) {

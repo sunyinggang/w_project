@@ -19,7 +19,7 @@
                 <input type="file" id="input-id" name="img" accept="image/*"/>
               </div>
               {if condition="$res['status'] eq 0"}
-              <a class="btn btn-primary" href="{:url('index/car',['id'=>$res['id'],'status'=>1])}" role="button">审核通过</a>
+              <a class="btn btn-primary" href="{:url('index/car',['id'=>$res['id'],'status'=>1,'key'=>0])}" role="button">审核通过</a>
               <a class="btn btn-danger" href="{:url('index/suggest',['id'=>$res['id'],'key'=>0])}" role="button">审核不通过</a>
               {elseif condition="$res['status'] eq 2"}
               <label>修改建议</label>

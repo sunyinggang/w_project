@@ -6,9 +6,11 @@ namespace app\user\controller;
 
 class Index extends BaseController
 {
+    // 车主首页
     public function index(){
         return $this->fetch();
     }
+    // 查看，添加，修改车辆页
     public function car(){
         $user = session('user','','user');
         $car = model('Car');
@@ -37,6 +39,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改车辆外观
     public function carShow(){
         $user = session('user','','user');
         $carShow = model('CarShow');
@@ -65,6 +68,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改车主基本信息
     public function carerInfo(){
         $user = session('user','','user');
         $carerInfo = model('CarerInfo');
@@ -93,6 +97,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改驾驶证基本信息
     public function driveCard(){
         $user = session('user','','user');
         $driveCard = model('DriveCard');
@@ -121,6 +126,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改驾驶证副页基本信息
     public function driveSubpage(){
         $user = session('user','','user');
         $driveSubpage = model('DriveSubpage');
@@ -149,6 +155,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改身份证基本信息（正页）
     public function idCard(){
         $user = session('user','','user');
         $idCard = model('IdCard');
@@ -177,6 +184,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改身份证基本信息(副页)
     public function idSubpage(){
         $user = session('user','','user');
         $idSubpage = model('IdSubpage');
@@ -213,6 +221,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 信息审核进度
     public function reviewProgress(){
         $user = session('user','','user');
         $car = model('Car')->selectByUserId($user["id"]);
@@ -237,6 +246,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改行驶证基本信息
     public function travelCard(){
         $user = session('user','','user');
         $travelCard = model('TravelCard');
@@ -265,6 +275,7 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 查看，添加，修改行驶证副业基本信息
     public function travelSubpage(){
         $user = session('user','','user');
         $travelSubpage = model('TravelSubpage');
@@ -297,22 +308,11 @@ class Index extends BaseController
             'res' => $res
         ]);
     }
+    // 审核人信息页面
     public function user(){
-//        if(request()->isPost()) {
-//            $data = input('post.');
-//            $user = model('User');
-//            var_dump($user);
-//            $res = $user->where('phone','=',$data["phone"])->find();
-//            if($res){
-//                $this->error('此手机号已被申请！');
-//            }else{
-//                $id = $this->user["id"];
-//                var_dump($id);
-//                $user->allowField(true)->save($data,['id'=>$id]);
-//            }
-//        }
         return $this->fetch();
     }
+    // 上传图片
     public function upload(){
         $file = request()->file("img");
 //移动文件到框架应用更目录的public/uploads/
@@ -330,6 +330,7 @@ class Index extends BaseController
             return $this->error($file->getError());
         }
     }
+    // 根据分类跳转至某类信息页面
     public function middleWare($key){
         if($key == 0){
             $this->redirect('index/car');
@@ -349,6 +350,7 @@ class Index extends BaseController
             $this->redirect('index/travelSubpage');
         }
     }
+    // 查看修改意见
     public function suggest($title,$suggest,$key){
         $data['title'] = $title;
         $data['suggest'] = $suggest;
@@ -357,6 +359,7 @@ class Index extends BaseController
             'key' => $key
         ]);
     }
+    // 修改密码
     public function changePassword()
     {
         if (request()->isPost()) {

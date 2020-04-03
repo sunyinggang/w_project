@@ -2,15 +2,17 @@
 
 namespace app\admin\controller;
 use think\Controller;
+// 安全警示管理
 class Safety extends Controller
 {
-
+    // 安全警示列表
     public function index(){
         $res = model('Safety')->paginate(5);
         return $this->fetch('',[
             'res' => $res
         ]);
     }
+    // 安全警示添加或修改
     public function add()
     {
         if (request()->isPost()) {
@@ -38,12 +40,14 @@ class Safety extends Controller
         }
         return $this->fetch();
     }
+    // 安全警示查看
     public function edit($id){
         $res = model('Safety')->selectById($id);
         return $this->fetch('',[
             'res' => $res
         ]);
     }
+    // 安全警示删除
     public function del($id){
         $model = model('Safety')->selectById($id);
         $res = $model->delete();
