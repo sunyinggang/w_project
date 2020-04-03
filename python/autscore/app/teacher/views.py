@@ -88,8 +88,9 @@ def editKeyWords(id=None):
         return redirect(url_for("teacher.experiment", page=1))
     return render_template("teacher/keywords.html",form=form,experiment=experiment)
 
-@teacher.route("/experiment/del/<id>/",methods=["POST","GET"])
-def delExperiment(id=None):
+@teacher.route("/experiment/del/")
+def delExperiment():
+    id = request.args.get("id")
     experiment = Experiment.query.filter_by(id=id).first_or_404()
     db.session.delete(experiment)
     db.session.commit()
@@ -101,7 +102,11 @@ def score(page=None):
     if page is None:
         page = 1
     experiment_list = Experiment.query.filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
-    return render_template("teacher/tscore.html",experiment_list = experiment_list)
+    select_all = db.session.query(Select.experiment_id,func.count(Select.student_id)).group_by(Select.experiment_id).all()
+    select_submit = db.session.query(Select.experiment_id, func.count(Select.student_id)).group_by(Select.experiment_id).filter(Select.is_aut==1).all()
+    print(select_all)
+    print(select_submit)
+    return render_template("teacher/tscore.html",experiment_list = experiment_list,select_all=select_all,select_submit=select_submit)
 
 @teacher.route("/student/<int:page>/",methods=["POST","GET"])
 def student(page=None):

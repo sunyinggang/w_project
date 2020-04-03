@@ -12,7 +12,7 @@
         <div style="margin-top: 40px;" class="row">
 
           <div class="col-lg-6">
-            搜索（输入工号）：
+            搜索（输入工号或姓名）：
             <form action="{{ url_for('admin.teacherSearch',page=1)}}">
             <div class="form-group input-group">
               <input type="text" name="username" class="form-control">
@@ -24,7 +24,7 @@
             <div class="table-responsive">
               <div class="row">
 				{% for msg in get_flashed_messages() %}
-				<p style="color:red;">{{ msg }}</p>
+				<p style="color:red;font-size: 20px;">{{ msg }}</p>
                 {% endfor %}
               </div>
               <table class="table table-bordered table-hover tablesorter">

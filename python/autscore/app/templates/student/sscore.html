@@ -14,7 +14,7 @@
           <div class="col-lg-12">
            <div class="row">
 				{% for msg in get_flashed_messages() %}
-				<p style="color:red;">{{ msg }}</p>
+				<p style="color:red;font-size: 20px;">{{ msg }}</p>
 				{% endfor %}
 			</div>
             <div class="table-responsive">
@@ -64,7 +64,7 @@
                     </td>
                     {% endif %}
                     <td>
-                      <a class="btn btn-danger" href="{{ url_for('student.scoreDel',id=v.id) }}" role="button">删除</a>
+                      <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-danger">删除</button>
                     </td>
                   </tr>
                 {% endfor %}
@@ -79,4 +79,16 @@
 
       </div><!-- /#page-wrapper -->
 
+{% endblock %}
+{% block js %}
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("student.scoreDel")}}?id=";
+    location.href =str+id;
+}
+</script>
 {% endblock %}

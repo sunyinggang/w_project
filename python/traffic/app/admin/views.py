@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import datetime
 from functools import wraps
 
 from flask import render_template, flash, redirect, url_for, session, request
@@ -415,9 +416,10 @@ def expenseApproval(id=None):
        id = 1
     expense = Expense.query.get_or_404(id)
     expense.status = 1
+    expense.end_time = datetime.now()
     db.session.add(expense)
     db.session.commit()
-    flash("修改成功", "ok")
+    flash("结算成功", "ok")
     return redirect(url_for("admin.expenseList",type=1))
 
 @admin.route("/expense/del/")

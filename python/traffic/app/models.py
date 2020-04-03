@@ -76,6 +76,7 @@ class Expense(db.Model):
     money = Column(Integer)
     status = Column(Integer, default=0)
     add_time = Column(db.DateTime, default=datetime.now)
+    end_time = Column(db.DateTime, default=datetime.now)
     note = Column(Text)
     because = Column(Text)
     img_url = Column(String)

@@ -110,13 +110,15 @@ def addWord(id=None):
     aut_score = TfIdf(new_filename,experiment.keywords)
     select.word_url = new_filename
     select.aut_score = aut_score
+    select.is_aut = 1
     db.session.add(select)
     db.session.commit()
     flash("上传成功，已完成自动评分！")
     return redirect(url_for("student.score", page=1))
 
-@student.route("/score/del/<id>/",methods=["GET","POST"])
-def scoreDel(id=None):
+@student.route("/score/del/")
+def scoreDel():
+    id = request.args.get("id")
     score = Select.query.filter_by(id=id).first_or_404()
     db.session.delete(score)
     db.session.commit()

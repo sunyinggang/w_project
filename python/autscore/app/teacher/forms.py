@@ -25,7 +25,8 @@ class ExperimentForm(FlaskForm):
         ],
         description="实验关键字",
         render_kw={
-            "class": "form-control"
+            "class": "form-control",
+            "placeholder": "关键词可以为关键字或句子，以英文分号隔开"
         }
     )
     start_time = StringField(
@@ -112,7 +113,8 @@ class KeyWordsForm(FlaskForm):
         ],
         description="实验关键字",
         render_kw={
-            "class": "form-control"
+            "class": "form-control",
+            "placeholder": "关键词可以为关键字或句子，以英文分号隔开"
         }
     )
     submit = SubmitField(

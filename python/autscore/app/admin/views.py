@@ -3,6 +3,7 @@ import os
 import xlrd
 from flask import render_template, send_from_directory, make_response, send_file, request, flash, redirect, url_for, \
     session
+from sqlalchemy import and_, or_
 from werkzeug.security import generate_password_hash
 from app import db
 
@@ -176,7 +177,7 @@ def studentSearch(page=None):
     username = request.args.get("username")
     student_list = Student.query
     if username:
-        student_list = student_list.filter(Student.username==username).paginate(page=page,per_page=5)
+        student_list = student_list.filter(or_(Student.username.ilike('%' + username + '%'),Student.name.ilike('%' + username + '%'))).paginate(page=page,per_page=5)
     return render_template("admin/astudent.html",student_list = student_list)
 
 @admin.route("/astudent/edit/",methods=["GET","POST"])
@@ -197,7 +198,7 @@ def ateacher(page=None):
     teacher_list = Teacher.query.paginate(page=page,per_page=5)
     return render_template("admin/ateacher.html",teacher_list = teacher_list)
 
-@admin.route("/ateacher/del/",methods=["GET","POST"])
+@admin.route("/ateacher/del/")
 def ateacherDel():
     id = request.args.get("id")
     teacher = Teacher.query.filter_by(id=id).first_or_404()
@@ -213,7 +214,7 @@ def teacherSearch(page=None):
     username = request.args.get("username")
     teacher_list = Teacher.query
     if username:
-        teacher_list = teacher_list.filter(Teacher.username==username).paginate(page=page,per_page=5)
+        teacher_list = teacher_list.filter(or_(Teacher.username.ilike('%' + username + '%'),Teacher.name.ilike('%' + username + '%'))).paginate(page=page, per_page=5)
     return render_template("admin/ateacher.html",teacher_list = teacher_list)
 
 @admin.route("/ateacher/edit/",methods=["GET","POST"])

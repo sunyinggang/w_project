@@ -6,6 +6,12 @@ import requests
 import json
 
 #模拟post/get请求
+from sqlalchemy import func
+
+from app import db
+from app.models import Expense
+
+
 def curl(url, params, type):
     baseUrl = 'https://restapi.amap.com/'
     url = baseUrl + url
@@ -40,23 +46,28 @@ def driving_curl(params):
 # print(t)
 # t = geocode_curl('北京市朝阳区阜通东大街6号')
 # print(t)
-origin = '116.964624,36.614668'
-destination = '116.483038,39.990633'
-params = {
-    'origin' : origin,
-    'destination' : destination
-}
-t = driving_curl(params)
-k = t['route']['paths'][0]['steps']
-start_point = origin.split(',')
-end_point = destination.split(',')
-paths = [start_point]
-for m in k:
-    pp = m['polyline'].split(';')[0].split(',')
-    paths.append(pp)
-paths.append(end_point)
-data = {}
-data['distance'] = t['route']['paths'][0]['distance']
-data['duration'] = t['route']['paths'][0]['duration']
-data['steps'] = paths
-print(data)
+# origin = '116.964624,36.614668'
+# destination = '116.483038,39.990633'
+# params = {
+#     'origin' : origin,
+#     'destination' : destination
+# }
+# t = driving_curl(params)
+# k = t['route']['paths'][0]['steps']
+# start_point = origin.split(',')
+# end_point = destination.split(',')
+# paths = [start_point]
+# for m in k:
+#     pp = m['polyline'].split(';')[0].split(',')
+#     paths.append(pp)
+# paths.append(end_point)
+# data = {}
+# data['distance'] = t['route']['paths'][0]['distance']
+# data['duration'] = t['route']['paths'][0]['duration']
+# data['steps'] = paths
+# print(data)
+
+t = db.session.query(Expense.type_id,func.sum(Expense.money)).group_by(Expense.type_id).all()
+
+print(t)
+
