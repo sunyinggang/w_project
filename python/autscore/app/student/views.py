@@ -49,10 +49,11 @@ def select(page=None):
     if page is None:
         page = 1
     experiment_list = Experiment.query.paginate(page=page,per_page=5)
-    return render_template("student/sselect.html",experiment_list = experiment_list)
+    teacher_list = Teacher.query.all()
+    return render_template("student/sselect.html",experiment_list = experiment_list,teacher_list=teacher_list)
 
 @student.route("/select/search/<int:page>/")
-def selectrSearch(page=None):
+def selectSearch(page=None):
     if page is None:
         page = 1
     name = request.args.get("name")
@@ -61,7 +62,21 @@ def selectrSearch(page=None):
         experiment_list = experiment_list.filter(
             Experiment.name.ilike('%' + name + '%')
         ).paginate(page=page,per_page=5)
-    return render_template("student/sselectSearch.html",experiment_list = experiment_list)
+    teacher_list = Teacher.query.all()
+    return render_template("student/sselectSearch.html",experiment_list = experiment_list,teacher_list=teacher_list)
+
+@student.route("/select/filter/<int:page>/")
+def selectFilter(page=None):
+    if page is None:
+        page = 1
+    teacher = request.args.get("teacher")
+    experiment_list = Experiment.query
+    if teacher:
+        experiment_list = experiment_list.filter(
+            Experiment.teacher_id == teacher
+        ).paginate(page=page,per_page=5)
+    teacher_list = Teacher.query.all()
+    return render_template("student/sselectFilter.html",experiment_list = experiment_list,teacher_list=teacher_list)
 
 @student.route("/select/experiment/<id>/",methods=["GET","POST"])
 def selectExp(id=None):

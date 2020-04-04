@@ -103,10 +103,9 @@ def score(page=None):
         page = 1
     experiment_list = Experiment.query.filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
     select_all = db.session.query(Select.experiment_id,func.count(Select.student_id)).group_by(Select.experiment_id).all()
-    select_submit = db.session.query(Select.experiment_id, func.count(Select.student_id)).group_by(Select.experiment_id).filter(Select.is_aut==1).all()
-    print(select_all)
-    print(select_submit)
-    return render_template("teacher/tscore.html",experiment_list = experiment_list,select_all=select_all,select_submit=select_submit)
+    # select_submit = db.session.query(Select.experiment_id, func.count(Select.student_id)).group_by(Select.experiment_id).filter(Select.is_aut==1).all()
+    # print(select_submit)
+    return render_template("teacher/tscore.html",experiment_list = experiment_list,select_all=select_all)
 
 @teacher.route("/student/<int:page>/",methods=["POST","GET"])
 def student(page=None):

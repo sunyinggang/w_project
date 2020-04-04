@@ -16,7 +16,7 @@ class Teacher(db.Model):
     username = Column(String)
     password = Column(String)
     name = Column(String)
-
+    experiment = db.relationship('Experiment', backref='teacher')
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)
 
@@ -45,7 +45,7 @@ class Experiment(db.Model):
     name = Column(String)
     model_url = Column(String)
     keywords = Column(Text)
-    teacher_id = Column(Integer)
+    teacher_id = Column(Integer,db.ForeignKey('teacher.id'))
     start_time = Column(DateTime)
     end_time = Column(DateTime)
     select = db.relationship('Select',backref='experiment')

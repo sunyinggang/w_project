@@ -269,44 +269,44 @@ def scheduleAdd():
         driver_id = request.form.get('driver_id')
         car_id = request.form.get('car_id')
         selectDC = request.form.get('selectDC')
-        if selectDC is None:
-            if driver_id is None or car_id is None:
-                schedule = Schedule(
-                    unit=data["unit"],
-                    user=data["user"],
-                    phone=data["phone"],
-                    start_point=data["start_point"],
-                    end_point=data["end_point"],
-                    start_time=data["start_time"],
-                    end_time=data["end_time"],
-                    content=data["content"],
-                    money=data["money"],
-                    driver_money=data["driver_money"],
-                    track_id=track.id
-                )
-            else:
-                driver = Driver.query.get_or_404(driver_id)
-                car = Car.query.get_or_404(car_id)
-                driver.status = 1
-                db.session.add(driver)
-                car.status = 1
-                db.session.add(car)
-                schedule = Schedule(
-                    unit=data["unit"],
-                    user=data["user"],
-                    phone=data["phone"],
-                    start_point=data["start_point"],
-                    end_point=data["end_point"],
-                    start_time=data["start_time"],
-                    end_time=data["end_time"],
-                    content=data["content"],
-                    driver_id=driver_id,
-                    car_id=car_id,
-                    money=data["money"],
-                    driver_money=data["driver_money"],
-                    status=1,
-                    track_id=track.id
-                )
+        print(selectDC)
+        if selectDC is None or driver_id is None or car_id is None:
+            schedule = Schedule(
+                unit=data["unit"],
+                user=data["user"],
+                phone=data["phone"],
+                start_point=data["start_point"],
+                end_point=data["end_point"],
+                start_time=data["start_time"],
+                end_time=data["end_time"],
+                content=data["content"],
+                money=data["money"],
+                driver_money=data["driver_money"],
+                track_id=track.id
+            )
+        else:
+            driver = Driver.query.get_or_404(driver_id)
+            car = Car.query.get_or_404(car_id)
+            driver.status = 1
+            db.session.add(driver)
+            car.status = 1
+            db.session.add(car)
+            schedule = Schedule(
+                unit=data["unit"],
+                user=data["user"],
+                phone=data["phone"],
+                start_point=data["start_point"],
+                end_point=data["end_point"],
+                start_time=data["start_time"],
+                end_time=data["end_time"],
+                content=data["content"],
+                driver_id=driver_id,
+                car_id=car_id,
+                money=data["money"],
+                driver_money=data["driver_money"],
+                status=1,
+                track_id=track.id
+            )
         db.session.add(schedule)
         db.session.commit()
         flash("添加成功", "ok")

@@ -12,8 +12,10 @@
         </div><!-- /.row -->
         <div style="margin-top: 40px;" class="row">
           <div class="col-lg-12">
-          搜索（输入实验名）：
-            <form action="{{ url_for('student.selectrSearch',page=1)}}">
+           <div class="">
+               <div class="col-lg-6">
+                   搜索（输入实验名）：
+                   <form action="{{ url_for('student.selectSearch',page=1)}}">
             <div class="form-group input-group">
               <input type="text" name="name" class="form-control">
               <span class="input-group-btn">
@@ -21,11 +23,29 @@
               </span>
             </div>
             </form>
+               </div>
+               <div class="col-lg-6">
+                   按教师筛选：
+                   <form action="{{ url_for('student.selectFilter',page=1)}}">
+                      <div class="form-group input-group">
+                        <select name="teacher" class="form-control">
+                            {% for k in teacher_list %}
+                                <option value ="{{k.id}}">{{ k.name }}</option>
+                            {% endfor %}
+                        </select>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">筛选</button>
+                      </span>
+                      </div>
+                   </form>
+               </div>
+           </div>
             <div class="table-responsive">
               <table class="table table-bordered table-hover tablesorter">
                 <thead>
                   <tr>
                     <th>实验题目<i class="fa"></i></th>
+                    <th>发布教师<i class="fa"></i></th>
                     <th>开始时间<i class="fa"></i></th>
                     <th>结束时间<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
@@ -35,6 +55,7 @@
                 {%  for v in experiment_list.items %}
                   <tr>
                     <td>{{ v.name }}</td>
+                    <td>{{ v.teacher.name }}</td>
                     <td>{{ v.start_time }}</td>
                     <td>{{ v.end_time }}</td>
                     <td>
