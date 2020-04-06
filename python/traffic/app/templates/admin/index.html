@@ -287,15 +287,7 @@
             // The type of chart we want to create
             type: 'bar',
             // The data for our dataset
-            data: {
-                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
-                datasets: [{
-                    label: '次数',
-                    backgroundColor: 'rgb(42, 222, 96)',
-                    borderColor: 'rgb((42, 222, 96)',
-                    data: [1, 10, 5, 2, 20, 30]
-                }]
-            },
+            data: {{ halfYearSchedules|safe }},
             options: {
                 legend: {
                     display: false
@@ -305,23 +297,7 @@
     var ctx2 = document.getElementById('travelSummary').getContext('2d');
         var myLineChart = new Chart(ctx2, {
             type: 'line',
-            data: {
-                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
-                datasets: [
-                    {
-                        label: "里程(公里)",
-                        borderColor: "rgb(43, 144, 255)",//路径颜色
-                        pointBackgroundColor: "rgb(43, 144, 255)",//定点填充色
-                        data: [0, 0, 80, 81, 56, 55, 40]
-                    },
-                    {
-                        label: "时长(小时)",
-                        borderColor: "rgb(255, 174, 0)",//路径颜色
-                        pointBackgroundColor: "rgb(255, 174, 0)",//定点填充色
-                        data: [0, 0, 66, 78, 56, 55, 40]
-                    }
-                ]
-            },
+            data: {{ travelSummary|safe }},
             options: {
                 legend: {
                     display: false
@@ -331,15 +307,7 @@
     var ctx3 = document.getElementById('carMonitorChart').getContext('2d');
         var myDoughnutChart = new Chart(ctx3, {
             type: 'doughnut',
-            data: {
-                labels: ['行驶车辆', '静止车辆', '离线车辆', '过期车辆'],
-                datasets: [
-                    {
-                        backgroundColor: ["rgb(52,207,104)", "rgb(40,174,219)", "rgb(222,71,29)", "rgb(212,222,29)"],
-                        data: [5, 12, 80, 81]
-                    }
-                ]
-            },
+            data: {{ carMonitorChart|safe }},
             options: {
                 legend: {
                     position: 'right'

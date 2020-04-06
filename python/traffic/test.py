@@ -1,3 +1,4 @@
+import calendar
 import os
 import re
 import uuid
@@ -9,7 +10,7 @@ import json
 from sqlalchemy import func
 
 from app import db
-from app.models import Expense
+from app.models import Expense, Schedule
 
 
 def curl(url, params, type):
@@ -67,7 +68,46 @@ def driving_curl(params):
 # data['steps'] = paths
 # print(data)
 
-t = db.session.query(Expense.type_id,func.sum(Expense.money)).group_by(Expense.type_id).all()
 
-print(t)
 
+from dateutil.relativedelta import relativedelta
+
+def LF(year,month):
+    FL = []
+    firstDayWeekDay, monthRange = calendar.monthrange(year, month)
+    firstDay = datetime.date(year=year, month=month, day=1)
+    lastDay = datetime.date(year=year, month=month, day=monthRange)
+    FL.append(firstDay)
+    FL.append(lastDay)
+    return FL
+
+def halfYear():
+    start = datetime.date.today() - relativedelta(months=5)
+    end = datetime.datetime.now()
+    month_num = 12 * (end.year - start.year) + end.month - start.month
+    time_list = []
+    year = start.year
+    month = start.month
+    # 遍历月份数+1,之所以加1是因为即使是本月注册的博主，月份差为0，他的页面也要显示一个月，即本月
+    temp = []
+    for m in range(month_num + 1):
+        # 把年月的小列表追加进大列表
+        time_list.append(str(month) + '月')
+        temp.append(LF(year, month))
+        # 月份加1
+        month += 1
+        # 当月份达到13的时候，需要再从1月开始数，而且这代表跨年了，所以年份加1
+        if month == 13:
+            month = 1
+            year += 1
+    return time_list,temp
+
+time_list,temp = halfYear()
+print(time_list)
+print(temp)
+count_list = []
+
+for v in temp:
+    count = Schedule.query.filter(Schedule.start_time.between(v[0],v[1])).count()
+    count_list.append(count)
+print(count_list)

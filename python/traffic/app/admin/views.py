@@ -1,11 +1,14 @@
+#coding=utf-8
+import calendar
 import json
 import os
 import re
-from datetime import datetime
+import datetime
 from functools import wraps
 
-from flask import render_template, flash, redirect, url_for, session, request
-from sqlalchemy import or_
+from dateutil.relativedelta import relativedelta
+from flask import render_template, flash, redirect, url_for, session, request, jsonify
+from sqlalchemy import or_, func
 from werkzeug.security import generate_password_hash
 
 from . import admin
@@ -74,7 +77,74 @@ def logout():
 @admin.route("/")
 @admin_login_req
 def index():
-    return render_template("admin/index.html")
+    # 近6个月的累计排班数据处理
+    halfYearSchedules = {
+                "labels": [],
+                "datasets": [{
+                    "label": '次数',
+                    "backgroundColor": 'rgb(42, 222, 96)',
+                    "borderColor": 'rgb((42, 222, 96)',
+                    "data": []
+                }]
+            }
+    time_list, temp = halfYear()
+    halfYearSchedules['labels'] = time_list
+    count_list = []
+    for v in temp:
+        count = Schedule.query.filter(Schedule.start_time.between(v[0], v[1])).count()
+        count_list.append(count)
+    halfYearSchedules['datasets'][0]['data'] = count_list
+    # 近6个月累积里程和行驶时长
+    travelSummary = {
+            "labels": [],
+            "datasets": [
+                {
+                    "label": "里程(公里)",
+                    "borderColor": "rgb(43, 144, 255)",#路径颜色
+                    "pointBackgroundColor": "rgb(43, 144, 255)",#定点填充色
+                    "data": []
+                },
+                {
+                    "label": "时长(小时)",
+                    "borderColor": "rgb(255, 174, 0)",#路径颜色
+                    "pointBackgroundColor": "rgb(255, 174, 0)",#定点填充色
+                    "data": []
+                }
+            ]
+        }
+    travelSummary['labels'] = time_list
+    travel_list0 = []
+    travel_list1 = []
+    for v in temp:
+        track = Track.query.filter(Track.end_time.between(v[0], v[1])).all()
+        sum = 0
+        hour = 0
+        for i in track:
+            sum = sum + int(i.distance)
+            hour = hour + int(i.duration)
+        travel_list0.append(round(sum*0.001,1))
+        travel_list1.append(round(hour/3600,1))
+    travelSummary['datasets'][0]['data'] = travel_list0
+    travelSummary['datasets'][1]['data'] = travel_list1
+    # 近6个月利润、收入、支出
+    # 车辆监控
+    carMonitorChart = {
+                "labels": ['空闲车辆', '行驶车辆', '检修车辆'],
+                "datasets": [
+                    {
+                        "backgroundColor": ["rgb(52,207,104)", "rgb(40,174,219)", "rgb(222,71,29)"],
+                        "data": []
+                    }
+                ]
+            }
+    car_list = [0,0,0]
+    car_count = db.session.query(Car.status,func.count(Car.status)).group_by(Car.status).all()
+    for v in car_count:
+        car_list[v[0]] = v[1]
+    carMonitorChart['datasets'][0]['data'] = car_list
+    return render_template("admin/index.html",halfYearSchedules=json.dumps(halfYearSchedules,ensure_ascii=False)
+                           ,travelSummary=json.dumps(travelSummary,ensure_ascii=False)
+                           ,carMonitorChart=json.dumps(carMonitorChart,ensure_ascii=False))
 
 @admin.route("/driver/list/")
 @admin_login_req
@@ -375,7 +445,9 @@ def scheduleEdit(id=None):
 def scheduleDel():
     id = request.args.get("id")
     schedule = Schedule.query.filter_by(id=id).first_or_404()
+    track = Track.query.filter_by(id=schedule.track_id).first_or_404()
     db.session.delete(schedule)
+    db.session.delete(track)
     db.session.commit()
     flash("删除成功！",'ok')
     return redirect(url_for('admin.scheduleList'))
@@ -416,7 +488,7 @@ def expenseApproval(id=None):
        id = 1
     expense = Expense.query.get_or_404(id)
     expense.status = 1
-    expense.end_time = datetime.now()
+    expense.end_time = datetime.datetime.now()
     db.session.add(expense)
     db.session.commit()
     flash("结算成功", "ok")
@@ -464,6 +536,17 @@ def expenseTypeDel():
     db.session.commit()
     flash("删除成功！",'ok')
     return redirect(url_for('admin.expenseType'))
+
+@admin.route("/expense/schedule/<int:type>/")
+@admin_login_req
+def expenseSchedule(type=None):
+    if type is None:
+        type = 0
+    if type == 0:
+        expense_list = Expense.query.filter_by(status=0).all()
+    else:
+        expense_list = Expense.query.filter(or_(Expense.status == 1, Expense.status == 2)).all()
+    return render_template("admin/expense_schedule.html",expense_list = expense_list,type=type)
 
 @admin.route("/leave/list/<int:type>/")
 @admin_login_req
@@ -574,3 +657,33 @@ def driving(origin,destination):
     data['duration'] = driving['route']['paths'][0]['duration']
     data['steps'] = paths
     return data
+
+def halfYear():
+    start = datetime.date.today() - relativedelta(months=5)
+    end = datetime.datetime.now()
+    month_num = 12 * (end.year - start.year) + end.month - start.month
+    time_list = []
+    year = start.year
+    month = start.month
+    # 遍历月份数+1,之所以加1是因为即使是本月注册的博主，月份差为0，他的页面也要显示一个月，即本月
+    temp = []
+    for m in range(month_num + 1):
+        # 把年月的小列表追加进大列表
+        time_list.append(str(month) + '月')
+        temp.append(LF(year, month))
+        # 月份加1
+        month += 1
+        # 当月份达到13的时候，需要再从1月开始数，而且这代表跨年了，所以年份加1
+        if month == 13:
+            month = 1
+            year += 1
+    return time_list,temp
+
+def LF(year,month):
+    FL = []
+    firstDayWeekDay, monthRange = calendar.monthrange(year, month)
+    firstDay = datetime.date(year=year, month=month, day=1)
+    lastDay = datetime.date(year=year, month=month, day=monthRange)
+    FL.append(firstDay)
+    FL.append(lastDay)
+    return FL

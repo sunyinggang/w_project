@@ -1,0 +1,129 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<style>
+table{
+	font-size: 10px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+     <div class="app-content-body fade-in-up ng-scope" ui-view="" style="">
+         <div ui-view="" ng-controller="driverController" class="ng-scope">
+
+<div class="page-container ng-scope" ng-controller="driverListController">
+    <div class="row align-items-center">
+        <div class="title-icon-style mr-2"></div>
+        <font color="#4c4c4c">排班收入</font>
+    </div>
+    <div class="w-100 bg-white card mt-2 page-card">
+        <div class="row justify-content-between mt-2">
+            <div class="row align-items-center">
+                <div class="">
+                    {% if type == 0 %}
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseList",type=0) }}">待我审批</a>
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseList",type=1) }}">审批完成</a>
+                    {% else %}
+                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.expenseList",type=0) }}">待我审批</a>
+                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.expenseList",type=1) }}">审批完成</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="mt-3 table-sticky-view">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">类型</th>
+                    <th scope="col">提交人/手机号</th>
+                    <th scope="col">金额</th>
+                    <th scope="col">日期</th>
+                    <th scope="col">状态</th>
+                    <th scope="col" class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for v in expense_list %}
+                  <tr class="ng-scope">
+                    <td class="ng-binding">{{ v.expense_type.name }}</td>
+                    <td class="ng-binding">{{ v.driver.name }}/{{ v.driver.phone }}</td>
+                    <td class="ng-binding">{{ v.money }}</td>
+                    <td class="ng-binding">{{ v.add_time }}</td>
+                    <td class="ng-binding">
+                    {% if v.status == 0 %}
+                        <div style="color:#747577" class="ng-binding">未审核</div>
+                    {% elif v.status == 1 %}
+                        <div style="color:#3b8cff" class="ng-binding">已结清</div>
+                    {% else %}
+                        <div style="color:#e22c1f" class="ng-binding">未通过</div>
+                    {% endif %}
+                    </td>
+                    <td>
+                        <div class="text-primary row justify-content-center align-items-center">
+                            <button type="button" onclick="window.location.href ='{{ url_for('admin.expenseDetail',id=v.id) }}'" class="btn btn-outline-primary btn-sm ml-1">查看详情</button>
+                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')"  class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+                <!-- Modal -->
+            <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal2Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认删除此信息</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <input type="hidden" id="delId">
+                <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
+                <tr>
+                    <!-- ngIf: !toEnd -->
+                    <!-- ngIf: toEnd --><td colspan="9" ng-if="toEnd" class="ng-scope">
+                        <div class="row justify-content-center tab-footer-loading-div"><font color="#CCCCCC">已经到底了</font>
+                        </div>
+                    </td><!-- end ngIf: toEnd -->
+                </tr>
+                </tfoot><!-- end ngIf: !emptyList -->
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3" ng-show="!emptyList">
+        共有<font color="red" class="ng-binding">0</font>条数据
+    </div>
+</div>
+</div></div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+function addId(id) {
+    $("#delId").val(id);
+}
+function del() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.expenseDel")}}?id=";
+    location.href =str+id;
+}
+</script>
+<script>
+    $(document).ready(function () {
+        $("#g-5 img").attr('src','{{ url_for('static',filename='admin/images/selector-finance.png') }}');
+        $("#g-5 span:eq(0)").addClass("text-white");
+        $("#g-5 span:eq(1)").addClass("glyphicon-chevron-down text-white");
+        $("#g-5-1 span").addClass("text-white");
+        $("#g-5-1").parent().css('display','block');
+    })
+</script>
+{% endblock %}
