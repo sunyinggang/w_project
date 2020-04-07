@@ -5,6 +5,7 @@ import uuid
 import datetime
 import requests
 import json
+import time
 
 #模拟post/get请求
 from sqlalchemy import func
@@ -102,12 +103,47 @@ def halfYear():
             year += 1
     return time_list,temp
 
-time_list,temp = halfYear()
-print(time_list)
-print(temp)
-count_list = []
+# time_list,temp = halfYear()
+# print(time_list)
+# print(temp)
+# count_list = []
+#
+# for v in temp:
+#     count = Schedule.query.filter(Schedule.start_time.between(v[0],v[1])).count()
+#     count_list.append(count)
+# print(count_list)
 
-for v in temp:
-    count = Schedule.query.filter(Schedule.start_time.between(v[0],v[1])).count()
-    count_list.append(count)
-print(count_list)
+# def getTodayDate():
+#     now = datetime.datetime.now()
+#     zero_today = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+#                                           microseconds=now.microsecond)
+#     last_today = zero_today + datetime.timedelta(hours=23, minutes=59, seconds=59)
+#     return zero_today, last_today
+# tomorrowTime = (datetime.datetime.now()+datetime.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
+# print(tomorrowTime)
+# now = datetime.datetime.now()
+# zero_today = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+#                                       microseconds=now.microsecond)
+# last_today = zero_today + datetime.timedelta(hours=23, minutes=59, seconds=59)
+#
+# tomorrow = now + datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+#                                     microseconds=now.microsecond)
+# zero_tomorrow = tomorrow - datetime.timedelta(hours=tomorrow.hour, minutes=tomorrow.minute, seconds=tomorrow.second,
+#                                               microseconds=tomorrow.microsecond)
+# last_tomorrow = zero_tomorrow + datetime.timedelta(hours=23, minutes=59, seconds=59)
+# print(last_tomorrow)
+
+t = Expense.query.all()
+expense_in = 0
+expense_out = 0
+for v in t:
+    if v.expense_type.type == '收入':
+        expense_in += int(v.money)
+    else:
+        expense_out += int(v.money)
+k = Schedule.query.all()
+for i in k:
+    money = int(i.money) - int(i.driver_money)
+    expense_in += money
+print(expense_in,expense_out)
+print(10-20)

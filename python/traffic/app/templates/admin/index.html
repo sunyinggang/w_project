@@ -77,11 +77,12 @@
                 <div class="dropdown-divider" style="border-top: 1px solid rgb(15,45,115);"></div>
                 <div>
 					<table class="table text-center table-sm table-borderless">
-						<tbody><tr>
+						<tbody>
+                        <tr>
 							<td>
 								<div class="s-today-tomorrow-view">
 									今日排班
-									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">{{scheduleToday[0]}}</div>
 								</div>
 
 							</td>
@@ -91,7 +92,7 @@
 							<td>
 								<div class="s-today-tomorrow-view">
 									明日排班
-									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">0</div>
+									<div style="font-weight: bold;font-size: 18px;" class="ng-binding">{{scheduleTomorrow[0]}}</div>
 								</div>
 
 							</td>
@@ -99,17 +100,15 @@
 						<tr>
 							<td>
 								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">{{scheduleToday[1]}}</font>
 								</div>
 							</td>
 							<td>
-								<font class="" size="1" color="#F4F4F4">未分配司机</font>
+								<font class="" size="1" color="#F4F4F4">未分配司机或车辆</font>
 							</td>
 							<td>
 								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">{{scheduleTomorrow[1]}}</font>
 								</div>
 							</td>
 						</tr>
@@ -117,17 +116,15 @@
 						<tr>
 							<td>
 								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">{{scheduleToday[2]}}</font>
 								</div>
 							</td>
 							<td>
-								<font class="" size="1" color="#F4F4F4">未通知司机</font>
+								<font class="" size="1" color="#F4F4F4">未开始任务</font>
 							</td>
 							<td>
 								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">{{scheduleTomorrow[2]}}</font>
 								</div>
 							</td>
 						</tr>
@@ -135,17 +132,15 @@
 						<tr>
 							<td>
 								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">{{scheduleToday[3]}}</font>
 								</div>
 							</td>
 							<td>
-								<font class="" size="1" color="#F4F4F4">已发送任务</font>
+								<font class="" size="1" color="#F4F4F4">进行中任务</font>
 							</td>
 							<td>
 								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">{{scheduleTomorrow[3]}}</font>
 								</div>
 							</td>
 						</tr>
@@ -153,75 +148,21 @@
 						<tr>
 							<td>
 								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
+									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">{{scheduleToday[4]}}</font>
+									<div class="s-today"></div>
 								</div>
 							</td>
 							<td>
-								<font class="" size="1" color="#F4F4F4">已接受任务</font>
+								<font class="" size="1" color="#F4F4F4">已结束任务</font>
 							</td>
 							<td>
 								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
+									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">{{scheduleTomorrow[4]}}</font>
 								</div>
 							</td>
 						</tr>
-
-						<tr>
-							<td>
-								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
-								</div>
-							</td>
-							<td>
-								<font class="" size="1" color="#F4F4F4">已通知客户</font>
-							</td>
-							<td>
-								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
-								</div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
-								</div>
-							</td>
-							<td>
-								<font class="" size="1" color="#F4F4F4">已到达起点</font>
-							</td>
-							<td>
-								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
-								</div>
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<div class="row justify-content-end align-items-center m-0 p-0">
-									<font class="mr-1 ng-binding" size="2" color="#F4F4F4">0</font>
-									<div class="s-today" style="width: NaN%;"></div>
-								</div>
-							</td>
-							<td>
-								<font class="" size="1" color="#F4F4F4">已完成任务</font>
-							</td>
-							<td>
-								<div class="row align-items-center m-0 p-0">
-									<div class="s-tomorrow" style="width: NaN%;"></div>
-									<font class="ml-1 ng-binding" size="2" color="#F4F4F4">0</font>
-								</div>
-							</td>
-						</tr>
-					</tbody></table>
+					</tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -317,26 +258,7 @@
     var ctx4 = document.getElementById('financialChart').getContext('2d');
         var myDoughnutChart = new Chart(ctx4, {
             type: 'horizontalBar',
-            data: {
-                labels: ['9月', '10月', '11月', '12月', '1月', '2月'],
-                datasets: [
-                    {
-                        label: '利润',
-                        data: [10, 20, 30, 50, 80, 40],
-                        backgroundColor: "rgb(255, 142, 100)"
-                    },
-                    {
-                        label: '收入',
-                        data: [10, 80, 30, 40, 30, 40],
-                        backgroundColor: "rgb(38, 247, 206)"
-                    },
-                    {
-                        label: '支出',
-                        data: [-50, -50, -50, -10,0,-100],
-                        backgroundColor: "rgb(1, 168, 250)"
-                    }
-                ]
-            },
+            data:{{ financialChart|safe }},
             options: {
                 legend: {
                     display: false

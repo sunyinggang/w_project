@@ -142,9 +142,57 @@ def index():
     for v in car_count:
         car_list[v[0]] = v[1]
     carMonitorChart['datasets'][0]['data'] = car_list
+    # 今日排班与明日排班数量统计
+    scheduleToday,scheduleTomorrow = scheduleTodayAndTomorrow()
+    # 近6个月利润、收入、支出
+    financialChart = {
+                "labels": ['9月', '10月', '11月', '12月', '1月', '2月'],
+                "datasets": [
+                    {
+                        "label": '利润',
+                        "data": [10, 20, 30, 50, 80, 40],
+                        "backgroundColor": "rgb(255, 142, 100)"
+                    },
+                    {
+                        "label": '收入',
+                        "data": [10, 80, 30, 40, 30, 40],
+                        "backgroundColor": "rgb(38, 247, 206)"
+                    },
+                    {
+                        "label": '支出',
+                        "data": [-50, -50, -50, -10,0,-100],
+                        "backgroundColor": "rgb(1, 168, 250)"
+                    }
+                ]
+            }
+    financialChart['labels'] = time_list
+    expense_in_list = []
+    expense_out_list = []
+    expense_profit_list = []
+    for v in temp:
+        expense = Expense.query.filter(Expense.end_time.between(v[0], v[1])).filter(Expense.status==1).all()
+        schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Expense.status == 3).all()
+        expense_in = 0
+        expense_out = 0
+        for v in expense:
+            if v.expense_type.type == '收入':
+                expense_in += int(v.money)
+            else:
+                expense_out -= int(v.money)
+        for i in schedule:
+            money = int(i.money) - int(i.driver_money)
+            expense_in += money
+        expense_in_list.append(expense_in)
+        expense_out_list.append(expense_out)
+        expense_profit_list.append(expense_in + expense_out)
+    financialChart['datasets'][0]['data'] = expense_profit_list
+    financialChart['datasets'][1]['data'] = expense_in_list
+    financialChart['datasets'][2]['data'] = expense_out_list
     return render_template("admin/index.html",halfYearSchedules=json.dumps(halfYearSchedules,ensure_ascii=False)
                            ,travelSummary=json.dumps(travelSummary,ensure_ascii=False)
-                           ,carMonitorChart=json.dumps(carMonitorChart,ensure_ascii=False))
+                           ,carMonitorChart=json.dumps(carMonitorChart,ensure_ascii=False)
+                           ,scheduleToday=scheduleToday,scheduleTomorrow=scheduleTomorrow
+                           ,financialChart=json.dumps(financialChart,ensure_ascii=False))
 
 @admin.route("/driver/list/")
 @admin_login_req
@@ -687,3 +735,44 @@ def LF(year,month):
     FL.append(firstDay)
     FL.append(lastDay)
     return FL
+
+def TodayAndTomorrow():
+    now = datetime.datetime.now()
+    zero_today = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                          microseconds=now.microsecond)
+    last_today = zero_today + datetime.timedelta(hours=23, minutes=59, seconds=59)
+
+    tomorrow = now + datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                 microseconds=now.microsecond)
+    zero_tomorrow = tomorrow - datetime.timedelta(hours=tomorrow.hour, minutes=tomorrow.minute, seconds=tomorrow.second,
+                                        microseconds=tomorrow.microsecond)
+    last_tomorrow = zero_tomorrow + datetime.timedelta(hours=23, minutes=59, seconds=59)
+    return zero_today,last_today,zero_tomorrow,last_tomorrow
+
+def scheduleTodayAndTomorrow():
+    zero_today, last_today, zero_tomorrow, last_tomorrow = TodayAndTomorrow()
+    scheduleToday = []
+    scheduleToday.append(Schedule.query.filter(Schedule.start_time.between(zero_today, last_today)).count())
+    scheduleToday.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_today, last_today)).filter(Schedule.status == 0).count())
+    scheduleToday.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_today, last_today)).filter(Schedule.status == 1).count())
+    scheduleToday.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_today, last_today)).filter(Schedule.status == 2).count())
+    scheduleToday.append(
+        Schedule.query.filter(Schedule.end_time.between(zero_today, last_today)).filter(Schedule.status == 3).count())
+    scheduleTomorrow = []
+    scheduleTomorrow.append(Schedule.query.filter(Schedule.start_time.between(zero_tomorrow, last_tomorrow)).count())
+    scheduleTomorrow.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_tomorrow, last_tomorrow)).filter(
+            Schedule.status == 0).count())
+    scheduleTomorrow.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_tomorrow, last_tomorrow)).filter(
+            Schedule.status == 1).count())
+    scheduleTomorrow.append(
+        Schedule.query.filter(Schedule.start_time.between(zero_tomorrow, last_tomorrow)).filter(
+            Schedule.status == 2).count())
+    scheduleTomorrow.append(
+        Schedule.query.filter(Schedule.end_time.between(zero_tomorrow, last_tomorrow)).filter(
+            Schedule.status == 3).count())
+    return scheduleToday,scheduleTomorrow
