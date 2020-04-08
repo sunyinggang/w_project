@@ -682,11 +682,19 @@ def upload():
         }
         return json.dumps(d)
 
+@admin.route("/t/")
+def t():
+    return render_template("admin/123.html")
+
 @admin.route("/test/")
 def test():
-    params = {}
-    response = curl('service/list',params,'GET')
-    return response
+    params = {
+        'tid':246882981,
+        'trid':40
+    }
+    response = curl('terminal/lastpoint',params,'GET')
+    print(response)
+    return jsonify(response)
 
 def driving(origin,destination):
     params = {
@@ -695,11 +703,11 @@ def driving(origin,destination):
     }
     driving = driving_curl(params)
     k = driving['route']['paths'][0]['steps']
-    paths = [['116.964624', '36.614668']]
+    paths = [origin.split(',')]
     for m in k:
         pp = m['polyline'].split(';')[0].split(',')
         paths.append(pp)
-    paths.append(['116.48303839', '39.990633'])
+    paths.append(destination.split(','))
     data = {}
     data['distance'] = driving['route']['paths'][0]['distance']
     data['duration'] = driving['route']['paths'][0]['duration']
