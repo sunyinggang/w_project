@@ -44,20 +44,25 @@ def driving_curl(params):
     res = json.loads(response.content)
     return res
 
-# origin = geocode_curl('山东省威海市荣成市哈尔滨理工大学荣成校区')
-# destination = geocode_curl('山东省威海市哈尔滨工业大学')
-# print(origin,destination)
-# params = {
-#         'origin': origin,
-#         'destination': destination
-#     }
-# paths = [origin.split(',')]
-# print(paths)
-# driving = driving_curl(params)
-
-paths = "122.514694,37.16684;122.515549,37.166847;122.515579,37.166882;122.515564,37.16737;122.515564,37.168201;122.515541,37.168812;122.515495,37.168839;122.515099,37.168839"
-p = paths.split(';')
+origin = geocode_curl('山东省威海市荣成市哈尔滨理工大学荣成校区')
+destination = geocode_curl('山东省威海市哈尔滨工业大学')
+print(origin,destination)
+params = {
+        'origin': origin,
+        'destination': destination
+    }
+paths = [origin.split(',')]
+driving = driving_curl(params)
+steps = driving['route']['paths'][0]['steps']
+print(len(steps))
+str = ''
+for i in range(len(steps)):
+    str += steps[i]['polyline']
+p = str.split(';')
 print(p)
+# paths = "122.514694,37.16684;122.515549,37.166847;122.515579,37.166882;122.515564,37.16737;122.515564,37.168201;122.515541,37.168812;122.515495,37.168839;122.515099,37.168839"
+# p = paths.split(';')
+# print(p)
 # params = {}
 # url = 'v3/direction/driving?origin=116.964624,36.614668&destination=116.483038,39.990633'
 # t = curl(url, params, 'GET')

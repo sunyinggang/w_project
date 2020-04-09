@@ -500,6 +500,36 @@ def scheduleDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.scheduleList'))
 
+@admin.route("/monitor/")
+def monitor():
+    return render_template("admin/monitor.html")
+
+@admin.route("/monitor/detail/")
+def monitorDetail():
+    params = {
+        'tid':246882981,
+        'trid':40
+    }
+    response = curl('terminal/lastpoint',params,'GET')
+    print(response)
+    return jsonify(response)
+
+@admin.route("/track/list/")
+@admin_login_req
+def trackList():
+    schedule_list = Schedule.query.filter(Schedule.status==3).order_by(
+        Schedule.start_time.desc()
+    ).all()
+    return render_template("admin/track_list.html",schedule_list = schedule_list)
+
+@admin.route("/track/detail/<int:id>/")
+@admin_login_req
+def trackDetail(id=None):
+    schedule = Schedule.query.filter_by(id=id).first_or_404()
+    track = Track.query.filter_by(id=schedule.track_id).first_or_404()
+    start = json.loads(track.steps)[0]
+    return render_template("admin/track_detail.html",track=track,start=start)
+
 @admin.route("/expense/list/<int:type>/")
 @admin_login_req
 def expenseList(type=None):
@@ -663,11 +693,6 @@ def noticeDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.noticeList'))
 
-@admin.route("/monitor/")
-@admin_login_req
-def monitor():
-    return render_template("admin/monitor.html")
-
 @admin.route('/upload/',methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
@@ -682,19 +707,6 @@ def upload():
         }
         return json.dumps(d)
 
-@admin.route("/t/")
-def t():
-    return render_template("admin/123.html")
-
-@admin.route("/test/")
-def test():
-    params = {
-        'tid':246882981,
-        'trid':40
-    }
-    response = curl('terminal/lastpoint',params,'GET')
-    print(response)
-    return jsonify(response)
 
 def driving(origin,destination):
     params = {

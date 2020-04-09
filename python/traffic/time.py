@@ -9,13 +9,27 @@ from threading import Timer
 #     i=i+1
 #     t = Timer(2, carTrack)
 #     t.start()
-from app.lib.functions import curl
+from app.lib.functions import curl, driving_curl, geocode_curl
 
 
 def carTrack():
-    paths = "122.514694,37.16684;122.515549,37.166847;122.515579,37.166882;122.515564,37.16737;122.515564,37.168201;122.515541,37.168812;122.515495,37.168839;122.515099,37.168839"
+    origin = geocode_curl('山东省威海市荣成市哈尔滨理工大学荣成校区')
+    destination = geocode_curl('山东省威海市哈尔滨工业大学')
+    print(origin, destination)
+    params = {
+        'origin': origin,
+        'destination': destination
+    }
+    paths = [origin.split(',')]
+    driving = driving_curl(params)
+    steps = driving['route']['paths'][0]['steps']
+    print(len(steps))
+    paths = ''
+    for i in range(len(steps)):
+        paths += steps[i]['polyline']
+    #paths = "122.514694,37.16684;122.515549,37.166847;122.515579,37.166882;122.515564,37.16737;122.515564,37.168201;122.515541,37.168812;122.515495,37.168839;122.515099,37.168839"
     l = paths.split(';')
-    for i in range(0,len(l)-1):
+    for i in range(len(l)):
         str = l[i]
         millis = int(round(time.time() * 1000))
         point = json.dumps([{"location": str, "locatetime": millis}])
@@ -26,7 +40,7 @@ def carTrack():
         }
         response = curl('point/upload', params, 'POST')
         print(response['errcode'],response['errmsg'])
-        time.sleep(3)
+        time.sleep(1)
 # def carTrack():
 #     l = [["116.964624", "36.614668"], ["122.081238", "37.530827"], ["122.081726", "37.530617"],
 #          ["122.081337", "37.530037"], ["122.083855", "37.529011"], ["122.083946", "37.529148"],
