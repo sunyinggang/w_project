@@ -41,26 +41,26 @@
                             <div class="card card-shadow mb-4">
                                 <div class="card-header">
                                     <div class="card-title">
-                                      添加费用
+                                      费用详情
                                     </div>
                                 </div>
                                 <div class="card-body">
                                     <form method="post">
                                       <div class="form-group">
                                         <label><font color="red">*</font>{{ form.type_id.label }}</label>
-                                        {{ form.type_id}}
+                                        {{ form.type_id(value=expense.expense_type.name)}}
                                       </div>
                                       <div class="form-group">
                                         <label><font color="red">*</font>{{ form.content.label }}</label>
-                                        {{ form.content}}
+                                        {{ form.content(value=expense.content)}}
                                       </div>
                                       <div class="form-group">
                                         <label><font color="red">*</font>{{ form.money.label }}</label>
-                                        {{ form.money}}
+                                        {{ form.money(value=expense.money)}}
                                       </div>
                                       <div class="form-group">
                                         <label><font color="red">*</font>{{ form.add_time.label }}</label>
-                                        {{ form.add_time}}
+                                        {{ form.add_time(value=expense.add_time)}}
                                       </div>
                                       <div class="form-group">
                                            <label><font color="red">*</font>附件(发票)</label>
@@ -68,11 +68,18 @@
                                       </div>
                                       <div class="form-group">
                                         <label>{{ form.note.label }}</label>
-                                        {{ form.note}}
+                                        {{ form.note(value=expense.note)}}
                                       </div>
                                       <div class="form-group">
-                                        {{ form.submit }}
-                                        {{ form.csrf_token }}
+                                          <label>未通过原因</label>
+                                          <textarea class="form-control">{{ expense.because }}</textarea>
+                                      </div>
+                                      <div class="form-group">
+                                      {% if expense.status == 0 or expense.status == 2 %}
+                                            {{ form.submit(value="确认修改") }}
+                                            {{ form.csrf_token }}
+                                      {% else %}
+                                      {% endif %}
                                       </div>
                                     </form>
                                 </div>
@@ -89,7 +96,7 @@
 <script src="{{ url_for('static',filename='admin/js/fileinput_locale_zh.js') }}"></script>
 <script>
         $(document).ready(function(){
-            $("#path-1").attr("value","");
+            $("#path-1").attr("value","{{ expense.img_url }}");
         });
         $("#input-1").fileinput({
             language: "zh",
@@ -97,7 +104,8 @@
             allowedFileTypes: ['image'], // 只允许上传图片
             allowedFileExtensions: ["jpg", "jpeg", "png", "gif"],
             initialPreview: [
-                '<img class="file-preview-image kv-preview-data" src='+'"">'
+                '<img class="file-preview-image kv-preview-data" src='+'"{{ url_for(
+    'static',filename='uploads/'+expense.img_url) }}">'
             ],
             uploadUrl: "{{url_for('admin.upload')}}" //上传图片的服务器地址
         }).on("fileuploaded", function (event, data, previewId, index){

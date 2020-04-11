@@ -15,11 +15,8 @@
 									<ol class="breadcrumb">
 										<li>
 											<i class="fa fa-home"></i>
-											<a class="parent-item" href="index.html">Home</a>
+											<a class="parent-item" href="{{ url_for("user.index") }}">首页</a>
 											<i class="fa fa-angle-right"></i>
-										</li>
-										<li class="active">
-											Dashboard
 										</li>
 									</ol>
 								</div>
@@ -79,11 +76,11 @@
 												<div class="float-right">
 													<i class="fa fa-truck f30 opacity-3 " aria-hidden="true"></i>
 												</div>
-												<h3 class="text-success">234</h3>
+												<h3 class="text-success">{{ schedule_count }}</h3>
 											</div>
 											<div class="col-12">
 												<div class="text-muted f20">
-													<h5 class="card-subtitle text-muted fw-500">订单</h5>
+													<h5 class="card-subtitle text-muted fw-500">排班</h5>
 												</div>
 										</div>
 										</div>
@@ -98,7 +95,7 @@
 												<div class="float-right">
 													<i class="fa fa-meh-o f30 opacity-3" aria-hidden="true"></i>
 												</div>
-												<h3 class="text-primary">5</h3>
+												<h3 class="text-primary">{{ leave_count }}</h3>
 											</div>
 											<div class="col-12">
 													<div class="text-muted f20">
@@ -117,7 +114,7 @@
 												<div class="float-right">
 													<i class="fa fa-rmb f30 opacity-3" aria-hidden="true"></i>
 												</div>
-												<h3 class="text-danger">￥ 123423</h3>
+												<h3 class="text-danger">￥ {{ money }}</h3>
 											</div>
 											<div class="col-12">
 												<div class="text-muted f20">

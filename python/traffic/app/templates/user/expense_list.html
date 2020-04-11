@@ -25,23 +25,19 @@
                         <div class="full_chart card mb-4">
                           <div class="card_chart">
                             <div class="student_table table-responsive-lg">
-                              <table class="table table-hover">
+                              <table class="table table-hover text-nowrap">
                                 <thead>
                                   <tr>
-                                    <th>类型</th>
-                                    <th>时间</th>
                                     <th>金额</th>
                                     <th>状态</th>
+                                    <th>类型</th>
+                                    <th>时间</th>
                                     <th>操作</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                 {% for v in expense_list.items %}
                                   <tr>
-                                    <td>
-                                      <span class="weight-500">{{ v.expense_type.name }}</span>
-                                    </td>
-                                    <td>{{ v.add_time }}</td>
                                     <td>
                                       <span class="weight-500">￥{{ v.money }}</span>
                                     </td>
@@ -54,10 +50,12 @@
                                           <span class="label label-warning">审核未通过</span>
                                       {% endif %}
                                     </td>
+                                     <td>
+                                      <span class="weight-500">{{ v.expense_type.name }}</span>
+                                    </td>
+                                    <td>{{ v.add_time }}</td>
                                     <td>
-                                      <span class="txt-success">
-                                        {{ v.money }}
-                                      </span>
+                                        <button type="button" onclick="window.location.href ='{{ url_for('user.expenseDetail',id=v.id) }}'" class="btn btn-outline-info btn-sm ml-1">查看详情</button>
                                     </td>
                                   </tr>
                                 {% endfor %}

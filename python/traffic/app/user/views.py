@@ -27,7 +27,15 @@ def index():
     schedule = Schedule.query.filter(
         Schedule.driver_id == session["driver_id"]
     ).filter(or_(Schedule.status == 1, Schedule.status == 2)).first()
-    return render_template("user/index.html",notice=notice,schedule=schedule)
+    schedule_count = Schedule.query.filter(Schedule.driver_id == session["driver_id"]).count()
+    leave_count = Leave.query.filter(Leave.driver_id == session["driver_id"]).count()
+    schedule_list = Schedule.query.filter(
+        Schedule.driver_id == session["driver_id"]
+    ).filter(Schedule.status == 3).all()
+    money = 0
+    for v in schedule_list:
+        money += v.driver_money
+    return render_template("user/index.html",notice=notice,schedule=schedule,schedule_count=schedule_count,leave_count=leave_count,money=money)
 
 @user.route("/profile/")
 @admin_login_req
@@ -155,6 +163,27 @@ def expenseList(page=None):
         ExpenseType.id == Expense.type_id
     ).paginate(page=page, per_page=5)
     return render_template("user/expense_list.html",expense_list=expense_list)
+
+@user.route("/expense/detail/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def expenseDetail(id=None):
+    form = ExpenseForm()
+    expense = Expense.query.get_or_404(id)
+    print(expense)
+    if form.validate_on_submit():
+        data = form.data
+        expense.type_id=data["type_id"],
+        expense.content=data["content"],
+        expense.money=data["money"],
+        expense.add_time=data["add_time"],
+        expense.note=data["note"],
+        expense.img_url=data["img_url"],
+        expense.status=0
+        db.session.add(expense)
+        db.session.commit()
+        flash("修改成功", "ok")
+        return redirect(url_for("user.expenseList",page=1))
+    return render_template("user/expense_detail.html",form=form,expense=expense)
 
 @user.route("/leave/add/",methods=["GET","POST"])
 @admin_login_req
