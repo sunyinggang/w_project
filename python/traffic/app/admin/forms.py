@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, HiddenField, SelectField, TextAreaField
+from wtforms import StringField, SubmitField, PasswordField, HiddenField, SelectField, TextAreaField, \
+    SelectMultipleField
 from wtforms.validators import DataRequired
 
-from app.models import Driver, ExpenseType, Car
+from app.models import Driver, ExpenseType, Car, Auth
 
 
 class LoginForm(FlaskForm):
@@ -446,3 +447,63 @@ class BecauseForm(FlaskForm):
             "class": "btn btn-primary btn-sm btn-sub-save"
         }
     )
+
+class AuthForm(FlaskForm):
+    name = StringField(
+        label="权限名称",
+        validators=[
+            DataRequired("请输入权限名称！")
+        ],
+        description="权限名称",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入权限名称！",
+        }
+    )
+    url = StringField(
+        label="权限地址",
+        validators=[
+            DataRequired("请输入权限地址！")
+        ],
+        description="权限地址",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入权限地址！",
+        }
+    )
+    submit = SubmitField(
+        '添加',
+        render_kw={
+            "class": "btn btn-primary",
+        }
+    )
+
+class RoleForm(FlaskForm):
+    name = StringField(
+        label="角色名称",
+        validators=[
+            DataRequired("请输入角色名称！")
+        ],
+        description="角色名称",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入角色名称！",
+        }
+    )
+    auths = SelectMultipleField(
+        label="权限列表 （Ctrl+鼠标可进行多选)",
+        coerce=int,
+        render_kw={
+            "class": "form-control",
+        }
+    )
+    submit = SubmitField(
+        '添加',
+        render_kw={
+            "class":"btn btn-primary",
+        }
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(RoleForm, self).__init__(*args, **kwargs)
+        self.auths.choices = [(v.id, v.name) for v in Auth.query.all()]

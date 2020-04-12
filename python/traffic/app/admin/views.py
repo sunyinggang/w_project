@@ -13,10 +13,10 @@ from werkzeug.security import generate_password_hash
 
 from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm, \
-    BecauseForm
+    BecauseForm, AuthForm, RoleForm
 from .. import db,app
 from ..lib.functions import change_filename, curl, geocode_curl, driving_curl
-from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track, Leave
+from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track, Leave, Auth, Role
 
 
 def admin_login_req(f):
@@ -198,7 +198,6 @@ def index():
 @admin_login_req
 def driverList():
     driver_list = Driver.query.all()
-    print(driver_list)
     return render_template("admin/driver_list.html",driver_list = driver_list)
 
 @admin.route("/driver/add/",methods=["GET","POST"])
@@ -354,6 +353,124 @@ def carStatus(id=None):
     flash("状态修改成功", "ok")
     return redirect(url_for("admin.carList"))
 
+@admin.route('/auth/add/', methods=["GET","POST"])
+@admin_login_req
+def authAdd():
+    form = AuthForm()
+    if form.validate_on_submit():
+        data = form.data
+        auth_count = Auth.query.filter_by(name=data["name"]).count()
+        if auth_count == 1:
+            flash("权限名称已经存在！", "err")
+            return redirect(url_for('admin.authAdd'))
+        auth_count = Auth.query.filter_by(url=data["url"]).count()
+        if auth_count == 1:
+            flash("权限地址已经存在！", "err")
+            return redirect(url_for('admin.authAdd'))
+        auth = Auth(
+            name=data["name"],
+            url=data["url"]
+        )
+        db.session.add(auth)
+        db.session.commit()
+        flash("添加权限成功！","ok")
+        return redirect(url_for('admin.authList'))
+    return render_template("admin/auth_add.html",form=form)
+
+@admin.route('/auth/list/')
+@admin_login_req
+def authList():
+    auth_list = Auth.query.order_by(
+        Auth.add_time.desc()
+    ).all()
+    return render_template("admin/auth_list.html",auth_list=auth_list)
+
+@admin.route("/auth/del/")
+@admin_login_req
+def authDel():
+    id = request.args.get("id")
+    auth = Auth.query.filter_by(id=id).first_or_404()
+    db.session.delete(auth)
+    db.session.commit()
+    flash("删除标签成功！","ok")
+    return redirect(url_for('admin.authList'))
+
+#权限编辑
+@admin.route("/auth/edit/<int:id>/",methods=["GET","POST"])
+@admin_login_req
+def authEdit(id=None):
+    form = AuthForm()
+    auth = Auth.query.filter_by(id=id).first_or_404()
+    if form.validate_on_submit():
+        data = form.data
+        auth_count = Auth.query.filter_by(name=data["name"]).count()
+        if auth.name !=data["name"] and auth_count == 1:
+            flash("权限名称已经存在！", "err")
+            return redirect(url_for('admin.authAdd'))
+        auth_count = Auth.query.filter_by(url=data["url"]).count()
+        if auth.url !=data["url"] and auth_count == 1:
+            flash("权限地址已经存在！", "err")
+            return redirect(url_for('admin.authAdd'))
+        auth.url = data["url"]
+        auth.name = data["name"]
+        db.session.add(auth)
+        db.session.commit()
+        flash("权限修改成功！","ok")
+        return redirect(url_for('admin.authList'))
+    return render_template("admin/auth_edit.html",form=form,auth=auth)
+
+@admin.route('/role/add/', methods=["GET","POST"])
+@admin_login_req
+def roleAdd():
+    form = RoleForm()
+    if form.validate_on_submit():
+        data = form.data
+        role = Role(
+            name=data["name"],
+            auths=",".join(map(lambda v: str(v), data["auths"]))
+        )
+        db.session.add(role)
+        db.session.commit()
+        flash("添加角色成功！", "ok")
+        return redirect(url_for('admin.roleList'))
+    return render_template("admin/role_add.html", form=form)
+
+@admin.route('/role/list/')
+@admin_login_req
+def roleList():
+    role_list = Role.query.order_by(
+        Role.add_time.desc()
+    ).all()
+    return render_template("admin/role_list.html",role_list=role_list)
+
+@admin.route("/role/del/")
+@admin_login_req
+def roleDel():
+    id = request.args.get("id")
+    role = Role.query.filter_by(id=id).first_or_404()
+    db.session.delete(role)
+    db.session.commit()
+    flash("删除角色成功！","ok")
+    return redirect(url_for('admin.roleList'))
+
+@admin.route('/role/edit/<int:id>/',methods=["GET","POST"])
+@admin_login_req
+def roleEdit(id=None):
+    form = RoleForm()
+    role = Role.query.get_or_404(id)
+    if request.method == "GET":
+        auths = role.auths
+        form.auths.data = list(map(lambda  v: int(v),auths.split(",")))
+    if form.validate_on_submit():
+        data = form.data
+        role.name = data["name"]
+        role.auths = ",".join(map(lambda v: str(v), data["auths"]))
+        db.session.add(role)
+        db.session.commit()
+        flash("修改角色成功！","ok")
+        return redirect(url_for('admin.roleList'))
+    return render_template("admin/role_edit.html",form=form,role=role)
+
 @admin.route("/schedule/list/")
 @admin_login_req
 def scheduleList():
@@ -387,7 +504,6 @@ def scheduleAdd():
         driver_id = request.form.get('driver_id')
         car_id = request.form.get('car_id')
         selectDC = request.form.get('selectDC')
-        print(selectDC)
         if selectDC is None or driver_id is None or car_id is None:
             schedule = Schedule(
                 unit=data["unit"],
@@ -686,7 +802,6 @@ def noticeAdd():
 @admin_login_req
 def noticeDel():
     id = request.args.get("id")
-    print(id)
     notice = Notice.query.filter_by(id=id).first_or_404()
     db.session.delete(notice)
     db.session.commit()

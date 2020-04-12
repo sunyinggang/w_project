@@ -10,10 +10,26 @@ class Admin(db.Model):
     name = Column(String)
     phone = Column(String)
     password = Column(String)
-    role = Column(Integer)
+    role_id = Column(Integer,db.ForeignKey('role.id'))
+    is_super = Column(Integer)
 
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)
+
+class Role(db.Model):
+    __tablename__ = "role"
+    id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(100),unique=True)
+    auths = db.Column(db.String(600))
+    add_time = db.Column(db.DateTime,index=True,default=datetime.now)
+    admin = db.relationship('Admin', backref='role')
+
+class Auth(db.Model):
+    __tablename__ = "auth"
+    id = db.Column(db.Integer,primary_key=True) #编号
+    name = db.Column(db.String(100),unique=True)
+    url = db.Column(db.String(255),unique=True) #地址
+    add_time = db.Column(db.DateTime,index=True,default=datetime.now)
 
 class Driver(db.Model):
     __tablename__ = "driver"
