@@ -3,7 +3,7 @@ from wtforms import StringField, SubmitField, PasswordField, HiddenField, Select
     SelectMultipleField
 from wtforms.validators import DataRequired
 
-from app.models import Driver, ExpenseType, Car, Auth
+from app.models import Driver, ExpenseType, Car, Auth, Role
 
 
 class LoginForm(FlaskForm):
@@ -507,3 +507,36 @@ class RoleForm(FlaskForm):
     def __init__(self, *args, **kwargs):
         super(RoleForm, self).__init__(*args, **kwargs)
         self.auths.choices = [(v.id, v.name) for v in Auth.query.all()]
+
+class AdminForm(FlaskForm):
+    name = StringField(
+        label="管理员姓名",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入管理员姓名！",
+        }
+    )
+    phone = StringField(
+        label="手机号码",
+        render_kw={
+            "class": "form-control",
+            "placeholder": "请输入手机号码！",
+        }
+    )
+    role_id = SelectField(
+        label="所属角色",
+        coerce=int,
+        render_kw={
+            "class": "form-control",
+        }
+    )
+    submit = SubmitField(
+        '添加',
+        render_kw={
+            "class": "btn btn-primary",
+        }
+    )
+
+    def __init__(self, *args, **kwargs):
+        super(AdminForm, self).__init__(*args, **kwargs)
+        self.role_id.choices = [(v.id, v.name) for v in Role.query.all()]

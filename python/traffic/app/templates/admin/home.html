@@ -42,7 +42,7 @@
                     <img class="ml-3 user-avatar" src="{{ url_for('static',filename='admin/images/user-avatar.png') }}">
                     <div class="btn-group ml-3">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-                            <span class="ng-binding">孙迎港</span>
+                            <span class="ng-binding">{{session.name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="{{ url_for('admin.changePwd') }}">修改密码</a>

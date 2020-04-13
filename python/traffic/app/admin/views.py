@@ -7,13 +7,13 @@ import datetime
 from functools import wraps
 
 from dateutil.relativedelta import relativedelta
-from flask import render_template, flash, redirect, url_for, session, request, jsonify
+from flask import render_template, flash, redirect, url_for, session, request, jsonify,abort
 from sqlalchemy import or_, func
 from werkzeug.security import generate_password_hash
 
 from . import admin
 from .forms import LoginForm, ChangeForm, DriverForm, CarForm, NoticeForm, ScheduleForm, ExpenseTypeForm, ExpenseForm, \
-    BecauseForm, AuthForm, RoleForm
+    BecauseForm, AuthForm, RoleForm, AdminForm
 from .. import db,app
 from ..lib.functions import change_filename, curl, geocode_curl, driving_curl
 from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule, Track, Leave, Auth, Role
@@ -22,9 +22,31 @@ from ..models import Admin, Driver, Car, Notice, ExpenseType, Expense, Schedule,
 def admin_login_req(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if "admin" not in session:
+        if "id" not in session:
             return redirect(url_for("admin.login",next=request.url))
         return f(*args, **kwargs)
+    return decorated_function
+
+#权限控制装饰器
+def admin_auth(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        admin = Admin.query.join(
+            Role
+        ).filter(
+            Role.id == Admin.role_id,
+            Admin.id == session["id"]
+        ).first()
+        auths = admin.role.auths
+        if auths != '':
+            auths = list(map(lambda v: int(v), auths.split(",")))
+            auth_list = Auth.query.all()
+            urls = [v.url for v in auth_list for val in auths if val == v.id]
+            rule = request.url_rule
+            if str(rule) not in urls:
+                abort(404)
+        return f(*args, **kwargs)
+
     return decorated_function
 
 @admin.route("/login/",methods=["GET","POST"])
@@ -39,8 +61,9 @@ def login():
         if not admin.check_pwd(data["password"]):
             flash("密码错误！", "err")
             return redirect(url_for("admin.login"))
-        session["admin"] = admin.name
+        session["name"] = admin.name
         session["id"] = admin.id
+        session["is_super"] = admin.is_super
         return redirect(request.args.get("next") or url_for("admin.index"))
     return render_template("admin/login.html",form=form)
 
@@ -70,8 +93,9 @@ def changePwd():
 
 @admin.route("/logout/")
 def logout():
-    session.pop("admin",None)
+    session.pop("name",None)
     session.pop("id", None)
+    session.pop("is_super", None)
     return redirect(url_for("admin.login"))
 
 @admin.route("/")
@@ -196,12 +220,14 @@ def index():
 
 @admin.route("/driver/list/")
 @admin_login_req
+@admin_auth
 def driverList():
     driver_list = Driver.query.all()
     return render_template("admin/driver_list.html",driver_list = driver_list)
 
 @admin.route("/driver/add/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def driverAdd():
     form = DriverForm()
     if form.validate_on_submit():
@@ -226,6 +252,7 @@ def driverAdd():
 
 @admin.route("/driver/edit/<int:id>/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def driverEdit(id=None):
     form = DriverForm()
     driver = Driver.query.get_or_404(id)
@@ -247,6 +274,7 @@ def driverEdit(id=None):
 
 @admin.route("/driver/del/")
 @admin_login_req
+@admin_auth
 def driverDel():
     id = request.args.get("id")
     driver = Driver.query.filter_by(id=id).first_or_404()
@@ -260,12 +288,14 @@ def driverDel():
 
 @admin.route("/car/list/")
 @admin_login_req
+@admin_auth
 def carList():
     car_list = Car.query.all()
     return render_template("admin/car_list.html",car_list = car_list)
 
 @admin.route("/car/add/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def carAdd():
     form = CarForm()
     if form.validate_on_submit():
@@ -298,6 +328,7 @@ def carAdd():
 
 @admin.route("/car/edit/<int:id>/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def carEdit(id=None):
     form = CarForm()
     car = Car.query.get_or_404(id)
@@ -329,6 +360,7 @@ def carEdit(id=None):
 
 @admin.route("/car/del/")
 @admin_login_req
+@admin_auth
 def carDel():
     id = request.args.get("id")
     car = Car.query.filter_by(id=id).first_or_404()
@@ -342,6 +374,7 @@ def carDel():
 
 @admin.route("/car/status/<int:id>/")
 @admin_login_req
+@admin_auth
 def carStatus(id=None):
     car = Car.query.get_or_404(id)
     if car.status == 0:
@@ -353,8 +386,66 @@ def carStatus(id=None):
     flash("状态修改成功", "ok")
     return redirect(url_for("admin.carList"))
 
+#添加管理员
+@admin.route('/admin/add/', methods=["GET", "POST"])
+@admin_login_req
+@admin_auth
+def adminAdd():
+    form = AdminForm()
+    from werkzeug.security import generate_password_hash
+    if form.validate_on_submit():
+        data = form.data
+        admin = Admin(
+            name=data["name"],
+            phone=data["phone"],
+            password=generate_password_hash('123456'),
+            role_id=data["role_id"],
+            is_super=1
+        )
+        db.session.add(admin)
+        db.session.commit()
+        flash("添加管理员成功！","ok")
+        return redirect(url_for("admin.adminList"))
+    return render_template("admin/admin_add.html", form=form)
+
+#管理员列表
+@admin.route('/admin/list/', methods=["GET"])
+@admin_login_req
+@admin_auth
+def adminList():
+    admin_list = Admin.query.join(
+        Role
+    ).filter(
+        Role.id == Admin.role_id
+    ).all()
+    return render_template("admin/admin_list.html",admin_list=admin_list)
+
+@admin.route("/admin/del/")
+@admin_login_req
+@admin_auth
+def adminDel():
+    id = request.args.get("id")
+    auth = Admin.query.filter_by(id=id).first_or_404()
+    db.session.delete(auth)
+    db.session.commit()
+    flash("删除管理员成功！","ok")
+    return redirect(url_for('admin.adminList'))
+
+@admin.route("/admin/sta/")
+@admin_login_req
+@admin_auth
+def adminSta():
+    id = request.args.get("id")
+    admin = Admin.query.filter_by(id=id).first_or_404()
+    admin.password = generate_password_hash('123456')
+    db.session.add(admin)
+    db.session.commit()
+    flash("恢复密码成功！","ok")
+    return redirect(url_for('admin.adminList'))
+
 @admin.route('/auth/add/', methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def authAdd():
     form = AuthForm()
     if form.validate_on_submit():
@@ -379,6 +470,7 @@ def authAdd():
 
 @admin.route('/auth/list/')
 @admin_login_req
+@admin_auth
 def authList():
     auth_list = Auth.query.order_by(
         Auth.add_time.desc()
@@ -387,6 +479,7 @@ def authList():
 
 @admin.route("/auth/del/")
 @admin_login_req
+@admin_auth
 def authDel():
     id = request.args.get("id")
     auth = Auth.query.filter_by(id=id).first_or_404()
@@ -395,9 +488,9 @@ def authDel():
     flash("删除标签成功！","ok")
     return redirect(url_for('admin.authList'))
 
-#权限编辑
 @admin.route("/auth/edit/<int:id>/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def authEdit(id=None):
     form = AuthForm()
     auth = Auth.query.filter_by(id=id).first_or_404()
@@ -421,6 +514,7 @@ def authEdit(id=None):
 
 @admin.route('/role/add/', methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def roleAdd():
     form = RoleForm()
     if form.validate_on_submit():
@@ -437,6 +531,7 @@ def roleAdd():
 
 @admin.route('/role/list/')
 @admin_login_req
+@admin_auth
 def roleList():
     role_list = Role.query.order_by(
         Role.add_time.desc()
@@ -445,6 +540,7 @@ def roleList():
 
 @admin.route("/role/del/")
 @admin_login_req
+@admin_auth
 def roleDel():
     id = request.args.get("id")
     role = Role.query.filter_by(id=id).first_or_404()
@@ -455,6 +551,7 @@ def roleDel():
 
 @admin.route('/role/edit/<int:id>/',methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def roleEdit(id=None):
     form = RoleForm()
     role = Role.query.get_or_404(id)
@@ -473,6 +570,7 @@ def roleEdit(id=None):
 
 @admin.route("/schedule/list/")
 @admin_login_req
+@admin_auth
 def scheduleList():
     schedule_list = Schedule.query.order_by(
         Schedule.start_time.desc()
@@ -481,6 +579,7 @@ def scheduleList():
 
 @admin.route("/schedule/add/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def scheduleAdd():
     form = ScheduleForm()
     driver_list = Driver.query.filter_by(status=0).all()
@@ -549,6 +648,7 @@ def scheduleAdd():
 
 @admin.route("/schedule/edit/<int:id>/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def scheduleEdit(id=None):
     form = ScheduleForm()
     driver_list = Driver.query.filter_by(status=0).all()
@@ -606,6 +706,7 @@ def scheduleEdit(id=None):
 
 @admin.route("/schedule/del/")
 @admin_login_req
+@admin_auth
 def scheduleDel():
     id = request.args.get("id")
     schedule = Schedule.query.filter_by(id=id).first_or_404()
@@ -632,6 +733,7 @@ def monitorDetail():
 
 @admin.route("/track/list/")
 @admin_login_req
+@admin_auth
 def trackList():
     schedule_list = Schedule.query.filter(Schedule.status==3).order_by(
         Schedule.start_time.desc()
@@ -640,6 +742,7 @@ def trackList():
 
 @admin.route("/track/detail/<int:id>/")
 @admin_login_req
+@admin_auth
 def trackDetail(id=None):
     schedule = Schedule.query.filter_by(id=id).first_or_404()
     track = Track.query.filter_by(id=schedule.track_id).first_or_404()
@@ -648,6 +751,7 @@ def trackDetail(id=None):
 
 @admin.route("/expense/list/<int:type>/")
 @admin_login_req
+@admin_auth
 def expenseList(type=None):
     if type is None:
         type = 0
@@ -659,6 +763,7 @@ def expenseList(type=None):
 
 @admin.route("/expense/detail/<int:id>/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def expenseDetail(id=None):
     if id is None:
         id = 1
@@ -677,6 +782,7 @@ def expenseDetail(id=None):
 
 @admin.route("/expense/approval/<int:id>/")
 @admin_login_req
+@admin_auth
 def expenseApproval(id=None):
     if id is None:
        id = 1
@@ -690,6 +796,7 @@ def expenseApproval(id=None):
 
 @admin.route("/expense/del/")
 @admin_login_req
+@admin_auth
 def expenseDel():
     id = request.args.get("id")
     expense = Expense.query.filter_by(id=id).first_or_404()
@@ -700,12 +807,14 @@ def expenseDel():
 
 @admin.route("/expense/type/")
 @admin_login_req
+@admin_auth
 def expenseType():
     type_list = ExpenseType.query.all()
     return render_template("admin/expense_type.html",type_list = type_list)
 
 @admin.route("/expense/addType/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def expenseAddType():
     form = ExpenseTypeForm()
     if form.validate_on_submit():
@@ -723,6 +832,7 @@ def expenseAddType():
 
 @admin.route("/expense/delType/")
 @admin_login_req
+@admin_auth
 def expenseTypeDel():
     id = request.args.get("id")
     cost_type = ExpenseType.query.filter_by(id=id).first_or_404()
@@ -733,6 +843,7 @@ def expenseTypeDel():
 
 @admin.route("/expense/schedule/<int:type>/")
 @admin_login_req
+@admin_auth
 def expenseSchedule(type=None):
     if type is None:
         type = 0
@@ -744,6 +855,7 @@ def expenseSchedule(type=None):
 
 @admin.route("/leave/list/<int:type>/")
 @admin_login_req
+@admin_auth
 def leaveList(type=None):
     if type is None:
         type = 0
@@ -757,6 +869,7 @@ def leaveList(type=None):
 
 @admin.route("/leave/status/")
 @admin_login_req
+@admin_auth
 def leaveStatus():
     id = request.args.get("id")
     status = request.args.get("status")
@@ -769,6 +882,7 @@ def leaveStatus():
 
 @admin.route("/leave/del/")
 @admin_login_req
+@admin_auth
 def leaveDel():
     id = request.args.get("id")
     leave = Leave.query.filter_by(id=id).first_or_404()
@@ -779,12 +893,14 @@ def leaveDel():
 
 @admin.route("/notice/list/")
 @admin_login_req
+@admin_auth
 def noticeList():
     notice_list = Notice.query.all()
     return render_template("admin/notice_list.html",notice_list = notice_list)
 
 @admin.route("/notice/add/",methods=["GET","POST"])
 @admin_login_req
+@admin_auth
 def noticeAdd():
     form = NoticeForm()
     if form.validate_on_submit():
@@ -800,6 +916,7 @@ def noticeAdd():
 
 @admin.route("/notice/del/")
 @admin_login_req
+@admin_auth
 def noticeDel():
     id = request.args.get("id")
     notice = Notice.query.filter_by(id=id).first_or_404()

@@ -1,0 +1,93 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static',filename='admin/css/fileinput.css') }}">
+{% endblock %}
+{% block content %}
+<div class="content-center-div" id="content-center-div">
+              <!-- <div ui-butterbar></div> -->
+              <!-- <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a> -->
+              <!-- uiView:  -->
+    <div class="app-content-body fade-in-up ng-scope" ui-view="" style=""><!-- uiView:  -->
+        <div ui-view="" ng-controller="vehicleController" class="ng-scope" style="">
+            <style class="ng-scope">
+.dropdown-item-select{
+  cursor: pointer;
+}
+.dropdown-item-select:hover{
+  color: #2da0f0;
+}
+.car-div{
+  cursor: pointer;
+}
+.car-div:hover{
+  background: #f4f4f4;
+}
+</style>
+<div class="page-container">
+<div class="card page-card">
+  <div class="row align-items-center">
+    <div class="title-icon-style mr-2"></div>
+    <font color="#4c4c4c" class="ng-binding">添加管理员</font>
+    <a type="button" class="btn btn-outline-secondary btn-sm ml-3" href="{{ url_for("admin.authList") }}">返回上层</a>
+  </div>
+  <div class="dropdown-divider"></div>
+  <form name="form" method="post">
+    <div class="form-group row justify-content-center">
+      <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.name.label }}:</label>
+      <div class="col-8">
+        {{ form.name}}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.phone.label }}:</label>
+      <div class="col-8">
+        {{ form.phone }}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+     <label class="col-2 col-form-label col-form-label-sm text-right"><font color="red">*</font>{{ form.role_id.label }}:</label>
+      <div class="col-8">
+        {{ form.role_id }}
+      </div>
+    </div>
+    <div class="form-group row justify-content-center mt-3">
+        {{ form.submit }}
+		{{ form.csrf_token }}
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static',filename='admin/js/fileinput.js') }}"></script>
+<script src="{{ url_for('static',filename='admin/js/fileinput_locale_zh.js') }}"></script>
+<script>
+        $(document).ready(function(){
+            $("#path-1").attr("value","");
+        });
+        $("#input-1").fileinput({
+            language: "zh",
+            showCaption: false, // 不显示本地文件名
+            allowedFileTypes: ['image'], // 只允许上传图片
+            allowedFileExtensions: ["jpg", "jpeg", "png", "gif"],
+            initialPreview: [
+                '<img class="file-preview-image kv-preview-data" src='+'"">'
+            ],
+            uploadUrl: "{{url_for('admin.upload')}}" //上传图片的服务器地址
+        }).on("fileuploaded", function (event, data, previewId, index){
+            $("#path-1").attr("value",data.response["path"]);
+        });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#g-2 img").attr('src','{{ url_for('static',filename='admin/images/selector-manager.png') }}');
+        $("#g-2 span:eq(0)").addClass("text-white");
+        $("#g-2 span:eq(1)").addClass("glyphicon-chevron-down text-white");
+        $("#g-2-3 span").addClass("text-white");
+        $("#g-2-3").parent().css('display','block');
+    })
+</script>
+{% endblock %}

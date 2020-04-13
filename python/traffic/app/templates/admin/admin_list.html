@@ -14,13 +14,13 @@ table{
 <div class="page-container ng-scope" ng-controller="driverListController">
     <div class="row align-items-center">
         <div class="title-icon-style mr-2"></div>
-        <font color="#4c4c4c">权限列表</font>
+        <font color="#4c4c4c">管理员列表</font>
     </div>
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center">
                 <div class="">
-                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.authAdd") }}">添加权限</a>
+                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.adminAdd") }}">添加管理员</a>
                 </div>
             </div>
         </div>
@@ -29,23 +29,26 @@ table{
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">序号</th>
-                    <th scope="col">名称</th>
-                    <th scope="col">地址</th>
-                    <th scope="col">添加时间</th>
+                    <th scope="col">姓名</th>
+                    <th scope="col">手机号</th>
+                    <th scope="col">角色类型</th>
                     <th scope="col" class="text-center">操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for v in auth_list %}
+                {% for v in admin_list %}
                   <tr class="ng-scope">
-                    <td>{{ loop.index}}</td>
-                    <td>{{ v.name}}</td>
-                    <td>{{ v.url}}</td>
-                    <td>{{ v.add_time}}</td>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ v.name }}</td>
+                    <td>{{ v.phone }}</td>
+                    <td>{{ v.role.name}}</td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
-                            <button type="button" onclick="window.location.href ='{{ url_for('admin.authEdit',id=v.id) }}'"  class="btn btn-outline-primary btn-sm ml-1">编辑</button>
-                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                            {% if v.is_super == 0 %}
+                            {% else %}
+                                <button type="button" data-toggle="modal" data-target="#Modal3" onclick="addId('{{ v.id }}')" class="btn btn-outline-primary btn-sm ml-1">恢复密码</button>
+                                <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')" class="btn btn-outline-danger btn-sm ml-1">删除</button>
+                            {% endif %}
                         </div>
                     </td>
                 </tr>
@@ -64,7 +67,7 @@ table{
         </div>
     </div>
     <div class="row justify-content-center mt-3" ng-show="!emptyList">
-        共有<font color="red" class="ng-binding">{{ auth_list|count }}</font>条数据
+        共有<font color="red" class="ng-binding">{{ admin_list|count }}</font>条数据
     </div>
 </div>
 </div></div>
@@ -87,6 +90,24 @@ table{
                         </div>
                     </div>
                 </div>
+
+    <div class="modal fade" id="Modal3" tabindex="-1" role="dialog"
+                     aria-labelledby="Modal3Label" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">确认恢复密码</div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" onclick="sta()">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 {% endblock %}
 {% block js %}
 <script>
@@ -94,8 +115,8 @@ table{
         $("#g-2 img").attr('src','{{ url_for('static',filename='admin/images/selector-manager.png') }}');
         $("#g-2 span:eq(0)").addClass("text-white");
         $("#g-2 span:eq(1)").addClass("glyphicon-chevron-down text-white");
-        $("#g-2-5 span").addClass("text-white");
-        $("#g-2-5").parent().css('display','block');
+        $("#g-2-3 span").addClass("text-white");
+        $("#g-2-3").parent().css('display','block');
     })
 </script>
 <script>
@@ -104,7 +125,12 @@ function addId(id) {
 }
 function del() {
     var id = $("#delId").val();
-    var str = "{{url_for("admin.authDel")}}?id=";
+    var str = "{{url_for("admin.adminDel")}}?id=";
+    location.href =str+id;
+}
+function sta() {
+    var id = $("#delId").val();
+    var str = "{{url_for("admin.adminSta")}}?id=";
     location.href =str+id;
 }
 </script>
