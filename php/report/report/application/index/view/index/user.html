@@ -1,0 +1,286 @@
+{include file="public/header" /}
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/user.css" />
+
+<div class="aw-container-wrap">
+    <div class="container" style="background: #fff;">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <div class="col-sm-12 col-md-9 aw-main-content">
+                    <!-- 用户数据内容 -->
+                    <div class="aw-mod aw-user-detail-box">
+                        <div class="mod-footer">
+                            <ul class="nav nav-tabs aw-nav-tabs" id="tab-ul">
+                                <li tabid="1" class="tab-li choice">未受理<span class="badge">{$count0}</span></li>
+                                <li tabid="2" class="tab-li">已受理<span class="badge">{$count1}</span></li>
+                                <li tabid="3" class="tab-li">未通过<span class="badge">{$count2}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                   <!-- 我的举报 -->
+                    <div class="tab-content">
+                    <div id="aw-tab-0" class="aw-user-center-tab show">
+                        <div class="aw-common-list">
+                            {volist name="res0" id="vo"}
+                            {if condition="$vo.img neq null"}
+                            <ul class="col-md-12 aw-article-list">
+                                <li>
+                                    <div class="aw-article-text col-md-4">
+                                        <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+                                            <img class="img-polaroid kltu" src={$vo.img} />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                        <span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+												<span class="pull-right more-operate text-color-999 hidden-xs">
+													<a href="#" class="aw-icon-thank-tips text-color-999" >状态：未受理</a>
+												</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
+												</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {else/}
+
+                            <ul class="col-md-12 aw-article-list">
+                                <li>
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-12 foxo">
+								<span>
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								<a href="#" class="aw-icon-thank-tips text-color-999" >
+                                    状态：未受理
+                                </a>
+								</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {/if}
+                            {/volist}
+                        </div>
+                    </div>
+                    <div id="aw-tab-1" class="aw-user-center-tab">
+                        <div class="aw-common-list">
+                            {volist name="res1" id="vo"}
+                            {if condition="$vo.img neq null"}
+                            <ul class="col-md-12 aw-article-list">
+                                <li>
+                                    <div class="aw-article-text col-md-4">
+                                        <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+                                            <img class="img-polaroid kltu" src={$vo.img} />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                        <span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+												<span class="pull-right more-operate text-color-999 hidden-xs">
+													<a href="#" class="aw-icon-thank-tips text-color-999" >
+                                                                        状态：
+                                    已通过|<a href="{:url('index/edit',['ikey'=>$vo['sort_id'],'id'=>$vo['id']])}" class="aw-icon-thank-tips text-color-999" >查看反馈</a>
+                                </a>
+												</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
+												</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {else/}
+
+                            <ul class="col-md-12 aw-article-list">
+                                <li id="oarticle-list_611">
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-12 foxo">
+								<span id="detail_611">
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								<a href="#" class="aw-icon-thank-tips text-color-999" >
+                                                                        状态：
+                                    已通过|<a href="{:url('index/edit',['ikey'=>$vo['sort_id'],'id'=>$vo['id']])}" class="aw-icon-thank-tips text-color-999" >查看反馈</a>
+                                </a>
+								</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {/if}
+                            {/volist}
+                        </div>
+                    </div>
+                    <div id="aw-tab-2" class="aw-user-center-tab">
+                        <div class="aw-common-list">
+                            {volist name="res2" id="vo"}
+                            {if condition="$vo.img neq null"}
+                            <ul class="col-md-12 aw-article-list">
+                                <li>
+                                    <div class="aw-article-text col-md-4">
+                                        <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+                                            <img class="img-polaroid kltu" src={$vo.img} />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                        <span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+												<span class="pull-right more-operate text-color-999 hidden-xs">
+													<a href="#" class="aw-icon-thank-tips text-color-999" > 状态：未通过|<a href="{:url('index/edit',['ikey'=>$vo['sort_id'],'id'=>$vo['id']])}" class="aw-icon-thank-tips text-color-999" >查看原因</a>
+                                </a>
+												</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
+												</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {else/}
+
+                            <ul class="col-md-12 aw-article-list">
+                                <li id="oarticle-list_611">
+                                    <div class="col-md-8 foxo">
+                                        <h1 style="color:#393A44;font-weight:bold;">
+                                            <a href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">{$vo.title}</a>
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-12 foxo">
+								<span id="detail_611">
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$vo.sort_id,'id'=>$vo.id])}">
+												{$vo.description|htmlspecialchars_decode}
+											</a>
+											</span>
+                                    </div>
+                                    <div class="mod-body col-md-12 clearfix kl">
+                                        <div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								<a href="#" class="aw-icon-thank-tips text-color-999" >
+                                    状态：
+                                    未通过|<a href="{:url('index/edit',['ikey'=>$vo['sort_id'],'id'=>$vo['id']])}" class="aw-icon-thank-tips text-color-999" >查看原因</a>
+                                </a>
+								</span>
+                                            <span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            {/if}
+                            {/volist}
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 侧边栏 -->
+                <div class="col-sm-12 col-md-3 aw-side-bar" >
+                    <div class="aw-mod people-following" >
+                        <div class="mod-body" >
+                            <span>姓名:{$user["name"]}</span>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <span>邮箱:{$user["email"]}</span>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <span>身份证号:{$user["number"]}</span>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <span>性别:{$user["sex"]}</span>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <span>地区:{$user["area"]}</span>
+                        </div>
+                    </div>
+                    <div class="aw-mod people-following">
+                        <div class="mod-body">
+                            <span><a href="{:url('index/changePassword')}">修改密码</a></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end 侧边栏 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var dd = document.getElementsByClassName("detail");
+    for (var i = 0; i < dd.length; i++) {
+        var s= dd[i].innerText;
+        str = s.substr(0,100) + '...' ;
+        dd[i].innerText=str;
+    }
+</script>
+<script type="text/javascript" src="__STATIC__/index/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#tab-ul li").each(function(index) {
+            $(this).click(function() {
+                $(".show").removeClass("show");
+                $(".choice").removeClass("choice");
+                var str = "#aw-tab-"+index;
+                $(str).addClass("show");
+                $(this).addClass("choice")
+            });
+        })
+    })
+</script>
+{include file="public/footer" /}

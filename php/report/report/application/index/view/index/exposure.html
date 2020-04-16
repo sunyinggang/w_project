@@ -1,0 +1,97 @@
+{include file="public/header" /}
+
+<div class="aw-container-wrap">
+	
+	<div class="container">
+		<div class="row" style="margin-left: 40px;background-color: #fff;">
+			<div class="aw-content-wrap">
+				<div class="aw-main-content">
+					<ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+						<h2 class="hidden-xs"><i class="icon icon-list"></i> 曝光栏</h2>
+					</ul>
+					<div class="mod-body">
+						{volist name="res" id="vo"}
+						{if condition="$vo.img neq null"}
+						<ul class="col-md-12 aw-article-list">
+							<li id="oarticle-list_609">
+								<div class="aw-article-text col-md-4">
+									<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" data-fancybox-group="thumb" rel="lightbox">
+										<img class="img-polaroid kltu" src={$vo.img} />
+									</a>
+								</div>
+								<div class="col-md-8 foxo">
+									<h1 style="color:#393A44;font-weight:bold;">
+										<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">{$vo.title}</a>
+									</h1>
+									<span>
+											<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">
+												{$vo.content|htmlspecialchars_decode}
+											</a>
+											</span>
+								</div>
+								<div class="mod-body col-md-12 clearfix kl">
+									<div class="mod-footer">
+												<span class="pull-right more-operate text-color-999 hidden-xs">
+													<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
+												</span>
+										<span class="pull-left more-operate text-color-999 fcontribute">
+													发表于 : {$vo.update_time}&nbsp;&nbsp;
+												</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						{else/}
+
+						<ul class="col-md-12 aw-article-list">
+							<li id="oarticle-list_611">
+								<div class="col-md-8 foxo">
+									<h1 style="color:#393A44;font-weight:bold;">
+										<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">{$vo.title}</a>
+									</h1>
+								</div>
+								<div class="col-md-12 foxo">
+								<span id="detail_611">
+									<a  class="detail" class="text-colors-999" href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}">
+												{$vo.content|htmlspecialchars_decode}
+											</a>
+											</span>
+								</div>
+								<div class="mod-body col-md-12 clearfix kl">
+									<div class="mod-footer">
+								<span class="pull-right more-operate text-color-999 hidden-xs">
+								<a href="{:url('index/article',['type'=>$type,'id'=>$vo.id])}" target="_blank"  class="aw-icon-thank-tips text-color-999" data-original-title="新窗口阅读" data-toggle="tooltip" title="" data-placement="left"><i class="icon icon-share"></i> 阅读</a>
+								</span>
+										<span class="pull-left more-operate text-color-999 fcontribute"> 发表于 : {$vo.update_time}</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						{/if}
+						{/volist}
+					</div>
+					<div class="aw-mod aw-explore-list">
+					<div class="mod-footer">
+						<div class="page-control">
+							{$res->render()}
+						</div>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    var dd = document.getElementsByClassName("detail");
+    for (var i = 0; i < dd.length; i++) {
+        var s= dd[i].innerText;
+        str = s.substr(0,20) + '...' ;
+        dd[i].innerText=str;
+    }
+</script>
+
+
+{include file="public/footer" /}

@@ -1,0 +1,35 @@
+<aside class="Hui-aside">
+	<input runat="server" id="divScrollValue" type="hidden" value="" />
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-article">
+
+			<dl>
+				<dt><i class="Hui-iconfont">&#xe616;</i> <a _href="{:url('exposure/index')}" data-title="曝光栏管理" href="javascript:void(0)">曝光栏管理</a></dt>
+			</dl>
+			<dl>
+				<dt><i class="Hui-iconfont">&#xe616;</i> <a _href="{:url('safety/index')}" data-title="安全提示管理" href="javascript:void(0)">安全警示管理</a></dt>
+			</dl>
+			<dl>
+				<dt><i class="Hui-iconfont">&#xe616;</i> <a _href="{:url('reward/index')}" data-title="新增文章" href="javascript:void(0)">悬赏公告管理</a></dt>
+			</dl>
+	<dl>
+	  <dt><i class="Hui-iconfont">&#xe616;</i> 举报管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+	  <dd>
+		<ul>
+			{volist name="sort" id="res"}
+		  <li><a _href="{:url('sort/index',['id'=>$res.id])}" data-title="{$res.name}" href="javascript:void(0)">{$res.name}</a></li>
+			{/volist}
+		</ul>
+	  </dd>
+	</dl>
+	<dl>
+		<dt><i class="Hui-iconfont">&#xe616;</i> <a _href="{:url('statistics/index')}" data-title="举报统计" href="javascript:void(0)">举报统计</a></dt>
+	</dl>
+			<dl>
+				<dt><i class="Hui-iconfont">&#xe616;</i> <a _href="{:url('index/changePassword')}" data-title="举报统计" href="javascript:void(0)">修改密码</a></dt>
+			</dl>
+
+
+
+	</div>
+</aside>

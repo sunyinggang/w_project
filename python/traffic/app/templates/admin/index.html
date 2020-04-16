@@ -13,7 +13,8 @@
                             <span style="color: #88A4E8; ">日常管理</span>
                         </div>
                         <div class="row">
-                            <div class="col" ui-sref="app.scheduling.list" href="#/app/scheduling/list">
+                            <div class="col">
+                                <a href="{{ url_for("admin.scheduleList") }}">
                                 <div class="daily-manager">
                                     <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
                                     <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-task.png') }}">
@@ -22,9 +23,11 @@
                                         <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
                                     </div>
                                 </div>
+                                </a>
                             </div>
 
-                            <div class="col" ui-sref="app.monitor" href="#/app/monitor">
+                            <div class="col">
+                                <a href="{{ url_for("admin.monitor") }}">
                                 <div class="daily-manager">
                                     <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
                                     <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-location.png') }}">
@@ -33,8 +36,10 @@
                                         <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
                                     </div>
                                 </div>
+                                </a>
                             </div>
-                            <div class="col" ui-sref="app.expense.list" href="#/app/expense/list">
+                            <div class="col">
+                                <a href="{{ url_for("admin.expenseList",type=0) }}">
                                 <div class="daily-manager">
                                     <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
                                     <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-finance.png') }}">
@@ -43,18 +48,22 @@
                                         <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
                                     </div>
                                 </div>
+                                </a>
                             </div>
-                            <div class="col" ui-sref="app.violation.query" href="#/app/violation/query">
+                            <div class="col">
+                                <a href="{{ url_for("admin.leaveList",type=0) }}">
                                 <div class="daily-manager">
                                     <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
                                     <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-count.png') }}">
                                     <div class="daily-manager-title">
-                                        <font>考勤统计</font>
+                                        <font>请假审批</font>
                                         <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
                                     </div>
                                 </div>
+                                </a>
                             </div>
-                            <div class="col" ui-sref="app.remind.list" href="#/app/remind/list">
+                            <div class="col">
+                                <a href="{{ url_for("admin.noticeList") }}">
                                 <div class="daily-manager">
                                     <img src="{{ url_for('static',filename='admin/images/home-banner-bg.png') }}" class="h-100 w-100">
                                     <img class="daily-icon" src="{{ url_for('static',filename='admin/images/home-banner-remind.png') }}">
@@ -63,6 +72,7 @@
                                         <img src="{{ url_for('static',filename='admin/images/home-banner-next.png') }}">
                                     </div>
                                 </div>
+                                </a>
                             </div>
                         </div>
     <div class="row" style="padding: 0.9375rem;">

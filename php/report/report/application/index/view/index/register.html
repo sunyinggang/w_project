@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="renderer" content="webkit" />
+<title>举报投诉系统</title>
+<meta name="keywords" content="/>
+<meta name="description" content=""  />
+<xbasehref="http://www.tousuyun.com/" /><!--[if IE]></base><![endif]-->
+<link href="http://www.tousuyun.com/static/css/default/img/favicon.ico?v=20190317" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/icon.css" />
+
+    <link href="__STATIC__/index/css/default/common.css-v=20190317.css" rel="stylesheet"  type="text/css" />
+    <link href="__STATIC__/index/css/default/link.css-v=20190317.css"  rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/js/plug_module/style.css-v=20190317.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/index/css/default/register.css-v=20190317.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/fox/fox.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/compatibility.js"></script>
+
+</head>
+<div id="body-wrapper">
+<div class="aw-register-box foxbox">
+ <div class="mod-footer">
+	<span style="font-size:18px;"><i class="icon icon-user"></i> 注 册 新 用 户</span>&nbsp;
+  </div>
+    <div class="mod-body">
+        <form class="aw-register-form" action="{:url('index/register')}" method="post">
+            <ul>
+                <li class="alert alert-danger hide error_message text-left">
+                    <i class="icon icon-delete"></i> <em></em>
+                </li>
+                <li>
+                    <input class="aw-register-name form-control" type="text" name="name" placeholder="姓名" required />
+                </li>
+                <li>
+                    <input class="aw-register-name form-control" type="text" name="phone" placeholder="手机号" required/>
+                </li>
+                <li>
+                    <input class="aw-register-name form-control" type="text" name="number" required placeholder="证件号码" />
+                </li>
+                <li style="padding-right: 200px;height:20px;" >
+                    性别:
+                    <label><input name="sex" value="男" type="radio" checked="checked"> 男</label>&nbsp;
+                    <label><input name="sex" value="女" type="radio"> 女 </label>&nbsp;
+                </li>
+                <li>
+                    <input class="aw-register-email form-control" type="text" placeholder="邮箱" name="email" required />
+                </li>
+                <li>
+                    <input class="aw-register-email form-control" type="text" placeholder="地域" name="area" required />
+                </li>
+                <li>
+                    <input class="aw-register-pwd form-control" type="password" name="password" placeholder="密码" required />
+                </li>   
+                <li>
+                    <input class="aw-register-pwd form-control" type="password" name="passwordt" placeholder="确认密码" required  />
+                </li> 
+                
+                <li class="clearfix">
+                    <button type="submit" class="btn btn-large btn-orange btn-block">注册</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div class="mod-footer">
+	<span>已有帐号?</span>&nbsp;&nbsp;
+			<a href="{:url('index/login')}">立即登录</a>&nbsp;&nbsp;•&nbsp;&nbsp;
+			<a href="{:url('index/index')}">返回首页</a>
+	</div>
+</div>
+<div id="bgPattern"></div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function ()
+{
+
+    $.get(G_BASE_URL + '/account/ajax/register_agreement/', function (result) { $('#register_agreement').html(result.err); }, 'json');
+
+    $('.aw-agreement-btn').click(function()
+    {
+        if ($('.aw-register-agreement').is(':visible'))
+        {
+            $('.aw-register-agreement').hide();
+        }
+        else
+        {
+            $('.aw-register-agreement').show();
+        }
+    });
+
+    $('.more-information-btn').click(function()
+    {
+        $('.more-information').fadeIn();
+        $(this).parent().hide();
+    });
+
+    verify_register_form('#register_form');
+
+    /* 注册页面验证 */
+    function verify_register_form(element)
+    {
+        $(element).find('[type=text], [type=password]').on({
+            focus : function()
+            {
+                if (typeof $(this).attr('tips') != 'undefined' && $(this).attr('tips') != '')
+                {
+                    $(this).parent().append('<span class="aw-reg-tips">' + $(this).attr('tips') + '</span>');
+                }
+            },
+            blur : function()
+            {
+                if ($(this).attr('tips') != '')
+                {
+                    switch ($(this).attr('name'))
+                    {
+                        case 'user_name' :
+                            var _this = $(this);
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 2)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            if ($(this).val().length > 17)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $.get(G_BASE_URL + '/account/ajax/check_username/username' + '-' + encodeURIComponent($(this).val()), function (result)
+                                {
+                                    if (result.errno == -1)
+                                    {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + result.err + '</span>');
+                                    }
+                                    else
+                                    {
+                                        _this.parent().find('.aw-reg-tips').detach();
+                                        _this.parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                                    }
+                                }, 'json');
+                            }
+                            return;
+
+                        case 'email' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            var emailreg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+                            if (!emailreg.test($(this).val()))
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                            }
+                            return;
+
+                        case 'password' :
+                            $(this).parent().find('.aw-reg-tips').detach();
+                            if ($(this).val().length >= 0 && $(this).val().length < 6)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            if ($(this).val().length > 17)
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-err"><i class="aw-icon i-err"></i>' + $(this).attr('errortips') + '</span>');
+                                return;
+                            }
+                            else
+                            {
+                                $(this).parent().find('.aw-reg-tips').detach();
+                                $(this).parent().append('<span class="aw-reg-tips aw-reg-right"><i class="aw-icon i-followed"></i></span>');
+                            }
+                            return;
+
+                    }
+                }
+
+            }
+        });
+    }
+
+    $('.select_area').LocationSelect({
+        labels: ["请选择省份或直辖市", "请选择城市"],
+        elements: document.getElementsByTagName("select"),
+        detector: function () {
+            this.select(["", ""]);
+        },
+        dataUrl: G_STATIC_URL + '/js/areas.js'
+    });
+});
+</script>
+<script type="text/javascript" src="../static/js/jquery.backstretch.js" tppabs="http://www.tousuyun.com/static/js/jquery.backstretch.js"></script>
+<script type="text/javascript" src="../static/js/app/fox.js" tppabs="http://www.tousuyun.com/static/js/app/fox.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{include file="public/header" /}
+
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="aw-content-wrap clearfix">
+                <div class="aw-main-content aw-article-content">
+                    <div class="aw-mod aw-question-detail">
+                        <div class="mod-head" style="color:#393A44;font-size:22px;font-weight:bold;text-align:center;">
+                          {$res.title}
+                        </div>
+                        {if condition="$res.sort_id eq 10"}
+                        <div class="meta clearfix">
+                            <span class="pull-right  more-operate">
+                                 <em class="text-color-999">来源：{$res.from}</em>
+                              <em class="text-color-999">{$res.update_time}</em>
+                            </span>
+                        </div>
+                        {else/}
+                        <div class="meta clearfix">
+                            <span class="pull-right  more-operate">
+                              <em class="text-color-999">{$res.update_time}</em>
+                            </span>
+                        </div>
+                        {/if}
+                        {if condition="$res.sort_id eq 1 OR $res.sort_id eq 2 OR $res.sort_id eq 3 OR $res.sort_id eq 4"}
+                        <div class="mod-head" style="">
+                            <h3>举报类型:{$res.type}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 5"}
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 6"}
+                        <div class="mod-head" style="">
+                            <h3>应用名称:{$res.name}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>下载地址:{$res.download}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 7"}
+                        <div class="mod-head" style="">
+                            <h3>举报对象:{$res.object}</h3>
+                        </div>
+                        <div class="mod-head" style="">
+                            <h3>网站地址:{$res.web_address}</h3>
+                        </div>
+                        {elseif condition="$res.sort_id eq 8 OR $res.sort_id eq 9"}
+                        <div class="mod-head" style="">
+                            <h3>举报对象:{$res.object}</h3>
+                        </div>
+                        {else/}
+                        {/if}
+                        {if condition="$res.sort_id eq 10"}
+                        <div class="mod-body">
+                            <div class="content markitup-box">
+                                {$res.description|htmlspecialchars_decode}
+                            </div>
+                        </div>
+                        {else/}
+                        <div class="mod-body">
+                            <h3>举报描述如下:</h3>
+                            <div class="content markitup-box">
+                                {$res.description|htmlspecialchars_decode}
+                            </div>
+                        </div>
+                        {/if}
+                        <div class="mod-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer" /}

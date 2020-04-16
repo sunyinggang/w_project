@@ -1,0 +1,42 @@
+{include file="public/header" /}
+
+<div class="aw-container-wrap">
+    <div class="container">
+        <div class="row" style="margin-left:100px;background-color: #fff;width:800px;">
+            <div class="aw-content-wrap">
+                <div class="col-sm-12 col-md-9 aw-main-content">
+                    <ul class="nav nav-tabs aw-nav-tabs active hidden-xs">
+                        <h2 class="hidden-xs"><i class="icon icon-ask"></i> 发布举报</h2>
+                    </ul>
+
+
+                    <div class="aw-mod aw-topic-category">
+                        <div class="mod-body clearfix">
+                            <ul>
+                                <li>
+                                    <a class="active">请选择举报入口</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="aw-mod aw-topic-list">
+                        <div class="mod-body clearfix">
+                            {volist name="res" id="data"}
+                            <div class="aw-item">
+                                <p class="clearfix">
+                                    <span class="topic-tag">
+                                        <a class="text" style="text-align:center;height:50px;line-height:45px;width:240px;font-size: 14px;" href="{:url('index/question',['ikey'=>$data['id'],'sort'=>$data['ano_name']])}">{$data["name"]}</a>
+                                    </span>
+                                </p>
+                            </div>
+                            {/volist}
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer" /}

@@ -939,6 +939,55 @@ def upload():
         }
         return json.dumps(d)
 
+@admin.route("/content/search/")
+def contentSearch():
+    type = request.args.get("type")
+    if int(type) == 1:
+        sel = request.args.get("sel")
+        if int(sel) == 4:
+            schedule_list = Schedule.query.all()
+        else:
+            schedule_list = Schedule.query.filter_by(status=sel).all()
+        return render_template("admin/schedule_list.html",schedule_list=schedule_list,sel=sel)
+    elif int(type) == 2:
+        content = request.args.get("content")
+        driver = Driver.query.filter_by(name=content).first()
+        car = Car.query.filter_by(number=content).first()
+        if not driver is None:
+            schedule_list = Schedule.query.filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'), Schedule.driver_id==driver.id)).all()
+        elif not car is None:
+            schedule_list = Schedule.query.filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'),Schedule.car_id == car.id)).all()
+        else:
+            schedule_list = Schedule.query.filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'))).all()
+        return render_template("admin/schedule_list.html", schedule_list=schedule_list, content=content,sel=4)
+    elif int(type) == 3:
+        time = request.args.get("time")
+        now = datetime.datetime.now()
+        if int(time) == 1:
+            start = request.args.get("start")
+            end = request.args.get("end")
+        elif int(time) == 2:
+            yesterday = now - datetime.timedelta(days=1)
+            start = yesterday - datetime.timedelta(hours=yesterday.hour, minutes=yesterday.minute,
+                                                          seconds=yesterday.second,
+                                                          microseconds=yesterday.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        elif int(time) == 3:
+            start = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                                  microseconds=now.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        else:
+            tomorrow = now + datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                                microseconds=now.microsecond)
+            start = tomorrow - datetime.timedelta(hours=tomorrow.hour, minutes=tomorrow.minute,
+                                                          seconds=tomorrow.second,
+                                                          microseconds=tomorrow.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        schedule_list = Schedule.query.filter(Schedule.start_time.between(start, end)).all()
+        return render_template("admin/schedule_list.html", schedule_list=schedule_list, start=start,end=end,sel=4,content='')
 
 def driving(origin,destination):
     params = {
