@@ -1,5 +1,6 @@
 {% extends "admin/home.html" %}
 {% block css %}
+<link href="{{ url_for('static',filename='admin/css/bootstrap-datetimepicker.css') }}" rel="stylesheet" media="screen">
 <style>
 table{
 	font-size: 10px;
@@ -14,22 +15,32 @@ table{
 <div class="page-container ng-scope" ng-controller="driverListController">
     <div class="row align-items-center">
         <div class="title-icon-style mr-2"></div>
-        <font color="#4c4c4c">请假审批</font>
+        <font color="#4c4c4c">请假统计</font>
     </div>
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
-            <div class="row align-items-center">
-                <div class="">
-                    {% if type == 0 %}
-                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.leaveList",type=0) }}">待我审批</a>
-                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.leaveList",type=1) }}">审批完成</a>
-                    {% else %}
-                        <a class="btn btn-sm btn-outline-primary" role="button" href="{{ url_for("admin.leaveList",type=0) }}">待我审批</a>
-                        <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.leaveList",type=1) }}">审批完成</a>
-                    {% endif %}
-
-                </div>
-            </div>
+            <div class="row align-items-center col-6 m-0 p-0">
+				<input id="searchContent" type="text" class="form-control form-control-sm mr-2 col-5 mr-2 ml-2" placeholder="司机/联系电话">
+				<button onclick="searchContent()" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索</button>
+		    </div>
+		    <div>
+		    	<div class="input-group input-group-sm">
+				  <input type="text" placeholder="起始日期" id="datetimepicker" class="form-control input-date-picker">
+				  <div class="input-group-append">
+					<button class="btn btn-outline-secondary btn-date-time" type="button">至</button>
+				  </div>
+				  <input type="text" placeholder="截至日期" id="datetimepicker2" class="form-control input-date-picker">
+				  <div class="input-group-append">
+						<button class="btn btn-primary" type="button" onclick="searchTime(1)">查询</button>
+						<div class="btn-group">
+							<button hidden="hidden"></button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(2)">昨天</button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(3)">今天</button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(4)">明天</button>
+						</div>
+				  </div>
+				</div>
+			</div>
         </div>
         <div class="mt-3 table-sticky-view">
             <table class="table table-hover">
@@ -158,8 +169,35 @@ function editStatus(status) {
         $("#g-6 img").attr('src','{{ url_for('static',filename='admin/images/selector-finance.png') }}');
         $("#g-6 span:eq(0)").addClass("text-white");
         $("#g-6 span:eq(1)").addClass("glyphicon-chevron-down text-white");
-        $("#g-6-1 span").addClass("text-white");
-        $("#g-6-1").parent().css('display','block');
+        $("#g-6-2 span").addClass("text-white");
+        $("#g-6-2").parent().css('display','block');
     })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#searchContent").val("{{ content }}");
+        $("#datetimepicker").val("{{ start }}");
+        $("#datetimepicker2").val("{{ end }}");
+    });
+    function searchContent(){
+       var type = 1;
+       var content = $("#searchContent").val();
+       var str = "{{url_for("admin.leaveSta")}}?type=";
+       location.href =str+type+"&content="+content;
+   }
+   function searchTime(time){
+       var type = 2;
+       var start;
+       var end;
+       if(time==1){
+           start = $("#datetimepicker").val();
+           end = $("#datetimepicker2").val();
+       }else{
+           start='';
+           end='';
+       }
+       var str = "{{url_for("admin.leaveSta")}}?type=";
+       location.href =str+type+"&time="+time+"&start="+start+"&end="+end;
+   }
 </script>
 {% endblock %}

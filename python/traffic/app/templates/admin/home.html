@@ -19,8 +19,8 @@
         {% include "admin/menu.html" %}
     <div class="col p-0 m-0">
     <div class="row mx-3 my-2 action-bar justify-content-between align-items-center">
-                <div class="row p-0 m-0">
-                    <div class="row m-0 p-0 align-items-center" ng-click="toggleMenu()" style="cursor: pointer;">
+                <div class="row p-0 m-0" id="menu-open">
+                    <div class="row m-0 p-0 align-items-center" style="cursor: pointer;">
                         <span ng-class="isCloseMenu?&#39;glyphicon glyphicon-chevron-right&#39;:&#39;glyphicon glyphicon-chevron-left&#39;" class="glyphicon glyphicon-chevron-left"></span>
                         <span class="glyphicon glyphicon-th-list"></span>
 {#                        <div title="清风代码" class="text-truncate ml-1" style="max-width: 200px"><b class="ng-binding">清风代码</b></div>#}

@@ -1,11 +1,6 @@
 {% extends "admin/home.html" %}
 {% block css %}
 <link href="{{ url_for('static',filename='admin/css/bootstrap-datetimepicker.css') }}" rel="stylesheet" media="screen">
-<style>
-table{
-	font-size: 10px;
-}
-</style>
 {% endblock %}
 {% block content %}
 <div class="content-center-div" id="content-center-div">
@@ -59,75 +54,7 @@ table{
             </div>
         </div>
         <div class="mt-3 table-sticky-view">
-            <table class="table table-hover">
-                <thead class="thead-light">
-                <tr>
-                    <th scope="col">序号</th>
-                    <th scope="col">用车人</th>
-                    <th scope="col">行程</th>
-                    <th scope="col">司机/车辆</th>
-                    <th scope="col">状态</th>
-                    <th scope="col" class="text-center">操作</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for v in schedule_list %}
-                  <tr class="ng-scope">
-                    <td><font class="text-primary ng-binding">{{ loop.index}}</font></td>
-                    <td>
-                        <div class="ng-binding">{{ v.user }}/{{ v.phone }}</div>
-                        <div class="ng-binding">{{ v.unit }}</div>
-                    </td>
-                    <td>
-                        <div style="color:#2da0f0">
-							<font>起：</font>
-							<font class="ng-binding">{{v.start_time}}</font>
-							<font style="word-break: break-all;" class="ng-binding">{{ v.start_point }}</font>
-						</div>
-                        <div style="color:red">
-							<font>终：</font>
-							<font class="ng-binding">{{v.end_time}}</font>
-							<font style="word-break: break-all;" class="ng-binding">{{ v.end_point }}</font>
-						</div>
-                    </td>
-                    <td>
-                        <div class="ng-binding">{{v.driver.name}}/{{v.driver.phone}}</div>
-                        <div class="ng-binding">{{v.car.number}}/{{v.car.nickname}}</div>
-                    </td>
-                    <td class="ng-binding">
-                        {% if v.status == 0 %}
-                            <div style="color:red" class="ng-binding">未分配司机</div>
-                        {% elif v.status == 1 %}
-                            <div style="color:red" class="ng-binding">未开始</div>
-                        {% elif v.status == 2 %}
-                            <div style="color:#3b8cff" class="ng-binding">正在进行</div>
-                        {% else %}
-                            <div style="color:#889195" class="ng-binding">已结束</div>
-                        {% endif %}
-                    </td>
-                    <td>
-                        <div class="text-primary row justify-content-center align-items-center">
-                            {% if v.status == 0 or v.status == 1 %}
-                                <button type="button" onclick="window.location.href ='{{ url_for('admin.scheduleEdit',id=v.id) }}'" class="btn btn-outline-primary btn-sm ml-1">编辑排班</button>
-                            {% else %}
-                                <button type="button" onclick="window.location.href ='{{ url_for('admin.scheduleEdit',id=v.id) }}'" class="btn btn-outline-primary btn-sm ml-1">查看详情</button>
-                            {% endif %}
-                            <button type="button" data-toggle="modal" data-target="#Modal2" onclick="addId('{{ v.id }}')"  class="btn btn-outline-danger btn-sm ml-1">删除</button>
-                        </div>
-                    </td>
-                  </tr>
-                {% endfor %}
-                </tbody>
-                <!-- ngIf: !emptyList --><tfoot ng-if="!emptyList" class="ng-scope">
-                <tr>
-                    <!-- ngIf: !toEnd -->
-                    <!-- ngIf: toEnd --><td colspan="9" ng-if="toEnd" class="ng-scope">
-                        <div class="row justify-content-center tab-footer-loading-div"><font color="#CCCCCC">已经到底了</font>
-                        </div>
-                    </td><!-- end ngIf: toEnd -->
-                </tr>
-                </tfoot><!-- end ngIf: !emptyList -->
-            </table>
+             <canvas id="scheduleSta" class="w-100 chartjs-render-monitor" style="display: block; width: 1093px; height: 300px;"></canvas>
         </div>
     </div>
     <div class="row justify-content-center mt-3" ng-show="!emptyList">
@@ -156,6 +83,47 @@ table{
                 </div>
 {% endblock %}
 {% block js %}
+<script src="{{ url_for('static',filename='admin/js/Chart.js') }}"></script>
+<script>
+    var ctx = document.getElementById('scheduleSta').getContext('2d');
+    var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 4, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderWidth:4,
+            borderColor:'black'
+        }]
+    },
+
+
+    options: {
+      responsive:true,
+    maintainAspectRatio: false,
+    title:{
+      display:true,
+      text:'My Favorite Colors',
+      fontSize:18
+    },
+    legend: {
+            display: true,
+            position:'right',
+
+        }
+
+    }
+});
+</script>
 <script>
     $(document).ready(function () {
         $("#g-3 img").attr('src','{{ url_for('static',filename='admin/images/selector-task.png') }}');
@@ -163,21 +131,6 @@ table{
         $("#g-3 span:eq(1)").addClass("glyphicon-chevron-down text-white");
         $("#g-3-1 span").addClass("text-white");
         $("#g-3-1").parent().css('display','block');
-    })
-</script>
-<script>
-    $(document).ready(function () {
-        //类型筛选
-        $("#sel option").each(function() {
-           if($(this).val() == {{sel}}) {
-                $(this).attr("selected","selected");
-           }else {
-                $(this).removeAttr("selected")
-           }
-        });
-        $("#searchContent").val("{{ content }}");
-        $("#datetimepicker").val("{{ start }}");
-        $("#datetimepicker2").val("{{ end }}");
     })
 </script>
 <script>

@@ -717,6 +717,12 @@ def scheduleDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.scheduleList'))
 
+@admin.route("/schedule/sta/")
+@admin_login_req
+@admin_auth
+def scheduleSta():
+    return render_template("admin/schedule_sta.html")
+
 @admin.route("/monitor/")
 def monitor():
     return render_template("admin/monitor.html")
@@ -853,6 +859,12 @@ def expenseSchedule(type=None):
         expense_list = Expense.query.filter(or_(Expense.status == 1, Expense.status == 2)).all()
     return render_template("admin/expense_schedule.html",expense_list = expense_list,type=type)
 
+@admin.route("/expense/sta/")
+@admin_login_req
+@admin_auth
+def expenseSta():
+    return render_template("admin/expense_sta.html")
+
 @admin.route("/leave/list/<int:type>/")
 @admin_login_req
 @admin_auth
@@ -890,6 +902,50 @@ def leaveDel():
     db.session.commit()
     flash("删除成功！",'ok')
     return redirect(url_for('admin.leaveList',type=0))
+
+@admin.route("/leave/sta/")
+@admin_login_req
+@admin_auth
+def leaveSta():
+    type = request.args.get("type")
+    if not type is None:
+        if int(type) == 1:
+            content = request.args.get("content")
+            driver = Driver.query.filter(
+                or_(Driver.name.ilike('%' + content + '%'), Driver.phone.ilike('%' + content + '%'))).first()
+            if not driver is None:
+                leave_list = Leave.query.filter(Leave.driver_id == driver.id).all()
+            else:
+                leave_list = ''
+            return render_template("admin/leave_sta.html", leave_list=leave_list, content=content)
+        elif int(type) == 2:
+            time = request.args.get("time")
+            now = datetime.datetime.now()
+            if int(time) == 1:
+                start = request.args.get("start")
+                end = request.args.get("end")
+            elif int(time) == 2:
+                yesterday = now - datetime.timedelta(days=1)
+                start = yesterday - datetime.timedelta(hours=yesterday.hour, minutes=yesterday.minute,
+                                                       seconds=yesterday.second,
+                                                       microseconds=yesterday.microsecond)
+                end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+            elif int(time) == 3:
+                start = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                                 microseconds=now.microsecond)
+                end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+            else:
+                tomorrow = now + datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                                    microseconds=now.microsecond)
+                start = tomorrow - datetime.timedelta(hours=tomorrow.hour, minutes=tomorrow.minute,
+                                                      seconds=tomorrow.second,
+                                                      microseconds=tomorrow.microsecond)
+                end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+            leave_list = Leave.query.filter(Leave.start_time.between(start, end)).all()
+            return render_template("admin/leave_sta.html", leave_list=leave_list, start=start, end=end, content='')
+    else:
+        leave_list = Leave.query.filter(Leave.status!=0).all()
+        return render_template("admin/leave_sta.html", leave_list=leave_list)
 
 @admin.route("/notice/list/")
 @admin_login_req
