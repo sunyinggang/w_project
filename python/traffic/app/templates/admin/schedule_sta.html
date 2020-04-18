@@ -15,50 +15,27 @@
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
 		    <div class="row align-items-center col-6 m-0 p-0">
-		        <div>
-					<select id="sel"  onchange="doSel();" class="form-control form-control-sm">
-                        <option label="全部排班" value="4">全部排班</option>
-                        <option label="未分配司机/车辆" value="0">未分配司机/车辆</option>
-                        <option label="未开始" value="1">未开始</option>
-                        <option label="正在进行" value="2">正在进行</option>
-                        <option label="已结束" value="3">已结束</option>
-                    </select>
-		        </div>
-				<input id="searchContent" type="text" class="form-control form-control-sm mr-2 col-5 mr-2 ml-2" placeholder="车牌号/司机/用车人/用车单位">
-				<button onclick="searchContent()" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索</button>
 		    </div>
 		    <div>
 		    	<div class="input-group input-group-sm">
-				  <input type="text" placeholder="起始日期" id="datetimepicker" class="form-control input-date-picker">
+				  <input type="text" placeholder="起始日期" id="timepickerstart" class="form-control input-date-picker">
 				  <div class="input-group-append">
 					<button class="btn btn-outline-secondary btn-date-time" type="button">至</button>
 				  </div>
-				  <input type="text" placeholder="截至日期" id="datetimepicker2" class="form-control input-date-picker">
+				  <input type="text" placeholder="截至日期" id="timepickerend" class="form-control input-date-picker">
 				  <div class="input-group-append">
-						<button class="btn btn-primary" type="button" onclick="searchTime(1)">查询</button>
-						<div class="btn-group">
-							<button hidden="hidden"></button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(2)">昨天</button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(3)">今天</button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(4)">明天</button>
-						</div>
+						<button class="btn btn-primary" type="button" onclick="searchTime()">查询</button>
 				  </div>
 				</div>
 			</div>
 		</div>
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center">
-                <div class="">
-                    <a class="btn btn-primary btn-sm" role="button" href="{{ url_for("admin.scheduleAdd") }}">添加排班</a>
-                </div>
             </div>
         </div>
         <div class="mt-3 table-sticky-view">
              <canvas id="scheduleSta" class="w-100 chartjs-render-monitor" style="display: block; width: 1093px; height: 300px;"></canvas>
         </div>
-    </div>
-    <div class="row justify-content-center mt-3" ng-show="!emptyList">
-        共有<font color="red" class="ng-binding">{{ schedule_list|count }}</font>条数据
     </div>
 </div>
 </div></div>
@@ -88,40 +65,19 @@
     var ctx = document.getElementById('scheduleSta').getContext('2d');
     var myChart = new Chart(ctx, {
     type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 4, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderWidth:4,
-            borderColor:'black'
-        }]
-    },
-
-
+    data: {{ scheduleByTime|safe }},
     options: {
-      responsive:true,
-    maintainAspectRatio: false,
-    title:{
-      display:true,
-      text:'My Favorite Colors',
-      fontSize:18
-    },
-    legend: {
-            display: true,
-            position:'right',
-
-        }
-
-    }
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: '排班统计'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: true
+                }
+            }
 });
 </script>
 <script>
@@ -129,46 +85,35 @@
         $("#g-3 img").attr('src','{{ url_for('static',filename='admin/images/selector-task.png') }}');
         $("#g-3 span:eq(0)").addClass("text-white");
         $("#g-3 span:eq(1)").addClass("glyphicon-chevron-down text-white");
-        $("#g-3-1 span").addClass("text-white");
-        $("#g-3-1").parent().css('display','block');
+        $("#g-3-2 span").addClass("text-white");
+        $("#g-3-2").parent().css('display','block');
+        $("#timepickerstart").val("{{ start_date }}");
+        $("#timepickerend").val("{{ end_date }}");
     })
 </script>
 <script>
-function addId(id) {
-    $("#delId").val(id);
-}
-function del() {
-    var id = $("#delId").val();
-    var str = "{{url_for("admin.scheduleDel")}}?id=";
-    location.href =str+id;
-}
+    $('#timepickerstart').datetimepicker({
+      minView: "month", //选择日期后，不会再跳转去选择时分秒
+      language:  'zh-CN',
+      format: 'yyyy-mm-dd',
+      todayBtn:  1,
+      autoclose: 1
+    });
+    $('#timepickerend').datetimepicker({
+      minView: "month", //选择日期后，不会再跳转去选择时分秒
+      language:  'zh-CN',
+      format: 'yyyy-mm-dd',
+      todayBtn:  1,
+      autoclose: 1
+    });
 </script>
 <script type="text/javascript">
-   function doSel(){
+function searchTime(){
        var type = 1;
-       var sel = $("#sel option:selected").val();
-       var str = "{{url_for("admin.contentSearch")}}?type=";
-       location.href =str+type+"&sel="+sel;
-   }
-   function searchContent(){
-       var type = 2;
-       var content = $("#searchContent").val();
-       var str = "{{url_for("admin.contentSearch")}}?type=";
-       location.href =str+type+"&content="+content;
-   }
-   function searchTime(time){
-       var type = 3;
-       var start;
-       var end;
-       if(time==1){
-           start = $("#datetimepicker").val();
-           end = $("#datetimepicker2").val();
-       }else{
-           start='';
-           end='';
-       }
-       var str = "{{url_for("admin.contentSearch")}}?type=";
-       location.href =str+type+"&time="+time+"&start="+start+"&end="+end;
+       var start = $("#timepickerstart").val();
+       var end = $("#timepickerend").val();
+       var str = "{{url_for("admin.scheduleSta")}}?type=";
+       location.href =str+type+"&start="+start+"&end="+end;
    }
 </script>
 {% endblock %}

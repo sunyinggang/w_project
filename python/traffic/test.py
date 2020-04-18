@@ -14,52 +14,52 @@ from app import db
 from app.models import Expense, Schedule
 
 
-def curl(url, params, type):
-    baseUrl = 'https://restapi.amap.com/'
-    url = baseUrl + url
-    params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
-    if type == 'GET':
-        response = requests.get(url, params)
-    else:
-        response = requests.post(url, params)
-    res = json.loads(response.text)
-    print(res)
-    return res
-
-def geocode_curl(address):
-    params = {}
-    url = 'https://restapi.amap.com/v3/geocode/geo'
-    params["address"] = address
-    params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
-    response = requests.get(url, params)
-    res = json.loads(response.content)
-    print(res)
-    return res['geocodes'][0]['location']
-
-
-def driving_curl(params):
-    url = 'https://restapi.amap.com/v3/direction/driving'
-    params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
-    response = requests.get(url, params)
-    res = json.loads(response.content)
-    return res
-
-origin = geocode_curl('山东省威海市荣成市哈尔滨理工大学荣成校区')
-destination = geocode_curl('山东省威海市哈尔滨工业大学')
-print(origin,destination)
-params = {
-        'origin': origin,
-        'destination': destination
-    }
-paths = [origin.split(',')]
-driving = driving_curl(params)
-steps = driving['route']['paths'][0]['steps']
-print(len(steps))
-str = ''
-for i in range(len(steps)):
-    str += steps[i]['polyline']
-p = str.split(';')
-print(p)
+# def curl(url, params, type):
+#     baseUrl = 'https://restapi.amap.com/'
+#     url = baseUrl + url
+#     params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
+#     if type == 'GET':
+#         response = requests.get(url, params)
+#     else:
+#         response = requests.post(url, params)
+#     res = json.loads(response.text)
+#     print(res)
+#     return res
+#
+# def geocode_curl(address):
+#     params = {}
+#     url = 'https://restapi.amap.com/v3/geocode/geo'
+#     params["address"] = address
+#     params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
+#     response = requests.get(url, params)
+#     res = json.loads(response.content)
+#     print(res)
+#     return res['geocodes'][0]['location']
+#
+#
+# def driving_curl(params):
+#     url = 'https://restapi.amap.com/v3/direction/driving'
+#     params["key"] = '01b6e8c78f8f2d7ee079d0a51c88ba50'
+#     response = requests.get(url, params)
+#     res = json.loads(response.content)
+#     return res
+#
+# origin = geocode_curl('山东省威海市荣成市哈尔滨理工大学荣成校区')
+# destination = geocode_curl('山东省威海市哈尔滨工业大学')
+# print(origin,destination)
+# params = {
+#         'origin': origin,
+#         'destination': destination
+#     }
+# paths = [origin.split(',')]
+# driving = driving_curl(params)
+# steps = driving['route']['paths'][0]['steps']
+# print(len(steps))
+# str = ''
+# for i in range(len(steps)):
+#     str += steps[i]['polyline']
+# p = str.split(';')
+# print(p)
 # paths = "122.514694,37.16684;122.515549,37.166847;122.515579,37.166882;122.515564,37.16737;122.515564,37.168201;122.515541,37.168812;122.515495,37.168839;122.515099,37.168839"
 # p = paths.split(';')
 # print(p)
@@ -168,3 +168,20 @@ print(p)
 #     expense_in += money
 # print(expense_in,expense_out)
 # print(10-20)
+
+def getBetweenDay(start_date,end_date):
+  date_list = []
+  begin_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+  end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
+  while begin_date <= end_date:
+    date_str = begin_date.strftime("%Y-%m-%d")
+    date_list.append(date_str)
+    begin_date += datetime.timedelta(days=1)
+  return date_list
+
+list = getBetweenDay('2019-04-01','2020-04-10')
+for v in list:
+  str = v + ' 00:00:00'
+  start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
+  end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+  print(start,end)

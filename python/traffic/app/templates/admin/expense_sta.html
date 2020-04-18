@@ -1,6 +1,6 @@
 {% extends "admin/home.html" %}
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static',filename='admin/css/index.css') }}">
+<link href="{{ url_for('static',filename='admin/css/bootstrap-datetimepicker.css') }}" rel="stylesheet" media="screen">
 {% endblock %}
 {% block content %}
 <div class="content-center-div" id="content-center-div">
@@ -10,36 +10,27 @@
 <div class="page-container ng-scope" ng-controller="driverListController">
     <div class="row align-items-center">
         <div class="title-icon-style mr-2"></div>
-        <font color="#4c4c4c">财务报表</font>
+        <font color="#4c4c4c">财务统计</font>
     </div>
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
             <div class="row align-items-center col-6 m-0 p-0">
-				<input id="searchContent" type="text" class="form-control form-control-sm mr-2 col-5 mr-2 ml-2" placeholder="司机/联系电话">
-				<button onclick="searchContent()" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索</button>
 		    </div>
 		    <div>
 		    	<div class="input-group input-group-sm">
-				  <input type="text" placeholder="起始日期" id="datetimepicker" class="form-control input-date-picker">
+				  <input type="text" placeholder="起始日期" id="timepickerstart" class="form-control input-date-picker">
 				  <div class="input-group-append">
 					<button class="btn btn-outline-secondary btn-date-time" type="button">至</button>
 				  </div>
-				  <input type="text" placeholder="截至日期" id="datetimepicker2" class="form-control input-date-picker">
+				  <input type="text" placeholder="截至日期" id="timepickerend" class="form-control input-date-picker">
 				  <div class="input-group-append">
-						<button class="btn btn-primary" type="button" onclick="searchTime(1)">查询</button>
-						<div class="btn-group">
-							<button hidden="hidden"></button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(2)">昨天</button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(3)">今天</button>
-							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(4)">明天</button>
-						</div>
+						<button class="btn btn-primary" type="button" onclick="searchTime()">查询</button>
 				  </div>
 				</div>
 			</div>
         </div>
-
         <div class="mt-3 table-sticky-view">
-        <canvas id="expenseSta" class="w-100 chartjs-render-monitor" style="display: block; width: 1093px; height: 450px;"></canvas>
+        <canvas id="expenseSta" class="w-100 chartjs-render-monitor" style="display: block; width: 1093px; height: 460px;"></canvas>
         </div>
     </div>
 </div>
@@ -52,41 +43,21 @@
     <script>
     var ctxex = document.getElementById('expenseSta').getContext('2d');
     var myChart = new Chart(ctxex, {
-    type: "bar",
-    data: {
-        datasets: [
-            {
-                label: "Bar Dataset",
-                data: [10, 20, 30, 40]
-            },
-            {
-                label: "Line Dataset",
-                data: [50, 50, 50, 50],
-
-                // 将此数据集类型变为折线图
-                type: "line"
+            type: 'bar',
+            data: {{ expenseByTime|safe }},
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: '财务统计'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: true
+                }
             }
-        ],
-        labels: ["January", "February", "March", "April"]
-    },
-
-
-    options: {
-      responsive:true,
-    maintainAspectRatio: false,
-    title:{
-      display:true,
-      text:'My Favorite Colors',
-      fontSize:18
-    },
-    legend: {
-            display: true,
-            position:'right',
-
-        }
-
-    }
-});
+        });
 </script>
 <script>
     $(document).ready(function () {
@@ -95,29 +66,33 @@
         $("#g-5 span:eq(1)").addClass("glyphicon-chevron-down text-white");
         $("#g-5-3 span").addClass("text-white");
         $("#g-5-3").parent().css('display','block');
+        $("#timepickerstart").val("{{ start_date }}");
+        $("#timepickerend").val("{{ end_date }}");
     })
 </script>
-
 <script>
-       function searchContent(){
-       var type = 2;
-       var content = $("#searchContent").val();
-       var str = "{{url_for("admin.contentSearch")}}?type=";
-       location.href =str+type+"&content="+content;
-   }
-   function searchTime(time){
-       var type = 3;
-       var start;
-       var end;
-       if(time==1){
-           start = $("#datetimepicker").val();
-           end = $("#datetimepicker2").val();
-       }else{
-           start='';
-           end='';
-       }
-       var str = "{{url_for("admin.contentSearch")}}?type=";
-       location.href =str+type+"&time="+time+"&start="+start+"&end="+end;
+    $('#timepickerstart').datetimepicker({
+      minView: "month", //选择日期后，不会再跳转去选择时分秒
+      language:  'zh-CN',
+      format: 'yyyy-mm-dd',
+      todayBtn:  1,
+      autoclose: 1
+    });
+    $('#timepickerend').datetimepicker({
+      minView: "month", //选择日期后，不会再跳转去选择时分秒
+      language:  'zh-CN',
+      format: 'yyyy-mm-dd',
+      todayBtn:  1,
+      autoclose: 1
+    });
+</script>
+<script>
+   function searchTime(){
+       var type = 1;
+       var start = $("#timepickerstart").val();
+       var end = $("#timepickerend").val();
+       var str = "{{url_for("admin.expenseSta")}}?type=";
+       location.href =str+type+"&start="+start+"&end="+end;
    }
 </script>
 {% endblock %}

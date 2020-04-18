@@ -170,21 +170,21 @@ def index():
     scheduleToday,scheduleTomorrow = scheduleTodayAndTomorrow()
     # 近6个月利润、收入、支出
     financialChart = {
-                "labels": ['9月', '10月', '11月', '12月', '1月', '2月'],
+                "labels": [],
                 "datasets": [
                     {
                         "label": '利润',
-                        "data": [10, 20, 30, 50, 80, 40],
+                        "data": [],
                         "backgroundColor": "rgb(255, 142, 100)"
                     },
                     {
                         "label": '收入',
-                        "data": [10, 80, 30, 40, 30, 40],
+                        "data": [],
                         "backgroundColor": "rgb(38, 247, 206)"
                     },
                     {
                         "label": '支出',
-                        "data": [-50, -50, -50, -10,0,-100],
+                        "data": [],
                         "backgroundColor": "rgb(1, 168, 250)"
                     }
                 ]
@@ -721,7 +721,61 @@ def scheduleDel():
 @admin_login_req
 @admin_auth
 def scheduleSta():
-    return render_template("admin/schedule_sta.html")
+    scheduleByTime = {
+        "labels": [],
+        "datasets": [{
+            "type": 'bar',
+            "label": '未分配司机/车辆',
+            "backgroundColor": 'rgb(255, 99, 132)',
+            "data": []
+        }, {
+            "type": 'bar',
+            "label": '未开始',
+            "backgroundColor": 'rgb(75, 192, 192)',
+            "data": []
+        },  {
+            "type": 'bar',
+            "label": '已结束',
+            "backgroundColor": 'rgb(180,191,192)',
+            "data": []
+        }]
+    }
+    type = request.args.get("type")
+    count_list_0 = []
+    count_list_1 = []
+    count_list_3 = []
+    start_date = ''
+    end_date = ''
+    if type is None:
+        time_list, temp = halfYear()
+        scheduleByTime['labels'] = time_list
+        for v in temp:
+            count = Schedule.query.filter(Schedule.status==0).filter(Schedule.start_time.between(v[0], v[1])).count()
+            count_list_0.append(count)
+            count = Schedule.query.filter(Schedule.status == 1).filter(Schedule.start_time.between(v[0], v[1])).count()
+            count_list_1.append(count)
+            count = Schedule.query.filter(Schedule.status == 3).filter(Schedule.start_time.between(v[0], v[1])).count()
+            count_list_3.append(count)
+    else:
+        start_date = request.args.get("start")
+        end_date = request.args.get("end")
+        day_list = getBetweenDay(start_date, end_date)
+        scheduleByTime['labels'] = day_list
+        for v in day_list:
+            str = v + ' 00:00:00'
+            start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+            count = Schedule.query.filter(Schedule.status == 0).filter(Schedule.start_time.between(start, end)).count()
+            count_list_0.append(count)
+            count = Schedule.query.filter(Schedule.status == 1).filter(Schedule.start_time.between(start, end)).count()
+            count_list_1.append(count)
+            count = Schedule.query.filter(Schedule.status == 3).filter(Schedule.start_time.between(start, end)).count()
+            count_list_3.append(count)
+    scheduleByTime['datasets'][0]['data'] = count_list_0
+    scheduleByTime['datasets'][1]['data'] = count_list_1
+    scheduleByTime['datasets'][2]['data'] = count_list_3
+    return render_template("admin/schedule_sta.html", scheduleByTime=json.dumps(scheduleByTime, ensure_ascii=False),
+                           start_date=start_date, end_date=end_date)
 
 @admin.route("/monitor/")
 def monitor():
@@ -861,9 +915,79 @@ def expenseSchedule(type=None):
 
 @admin.route("/expense/sta/")
 @admin_login_req
-@admin_auth
 def expenseSta():
-    return render_template("admin/expense_sta.html")
+    expenseByTime = {
+        "labels": [],
+        "datasets": [{
+                "type": 'bar',
+                "label": '收入',
+                "backgroundColor": 'rgb(255, 99, 132)',
+                "data": []
+            }, {
+                "type": 'bar',
+                "label": '支出',
+                "backgroundColor": 'rgb(75, 192, 192)',
+                "data": []
+            },{
+                "type": 'line',
+                "label": '利润',
+                "borderColor": 'rgb(54, 162, 235)',
+                "data": []
+            }]
+    }
+    type = request.args.get("type")
+    expense_in_list = []
+    expense_out_list = []
+    expense_profit_list = []
+    start_date=''
+    end_date=''
+    if type is None:
+        time_list, temp = halfYear()
+        expenseByTime['labels'] = time_list
+        for v in temp:
+            expense = Expense.query.filter(Expense.end_time.between(v[0], v[1])).filter(Expense.status == 1).all()
+            schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Expense.status == 3).all()
+            expense_in = 0
+            expense_out = 0
+            for v in expense:
+                if v.expense_type.type == '收入':
+                    expense_in += int(v.money)
+                else:
+                    expense_out -= int(v.money)
+            for i in schedule:
+                money = int(i.money) - int(i.driver_money)
+                expense_in += money
+            expense_in_list.append(expense_in)
+            expense_out_list.append(expense_out)
+            expense_profit_list.append(expense_in + expense_out)
+    else:
+        start_date = request.args.get("start")
+        end_date = request.args.get("end")
+        day_list = getBetweenDay(start_date,end_date)
+        expenseByTime['labels'] = day_list
+        for v in day_list:
+            str = v + ' 00:00:00'
+            start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+            expense = Expense.query.filter(Expense.end_time.between(start, end)).filter(Expense.status == 1).all()
+            schedule = Schedule.query.filter(Schedule.end_time.between(start, end)).filter(Expense.status == 3).all()
+            expense_in = 0
+            expense_out = 0
+            for t in expense:
+                if t.expense_type.type == '收入':
+                    expense_in += int(t.money)
+                else:
+                    expense_out -= int(t.money)
+            for i in schedule:
+                money = int(i.money) - int(i.driver_money)
+                expense_in += money
+            expense_in_list.append(expense_in)
+            expense_out_list.append(expense_out)
+            expense_profit_list.append(expense_in + expense_out)
+    expenseByTime['datasets'][0]['data'] = expense_in_list
+    expenseByTime['datasets'][1]['data'] = expense_out_list
+    expenseByTime['datasets'][2]['data'] = expense_profit_list
+    return render_template("admin/expense_sta.html",expenseByTime=json.dumps(expenseByTime,ensure_ascii=False),start_date=start_date,end_date=end_date)
 
 @admin.route("/leave/list/<int:type>/")
 @admin_login_req
@@ -1133,3 +1257,14 @@ def scheduleTodayAndTomorrow():
         Schedule.query.filter(Schedule.end_time.between(zero_tomorrow, last_tomorrow)).filter(
             Schedule.status == 3).count())
     return scheduleToday,scheduleTomorrow
+
+#获取指定日期区间日期列表
+def getBetweenDay(start_date,end_date):
+  date_list = []
+  begin_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+  end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
+  while begin_date <= end_date:
+    date_str = begin_date.strftime("%Y-%m-%d")
+    date_list.append(date_str)
+    begin_date += datetime.timedelta(days=1)
+  return date_list
