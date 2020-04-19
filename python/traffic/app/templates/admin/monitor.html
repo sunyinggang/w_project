@@ -44,7 +44,7 @@
     });
 
     // 将 icon 传入 marker
-setInterval("test()",1000);
+setInterval("test()",1500);
 function test() {
     console.log('1');
     $.ajax({
@@ -57,7 +57,7 @@ function test() {
                 position: new AMap.LngLat(b[0], b[1]),
                 icon: startIcon,
                 label: {
-                    content: '7.38km/h',
+                    content: 'A1234',
                     offset: new AMap.Pixel(-10, -25)
                 }
             });
