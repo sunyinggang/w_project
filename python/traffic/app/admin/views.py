@@ -804,10 +804,16 @@ def trackList():
 @admin_login_req
 @admin_auth
 def trackDetail(id=None):
+    return render_template("admin/track_detail.html",id=id)
+
+@admin.route("/json/<int:id>/")
+def jsonData(id=None):
     schedule = Schedule.query.filter_by(id=id).first_or_404()
     track = Track.query.filter_by(id=schedule.track_id).first_or_404()
-    start = json.loads(track.steps)[0]
-    return render_template("admin/track_detail.html",track=track,start=start)
+    data = []
+    str = schedule.start_point + "->" + schedule.end_point
+    data.append({"name": str, "path": json.loads(track.steps)})
+    return json.dumps(data,ensure_ascii=False)
 
 @admin.route("/expense/list/<int:type>/")
 @admin_login_req
@@ -1268,3 +1274,9 @@ def getBetweenDay(start_date,end_date):
     date_list.append(date_str)
     begin_date += datetime.timedelta(days=1)
   return date_list
+
+
+
+@admin.route("/test/map/")
+def testMap():
+  return render_template("admin/t.html")

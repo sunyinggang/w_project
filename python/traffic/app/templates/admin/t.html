@@ -1,36 +1,52 @@
-{% extends "admin/home.html" %}
-{% block css %}
+<!-- 重点参数：renderOptions -->
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/navigators.html -->
+    <base href="//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>轨迹巡航控制</title>
     <style>
-        html, body, #container {
-            height: 100%;
-            width: 100%;
-        }
-     #panel {
+    #container,
+    body,
+    html {
+        height: 100%;
+        width: 100%
+    }
+    
+    #loadingTip,
+    #panel {
         position: absolute;
         top: 0
     }
-
+    
+    body,
+    html {
+        margin: 0;
+        font-size: 12px
+    }
+    
     #outer-box {
         height: 100%;
         padding-right: 300px;
     }
-
+    
     #panel {
         right: 0;
         width: 300px;
         z-index: 999;
-        margin-top: 40px;
-        background-color: #fff;
         height: calc(100% - 5px);
         overflow: hidden;
         overflow-y: auto
     }
-
+    
     #routes-container {
         height: 1200px;
         margin-left: 10px
     }
-
+    
     #loadingTip {
         z-index: 9999;
         left: 0;
@@ -39,68 +55,57 @@
         color: #fff;
         font-size: 13px
     }
-
+    
     .route-item {
         margin-bottom: 10px
     }
-
+    
     .route-item pre {
         margin: 0
     }
-
+    
     .route-item h3 {
         margin: 5px 0;
         font-size: 14px;
         cursor: pointer
     }
-
+    
     .hide {
         display: none
     }
-
+    
     .speedBox {
         padding: 5px 0
     }
-
+    
     .speedRange {
         vertical-align: middle;
         margin: 0;
         padding: 0;
         width: 100px
     }
-
+    
     .markerInfo {
         background: rgba(255, 255, 255, 0.7);
         padding: 2px 5px;
         border: 1px solid #ccc;
         white-space: nowrap;
     }
-</style>
-{% endblock %}
-{% block content %}
-<div id="outer-box">
+    </style>
+</head>
+
+<body>
+    <div id="outer-box">
         <div id="container">
         </div>
         <div id="panel">
             <div id="routes-container">
             </div>
         </div>
-</div>
-
-{% endblock %}
-{% block js %}
+    </div>
     <script type="text/javascript" src='//webapi.amap.com/maps?v=1.4.15&key=dfdf4bf6d790e5d80a248168446dfe75'></script>
     <!-- UI组件库 1.0 -->
     <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
-    <script>
-    $(document).ready(function () {
-        $("#g-4 img").attr('src','{{ url_for('static',filename='admin/images/selector-task.png') }}');
-        $("#g-4 span:eq(0)").addClass("text-white");
-        $("#g-4 span:eq(1)").addClass("glyphicon-chevron-down text-white");
-        $("#g-4-2 span").addClass("text-white");
-        $("#g-4-2").parent().css('display','block');
-    })
-</script>
     <script type="text/javascript">
     //创建地图
     var map = new AMap.Map('container', {
@@ -133,7 +138,7 @@
             getHoverTitle: function(pathData, pathIndex, pointIndex) {
 
                 if (pointIndex >= 0) {
-                    //point
+                    //point 
                     return pathData.name + '，点:' + pointIndex + '/' + pathData.path.length;
                 }
 
@@ -157,10 +162,7 @@
                             lineWidth: lineWidth + 2
                         },
                         pathNavigatorStyle: {
-                            width: 16,
-                            height: 32,
-                            fillStyle: color,
-                            content: PathSimplifier.Render.Canvas.getImageContent('//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/imgs/car.png', onload, onerror)
+                            fillStyle: color
                         }
                     }
                 }
@@ -363,7 +365,7 @@
 
         $('<div id="loadingTip">加载数据，请稍候...</div>').appendTo(document.body);
 
-        $.getJSON('http://127.0.0.1:5555/admin/json/{{id}}', function(d) {
+        $.getJSON('http://127.0.0.1:5555/admin/json/', function(d) {
 
             $('#loadingTip').remove();
 
@@ -388,4 +390,6 @@
         });
     });
     </script>
-{% endblock %}
+</body>
+
+</html>

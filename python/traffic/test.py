@@ -11,8 +11,7 @@ import time
 from sqlalchemy import func
 
 from app import db
-from app.models import Expense, Schedule
-
+from app.models import Expense, Schedule, Track
 
 # def curl(url, params, type):
 #     baseUrl = 'https://restapi.amap.com/'
@@ -169,19 +168,24 @@ from app.models import Expense, Schedule
 # print(expense_in,expense_out)
 # print(10-20)
 
-def getBetweenDay(start_date,end_date):
-  date_list = []
-  begin_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-  end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
-  while begin_date <= end_date:
-    date_str = begin_date.strftime("%Y-%m-%d")
-    date_list.append(date_str)
-    begin_date += datetime.timedelta(days=1)
-  return date_list
-
-list = getBetweenDay('2019-04-01','2020-04-10')
-for v in list:
-  str = v + ' 00:00:00'
-  start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
-  end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
-  print(start,end)
+# def getBetweenDay(start_date,end_date):
+#   date_list = []
+#   begin_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+#   end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
+#   while begin_date <= end_date:
+#     date_str = begin_date.strftime("%Y-%m-%d")
+#     date_list.append(date_str)
+#     begin_date += datetime.timedelta(days=1)
+#   return date_list
+#
+# list = getBetweenDay('2019-04-01','2020-04-10')
+# for v in list:
+#   str = v + ' 00:00:00'
+#   start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
+#   end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+#   print(start,end)
+schedule = Schedule.query.filter_by(id=9).first_or_404()
+track = Track.query.filter_by(id=schedule.track_id).first_or_404()
+data = []
+str = schedule.start_point + "->" + schedule.end_point
+data.append({"name":str,"path":json.loads(track.steps)})
