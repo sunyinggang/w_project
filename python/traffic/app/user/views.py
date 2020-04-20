@@ -57,6 +57,7 @@ def login():
             return redirect(url_for("user.login"))
         session["driver_name"] = driver.name
         session["driver_id"] = driver.id
+        session["driver_status"] = driver.status
         flash("登录成功！", "ok")
         return redirect(request.args.get("next") or url_for("user.index"))
     return render_template("user/login.html",form=form)
@@ -90,6 +91,7 @@ def changePwd():
 def logout():
     session.pop("driver_name",None)
     session.pop("driver_id", None)
+    session.pop("driver_status", None)
     return redirect(url_for("user.login"))
 
 @user.route("/schedule/list/")
@@ -143,6 +145,7 @@ def expenseAdd():
             add_time=data["add_time"],
             note=data["note"],
             img_url=data["img_url"],
+            because=''
         )
         db.session.add(expense)
         db.session.commit()
@@ -161,6 +164,8 @@ def expenseList(page=None):
         Expense.user_id == session["driver_id"]
     ).filter(
         ExpenseType.id == Expense.type_id
+    ).order_by(
+        Expense.end_time.desc()
     ).paginate(page=page, per_page=5)
     return render_template("user/expense_list.html",expense_list=expense_list)
 
@@ -211,6 +216,15 @@ def leaveList(page=None):
         page = 1
     leave_list = Leave.query.filter_by(driver_id=session["driver_id"]).paginate(page=page, per_page=5)
     return render_template("user/leave_list.html",leave_list=leave_list)
+
+@user.route("/leave/edit/")
+@admin_login_req
+def leaveEdit():
+    driver = Driver.query.filter_by(id=session["driver_id"]).first_or_404()
+    session["driver_status"] = 0
+    driver.status = 0
+    flash("已结束请假！", "ok")
+    return redirect(url_for("user.index"))
 
 @user.route("/notice/list/<int:page>/")
 @admin_login_req

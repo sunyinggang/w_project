@@ -101,7 +101,7 @@ class DriverForm(FlaskForm):
         ],
         render_kw={
             "class": "form-control form-control-sm",
-            "placeholder": "请输入司机姓名"
+            "placeholder": "请输入司机住址"
         }
     )
     idcardz = HiddenField(
@@ -181,16 +181,6 @@ class CarForm(FlaskForm):
             "id": "path-1"
         }
     )
-    # driver_id = SelectField(
-    #     label="默认司机",
-    #     validators=[
-    #         DataRequired()
-    #     ],
-    #     render_kw={
-    #         "class": "form-control"
-    #     },
-    #     coerce=int
-    # )
     content = StringField(
         label="备注",
         render_kw={
@@ -205,9 +195,6 @@ class CarForm(FlaskForm):
         }
     )
 
-    # def __init__(self, *args, **kwargs):
-    #     super(CarForm, self).__init__(*args, **kwargs)
-    #     self.driver_id.choices = [(v.id, v.name) for v in Driver.query.all()]
 
 class NoticeForm(FlaskForm):
     content = TextAreaField(

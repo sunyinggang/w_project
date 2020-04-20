@@ -37,8 +37,8 @@ table{
                 <tbody>
                 {% for v in notice_list %}
                   <tr class="ng-scope">
-                    <td><font class="text-primary ng-binding">{{ v.id }}</font></td>
-                    <td class="ng-binding">{{ v.content }}</td>
+                    <td><font class="text-primary ng-binding">{{ loop.index}}</font></td>
+                    <td id="noticeContent" class="ng-binding">{{ v.content }}</td>
                     <td class="ng-binding">{{ v.add_time }}</td>
                     <td>
                         <div class="text-primary row justify-content-center align-items-center">
@@ -126,6 +126,19 @@ function del() {
         $("#g-7 span:eq(1)").addClass("glyphicon-chevron-down text-white");
         $("#g-7-1 span").addClass("text-white");
         $("#g-7-1").parent().css('display','block');
-    })
+        $("#noticeContent").each(function(){
+			textIntercept( $(this) , 16 );
+		});
+    });
+
+function textIntercept( cur , textLen ){
+	var len = cur.html().length;
+	if(len > textLen){
+		//获取文本的值,进行截取。赋值给html变量保存.
+		var text=cur.html().substring(0,textLen)+"...";
+		//重新为文本赋值;
+		cur.html(text);
+	}
+}
 </script>
 {% endblock %}

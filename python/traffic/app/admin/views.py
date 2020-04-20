@@ -150,7 +150,6 @@ def index():
         travel_list1.append(round(hour/3600,1))
     travelSummary['datasets'][0]['data'] = travel_list0
     travelSummary['datasets'][1]['data'] = travel_list1
-    # 近6个月利润、收入、支出
     # 车辆监控
     carMonitorChart = {
                 "labels": ['空闲车辆', '行驶车辆', '检修车辆'],
@@ -195,7 +194,7 @@ def index():
     expense_profit_list = []
     for v in temp:
         expense = Expense.query.filter(Expense.end_time.between(v[0], v[1])).filter(Expense.status==1).all()
-        schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Expense.status == 3).all()
+        schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Schedule.status == 3).all()
         expense_in = 0
         expense_out = 0
         for v in expense:
@@ -603,7 +602,7 @@ def scheduleAdd():
         driver_id = request.form.get('driver_id')
         car_id = request.form.get('car_id')
         selectDC = request.form.get('selectDC')
-        if selectDC is None or driver_id is None or car_id is None:
+        if not selectDC is None or driver_id is None or car_id is None:
             schedule = Schedule(
                 unit=data["unit"],
                 user=data["user"],
@@ -685,6 +684,12 @@ def scheduleEdit(id=None):
                 schedule.money=data["money"]
                 schedule.driver_money=data["driver_money"]
             else:
+                driver = Driver.query.get_or_404(driver_id)
+                car = Car.query.get_or_404(car_id)
+                driver.status = 1
+                db.session.add(driver)
+                car.status = 1
+                db.session.add(car)
                 schedule.unit = data["unit"],
                 schedule.user = data["user"],
                 schedule.phone = data["phone"],
@@ -698,6 +703,27 @@ def scheduleEdit(id=None):
                 schedule.money = data["money"],
                 schedule.driver_money = data["driver_money"],
                 schedule.status = 1,
+        else:
+            if not schedule.driver_id is None:
+                driver = Driver.query.get_or_404(schedule.driver_id)
+                car = Car.query.get_or_404(schedule.car_id)
+                driver.status = 0
+                db.session.add(driver)
+                car.status = 0
+                db.session.add(car)
+                schedule.unit = data["unit"],
+                schedule.user = data["user"],
+                schedule.phone = data["phone"],
+                schedule.start_point = data["start_point"],
+                schedule.end_point = data["end_point"],
+                schedule.start_time = data["start_time"],
+                schedule.end_time = data["end_time"],
+                schedule.content = data["content"],
+                schedule.driver_id = None,
+                schedule.car_id = None,
+                schedule.money = data["money"],
+                schedule.driver_money = data["driver_money"],
+                schedule.status = 0
         db.session.add(schedule)
         db.session.commit()
         flash("修改成功", "ok")
@@ -907,18 +933,6 @@ def expenseTypeDel():
     flash("删除成功！",'ok')
     return redirect(url_for('admin.expenseType'))
 
-@admin.route("/expense/schedule/<int:type>/")
-@admin_login_req
-@admin_auth
-def expenseSchedule(type=None):
-    if type is None:
-        type = 0
-    if type == 0:
-        expense_list = Expense.query.filter_by(status=0).all()
-    else:
-        expense_list = Expense.query.filter(or_(Expense.status == 1, Expense.status == 2)).all()
-    return render_template("admin/expense_schedule.html",expense_list = expense_list,type=type)
-
 @admin.route("/expense/sta/")
 @admin_login_req
 def expenseSta():
@@ -952,7 +966,7 @@ def expenseSta():
         expenseByTime['labels'] = time_list
         for v in temp:
             expense = Expense.query.filter(Expense.end_time.between(v[0], v[1])).filter(Expense.status == 1).all()
-            schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Expense.status == 3).all()
+            schedule = Schedule.query.filter(Schedule.end_time.between(v[0], v[1])).filter(Schedule.status == 3).all()
             expense_in = 0
             expense_out = 0
             for v in expense:
@@ -1018,6 +1032,10 @@ def leaveStatus():
     leave = Leave.query.filter_by(id=id).first_or_404()
     leave.status = status
     db.session.add(leave)
+    if int(status) == 1:
+        driver = Driver.query.filter_by(id=leave.driver_id).first_or_404()
+        driver.status = 2
+        db.session.add(leave)
     db.session.commit()
     flash("操作成功！",'ok')
     return redirect(url_for('admin.leaveList',type=0))
@@ -1174,6 +1192,18 @@ def contentSearch():
             end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
         schedule_list = Schedule.query.filter(Schedule.start_time.between(start, end)).all()
         return render_template("admin/schedule_list.html", schedule_list=schedule_list, start=start,end=end,sel=4,content='')
+    # 车辆搜索 车牌号码/别名
+    elif int(type) == 4:
+        content = request.args.get("content")
+        car_list = Car.query.filter(
+            or_(Car.number.ilike('%' + content + '%'), Car.nickname.ilike('%' + content + '%'))).all()
+        return render_template("admin/car_list.html", car_list=car_list, content=content)
+    # 司机搜索 司机姓名/手机号码
+    elif int(type) == 5:
+        content = request.args.get("content")
+        driver_list = Driver.query.filter(
+            or_(Driver.name.ilike('%' + content + '%'), Driver.phone.ilike('%' + content + '%'))).all()
+        return render_template("admin/driver_list.html", driver_list=driver_list, content=content)
 
 def driving(origin,destination):
     params = {

@@ -60,7 +60,6 @@ class Car(db.Model):
     capacity = Column(String)
     model = Column(String)
     img_url = Column(String)
-    driver_id = Column(Integer)
     content = Column(String)
     status = Column(Integer, default=0)
     schedule = db.relationship('Schedule', backref='car')
