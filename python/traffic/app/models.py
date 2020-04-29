@@ -11,7 +11,7 @@ class Admin(db.Model):
     phone = Column(String)
     password = Column(String)
     role_id = Column(Integer,db.ForeignKey('role.id'))
-    is_super = Column(Integer)
+    type = Column(Integer)
 
     def check_pwd(self, pwd):
         return check_password_hash(self.password, pwd)

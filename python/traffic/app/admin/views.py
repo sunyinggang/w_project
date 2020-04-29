@@ -63,7 +63,8 @@ def login():
             return redirect(url_for("admin.login"))
         session["name"] = admin.name
         session["id"] = admin.id
-        session["is_super"] = admin.is_super
+        session["admin_type"] = admin.type
+        flash("登录成功！", "ok")
         return redirect(request.args.get("next") or url_for("admin.index"))
     return render_template("admin/login.html",form=form)
 
@@ -95,7 +96,7 @@ def changePwd():
 def logout():
     session.pop("name",None)
     session.pop("id", None)
-    session.pop("is_super", None)
+    session.pop("admin_type", None)
     return redirect(url_for("admin.login"))
 
 @admin.route("/")
@@ -399,7 +400,7 @@ def adminAdd():
             phone=data["phone"],
             password=generate_password_hash('123456'),
             role_id=data["role_id"],
-            is_super=1
+            type=1
         )
         db.session.add(admin)
         db.session.commit()
@@ -736,11 +737,14 @@ def scheduleEdit(id=None):
 def scheduleDel():
     id = request.args.get("id")
     schedule = Schedule.query.filter_by(id=id).first_or_404()
-    track = Track.query.filter_by(id=schedule.track_id).first_or_404()
-    db.session.delete(schedule)
-    db.session.delete(track)
-    db.session.commit()
-    flash("删除成功！",'ok')
+    if schedule.status == 2:
+        flash("排班正在进行，不可删除！", 'err')
+    else:
+        track = Track.query.filter_by(id=schedule.track_id).first_or_404()
+        db.session.delete(schedule)
+        db.session.delete(track)
+        db.session.commit()
+        flash("删除成功！", 'ok')
     return redirect(url_for('admin.scheduleList'))
 
 @admin.route("/schedule/sta/")
@@ -990,7 +994,7 @@ def expenseSta():
             start = datetime.datetime.strptime(str, "%Y-%m-%d %H:%M:%S")
             end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
             expense = Expense.query.filter(Expense.end_time.between(start, end)).filter(Expense.status == 1).all()
-            schedule = Schedule.query.filter(Schedule.end_time.between(start, end)).filter(Expense.status == 3).all()
+            schedule = Schedule.query.filter(Schedule.end_time.between(start, end)).filter(Schedule.status == 3).all()
             expense_in = 0
             expense_out = 0
             for t in expense:
@@ -1146,6 +1150,7 @@ def upload():
 @admin.route("/content/search/")
 def contentSearch():
     type = request.args.get("type")
+    # 排班搜索 按状态搜索
     if int(type) == 1:
         sel = request.args.get("sel")
         if int(sel) == 4:
@@ -1153,10 +1158,12 @@ def contentSearch():
         else:
             schedule_list = Schedule.query.filter_by(status=sel).all()
         return render_template("admin/schedule_list.html",schedule_list=schedule_list,sel=sel)
+    # 排班搜索 关键字搜索
     elif int(type) == 2:
         content = request.args.get("content")
         driver = Driver.query.filter_by(name=content).first()
         car = Car.query.filter_by(number=content).first()
+        print(driver)
         if not driver is None:
             schedule_list = Schedule.query.filter(
                 or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'), Schedule.driver_id==driver.id)).all()
@@ -1167,6 +1174,7 @@ def contentSearch():
             schedule_list = Schedule.query.filter(
                 or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'))).all()
         return render_template("admin/schedule_list.html", schedule_list=schedule_list, content=content,sel=4)
+    # 排班搜索 日期搜索
     elif int(type) == 3:
         time = request.args.get("time")
         now = datetime.datetime.now()
@@ -1204,6 +1212,52 @@ def contentSearch():
         driver_list = Driver.query.filter(
             or_(Driver.name.ilike('%' + content + '%'), Driver.phone.ilike('%' + content + '%'))).all()
         return render_template("admin/driver_list.html", driver_list=driver_list, content=content)
+    # 轨迹搜索 关键字搜索
+    elif int(type) == 6:
+        content = request.args.get("content")
+        driver = Driver.query.filter_by(name=content).first()
+        car = Car.query.filter_by(number=content).first()
+        if not driver is None:
+            schedule_list = Schedule.query.filter_by(status=3).filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'),
+                    Schedule.driver_id == driver.id)).all()
+        elif not car is None:
+            schedule_list = Schedule.query.filter_by(status=3).filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'),
+                    Schedule.car_id == car.id)).all()
+        else:
+            schedule_list = Schedule.query.filter_by(status=3).filter(
+                or_(Schedule.unit.ilike('%' + content + '%'), Schedule.user.ilike('%' + content + '%'))).all()
+        return render_template("admin/track_list.html", schedule_list=schedule_list, content=content)
+    # 轨迹搜索 日期搜索
+    elif int(type) == 7:
+        time = request.args.get("time")
+        now = datetime.datetime.now()
+        if int(time) == 1:
+            start = request.args.get("start")
+            end = request.args.get("end")
+        elif int(time) == 2:
+            yesterday = now - datetime.timedelta(days=1)
+            start = yesterday - datetime.timedelta(hours=yesterday.hour, minutes=yesterday.minute,
+                                                   seconds=yesterday.second,
+                                                   microseconds=yesterday.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        elif int(time) == 3:
+            start = now - datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                             microseconds=now.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        else:
+            tomorrow = now + datetime.timedelta(hours=now.hour, minutes=now.minute, seconds=now.second,
+                                                microseconds=now.microsecond)
+            start = tomorrow - datetime.timedelta(hours=tomorrow.hour, minutes=tomorrow.minute,
+                                                  seconds=tomorrow.second,
+                                                  microseconds=tomorrow.microsecond)
+            end = start + datetime.timedelta(hours=23, minutes=59, seconds=59)
+        schedule_list = Schedule.query.filter_by(status=3).filter(Schedule.end_time.between(start, end)).all()
+        return render_template("admin/track_list.html", schedule_list=schedule_list, start=start, end=end,
+                               content='')
+
+
 
 def driving(origin,destination):
     params = {
@@ -1305,8 +1359,3 @@ def getBetweenDay(start_date,end_date):
     begin_date += datetime.timedelta(days=1)
   return date_list
 
-
-
-@admin.route("/test/map/")
-def testMap():
-  return render_template("admin/t.html")

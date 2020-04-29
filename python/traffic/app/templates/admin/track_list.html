@@ -20,14 +20,8 @@ table{
     <div class="w-100 bg-white card mt-2 page-card">
         <div class="row justify-content-between mt-2">
 		    <div class="row align-items-center col-6 m-0 p-0">
-		        <div>
-					<select class="form-control form-control-sm ng-pristine ng-valid ng-not-empty ng-touched" ng-model="params.schedulingStatus" ng-change="selectStatus(params.schedulingStatus)" ng-options="v.value as v.name for v in STATUS" style=""><option label="全部排班" value="number:1023" selected="selected">全部排班</option><option label="未分配司机" value="number:1">未分配司机</option><option label="未通知司机" value="number:2">未通知司机</option><option label="已发送任务" value="number:4">已发送任务</option><option label="已接收任务" value="number:8">已接收任务</option><option label="已通知客户" value="number:32">已通知客户</option><option label="已到达起点" value="number:16">已到达起点</option><option label="未完成任务" value="number:63">未完成任务</option><option label="已完成任务" value="number:64">已完成任务</option></select>
-		        </div>
-				<div style="margin-left: 5px">
-					<select class="form-control form-control-sm ng-pristine ng-valid ng-empty ng-touched" ng-model="params.schedulingType" ng-change="selectType()" ng-options="v.value as v.name for v in TYPES" style=""><option label="全部类型" value="undefined:undefined" selected="selected">全部类型</option><option label="班车" value="number:1">班车</option><option label="普通" value="number:2">普通</option><option label="预订" value="number:4">预订</option><option label="审批" value="number:5">审批</option></select>
-				</div>
-				<input type="text" class="form-control form-control-sm mr-2 col-5 mr-2 ml-2 ng-pristine ng-valid ng-empty ng-touched" placeholder="车牌号/司机/用车人/用车单位" ng-model="params.keyword" ng-keypress="enterSearch($event)" style="">
-				<button ng-click="refreshDataList(true)" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索</button>
+				<input id="searchContent" type="text" class="form-control form-control-sm mr-2 col-5 mr-2 ml-2" placeholder="车牌号/司机/用车人/用车单位">
+				<button onclick="searchContent()" class="btn btn-primary btn-sm" style="padding-left: 1.25rem;padding-right: 1.25rem;">搜索</button>
 		    </div>
 		    <div>
 		    	<div class="input-group input-group-sm">
@@ -37,16 +31,15 @@ table{
 				  </div>
 				  <input type="text" placeholder="截至日期" id="datetimepicker2" class="form-control input-date-picker">
 				  <div class="input-group-append">
-						<button class="btn btn-primary" type="button" ng-click="filterDate()" ng-disabled="!canFilterDate">查询</button>
+						<button class="btn btn-primary" type="button" onclick="searchTime(1)">查询</button>
 						<div class="btn-group">
 							<button hidden="hidden"></button>
-							<button class="btn btn-outline-primary btn-sm" ng-click="filterDate('yesterday')">昨天</button>
-							<button class="btn btn-outline-primary btn-sm" ng-click="filterDate('today')">今天</button>
-							<button class="btn btn-outline-primary btn-sm" ng-click="filterDate('tomorrow')">明天</button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(2)">昨天</button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(3)">今天</button>
+							<button class="btn btn-outline-primary btn-sm" onclick="searchTime(4)">明天</button>
 						</div>
 				  </div>
 				</div>
-
 			</div>
 		</div>
         <div class="mt-3 table-sticky-view">
@@ -122,24 +115,6 @@ table{
 </div>
 </div></div>
             </div>
-    <input type="hidden" id="delId">
-                <div class="modal fade" id="Modal2" tabindex="-1" role="dialog"
-                     aria-labelledby="Modal2Label" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="Modal2Label">提醒</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">确认删除此信息</div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" onclick="del()">删除</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 {% endblock %}
 {% block js %}
 <script>
@@ -149,16 +124,31 @@ table{
         $("#g-4 span:eq(1)").addClass("glyphicon-chevron-down text-white");
         $("#g-4-2 span").addClass("text-white");
         $("#g-4-2").parent().css('display','block');
+        $("#searchContent").val("{{ content }}");
+        $("#datetimepicker").val("{{ start }}");
+        $("#datetimepicker2").val("{{ end }}");
     })
 </script>
-<script>
-function addId(id) {
-    $("#delId").val(id);
-}
-function del() {
-    var id = $("#delId").val();
-    var str = "{{url_for("admin.scheduleDel")}}?id=";
-    location.href =str+id;
-}
+<script type="text/javascript">
+   function searchContent(){
+       var type = 6;
+       var content = $("#searchContent").val();
+       var str = "{{url_for("admin.contentSearch")}}?type=";
+       location.href =str+type+"&content="+content;
+   }
+   function searchTime(time){
+       var type = 7;
+       var start;
+       var end;
+       if(time==1){
+           start = $("#datetimepicker").val();
+           end = $("#datetimepicker2").val();
+       }else{
+           start='';
+           end='';
+       }
+       var str = "{{url_for("admin.contentSearch")}}?type=";
+       location.href =str+type+"&time="+time+"&start="+start+"&end="+end;
+   }
 </script>
 {% endblock %}

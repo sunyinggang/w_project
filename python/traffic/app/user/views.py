@@ -9,7 +9,7 @@ from . import user
 from .forms import LoginForm, ExpenseForm, LeaveForm
 from .. import db
 from ..admin.forms import ChangeForm
-from ..models import Driver, Expense, ExpenseType, Notice, Leave, Schedule
+from ..models import Driver, Expense, ExpenseType, Notice, Leave, Schedule, Car
 
 
 def admin_login_req(f):
@@ -122,13 +122,19 @@ def scheduleStatus(id=None,sta=None):
     if id is None:
         id = 1
     schedule = Schedule.query.filter_by(id=id).first()
+    driver = Driver.query.filter_by(id=schedule.driver_id).first()
+    car = Car.query.filter_by(id=schedule.car_id).first()
     schedule.status = sta
+    driver.status = 0
+    car.status = 0
     db.session.add(schedule)
-    db.session.commit()
     if sta == 2:
         flash("发车成功", "ok")
     else:
+        db.session.add(car)
+        db.session.add(driver)
         flash("成功结束", "ok")
+    db.session.commit()
     return redirect(url_for("user.index"))
 
 @user.route("/expense/add/",methods=["GET","POST"])
@@ -223,6 +229,8 @@ def leaveEdit():
     driver = Driver.query.filter_by(id=session["driver_id"]).first_or_404()
     session["driver_status"] = 0
     driver.status = 0
+    db.session.add(driver)
+    db.session.commit()
     flash("已结束请假！", "ok")
     return redirect(url_for("user.index"))
 
