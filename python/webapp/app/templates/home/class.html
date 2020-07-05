@@ -1,0 +1,327 @@
+{% extends "home/home.html" %}
+{% import "home/page.html" as pg %}
+{% block css %}
+<style type="text/css">
+input[type="radio"]{display: none;}
+.duanwei li.cur label {
+    color: #fff;
+}
+.duanwei li.now label {
+    color: #fff;
+}
+.duanwei li.cur {
+    background: #d1b897;
+}
+.duanwei li.now {
+    background: #d1b897;
+}
+/**************/
+.shuliang li.cur label {
+    color: #fff;
+}
+.shuliang li.now label {
+    color: #fff;
+}
+.shuliang li.cur {
+    background: #d1b897;
+}
+.shuliang li.now {
+    background: #d1b897;
+}
+/*************/
+.mingwen li.cur label {
+    color: #fff;
+}
+.mingwen li.now label {
+    color: #fff;
+}
+.mingwen li.cur {
+    background: #d1b897;
+}
+.mingwen li.now {
+    background: #d1b897;
+}
+/*************/
+.price li.cur label {
+    color: #fff;
+}
+.price li.now label {
+    color: #fff;
+}
+.price li.cur {
+    background: #d1b897;
+}
+.price li.now {
+    background: #d1b897;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="gyt">
+    <img src="{{ url_for('static',filename='home/images/icon12.png') }}" alt="" class="fl" height="36">
+    <div class="gytl">
+<p><a class="icon13a">专人对接</a></p>
+<p><a class="icon13b">安全高效</a></p>
+    </div>
+
+    <div class="cb"></div>
+</div>
+ <div class="sstflmenu" style="height:; width:100%; max-width:760px;position:relative; z-index:3000">
+    <div class="sst">
+         <a href="javascript:history.back();" class="fhlink2"></a>
+          <div class="flmenu" style="margin-left:150px;margin-top:10px">
+         <input size="60" id="key_commodity" name="kw" placeholder="请输入标题信息" style="border: 1px solid #d1b897;padding: 0.25rem;  width: 60%;height: 25px;margin:0 10px;" type="text">
+         <span class="iconone pt" id="do_search"> 搜索</span>
+         </div>
+
+
+    </div>
+    <!---->
+
+    <div class="flmenu">
+     <ul>
+      <li class="flt flt1"><span class="icon21 pt"> 平台</span></li>
+      <li class="flt"><span class="icon23">筛选</span></li>
+      <li>
+ <span class=" jg  icon22   "> <a id="Lb_Price" style="
+    float: left;
+    width: 28px;
+">价格</a>
+   <ul style="
+    width: 24px;
+    position: absolute;
+    margin-left: 20px;
+">
+    <li> <a id="asc" style="
+    width:  25px;
+    height: 25px;
+    position: absolute;
+"></a></li>
+    <li> <a id="desc" style="
+    width: 24px;
+    height: 25px;
+    position: absolute;
+    margin-top: 25px;
+"> </a></li>
+   </ul> </span>
+      </li>
+      <div class="cb"></div>
+     </ul>
+    </div>
+    <!--flmenu end-->
+   </div>
+
+<span class="top"></span>
+
+   <div class="tcbg" style="height: 750px;"></div>
+   <div class="ptai flb">
+    <ul>
+
+
+     <li><a href="{{ url_for('home.match',page=1) }}?os=苹果专区"><img src="{{ url_for('static',filename='home/images/20180428102127311.png') }}" alt=""><span>苹果专区</span></a></li>
+
+     <li><a href="{{ url_for('home.match',page=1) }}?os=安卓专区"><img src="{{ url_for('static',filename='home/images/20180428102209827.png') }}" alt=""><span>安卓专区</span></a></li>
+
+     <li><a href="{{ url_for('home.match',page=1) }}?os=双平台苹果登入"><img src="{{ url_for('static',filename='home/images/20180428102233616.png') }}" alt=""><span>双平台苹果登入</span></a></li>
+
+     <li><a href="{{ url_for('home.match',page=1) }}?os=双平台安卓登入"><img src="{{ url_for('static',filename='home/images/20180428102306730.png') }}" alt=""><span>双平台安卓登入</span></a></li>
+
+
+     <div class="cb"></div>
+    </ul>
+   </div>
+   <!--ptai end-->
+   <!--fwq end-->
+   <div class="shx flb" style="height: 750px;">
+<form action="{{ url_for('home.match',page=1)}}" id="fsearch">
+<div style="display: none">
+<select name="catid" id="catid_1"><option value="0" selected="selected">不限分类</option><option value="4">安卓QQ专区</option><option value="5">安卓微信专区</option><option value="6">苹果QQ专区</option><option value="7">苹果微信专区</option></select></div>
+<span class="shxtxt2">价格区间：</span><input size="10" name="minztprice" placeholder="请输入最低价格" style="border: 1px solid #d1b897;padding: 0.25rem;  width: 26%;height: 15px;" type="text"> ~~ <input size="10" name="maxztprice" placeholder="请输入最高价格" style="border: 1px solid #d1b897;padding: 0.25rem;  width: 26%;height: 15px;" type="text">
+    <h2 class="shxtxt2">账号类型 </h2>
+    <div class="zhlx  yingxiong">
+     <ul class="choosebank duanwei">
+  <li id="ban1" class=""><input name="duanwei" value="无绑定账号" id="bank1" type="radio"><label class="bank-01" for="bank1">无绑定账号</label></li>
+  <li id="ban2" class=""><input name="duanwei" value="手机账号" id="bank2" type="radio"><label class="bank-0" for="bank2">手机账号</label></li>
+  <li id="ban3" class=""><input name="duanwei" value="签订合同账号" id="bank3" type="radio"><label class="bank-0" for="bank3">签订合同账号</label></li>
+  <li id="ban4" class=""><input name="duanwei" value="有绑定账号" id="bank4" type="radio"><label class="bank-0" for="bank4">有绑定账号</label></li>
+      <div class="cb"></div>
+     </ul>
+    </div>
+
+
+       <h2 class="shxtxt2">等级 </h2>
+    <div class="zhlx  pifu">
+     <ul class="choosebank shuliang">
+
+
+  <li id="ban11" class=""><input name="shuliang" value="1" id="bank11" type="radio"><label class="bank-01" for="bank11">精锐0-69</label></li>
+  <li id="ban12" class=""><input name="shuliang" value="2" id="bank12" type="radio"><label class="bank-01" for="bank12">勇武70-89</label></li>
+  <li id="ban13" class=""><input name="shuliang" value="3" id="bank13" type="radio"><label class="bank-01" for="bank13">神威90-109</label></li>
+
+      <div class="cb"></div>
+     </ul>
+    </div>
+    <h2 class="shxtxt2">神兽数量 </h2>
+    <input size="10" name="pet" placeholder="神兽数量（数字）" style="border: 1px solid #d1b897;padding: 0.25rem;  width: 26%;height: 15px;" type="text">以上
+       <h2 class="shxtxt2">性别 </h2>
+    <div class="zhlx  mingwen">
+     <ul class="choosebank mingwen">
+
+
+      <li id="ban21" class=""><input name="mingwen" value="男" id="bank21" type="radio"><label class="bank-01" for="bank21">男</label></li>
+      <li id="ban22" class=""><input name="mingwen" value="女" id="bank22" type="radio"><label class="bank-01" for="bank22">女</label></li>
+
+      <div class="cb"></div>
+     </ul>
+    </div>
+        <h2 class="shxtxt2">门派 </h2>
+    <div class="zhlx  jiage">
+     <ul class="choosebank price">
+      <li id="ban31" class=""><input name="price" value="大唐官府" id="bank31" type="radio"><label class="bank-01" for="bank31">大唐官府</label></li>
+      <li id="ban32" class=""><input name="price" value="方寸山" id="bank32" type="radio"><label class="bank-01" for="bank32">方寸山</label></li>
+      <li id="ban33" class=""><input name="price" value="狮驼岭" id="bank33" type="radio"><label class="bank-01" for="bank33">狮驼岭</label></li>
+      <li id="ban34" class=""><input name="price" value="普陀山" id="bank34" type="radio"><label class="bank-01" for="bank34">普陀山</label></li>
+      <li id="ban35" class=""><input name="price" value="龙宫" id="bank35" type="radio"><label class="bank-01" for="bank35">龙宫</label></li>
+      <li id="ban36" class=""><input name="price" value="阴曹地府" id="bank36" type="radio"><label class="bank-01" for="bank36">阴曹地府</label></li>
+      <li id="ban37" class=""><input name="price" value="魔王寨" id="bank37" type="radio"><label class="bank-01" for="bank37">魔王寨</label></li>
+      <li id="ban38" class=""><input name="price" value="化生寺" id="bank38" type="radio"><label class="bank-01" for="bank38">化生寺</label></li>
+      <li id="ban39" class=""><input name="price" value="月宫" id="bank39" type="radio"><label class="bank-01" for="bank39">月宫</label></li>
+
+      <div class="cb"></div>
+     </ul>
+    </div>
+    <div class="shxb">
+     <input name="" value="重置" class="shxb_btn1" onclick='location.href=("{{ url_for("home.sort",page=1) }}")' type="button">
+     <input name="" value="确认" class="shxb_btn2" type="submit">
+  </div>
+</form>
+
+
+   </div>
+   <!--shx end-->
+<div class="pro_listbox">
+    {% if commodity_list.items %}
+    {% for v in commodity_list.items %}
+<div class="order_list ctm dis">
+    <div class="orderl_content">
+        <a target="_blank" href="{{url_for('home.detail',id=v.id)}}">
+            <p class="oc_msg">&nbsp;&nbsp;&nbsp;&nbsp;{{ v.title }}</p>
+            <p class="oc_type">
+                &nbsp;&nbsp;{{v.os}}
+                <span class="ph15">|</span>{{v.area}}
+                <span class="ph15">|</span>{{v.server}}
+                <span class="ph15">|</span>{{v.rank}}
+                <span class="ph15">|</span>{{v.pet}}
+                <span class="ph15">|</span>{{v.sect}}
+                <span class="ph15">|</span>{{v.sex}}
+                <span class="ph15">|</span>{{v.bargain}}
+                <span class="ph15">|</span><span class="addtime_c">发布于:{{v.time}} </span>
+            </p>
+        </a>
+        <p class="oc_type2">
+
+            <span class="fr oc_type2_buynow">
+                <span class="oc_price_buy">￥{{ v.price }}</span>
+            </span>
+        </p>
+    </div>
+</div>
+    {% endfor %}
+    {% else %}
+<div style="padding:20px 10px 30px 30px;line-height:180%;">
+   <p style="text-align:center;font-size:16px;">抱歉，没有找到相关需求的产品。</p>
+</div>
+{% endif %}
+  <div class="csk">
+  {{ pg.page(commodity_list,"home.sort") }}
+</div>
+</div>
+
+{% endblock %}
+{% block js %}
+
+<script type="text/javascript">
+$(document).ready(function(){
+$(".duanwei li").each(function(index){
+$(this).click(function(){
+addrssid = $(this).attr("id");
+id = addrssid.replace('ban','');
+$(".duanwei li").removeClass('now');
+$("#ban"+id).addClass('now');
+
+});
+});
+    $(".shuliang li").each(function(index){
+$(this).click(function(){
+addrssid = $(this).attr("id");
+id = addrssid.replace('ban','');
+$(".shuliang li").removeClass('now');
+$("#ban"+id).addClass('now');
+});
+});
+$(".mingwen li").each(function(index){
+$(this).click(function(){
+addrssid = $(this).attr("id");
+id = addrssid.replace('ban','');
+$(".mingwen li").removeClass('now');
+$("#ban"+id).addClass('now');
+});
+});
+$(".price li").each(function(index){
+$(this).click(function(){
+addrssid = $(this).attr("id");
+id = addrssid.replace('ban','');
+$(".price li").removeClass('now');
+$("#ban"+id).addClass('now');
+});
+});
+});
+</script>
+<script>
+$(document).ready(function(){
+$(".duanwei li").click(function(){
+$("li").removeClass("cur");
+});
+$(".shuliang li").click(function(){
+$("li").removeClass("cur");
+});
+$(".mingwen li").click(function(){
+$("li").removeClass("cur");
+});
+$(".price li").click(function(){
+$("li").removeClass("cur");
+});
+});
+</script>
+<script type="text/javascript">
+  $("#do_search").click(function(){
+      var key = $("#key_commodity").val();
+      location.href = "{{ url_for('home.search',page=1) }}?key=" + key;
+      });
+</script>
+  <script>
+      $(document).ready(function() {
+		$('#icon56').addClass("now").siblings().removeClass("now");
+});
+  </script>
+<script>
+    $("#asc").click(function(event) {
+            $.ajax({
+                url: "{{url_for('home.priceAsc',page=1)}}",
+            })
+        });
+            $("#desc").click(function(event) {
+           var json = {};
+            $.ajax({
+                url: '{:url("admin/news/cate")}',
+                type: 'post',
+                data: json
+            })
+            .done(function(data) {
+                $(".table-bordered").html(data);
+                $(document).click();
+            })
+        });
+</script>
+{% endblock %}

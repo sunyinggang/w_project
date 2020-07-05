@@ -9,6 +9,7 @@
 4. 启动mysql容器  
    `docker start mysql`
 5. 使用连接工具测试
+
 #### 拓：修改数据库密码
 1. 进入mysql
    `sudo docker exec -it mysql bash`

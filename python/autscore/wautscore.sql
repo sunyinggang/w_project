@@ -29,7 +29,18 @@ CREATE TABLE `admin` (
 -- ----------------------------
 -- Records of admin
 -- ----------------------------
-INSERT INTO `admin` VALUES ('1', 'admin', 'pbkdf2:sha256:150000$6eJfNcP6$55051a071302b3aef30d4011674b654f212fb7d3adcc8ffd148d1263d1db07db');
+INSERT INTO `admin` VALUES ('1', 'admin', '123456');
+
+INSERT INTO `admin` VALUES ('2', 'b', '123456');
+INSERT INTO `admin` VALUES ('3', 'c', '123456');
+INSERT INTO `admin` VALUES ('4', 'd', '123456');
+INSERT INTO `admin` VALUES ('5', 'e', '123456');
+INSERT INTO `admin` VALUES ('6', 'f', '123456');
+INSERT INTO `admin` VALUES ('7', 'g', '123456');
+INSERT INTO `admin` VALUES ('8', 'h', '123456');
+INSERT INTO `admin` VALUES ('9', 'i', '123456');
+INSERT INTO `admin` VALUES ('10', 'g', '123456');
+
 
 -- ----------------------------
 -- Table structure for `class`
@@ -44,8 +55,19 @@ CREATE TABLE `class` (
 -- ----------------------------
 -- Records of class
 -- ----------------------------
-INSERT INTO `class` VALUES ('4', '软件-16-2');
-INSERT INTO `class` VALUES ('3', '软件-16-1');
+INSERT INTO `class` VALUES ('软件-1');
+
+INSERT INTO `class` VALUES ('1', '软件-1');
+INSERT INTO `class` VALUES ('2', '软件-2');
+INSERT INTO `class` VALUES ('3', '软件-3');
+INSERT INTO `class` VALUES ('4', '软件-4');
+INSERT INTO `class` VALUES ('5', '软件-5');
+INSERT INTO `class` VALUES ('6', '软件-6');
+INSERT INTO `class` VALUES ('7', '软件-7');
+INSERT INTO `class` VALUES ('8', '软件-8');
+INSERT INTO `class` VALUES ('9', '软件-9');
+INSERT INTO `class` VALUES ('10', '软件-10');
+
 
 -- ----------------------------
 -- Table structure for `experiment`
@@ -68,6 +90,18 @@ CREATE TABLE `experiment` (
 INSERT INTO `experiment` VALUES ('4', '测试4', '1579603569.docx', '1', '5', '2020-01-01 00:00:00', '2020-01-01 00:00:00');
 INSERT INTO `experiment` VALUES ('6', '测试实验二', '1581305383.docx', 'ddd', '4', '2020-01-01 00:00:00', '2020-01-01 00:00:00');
 INSERT INTO `experiment` VALUES ('7', '测试实验', '1581496090.docx', '调试；进程；线程；程序；验证；查看 EOS 启动后的状态和行为，理解操作系统启动后的工作方式', '4', '2020-01-01 00:00:00', '2020-01-01 00:00:00');
+
+INSERT INTO `experiment` VALUES ('1', '测试1', '1579603569.docx', '1', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('2', '测试2', '1579603569.docx', '2', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('3', '测试3', '1579603569.docx', '2', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('4', '测试4', '1579603569.docx', '4', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('5', '测试5', '1579603569.docx', '3', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('6', '测试6', '1579603569.docx', '6', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('7', '测试7', '1579603569.docx', '6', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('8', '测试8', '1579603569.docx', '7', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('9', '测试9', '1579603569.docx', '8', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+INSERT INTO `experiment` VALUES ('10', '测试10', '1579603569.docx', '6', '2020-01-01 00:00:00', '2020-01-02 00:00:00');
+
 
 -- ----------------------------
 -- Table structure for `select`
@@ -93,6 +127,16 @@ INSERT INTO `select` VALUES ('13', '4', '20', null, '2020-02-23 11:44:42', null,
 INSERT INTO `select` VALUES ('11', '7', '21', '1581499013.docx', '2020-02-12 17:13:53', null, '63', '0', '0');
 INSERT INTO `select` VALUES ('12', '6', '21', null, '2020-02-12 17:14:06', null, '0', '0', '0');
 
+INSERT INTO `select` VALUES ('1', '4', '5', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('2', '7', '8', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('3', '5', '8', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('4', '4', '9', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('5', '8', '2', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('6', '9', '1', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('7', '2', '3', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('8', '9', '4', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('9', '6', '7', null, '2020-02-12 17:14:06', null, null);
+INSERT INTO `select` VALUES ('10', '4', '7', null, '2020-02-12 17:14:06', null, null);
 -- ----------------------------
 -- Table structure for `student`
 -- ----------------------------
@@ -126,6 +170,18 @@ INSERT INTO `student` VALUES ('33', '18300114', 'pbkdf2:sha256:150000$5t80w8ju$6
 INSERT INTO `student` VALUES ('34', '18300115', 'pbkdf2:sha256:150000$xV0JJ1di$b8c39c31013261611f7ef888dd8bf3718b6b832a2b4240c560264cf1fbab0de1', '王五', '0');
 INSERT INTO `student` VALUES ('35', '18300116', 'pbkdf2:sha256:150000$vl1F4o02$63dacb1b931ef0280ca8a44d703b916192c16f6787ca1749d595602fe7ea2ea0', '王六', '0');
 
+INSERT INTO `student` VALUES ('1', '18300112', '123456', '王二', '1');
+INSERT INTO `student` VALUES ('2', '18300111', '123456', '王一', '2');
+INSERT INTO `student` VALUES ('3', '18300110', '123456', '张十', '3');
+INSERT INTO `student` VALUES ('4', '18300109', '123456', '张九', '3');
+INSERT INTO `student` VALUES ('5', '18300108', '123456', '张八', '2');
+INSERT INTO `student` VALUES ('6', '18300107', '123456', '张七', '6');
+INSERT INTO `student` VALUES ('7', '18300106', '123456', '张六', '7');
+INSERT INTO `student` VALUES ('8', '18300105', '123456', '张五', '1');
+INSERT INTO `student` VALUES ('9', '18300104', '123456', '张四', '8');
+INSERT INTO `student` VALUES ('10', '18300103', '123456', '张三', '5');
+
+
 -- ----------------------------
 -- Table structure for `teacher`
 -- ----------------------------
@@ -144,3 +200,16 @@ CREATE TABLE `teacher` (
 INSERT INTO `teacher` VALUES ('6', '18200903', 'pbkdf2:sha256:150000$3XOvdr6s$f8f23ff8e4a217c2de14d6c2713d89ee24ba565e5270e53226b42ae6ef9eb698', '李四');
 INSERT INTO `teacher` VALUES ('4', '18200901', 'pbkdf2:sha256:150000$DbvW1bPz$e0aa5365ba66075c6b1ba0a8fd86fe5ff29d0f294979ce4f49090684e9692765', '王小明');
 INSERT INTO `teacher` VALUES ('5', '18200902', 'pbkdf2:sha256:150000$z9nFoja8$77f9d24865fd75fa33d8b2f2ce9c278b05167f2d1df997a0050a09c7b4394868', '张晓红');
+
+
+INSERT INTO `teacher` VALUES ('1', '18200901', '123456', '李二');
+INSERT INTO `teacher` VALUES ('2', '18200902', '123456', '李一');
+INSERT INTO `teacher` VALUES ('3', '18200903', '123456', '赵十');
+INSERT INTO `teacher` VALUES ('4', '18200904', '123456', '赵九');
+INSERT INTO `teacher` VALUES ('5', '18200905', '123456', '赵八');
+INSERT INTO `teacher` VALUES ('6', '18200906', '123456', '赵七');
+INSERT INTO `teacher` VALUES ('7', '18200907', '123456', '赵六');
+INSERT INTO `teacher` VALUES ('8', '18200908', '123456', '赵五');
+INSERT INTO `teacher` VALUES ('9', '18200909', '123456', '赵四');
+INSERT INTO `teacher` VALUES ('10', '18200910', '123456', '赵三');
+

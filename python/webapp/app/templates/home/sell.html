@@ -1,0 +1,239 @@
+{% extends "home/home.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/style_sell.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/select2.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/animate.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/common.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/mglobal.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='layui/css/layui.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='layui/css/layui.css') }}">
+{% endblock %}
+{% block content %}
+<div class="ctm_titleline">
+    <a href="{{ url_for('home.index') }}" class="back_btn"></a>
+    <span class="ctl_show">发布商品</span>
+</div>
+
+<form id="form" class="form-horizontal" method="post" accept-charset="utf-8">
+                  {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+    <div class="fbdz_box">
+        <!-- fbdz_box start -->
+        <div class="fbdz_line">
+            <p class="fbdz_title"><span class="important_star">*</span>商品标题</p>
+            {{ form.title }}
+        </div>
+        <div class="fbdz_line ">
+                <p class="fbdz_title"><span class="important_star">*</span>操作系统</p>
+                {{ form.os }}
+            </div>
+            <div class="fbdz_line ">
+                <p class="fbdz_title"><span class="important_star">*</span>服务器</p>
+                {{ form.server }}
+            </div>
+            <div class="fbdz_line ">
+                <p class="fbdz_title"><span class="important_star">*</span>所属大区</p>
+                {{ form.area }}
+            </div>
+            <script type="text/javascript">
+
+
+                function get_server(daqu) {
+
+
+                    $.ajax({
+                        type: "get",
+                        url: "/index/get_selectlist/11/",
+                        data: {os: $('#os').val(), daqu: daqu},
+                        datatype: "ajax", //"xml", "html", "script", "json", "jsonp", "text".
+
+                        success: function (data) {
+                            //var data = eval("(" + data + ")")
+
+                            if (data.daqu.length == 0) {
+                                $('.fwqmeiyoule').html('<input type="text" name="server" class="fbdz_text  ctm rol" value="" placeholder="请输入服务器名称"/>')
+
+                                $('.daqu').hide()
+                            } else {
+
+                                $('.daqu').html('<select class="fbdz_text ctm rol server_select" name="daqu" id="daqu" onchange="  get_server(this.value)"></select>')
+                                $('#daqu').html('')
+                                $('#daqu').append("<option value=''>请选择</option>")
+
+                                $(".daqu_select").select2();
+
+                                for (let i = 0; i < data.daqu.length; i++) {
+                                    var sel = data.daquon == data.daqu[i] ? 'selected' : ""
+
+                                    $('#daqu').append("<option " + sel + " value='" + data.daqu[i] + "'>" + data.daqu[i] + "</option>")
+                                }
+                                $('.fwqmeiyoule').html('<select class="fbdz_text ctm rol server_select" name="server" id="server"></select>')
+
+                                var d = data.list
+
+                                $('#server').html('')
+                                $('#server').append("<option value=''>请选择</option>")
+
+
+                                for (let i = 0; i < d.length; i++) {
+
+                                    var sel = '' == d[i].server.trim() ? 'selected' : ""
+
+                                    $('#server').append("<option " + sel + " value='" + d[i].server + "'>" + d[i].server_short + "</option>")
+
+                                }
+
+                                //
+
+                                $(".server_select").select2();
+                                $(".games_select").select2();
+                            }
+
+
+                        },
+
+                    });
+                }
+
+
+            </script>
+        <div class="fbdz_line">
+            <p class="fbdz_title hiddenClick"><span class="important_star">*</span>商品价格</p>
+            {{ form.price }}
+            <span class="fbdz_line_yuan">元</span>
+            <div class="pt35"></div>
+            <div class="sxf_tips">
+                <p>弥亚将收取8％的手续费，即 <span id="sxf">0</span> 元，请知晓。</p>
+                <p>
+                                            200元保底，
+                                        2000元封顶(砍价按实际成交价收取服务费)</p>
+            </div>
+        </div>
+        <div class="fbdz_line ">
+                <p class="fbdz_title"><span class="important_star">*</span>可否议价</p>
+                {{ form.bargain }}
+            </div>
+                    <div class="fbdz_line">
+                        <p class="fbdz_title"><span class="important_star">*</span>账号类型</p>
+                        {{ form.type }}
+                    </div>
+
+                    <div class="fbdz_line">
+                        <p class="fbdz_title"><span class="important_star">*</span>等级</p>
+                        {{ form.rank }}
+                    </div>
+
+
+
+
+                    <div class="fbdz_line">
+                        <p class="fbdz_title"><span class="important_star">*</span>性别</p>
+                        {{ form.sex }}
+                    </div>
+
+
+
+
+                    <div class="fbdz_line">
+                        <p class="fbdz_title"><span class="important_star">*</span>门派</p>
+                        {{ form.sect }}
+                    </div>
+
+
+
+
+                    <div class="fbdz_line">
+                        <p class="fbdz_title"><span class="important_star">*</span>神兽数量</p>
+                        {{ form.pet }}
+                    </div>
+        <div class="fbdz_line">
+            <p class="fbdz_title"><span class="important_star">*</span>卖家描述</p>
+            {{ form.description }}
+        </div>
+        <div class="fbdz_line">
+            <p class="fbdz_title"><span class="important_star">*</span>联系手机</p>
+            {{ form.tel }}
+        </div>
+        <div class="fbdz_line">
+            <p class="fbdz_title"><span class="important_star">*</span>微信号</p>
+            {{ form.wx }}
+        </div>
+         {{ form.content }}
+              <div class="fbdz_line">
+                <p class="fbdz_title"><span class="important_star">*</span>商品图片</p>
+                    <div class="layui-upload-drag" id="test10">
+                    <i class="layui-icon" style="color: #1E9FFF;"></i>
+                    <p>点击上传</p>
+                    </div>
+              </div>
+            <div class="sctp_tipsbox">
+                <p>＊可上传多张图片！</p>
+                <p>＊角色ID和角色名称请务必打马赛克！</p>
+                <p>＊上传与商品无关的图片将无法通过审核！</p>
+                <p>＊请优先上传高价值的装备和宝宝，吸引买家更快下单！</p>
+            </div>
+        {{ form.submit }}
+			  {{ form.csrf_token }}
+    </div>
+
+    <style>
+        .remove_btn {
+            z-index: 99
+        }
+    </style>
+
+</form>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static',filename='layui/layui.js') }}"></script>
+
+<script src="{{ url_for('static',filename='home/js/select2.js') }}"></script>
+<script type="text/javascript">
+     function sxf() {
+         if ($('#price').val()) {
+             var sxf = $('#price').val() * 0.08 <= 200 ? 200 : $('#price').val() * 0.08;
+             sxf = sxf >= 2000 ? 2000 : sxf;
+             $('#sxf').html(sxf.toFixed(2))
+         }
+
+     }
+     sxf()
+</script>
+<script src="{{ url_for('static',filename='layui/layui.js') }}"></script>
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+
+  //各种基于事件的操作，下面会有进一步介绍
+});
+</script>
+<script>
+layui.use('upload', function(){
+  var $ = layui.jquery;
+  var upload = layui.upload;
+
+    //多图片上传
+  upload.render({
+    elem: '#test10'
+    ,url: '{{url_for('home.upload')}}'
+    ,multiple: true
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#test10').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+      });
+    }
+    ,done: function(res){
+      var str = $("input[name='content']").val();
+      if(str == ''){
+          $("input[name='content']").val(res.src);
+      }else{
+          $("input[name='content']").val(str+','+res.src);
+      }
+    }
+  });
+});
+</script>
+{% endblock %}

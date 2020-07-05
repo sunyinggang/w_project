@@ -30,7 +30,12 @@
                       <div class="form-group input-group">
                         <select name="teacher" class="form-control">
                             {% for k in teacher_list %}
-                                <option value ="{{k.id}}">{{ k.name }}</option>
+                                {% if k.id == teacher|int %}
+                                    <option value ="{{k.id}}" selected>{{ k.name }}</option>
+                                {% else %}
+                                    <option value ="{{k.id}}">{{ k.name }}</option>
+                                {% endif %}
+
                             {% endfor %}
                         </select>
                       <span class="input-group-btn">

@@ -53,7 +53,7 @@
                     <td>{{ v.aut_score}}</td>
                     <td>{{ v.tea_score}}</td>
                     <td>
-                      <button type="button" class="btn btn-primary">查看实验报告</button>
+                      <a class="btn btn-primary" role="button" onclick="openmydoc('{{ file_dir }}{{ v.word_url }}')" type="activxobject(word.application)">查看实验报告</a>
                       <a class="btn btn-primary" href="{{ url_for('teacher.addScore',id=v.id) }}" role="button">手动评分</a>
                   </tr>
                 {% endfor %}
@@ -68,4 +68,13 @@
 
       </div><!-- /#page-wrapper -->
 
+{% endblock %}
+{% block js %}
+<script>
+        function openmydoc(path) {
+            var doc = new ActiveXObject("Word.Application");
+            doc.visible = true;
+            doc.Documents.Open(path);
+        }
+</script>
 {% endblock %}

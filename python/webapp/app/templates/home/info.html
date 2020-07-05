@@ -1,0 +1,96 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="wrap">
+<!--banner-->
+<div class="gyt">
+    <img src="{{ url_for('static',filename='home/images/icon12.png') }}" alt="" class="fl" height="36">
+    <div class="gytl">
+<p><a class="icon13a">专人对接</a></p>
+<p><a class="icon13b">安全高效</a></p>
+    </div>
+
+    <div class="cb"></div>
+</div>
+   <!--header end-->
+   <script>
+  $(".fhsy").bind("mousedown touchstart", function(event){
+    event.stopPropagation();
+    event.preventDefault();
+    if($(".goods_nav").hasClass("goods_navnow") == true)
+    {
+     $(".goods_nav_bg").hide()
+     $(".goods_nav").removeClass("goods_navnow")
+ }
+ else{
+     $(".goods_nav_bg").show()
+     $(".goods_nav").addClass("goods_navnow")
+     //4.14添加，当背景层出现时给menum添加点击事件，生效后即unbind解除绑定
+     $(".menum").bind("mousedown touchstart", function(event)
+     {
+         $(".goods_nav_bg").hide()
+         $(".goods_nav").removeClass("goods_navnow")
+         $(".menum").unbind()
+     })
+ }
+})
+$(".goods_nav_bg").bind("mousedown touchstart", function(event){
+event.stopPropagation();
+event.preventDefault();
+ $(".goods_nav_bg").hide()
+ $(".goods_nav").removeClass("goods_navnow")
+ })
+ })
+</script>
+ <div class="menu">
+    <a href="javascript:history.go(-1);" class="fhlink"></a>
+     <div class="menu">
+    <a href="javascript:history.go(-1);" class="fhlink"></a>
+    <div class="menu" style="background:#fff">
+        <a href="javascript:history.back();" class="fhlink"></a>
+        <div class="menum">
+            <a href="javascript:void(0);" class="now">网站简介</a>
+        </div>
+        <a href="{{ url_for('home.index') }}" class="fhsy"></a>
+        <!---->
+    </div>
+    <!---->
+   </div>
+    <!---->
+   </div>
+   <!--menu end-->
+<div class="page_agent_about page_sell detail_wrap">
+
+    <div class="stages_shop_con agent_about_con">
+     <div class="stages_shop_itme">
+      <div class="tui_process">
+       <div class="border_green">
+         <p>
+             <h2>一、防骗须知</h2><br>
+             &nbsp;&nbsp;<h3>以下一定是骗子：</h3><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1.微信主动加您好友，说是西瓜手游交易平台客服的。
+注：我们客服微信不会主动加老板好友。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.qq群陌生人主动和你说话，说是西瓜或者客服的。
+注：我们QQ不会主动加好友或者主动私聊。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3.游戏内主动和您联系说某某排行是他老板，截图给您看的。
+注：他提供的图片是PS的，您可以自行和老板号确认一下。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;4.中介账号拉微信群，群内有西瓜客服，但是客服不是群主。
+注：骗子先把老板和客服拉到一个群，然后借口说明天改天交易，然后他会把我们的真客服踢掉，拉进来一个冒充我们的骗子客服！<br>
+&nbsp;&nbsp;<h3>防骗确认方式：</h3><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.登录西瓜手戏交易平台官网：xixiguagua.com，在首页找到联系客服，可以验证客服微信是否正确。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.登录斗鱼直播官网：www.douyu.com输入西瓜斗鱼房间号：244559，如果有主播在直播，可以直接问主播客服微信或者收款方式是否正确。<br>
+          <h2>二、甜心主播招募令</h2><br>
+             &nbsp;&nbsp;&nbsp;&nbsp;随着西瓜手游交易平台业务的扩大，现在增加更多的游戏类目已经势在必行，为了丰富更多游戏账号的种类和数量,为了更好的服务平台用户，现在招募梦幻西游手游模板甜心女主播！<br>
+           &nbsp;&nbsp;&nbsp;&nbsp;主播要求：全职主播或者兼职主播（仅招收线下主播）<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;游戏要求：熟悉梦幻西游手游 <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;有意请添加微信：307434771
+         </p>
+       </div>
+      </div>
+     </div>
+
+     <p style="height:70px;"></p>
+    </div>
+   </div>
+</div>
+{% endblock %}

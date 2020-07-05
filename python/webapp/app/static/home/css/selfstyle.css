@@ -1,0 +1,270 @@
+    .tcbg2{ background:#000; opacity:0.5; width:100%; height:100%; position:fixed; left:0; top:0; z-index:2000; display:none}
+    .fraud-tips-dialog {
+position: fixed; display:none;
+z-index: 10000;
+top: 50%;
+left: 50%;
+margin-top: -200px;
+margin-left: -134px;
+width: 268px;
+    }
+.fraud-tips-dialog .fraud-hd {
+background-image: url(../images/fraud_hd_bg.jpg);
+background-repeat: no-repeat;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+text-align: center;
+color: #fff;
+height: 70px;
+background-size: cover;
+    }
+    .fraud-tips-dialog .fraud-con {
+background: #fff; font-size:14px;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code {
+width: 60%;
+margin: 0 auto;
+padding: 8px 0;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code  img{ max-width:100%; vertical-align:top}
+    .fraud-tips-dialog .fraud-con{
+text-align: center;
+    }
+        /*3.1新增，多个微信设置外边距*/
+        .wx_code_info{
+            margin-top: 3px;
+                height: 180px;
+        }
+        .wx_code_info>span{
+            width: 190px;
+            height: 19px;
+            /*border: 1px solid #000;*/
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: left;
+        }
+        /*新增完毕*/
+    .fraud-tips-dialog .fraud-con .wx_code_info img {
+width: 20px;
+margin-right: 5px;
+margin-bottom：2px;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code_info .btn_wrap {
+display: inline-block;
+width: 40px;
+margin-left: 5px;
+    }
+    .jue_btn_primary {
+background-color: #f74b3d;
+color: #fff;
+border: 1px solid #f74b3d;
+    }
+    .jue_btn {
+display: block;
+text-align: center;
+height: 40px;
+line-height: 40px;
+font-size: 14px;
+font-weight: 400;
+cursor: pointer;
+background-image: none;
+border: none;
+border: 1px solid #f74b3d;
+border-radius: 4px;
+color: #f74b3d;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code_info .btn_wrap>.jue_btn {
+width: 100%;
+height: 26px;
+line-height: 26px; color:#fff
+    }
+    .fraud-tips-dialog .fraud-con .tip_info {
+padding-top: 8px;
+    }
+    .fraud-tips-dialog .fraud-footer {
+padding: 8px 25px;
+text-align: center;
+background-color: #fff;
+border-bottom-left-radius: 4px;
+    }
+    .fraud-tips-dialog .fraud-footer>p:first-child {
+padding-bottom: 5px;
+    }
+    .fraud-tips-dialog .fraud-footer>p:last-child {
+color: #f74c3b;
+    }
+    .fui-border-t-linght {
+border: 0;
+background-position: left top;
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(.5,transparent),color-stop(.5,#e8e8e8));
+background-repeat: repeat-x;
+-webkit-background-size: 100% 1px;
+    }
+    .fui-border-t-linght {
+border: 0;
+background-position: left top;
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(.5,transparent),color-stop(.5,#e8e8e8));
+background-repeat: repeat-x;
+-webkit-background-size: 100% 1px;
+    }
+    .fraud-tips-dialog .fraud-tips-btn {
+text-align: center;
+display: block;
+color: #fff;
+margin-top: 10px;
+padding: 10px 0;
+font-size: 14px;
+    }
+    .goods_nav{ width:110px; background:rgba(51,51,51,0.96); border-radius:7px; position:absolute; right:5px; top:56px; z-index:10000; opacity:0; height:0; transform:scale(0.0); display:block;    transition: all 0.3s; transform-origin: 86% -10px;}
+    .goods_navnow{height: auto;opacity: 1; transform: scale(1.0);}
+    .syfooter li.now a{
+        color:#a67a4d !important;
+    }
+    .jrsx li a span.jrsxl{    width: 86%;}
+     .prolist1 {
+    overflow: hidden;
+    margin: 5px;
+    position: relative;
+}
+          .flm{
+              padding-bottom:20px;
+          }
+          .flm li{
+           border:0;
+                 padding:0;
+          }
+          .prolist1 li {
+    float: left;
+    width: 49.9%;
+    margin-bottom:8px;
+    overflow: hidden;
+}
+          .prolist1 li div.pbox {
+    overflow: hidden;
+    padding:7px;
+    background: #fff;
+    position: relative;
+}
+          .prolist1 a.img {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+          .prolist1 a.img img {
+    width: 100%;
+    display: block;
+}
+          .prolist1 a.name {
+    height: 34px;
+    line-height: 17px;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    overflow: hidden;
+    margin: 3px 0;
+}
+          .prolist1 p.price {
+    line-height: 20px;
+    height: 20px;
+    display: block;
+    overflow: hidden;
+}
+          .prolist1 p.price span {
+    color: #ff4444;
+    font-size: 15px;
+}
+    .flm li h1{ display:-webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color:#333; font-size:14px; line-height:20px;margin-bottom:3px;overflow: hidden;}
+    .flm li a:visited h1{color: #ccc;}
+    .shx{
+        top:100px;
+    }
+    .WebTopTips{     height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    font-size: 16px;
+    z-index: 9999;
+    width: 100%;}
+.WebTopTips b{ width:30px; height:30px; line-height:30px; display:inline-block; overflow:hidden; position:absolute; top:0; right:0; z-index:100;
+font-size:15px; padding:0 3px; cursor:pointer;}
+        .gyt{
+            display:none;
+        }
+        .sst {
+            padding:0 !important;
+    height: 55px;
+}
+        .ptai{
+            top:100px !important;
+        }
+ .fullSlide{display:none !important;}
+input[type="radio"]{display: none;}
+.duanwei li.cur label {
+    color: #fff;
+}
+.duanwei li.now label {
+    color: #fff;
+}
+.duanwei li.cur {
+    background: #d1b897;
+}
+.duanwei li.now {
+    background: #d1b897;
+}
+/**************/
+.shuliang li.cur label {
+    color: #fff;
+}
+.shuliang li.now label {
+    color: #fff;
+}
+.shuliang li.cur {
+    background: #d1b897;
+}
+.shuliang li.now {
+    background: #d1b897;
+}
+/*************/
+.mingwen li.cur label {
+    color: #fff;
+}
+.mingwen li.now label {
+    color: #fff;
+}
+.mingwen li.cur {
+    background: #d1b897;
+}
+.mingwen li.now {
+    background: #d1b897;
+}
+/*************/
+.price li.cur label {
+    color: #fff;
+}
+.price li.now label {
+    color: #fff;
+}
+.price li.cur {
+    background: #d1b897;
+}
+.price li.now {
+    background: #d1b897;
+}
+           label{
+               color: #624024;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+           }
+           label input{
+               margin-right:2px;
+           }
+   .shx {    padding: 15px 10px 150px;}
+           .icon22 a{
+               color:#624024;
+           }
+

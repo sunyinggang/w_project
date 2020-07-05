@@ -63,7 +63,7 @@ def selectSearch(page=None):
             Experiment.name.ilike('%' + name + '%')
         ).paginate(page=page,per_page=5)
     teacher_list = Teacher.query.all()
-    return render_template("student/sselectSearch.html",experiment_list = experiment_list,teacher_list=teacher_list)
+    return render_template("student/sselectSearch.html",experiment_list = experiment_list,teacher_list=teacher_list,name=name)
 
 @student.route("/select/filter/<int:page>/")
 def selectFilter(page=None):
@@ -76,7 +76,7 @@ def selectFilter(page=None):
             Experiment.teacher_id == teacher
         ).paginate(page=page,per_page=5)
     teacher_list = Teacher.query.all()
-    return render_template("student/sselectFilter.html",experiment_list = experiment_list,teacher_list=teacher_list)
+    return render_template("student/sselectFilter.html",experiment_list = experiment_list,teacher_list=teacher_list,teacher=teacher)
 
 @student.route("/select/experiment/<id>/",methods=["GET","POST"])
 def selectExp(id=None):
@@ -90,7 +90,12 @@ def selectExp(id=None):
         student_id = session["id"],
         select_time= datetime.datetime.now()
     )
+    experiment = Experiment.query.filter_by(id=id).first_or_404()
+    count = experiment.select_count
+    count = count+1
+    experiment.select_count = count
     db.session.add(sel)
+    db.session.add(experiment)
     db.session.commit()
     flash("选择成功！")
     return redirect(url_for('student.score',page=1))
@@ -125,7 +130,13 @@ def addWord(id=None):
     aut_score = TfIdf(new_filename,experiment.keywords)
     select.word_url = new_filename
     select.aut_score = aut_score
-    select.is_aut = 1
+    experiment = Experiment.query.filter_by(id=select.experiment_id).first_or_404()
+    if select.is_aut == 0:
+        select.is_aut = 1
+        count = experiment.submit_count
+        count = count + 1
+        experiment.submit_count = count
+        db.session.add(experiment)
     db.session.add(select)
     db.session.commit()
     flash("上传成功，已完成自动评分！")
@@ -135,6 +146,11 @@ def addWord(id=None):
 def scoreDel():
     id = request.args.get("id")
     score = Select.query.filter_by(id=id).first_or_404()
+    experiment = Experiment.query.filter_by(id=score.experiment_id).first_or_404()
+    count = experiment.select_count
+    count = count - 1
+    experiment.select_count = count
+    db.session.add(experiment)
     db.session.delete(score)
     db.session.commit()
     flash("删除成功！")

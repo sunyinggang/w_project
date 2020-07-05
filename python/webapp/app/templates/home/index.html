@@ -1,0 +1,93 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="wrap">
+    <div class="bgfff">
+     <div class="header" style="text-align:center;height:80px; padding:5px 0;">
+        <img src="{{ url_for('static',filename='home/images/223620271.png') }}" alt="西瓜手游交易平台" style="width: 250px;">
+     </div>
+    </div>
+    <div class="banner">
+     <div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-2280px, 0px, 0px);">
+        <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" style="width: 760px;">
+       </div>
+       <div class="swiper-slide" data-swiper-slide-index="0" style="width: 760px;">
+        <a href="#" class="link"><img src="{{ url_for('static',filename='home/images/banner_1.png') }}" alt=""></a>
+       </div>
+        <div class="swiper-slide" data-swiper-slide-index="0" style="width: 760px;">
+        <a href="#" class="link"><img src="{{ url_for('static',filename='home/images/banner_2.png') }}" alt=""></a>
+       </div>
+        <div class="swiper-slide" data-swiper-slide-index="0" style="width: 760px;">
+        <a href="#" class="link"><img src="{{ url_for('static',filename='home/images/banner_3.png') }}" alt=""></a>
+       </div>
+        <div class="swiper-slide" data-swiper-slide-index="0" style="width: 760px;">
+        <a href="#" class="link"><img src="{{ url_for('static',filename='home/images/banner_4.png') }}" alt=""></a>
+       </div>
+       </div>
+     </div>
+    </div>
+    <div class="jsq">
+     <ul>
+      <li><a href="{{ url_for('home.sort',page=1) }}"><img src="{{ url_for('static',filename='home/images/buy.jpg') }}" width="100%"></a></li>
+      <li><a href="{{ url_for('home.sell') }}"><img src="{{ url_for('static',filename='home/images/sell.jpg') }}" width="100%"></a></li>
+      <div class="cb"></div>
+     </ul>
+    </div>
+    <div class="bgf6 ph10">
+     <div class="jrsx">
+      <h2><span>最新上架</span><a href="{{ url_for('home.sort',page=1) }}">更多&gt;</a></h2>
+      <ul>
+          {% for v in commodity_list %}
+         <li>
+             <a href="{{ url_for('home.detail',id=v.id) }}" title="{{ v.title }}"><span class="jrsxl" style="overflow: hidden;height:40px;">{{ v.title }}</span>
+                <span class="jrsxr">￥{{ v.price }}</span>
+                <div class="cb"></div>
+             </a>
+         </li>
+          {% endfor %}
+      </ul>
+     </div>
+     <!--jrsx end-->
+    </div>
+
+    <div class="whggwrap">
+     <div class="whgg">
+      <div class="whggt">
+       <span class="now">常见问题</span>
+       <span>简介</span>
+      </div>
+
+      <!---->
+      <div class="whggb" style=" display:block">
+       <div class="whggli">
+        <ul>
+<li><a href="{{ url_for('home.transaction') }}" title="交易流程">交易流程</a></li>
+<li><a href="{{ url_for('home.suggest') }}" title="推广合作">推广合作</a></li>
+        </ul>
+       </div>
+      </div>
+      <!---->
+      <div class="whggb">
+       <div class="whggli">
+        <ul>
+<li><a href="{{ url_for('home.info') }}" title="网站简介">网站简介</a></li>
+        </ul>
+       </div>
+      </div>
+      <!---->
+     </div>
+    </div>
+    <!--whggwrap end-->
+    <div class="cb" style=" padding:54px 0 0"></div>
+
+<!-- ix-footer -->
+</div>
+{% endblock %}
+{% block js %}
+  <script>
+      $(document).ready(function() {
+		$('#icon55').addClass("now").siblings().removeClass("now");
+});
+  </script>
+{% endblock %}

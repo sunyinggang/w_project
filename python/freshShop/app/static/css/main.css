@@ -42,11 +42,11 @@ html,body{height:100%}
 .search_bar{width:1200px;height:115px;margin:0 auto;}
 .logo{width:150px;height:59px;margin:29px 0 0 17px;}
 
-.search_con{width:616px;height:38px;border:1px solid #f59ba5;margin:34px 0 0 124px;background:url("../images/icons.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons.png*/ 10px -338px no-repeat;}
+.search_con{width:616px;height:38px;border:1px solid #37ab40;margin:34px 0 0 124px;background:url("../images/icons.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons.png*/ 10px -338px no-repeat;}
 .search_con .input_text{width:470px;height:34px;border:0px;margin:2px 0 0 36px;outline:none;font-size:12px;color:#737272;font-family:'Microsoft Yahei'}
 
 .search_con .input_btn{
-	width:100px;height:38px;background-color:#f59ba5;border:0px;font-size:14px;color:#fff;font-family:'Microsoft Yahei';outline:none;cursor:pointer;
+	width:100px;height:38px;background-color:#37ab40;border:0px;font-size:14px;color:#fff;font-family:'Microsoft Yahei';outline:none;cursor:pointer;
 }
 
 .guest_cart{
@@ -54,7 +54,7 @@ html,body{height:100%}
 }
 
 .guest_cart .cart_name{
-	width:158px;height:38px;line-height:38px;border:1px solid #dddddd;display:block;background:url("../images/icons.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons.png*/ 13px -300px no-repeat;font-size:14px;color:#f59ba5;text-indent:56px;
+	width:158px;height:38px;line-height:38px;border:1px solid #dddddd;display:block;background:url("../images/icons.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons.png*/ 13px -300px no-repeat;font-size:14px;color:#37ab40;text-indent:56px;
 }
 
 .guest_cart .goods_count{
@@ -65,11 +65,11 @@ html,body{height:100%}
 
 /* 菜单、幻灯片样式 */
 
-.navbar_con{height:40px;border-bottom:2px solid #f59ba5}
+.navbar_con{height:40px;border-bottom:2px solid #37ab40}
 .navbar{width:1200px;margin:0 auto;}
-.navbar h1{width:200px;height:40px;line-height:40px;text-align: center;font-size:14px;color:#fff;background-color:#f59ba5;}
+.navbar h1{width:200px;height:40px;line-height:40px;text-align: center;font-size:14px;color:#fff;background-color:#37ab40;}
 
-.navbar .subnav_con{width:200px;height:40px;background-color:#f59ba5;position:relative;cursor:pointer;}
+.navbar .subnav_con{width:200px;height:40px;background-color:#37ab40;position:relative;cursor:pointer;}
 
 .navbar .subnav_con h1{position:absolute;left:0;top:0;text-align:left;text-indent:40px}
 .navbar .subnav_con span{display:block;width:16px;height:9px;background:url("../images/down.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/down.png*/ no-repeat;position:absolute;right:27px;top:16px;transition:all 300ms ease-in;
@@ -77,7 +77,7 @@ html,body{height:100%}
 
 .navbar .subnav_con:hover span{transform:rotateZ(180deg)}
 
-.navbar .subnav_con .subnav{position:absolute;left:0;top:40px;display:none;border-top:2px solid  #f59ba5;}
+.navbar .subnav_con .subnav{position:absolute;left:0;top:40px;display:none;border-top:2px solid  #37ab40;}
 .navbar .subnav_con:hover .subnav{display:block;}
 
 
@@ -143,8 +143,8 @@ html,body{height:100%}
 /* 商品列表样式 */
 
 .list_model{width:1200px;height:340px;margin:15px auto 0;}
-.list_title{height:40px;border-bottom:2px solid #f59ba5}
-.list_title h3{height:40px;line-height:40px;font-size:16px;color:#f59ba5;font-weight:bold;}
+.list_title{height:40px;border-bottom:2px solid #37ab40}
+.list_title h3{height:40px;line-height:40px;font-size:16px;color:#37ab40;font-weight:bold;}
 .list_title .subtitle{height:20px;line-height:20px;margin-top:15px;}
 .list_title .subtitle span{color:#666;margin:0 10px 0 20px;}
 .list_title .subtitle a{color:#666;margin:0 5px;}
@@ -169,7 +169,7 @@ html,body{height:100%}
 
 /* 页面底部样式 */
 .footer{
-	border-top:2px solid #f59ba5;
+	border-top:2px solid #37ab40;
 	margin:30px 0;
 }
 
@@ -184,7 +184,7 @@ html,body{height:100%}
 .breadcrumb{
 	width:1200px;height:40px;margin:0 auto;
 }
-.breadcrumb a{line-height:40px;color:#f59ba5}
+.breadcrumb a{line-height:40px;color:#37ab40}
 .breadcrumb a:hover{color:#ff8800}
 .breadcrumb span{line-height:40px;color:#666;padding:0 5px;}
 
@@ -198,7 +198,7 @@ html,body{height:100%}
 
 .new_goods{
 	border:1px solid #ededed;
-	border-top:2px solid #f59ba5;
+	border-top:2px solid #37ab40;
 	padding-bottom:10px;
 }
 
@@ -219,7 +219,7 @@ html,body{height:100%}
 
 .sort_bar{height:30px;background-color:#f0fdec}
 .sort_bar a{display:block;height:30px;line-height:30px;padding:0 20px;float:left;color:#000}
-.sort_bar .active{background-color:#f59ba5;color:#fff;}
+.sort_bar .active{background-color:#37ab40;color:#fff;}
 
 
 .goods_type_list{
@@ -246,7 +246,7 @@ html,body{height:100%}
 .pagenation{height:32px;text-align:center;font-size:0;margin:30px auto;}
 .pagenation a{display:inline-block;border:1px solid #d2d2d2;background-color:#f8f6f7;font-size:12px;padding:7px 10px;color:#666;margin:5px}
 
-.pagenation .active{background-color:#f59ba5;color:#fff}
+.pagenation .active{background-color:#37ab40;color:#fff}
 
 
 /* 商品详情样式 */
@@ -286,12 +286,12 @@ html,body{height:100%}
 
 .detail_tab{
 	height:35px;
-	border-bottom:1px solid #f59ba5
+	border-bottom:1px solid #37ab40
 }
 
 .detail_tab li{height:34px;line-height:34px;padding:0 30px;font-size:14px;color:#333333;float:left;border:1px solid #e8e8e8;border-bottom:0px;cursor:pointer;background-color:#faf8f8}
 
-.detail_tab li.active{border-top:2px solid #f59ba5;position:relative;background-color:#fff;border-left:1px solid #f59ba5;border-right:1px solid #f59ba5;top:-1px;height:35px;}
+.detail_tab li.active{border-top:2px solid #37ab40;position:relative;background-color:#fff;border-left:1px solid #37ab40;border-right:1px solid #37ab40;top:-1px;height:35px;}
 
 .tab_content dt{margin-top:10px;font-size:16px;color:#044d39}
 .tab_content dd{line-height:24px;margin-top:5px;}
@@ -301,7 +301,7 @@ html,body{height:100%}
 
 .login_top{width:960px;height:130px;margin:0 auto;}
 .login_logo{display:block;width:193px;height:76px;margin-top:30px;}
-.login_form_bg{height:480px;background:url("../images/login_banner.png");}
+.login_form_bg{height:480px;background-color: #518e17;}
 .no-mp{margin-top:0px;}
 .login_form_wrap{width:960px;height:480px;margin:0 auto;}
 .login_banner{width:381px;height:322px;background:url("../images/login_banner.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/login_banner.png*/ no-repeat;margin-top:90px;}
@@ -311,7 +311,7 @@ html,body{height:100%}
 .login_title{height:60px;width:308px;margin:10px auto;border-bottom:1px solid #e0e0e0;}
 
 .login_title h1{font-size:24px;height:60px;line-height:60px;color:#a8a8a8;float:left;font-weight:bold;margin-left:44px;}
-.login_title a{width:100px;height:20px;display:block;font-size:16px;color:#f59ba5;text-indent:26px;background:url("../images/icons02.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons02.png*/ left 5px no-repeat;float:left;margin:20px 0 0 36px}
+.login_title a{width:100px;height:20px;display:block;font-size:16px;color:#37ab40;text-indent:26px;background:url("../images/icons02.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons02.png*/ left 5px no-repeat;float:left;margin:20px 0 0 36px}
 
 .form_input{width:308px;margin:20px auto;position:relative;}
 .name_input,.pass_input{width:306px;height:36px;border:1px solid #e0e0e0;background:url("../images/icons02.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons02.png*/ 280px -41px no-repeat #f8f8f8;outline:none;font-size:14px;text-indent:10px;position: absolute;left:0;top:0}
@@ -325,10 +325,10 @@ html,body{height:100%}
 
 .more_input input{float:left;margin-top:2px;}
 .more_input label{float:left;margin-left:10px;}
-.more_input a{float:right;color:#f59ba5;}
+.more_input a{float:right;color:#37ab40;}
 .more_input a:hover{color:#ff8800}
 
-.input_submit{width:100%;height:40px;position:absolute;left:0;top:180px;background-color:#f59ba5;color:#fff;font-size:22px;border:0px;font-family:'Microsoft Yahei';cursor:pointer;}
+.input_submit{width:100%;height:40px;position:absolute;left:0;top:180px;background-color:#37ab40;color:#fff;font-size:22px;border:0px;font-family:'Microsoft Yahei';cursor:pointer;}
 
 
 /* 注册页面 */
@@ -348,7 +348,7 @@ html,body{height:100%}
 .r_con{width:400px;}
 .reg_title{width:360px;height:50px;float:left;margin-left:30px;border-bottom:1px solid #e0e0e0}
 .reg_title h1{height:50px;line-height:50px;float:left;font-size:24px;color:#a8a8a8;font-weight:bold;}
-.reg_title a{float:right;height:20px;line-height:20px;font-size:16px;color:#f59ba5;padding-right:20px;background:url("../images/icons02.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons02.png*/ 35px 3px no-repeat;margin-top:15px}
+.reg_title a{float:right;height:20px;line-height:20px;font-size:16px;color:#37ab40;padding-right:20px;background:url("../images/icons02.png")/*tpa=http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/icons02.png*/ 35px 3px no-repeat;margin-top:15px}
 
 .reg_form{width:360px;margin:30px 0 0 30px;float:left;position:relative;}
 .reg_form li{height:70px;}
@@ -356,7 +356,7 @@ html,body{height:100%}
 .reg_form li input{width:288px;height:38px;border:1px solid #e0e0e0;float:left;outline:none;text-indent:10px;background-color:#f8f8f8}
 .reg_form li.agreement input{width:15px;height:15px;float:left;margin-top:13px}
 .reg_form li.agreement label{width:300px;float:left;margin-left:10px;}
-.reg_form li.reg_sub input{width:360px;height:40px;background-color:#f59ba5;font-size:18px;color:#fff;font-family:'Microsoft Yahei';cursor:pointer;}
+.reg_form li.reg_sub input{width:360px;height:40px;background-color:#37ab40;font-size:18px;color:#fff;font-family:'Microsoft Yahei';cursor:pointer;}
 .reg_form li .error_tip{float:left;height:30px;line-height:30px;margin-left:70px;color:#e62e2e;display:none;}
 .reg_form li .error_tip2{float:left;height:20px;line-height:20px;color:#e62e2e;display:none;}
 
@@ -417,13 +417,13 @@ html,body{height:100%}
 
 .common_title{width:1200px;margin:20px auto 0;font-size:14px;}
 
-.common_list_con{width:1200px;border:1px solid #dddddd;border-top:2px solid #f59ba5;margin:10px auto 0;background-color:#f7f7f7;position:relative;}
+.common_list_con{width:1200px;border:1px solid #dddddd;border-top:2px solid #37ab40;margin:10px auto 0;background-color:#f7f7f7;position:relative;}
 
 .common_list_con dl{margin:20px;}
 .common_list_con dt{font-size:14px;font-weight:bold;margin-bottom:10px}
 .common_list_con dd input{vertical-align:bottom;margin-right:10px}
 
-.edit_site{position:absolute; right:20px;top:30px;width:100px;height:30px;background-color:#f59ba5;text-align:center;line-height:30px;color:#fff}
+.edit_site{position:absolute; right:20px;top:30px;width:100px;height:30px;background-color:#37ab40;text-align:center;line-height:30px;color:#fff}
 
 .pay_style_con{margin:20px;}
 .pay_style_con input{float:left;margin:14px 7px 0 0;}
@@ -468,7 +468,7 @@ html,body{height:100%}
 .total_goods_count em,.total_goods_count b,.transit b,.total_pay b{font-size:14px;color:#ff4200;padding:0 5px;}
 
 .order_submit{width:1200px;margin:20px auto;}
-.order_submit a{width:160px;height:40px;line-height:40px;text-align:center;background-color:#f59ba5;color:#fff;font-size:16px;display:block;float:right}
+.order_submit a{width:160px;height:40px;line-height:40px;text-align:center;background-color:#37ab40;color:#fff;font-size:16px;display:block;float:right}
 
 
 .order_list_th{width:1198px;border:1px solid #ddd;background-color:#f7f7f7;margin:20px auto 0;}
@@ -504,7 +504,7 @@ html,body{height:100%}
 .oper_btn{display:inline-block;border:1px solid #ddd;color:#666;padding:5px 10px}
 
 .popup_con{display:none;}
-.popup{width:300px;height:150px;border:1px solid #dddddd;border-top:2px solid #f59ba5;background-color:#f7f7f7;position:fixed;
+.popup{width:300px;height:150px;border:1px solid #dddddd;border-top:2px solid #37ab40;background-color:#f7f7f7;position:fixed;
 	left:50%;
 	margin-left:-150px;
 	top:50%;
@@ -658,7 +658,7 @@ html,body{height:100%}
 .info_submit{
 	width:80px;
 	height:30px;
-	background-color:#f59ba5;
+	background-color:#37ab40;
 	border:0px;
 	color:#fff;
 	margin:10px 0 10px 100px;
@@ -694,13 +694,13 @@ html,body{height:100%}
 }
 .review_user {
     font-size: 18px;
-    color: #f59ba5;
+    color: #37ab40;
 }
 .review li {
     width: 98%;
     margin: 10px 0 0 20px;
     padding-bottom:10px;
-    border-bottom: 1px solid #f59ba5;
+    border-bottom: 1px solid #37ab40;
 }
 
 .review li p{
@@ -711,7 +711,7 @@ width:300px;
 height:200px;
 margin:30px auto;
 padding:20px;
-border:1px solid #f59ba5;
+border:1px solid #37ab40;
 }
 
 .help{
@@ -729,7 +729,7 @@ float:left;
 width:400px;
 height:200px;
 padding:20px;
-border:1px solid #f59ba5;
+border:1px solid #37ab40;
 }
 .detail {
     list-style: none;

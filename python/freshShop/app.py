@@ -7,5 +7,4 @@ sa = []
 for i in range(26):
     sa.append(random.choice(str))
 salt = ''.join(sa)
-print(salt)
 

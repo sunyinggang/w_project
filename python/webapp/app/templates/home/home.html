@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" data-dpr="1" style="font-size: 40px;"><head>
+<meta name="save" content="history">
+<meta http-equiv="Page-Enter" content="blendTrans(transtion=15)">
+<meta http-equiv="Page-Exit" content="blendTrans(transtion=3)">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<meta name="keywords" content="LinkWin">
+<meta name="description" content="LinkWin">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>西瓜手游交易平台</title>
+<meta name="keywords" content="西瓜手游交易平台">
+<meta name="description" content="西瓜手游交易平台">
+ <meta content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+ <meta content="yes" name="apple-mobile-web-app-capable">
+ <meta content="black" name="apple-mobile-web-app-status-bar-style">
+ <meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home/css/global.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='home/css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/swiper.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/selfstyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/page.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/mobile.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/common.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/mglobal.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='home/css/layer.css') }}">
+{% block css %}{% endblock %}
+</head>
+<body style="font-size: 12px;">
+
+  <div class="wrap">
+    {% block content %}{% endblock %}
+      <div class="syfooter" style="    border-top: 1px solid #eee !important;">
+     <ul>
+      <li id="icon55"><a href="{{ url_for('home.index') }}" class="icon55">首页</a></li>
+      <li id="icon56"><a href="{{ url_for('home.sort',page=1) }}" class="icon56">分类</a></li>
+      <li><a href="javascript:void(0)" class="icon57 link">联系客服</a></li>
+      <li id="icon58"><a href="{{ url_for('home.user') }}" class="icon58">个人中心</a></li>
+      <div class="cb"></div>
+     </ul>
+    </div>
+
+    <div class="tcbg2"></div>
+    <div class="fraud-tips-dialog">
+     <div class="fraud-hd"></div>
+     <div class="fraud-con">
+      <div class="wx_code">
+       <img src="">
+      </div>
+
+
+      <div class="wx_code_info">
+       <span> <img src="{{ url_for('static',filename='home/images/icon_wx.png') }}" alt="" class="vam">
+           <span class="wx_wenzi">战神王者</span>
+                 <div class="tip_info tc" style="padding-bottom: 8px;">
+               网站仅供看号选号&nbsp;&nbsp;&nbsp;咨询交易请联系淘宝客服
+             </div>
+           <div class="wechat_line">
+           <div class="disinb wechat_msg vam">
+			    <span class="vam">合作推广</span>
+			    <span class="vam">307434771</span>
+			</div>
+				<button type="button" class="copy_wx" data-clipboard-text="307434771">复制</button>
+			</div>
+           <div class="wechat_line">
+           <div class="disinb wechat_msg vam">
+			    <span class="vam">微信客服</span>
+			    <span class="vam">xiguaTD</span>
+			</div>
+				<button type="button" class="copy_wx" data-clipboard-text="xiguaTD">复制</button>
+			</div>
+           <div class="wechat_line">
+           <div class="disinb wechat_msg vam">
+			    <span class="vam">微信客服</span>
+			    <span class="vam">xiguaTD02</span>
+			</div>
+				<button type="button" class="copy_wx" data-clipboard-text="xiguaTD02">复制</button>
+			</div>
+      </div>
+     </div>
+
+     <a id="closeCancel" href="javascript:void(0);" class="fraud-tips-btn">（关闭）<span class="countTimer"></span> </a>
+    </div>
+
+</div>
+    <!-- 4.16新增swiper -->
+<script src="{{ url_for('static',filename='home/js/jquery.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/jquery-1.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/hm.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/global_phone.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/layer.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/common.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/swiper.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/clipboard.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/selfjs.js') }}"></script>
+  <script src="{{ url_for('static',filename='home/js/picautozoom.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/page.js') }}"></script>
+<script src="{{ url_for('static',filename='home/js/clipboard.min.js') }}"></script>
+<script type="text/javascript">
+    setTimeout(function(){
+        $(".jrsxr").each(function(i){
+            var jrsxrW = $(".jrsxr").eq(i).width();
+            if(jrsxrW>80)
+            {
+                $(".jrsxr").eq(i).css('fontSize','12px')
+            }
+        })
+    },500);
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+//        设置切换效果为“滑动”
+        effect:'slide',
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+            clickable:'true',
+        },
+    });
+</script>
+<script type="text/javascript">
+        $(document).ready(function () {
+
+$(".whggt span").click(function(){
+var num=$(".whggt span").index($(this))
+$(this).addClass("now")
+$(this).siblings("span").removeClass("now")
+$(".whggb").eq(num).slideDown()
+$(".whggb").eq(num).siblings(".whggb").slideUp()
+ })
+
+ $(".link").click(function(){
+
+            $(".tcbg2").show()
+            $(".fraud-tips-dialog").show()
+        })
+        $("#closeCancel").click(function(){
+            $(".tcbg2").hide()
+            $(".fraud-tips-dialog").hide()
+        })
+        //3.2新增 弹出框弹出后，点击空白背景时消失
+        $(".tcbg2").click(function(){
+                    if($(".tcbg2").css("display")=='block')
+                    {
+                        $(".tcbg2").hide();
+                        $(".fraud-tips-dialog").hide()
+                    }
+                });
+        });
+    </script>
+<script type="text/javascript">
+        var clipboard = new Clipboard('.copy_wx');
+    clipboard.on('success', function(e) {
+    layer.msg( '复制成功',{  time:1500, shade: 0.3  });
+    e.clearSelection();
+    });
+    clipboard.on('error', function(e) {
+    layer.msg( '浏览器不支持复制功能，请手动复制',{  time:1500, shade: 0.3  });
+    e.clearSelection();
+    });
+    </script>
+<script type="text/javascript">
+var clipboard = new Clipboard('#copy_wx');
+		clipboard.on('success', function(e) {
+			layer.msg('复制成功', {
+				time: 600,
+				shade: 0,
+				skin: 'layer_msg_skin',
+				isOutAnim:false
+			});
+			e.clearSelection();
+		});
+		clipboard.on('error', function(e) {
+			layer.msg('浏览器不支持复制功能，请手动复制', {
+				time: 1500,
+				shade: 0.3
+			});
+			e.clearSelection();
+		});
+</script>
+{% block js %}{% endblock %}
+</body>
+</html>
+
+

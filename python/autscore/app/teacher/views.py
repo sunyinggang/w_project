@@ -102,10 +102,7 @@ def score(page=None):
     if page is None:
         page = 1
     experiment_list = Experiment.query.filter_by(teacher_id=session["id"]).paginate(page=page,per_page=5)
-    select_all = db.session.query(Select.experiment_id,func.count(Select.student_id)).group_by(Select.experiment_id).all()
-    # select_submit = db.session.query(Select.experiment_id, func.count(Select.student_id)).group_by(Select.experiment_id).filter(Select.is_aut==1).all()
-    # print(select_submit)
-    return render_template("teacher/tscore.html",experiment_list = experiment_list,select_all=select_all)
+    return render_template("teacher/tscore.html",experiment_list = experiment_list)
 
 @teacher.route("/student/<int:page>/",methods=["POST","GET"])
 def student(page=None):
@@ -129,8 +126,10 @@ def student(page=None):
         ).filter(
             Experiment.id == Select.experiment_id
         ).paginate(page=page, per_page=5)
+        UPLOAD_FOLDER = 'app/static/upload/'
+        file_dir = os.path.join(os.getcwd(), UPLOAD_FOLDER).replace('\\', '/')
         return render_template("teacher/tstudent.html", form=form, experiment=experiment, select_list=select_list,
-                               id=id)
+                               id=id,file_dir=file_dir)
     if page is None:
         page = 1
     id = request.args.get('id')
@@ -148,7 +147,9 @@ def student(page=None):
     ).filter(
         Experiment.id == Select.experiment_id
     ).paginate(page=page,per_page=5)
-    return render_template("teacher/tstudent.html",form=form,experiment = experiment,select_list = select_list,id=id)
+    UPLOAD_FOLDER = 'app/static/upload/'
+    file_dir = os.path.join(os.getcwd(), UPLOAD_FOLDER).replace('\\', '/')
+    return render_template("teacher/tstudent.html",form=form,experiment = experiment,select_list = select_list,id=id,file_dir=file_dir)
 
 @teacher.route("/addScore/<id>/",methods=["POST","GET"])
 def addScore(id=None):
@@ -163,4 +164,6 @@ def addScore(id=None):
         db.session.commit()
         flash("评分成功！")
         return redirect(url_for('teacher.addScore',id=id))
-    return render_template("teacher/addScore.html",form=form,student=student,select=select)
+    UPLOAD_FOLDER = 'app/static/upload/'
+    file_dir = os.path.join(os.getcwd(), UPLOAD_FOLDER).replace('\\', '/')
+    return render_template("teacher/addScore.html",form=form,student=student,select=select,file_dir=file_dir)

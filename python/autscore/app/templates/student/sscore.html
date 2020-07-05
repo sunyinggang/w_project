@@ -50,16 +50,16 @@
                     <td>
                       <a class="btn btn-primary" href="{{ url_for('student.download',id=v.experiment.id) }}" role="button">下载模板</a>
                     </td>
-                    {% if v.word_url == None  %}
+                    {% if v.is_aut == 0  %}
                     <td>
                        <form action="{{ url_for('student.addWord',id=v.id) }}" method="post" enctype="multipart/form-data">
-                       <input name="file"  accept=".docx" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">上传</button>
+                       <input name="file"  accept=".docx" type="file" required><button style="margin-top: 10px" type="submit" class="btn btn-primary">上传</button>
                        </form>
                     </td>
                     {% else %}
                     <td>
                        <form action="{{ url_for('student.addWord',id=v.id) }}" method="post" enctype="multipart/form-data">
-                       <input name="file" accept=".docx" type="file"><button style="margin-top: 10px" type="submit" class="btn btn-primary">重新上传</button>
+                       <input name="file" accept=".docx" type="file" required><button style="margin-top: 10px" type="submit" class="btn btn-primary">重新上传</button>
                        </form>
                     </td>
                     {% endif %}

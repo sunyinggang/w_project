@@ -1,0 +1,155 @@
+{% extends "admin/home.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static',filename='layui/css/layui.css') }}">
+{% endblock %}
+{% block content %}
+      <div id="page-wrapper">
+        <div class="row" style="margin-top:50px;">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <form method="post" role="form">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <h1>添加商品</h1>
+              <div class="form-group">
+                <label>标题</label>
+                {{ form.title }}
+                {% for err in form.title.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>价格</label>
+                {{ form.price }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>请填写整数</p>
+              </div>
+              <div class="form-group">
+                <label>操作系统</label>
+                {{ form.os }}
+              </div>
+              <div class="form-group">
+                <label>所在大区</label>
+                {{ form.area }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>服务器</label>
+                {{ form.server }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>等级</label>
+                {{ form.rank }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>请填写整数</p>
+              </div>
+              <div class="form-group">
+                <label>账号类型</label>
+                {{ form.type }}
+              </div>
+              <div class="form-group">
+                <label>神兽数量</label>
+                {{ form.pet }}
+                {% for err in form.price.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+                <p>填写数字</p>
+              </div>
+              <div class="form-group">
+                <label>门派</label>
+                {{ form.sect }}
+              </div>
+              <div class="form-group">
+                <label>性别</label>
+                {{ form.sex }}
+              </div>
+              <div class="form-group">
+                <label>是否议价</label>
+                {{ form.bargain }}
+              </div>
+              <div class="form-group">
+                <label>卖家描述</label>
+                {{ form.description }}
+                {% for err in form.description.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+                {% endfor %}
+              </div>
+                {{ form.content }}
+              <div class="form-group">
+                <label>图片内容</label>
+                  <br>
+                    <div class="layui-upload-drag" id="test10">
+                    <i class="layui-icon" style="color: #1E9FFF;"></i>
+                    <p>点击上传</p>
+                    </div>
+              </div>
+              {{ form.submit }}
+			  {{ form.csrf_token }}
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}
+{% block js %}
+<script src="{{ url_for('static',filename='layui/layui.js') }}"></script>
+<script>
+layui.use('form', function(){
+  var form = layui.form;
+
+  //各种基于事件的操作，下面会有进一步介绍
+});
+</script>
+<script>
+layui.use('upload', function(){
+  var $ = layui.jquery;
+  var upload = layui.upload;
+
+    //多图片上传
+  upload.render({
+    elem: '#test10'
+    ,url: '{{url_for('home.upload')}}'
+    ,multiple: true
+    ,before: function(obj){
+      //预读本地文件示例，不支持ie8
+      obj.preview(function(index, file, result){
+        $('#test10').append('<img src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img">')
+      });
+    }
+    ,done: function(res){
+      var str = $("input[name='content']").val();
+      if(str == ''){
+          $("input[name='content']").val(res.src);
+      }else{
+          $("input[name='content']").val(str+','+res.src);
+      }
+    }
+  });
+});
+</script>
+{% endblock %}

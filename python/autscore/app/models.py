@@ -46,6 +46,8 @@ class Experiment(db.Model):
     model_url = Column(String)
     keywords = Column(Text)
     teacher_id = Column(Integer,db.ForeignKey('teacher.id'))
+    select_count = Column(Integer,default=0)
+    submit_count = Column(Integer, default=0)
     start_time = Column(DateTime)
     end_time = Column(DateTime)
     select = db.relationship('Select',backref='experiment')

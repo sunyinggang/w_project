@@ -212,11 +212,13 @@ def index():
     financialChart['datasets'][0]['data'] = expense_profit_list
     financialChart['datasets'][1]['data'] = expense_in_list
     financialChart['datasets'][2]['data'] = expense_out_list
+    car_allCount = Car.query.count()
     return render_template("admin/index.html",halfYearSchedules=json.dumps(halfYearSchedules,ensure_ascii=False)
                            ,travelSummary=json.dumps(travelSummary,ensure_ascii=False)
                            ,carMonitorChart=json.dumps(carMonitorChart,ensure_ascii=False)
                            ,scheduleToday=scheduleToday,scheduleTomorrow=scheduleTomorrow
-                           ,financialChart=json.dumps(financialChart,ensure_ascii=False))
+                           ,financialChart=json.dumps(financialChart,ensure_ascii=False)
+                           ,car_allCount=car_allCount)
 
 @admin.route("/driver/list/")
 @admin_login_req

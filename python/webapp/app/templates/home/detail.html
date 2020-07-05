@@ -1,0 +1,311 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+  <div class="wrap">
+
+<style type="text/css">
+.WebTopTips{     height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    font-size: 16px;
+    z-index: 9999;
+    width: 100%;}
+.WebTopTips b{ width:30px; height:30px; line-height:30px; display:inline-block; overflow:hidden; position:absolute; top:0; right:0; z-index:100;
+font-size:15px; padding:0 3px; cursor:pointer;}
+</style>
+<div class="gyt">
+    <img src="{{ url_for('static',filename='home/images/icon12.png') }}" alt="" class="fl" height="36">
+    <div class="gytl">
+<p><a class="icon13a">专人对接</a></p>
+<p><a class="icon13b">安全高效</a></p>
+    </div>
+
+    <div class="cb"></div>
+</div>
+   <!--header end-->
+   <div class="menu">
+    <a href="javascript:history.back();" class="fhlink"></a>
+    <div class="menum">
+     <a href="javascript:void(0);" class="now">详细信息</a>
+     <a href="{{ url_for('home.transaction') }}">交易流程</a>
+     <a href="{{ url_for('home.index') }}">常见问题</a>
+    </div>
+    <a href="{{ url_for('home.index') }}" class="fhsy"></a>
+    <!---->
+   </div>
+   <!--menu end-->
+<div class="xqt">
+    <p>{{ commodity.title }}</p>
+    <span class="xqtl">价格：￥ {{ commodity.price }}</span>
+    <span class="xqtr">发布时间：{{ commodity.time }}</span>
+    <div class="cb"></div>
+   </div>
+   <!--xqt end-->
+   <div class="xqm">
+    <span class="xqml">操作系统</span>
+    <span class="xqmr"><a href="#">{{ commodity.os }}</a></span>
+    <div class="cb"></div>
+    <span class="xqml">商品编号</span>
+    <span class="xqmr">{{ commodity.number }}</span>
+    <span class="xqml">所在大区</span>
+    <span class="xqmr">{{ commodity.area }}</span>
+    <div class="cb"></div>
+    <span class="xqml">服务器</span>
+    <span class="xqmr">{{ commodity.server }}</span>
+    <span class="xqml">等级</span>
+    <span class="xqmr">{{ commodity.rank }}</span>
+    <div class="cb"></div>
+    <span class="xqml">账号类型</span>
+    <span class="xqmr">{{ commodity.type }}</span>
+    <span class="xqml">神兽数量</span>
+    <span class="xqmr">{{ commodity.pet }}</span>
+    <div class="cb"></div>
+    <span class="xqml">门派</span>
+    <span class="xqmr">{{ commodity.sect }}</span>
+    <span class="xqml">性别</span>
+    <span class="xqmr">{{ commodity.sex }}</span>
+    <div class="cb"></div>
+    <span class="xqml">是否议价</span>
+    <span class="xqmr">{{ commodity.bargain }}</span>
+    <div class="cb"></div>
+    <span class="xqml">卖家描述</span>
+    <span class="xqmr">{{ commodity.description }}</span>
+    <div class="cb"></div>
+   </div>
+   <!--xqm end-->
+   <span class="top"></span>
+   <div class="xqjst">
+    <h1 class="title">详情介绍</h1>
+   </div>
+   <div class="xqjs">
+       {% for v in img %}
+                   <img src="{{ url_for('static',filename='uploads/'+v) }}" style="">
+       {% endfor %}
+   </div>
+   <div class="cb" style=" padding:54px 0 0"></div>
+<style>
+    .syfooter li.now a{
+        color:#333 !important;
+    }
+</style>
+
+<style>
+    .tcbg2{ background:#000; opacity:0.5; width:100%; height:100%; position:fixed; left:0; top:0; z-index:2000; display:none}
+    .fraud-tips-dialog {
+position: fixed; display:none;
+z-index: 10000;
+top: 50%;
+left: 50%;
+margin-top: -200px;
+margin-left: -134px;
+width: 268px;
+    }
+    .fraud-tips-dialog .fraud-hd {
+background-image: url(http://www.hyyxb.com/skin/xin/images/fraud_hd_bg.jpg);
+background-repeat: no-repeat;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;
+text-align: center;
+color: #fff;
+height: 70px;
+background-size: cover;
+    }
+    .fraud-tips-dialog .fraud-con {
+background: #fff; font-size:14px;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code {
+width: 60%;
+margin: 0 auto;
+padding: 8px 0;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code  img{ max-width:100%; vertical-align:top}
+    .fraud-tips-dialog .fraud-con{
+text-align: center;
+    }
+        /*3.1新增，多个微信设置外边距*/
+        .wx_code_info{
+            margin-top: 3px;
+        }
+        .wx_code_info>span{
+            width: 190px;
+            height: 19px;
+            /*border: 1px solid #000;*/
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: left;
+        }
+        /*新增完毕*/
+    .fraud-tips-dialog .fraud-con .wx_code_info img {
+width: 20px;
+margin-right: 5px;
+margin-bottom：2px;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code_info .btn_wrap {
+display: inline-block;
+width: 40px;
+margin-left: 5px;
+    }
+    .jue_btn_primary {
+background-color: #f74b3d;
+color: #fff;
+border: 1px solid #f74b3d;
+    }
+    .jue_btn {
+display: block;
+text-align: center;
+height: 40px;
+line-height: 40px;
+font-size: 14px;
+font-weight: 400;
+cursor: pointer;
+background-image: none;
+border: none;
+border: 1px solid #f74b3d;
+border-radius: 4px;
+color: #f74b3d;
+    }
+    .fraud-tips-dialog .fraud-con .wx_code_info .btn_wrap>.jue_btn {
+width: 100%;
+height: 26px;
+line-height: 26px; color:#fff
+    }
+    .fraud-tips-dialog .fraud-con .tip_info {
+padding-top: 8px;
+    }
+    .fraud-tips-dialog .fraud-footer {
+padding: 8px 25px;
+text-align: center;
+background-color: #fff;
+border-bottom-left-radius: 4px;
+    }
+    .fraud-tips-dialog .fraud-footer>p:first-child {
+padding-bottom: 5px;
+    }
+    .fraud-tips-dialog .fraud-footer>p:last-child {
+color: #f74c3b;
+    }
+    .fui-border-t-linght {
+border: 0;
+background-position: left top;
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(.5,transparent),color-stop(.5,#e8e8e8));
+background-repeat: repeat-x;
+-webkit-background-size: 100% 1px;
+    }
+    .fui-border-t-linght {
+border: 0;
+background-position: left top;
+background-image: -webkit-gradient(linear,left bottom,left top,color-stop(.5,transparent),color-stop(.5,#e8e8e8));
+background-repeat: repeat-x;
+-webkit-background-size: 100% 1px;
+    }
+    .fraud-tips-dialog .fraud-tips-btn {
+text-align: center;
+display: block;
+color: #fff;
+margin-top: 10px;
+padding: 10px 0;
+font-size: 14px;
+    }
+    .goods_nav{ width:110px; background:rgba(51,51,51,0.96); border-radius:7px; position:absolute; right:5px; top:56px; z-index:10000; opacity:0; height:0; transform:scale(0.0); display:block;    transition: all 0.3s; transform-origin: 86% -10px;}
+    .goods_navnow{height: auto;opacity: 1; transform: scale(1.0);}
+</style>
+    <div class="tcbg2"></div>
+    <div class="fraud-tips-dialog">
+     <div class="fraud-hd"></div>
+     <div class="fraud-con">
+      <div class="wx_code">
+       <img src="">
+      </div>
+
+
+       <div class="wx_code_info">
+       <span> <img src="images/icon_wx.png" alt="" class="vam"> <span class="wx_wenzi">战神王者</span> <span class="copy_wx_con28">xiguaTD</span> </span>
+      </div>
+
+
+
+
+      <div class="tip_info tc" style="padding-bottom: 8px;">
+        网站仅供看号选号&nbsp;&nbsp;&nbsp;咨询交易请联系淘宝客服
+      </div>
+     </div>
+
+     <a id="closeCancel" href="javascript:void(0);" class="fraud-tips-btn">（关闭）<span class="countTimer"></span> </a>
+    </div>
+    <!-- 4.16新增swiper -->
+    <script src="js/swiper.js"></script>
+    <script>
+    setTimeout(function(){
+        $(".jrsxr").each(function(i){
+            var jrsxrW = $(".jrsxr").eq(i).width();
+            if(jrsxrW>80)
+            {
+                $(".jrsxr").eq(i).css('fontSize','12px')
+            }
+        })
+    },500)
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true,
+//        设置切换效果为“滑动”
+        effect:'slide',
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+            clickable:'true',
+        },
+    })
+</script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+$(".whggt span").click(function(){
+var num=$(".whggt span").index($(this))
+$(this).addClass("now")
+$(this).siblings("span").removeClass("now")
+$(".whggb").eq(num).slideDown()
+$(".whggb").eq(num).siblings(".whggb").slideUp()
+ })
+
+ $(".icon57").click(function(){
+
+            $(".tcbg2").show()
+            $(".fraud-tips-dialog").show()
+        })
+        $("#closeCancel").click(function(){
+            $(".tcbg2").hide()
+            $(".fraud-tips-dialog").hide()
+        })
+        //3.2新增 弹出框弹出后，点击空白背景时消失
+        $(".tcbg2").click(function(){
+                    if($(".tcbg2").css("display")=='block')
+                    {
+                        $(".tcbg2").hide();
+                        $(".fraud-tips-dialog").hide()
+                    }
+                });
+        });
+    </script>
+    <script src="js/clipboard.js"></script>
+    <script type="text/javascript">
+        var clipboard = new Clipboard('.copy_wx');
+    clipboard.on('success', function(e) {
+    layer.msg( '复制成功',{  time:1500, shade: 0.3  });
+    e.clearSelection();
+    });
+    clipboard.on('error', function(e) {
+    layer.msg( '浏览器不支持复制功能，请手动复制',{  time:1500, shade: 0.3  });
+    e.clearSelection();
+    });
+    </script>
+
+   </div>
+{% endblock %}

@@ -20,7 +20,7 @@
                     <th>开始时间<i class="fa"></i></th>
                     <th>结束时间<i class="fa"></i></th>
                     <th>已选择人数<i class="fa"></i></th>
-{#                    <th>已提交人数<i class="fa"></i></th>#}
+                    <th>已提交人数<i class="fa"></i></th>
                     <th>操作<i class="fa"></i></th>
                   </tr>
                 </thead>
@@ -30,16 +30,8 @@
                     <td>{{ v.name }}</td>
                     <td>{{ v.start_time }}</td>
                     <td>{{ v.end_time }}</td>
-                    {% for k in select_all %}
-                    {% if k[0] == v.id %}
-                    <td>{{ k[1] }}</td>
-                    {% endif %}
-                    {% endfor %}
-{#                    {% for k in select_submit %}#}
-{#                    {% if k[0] == v.id %}#}
-{#                    <td>{{ k[1] }}</td>#}
-{#                    {% endif %}#}
-{#                    {% endfor %}#}
+                    <td>{{ v.select_count }}</td>
+                    <td>{{ v.submit_count }}</td>
                     <td>
                       <a href="{{ url_for('teacher.student',page=1,id=v.id) }}">查看学生成绩</a>
                     </td>

@@ -1,0 +1,27 @@
+﻿/*======= pg-partner =========*/
+ul.pg_partner{
+	width:664px;
+	margin:0px auto;
+	border-bottom:solid 1px #e0e0e0;
+	border:none;
+}
+ul.pg_partner li{
+	    border: solid 1px #ccc;
+			margin-left: -1px;
+    margin-top: -1px;
+}
+.csk { width:100%; height: 24px;margin-top: 15px;margin-bottom: 80px;}
+.csk .pager { text-align: center; }
+
+
+
+/*#region ===========分页样式===========*/
+.aspnetpager{ overflow:hidden; padding:15px;}
+.paginator{ font-size:12px; line-height:14px; text-align:right; margin:0 auto; text-align:center;}
+.paginator a{ height:14px; line-height:14px; margin:0px 1px; padding:4px 8px; display:inline-block; text-decoration:none; color:#666; background:#fff; border:1px solid #dadad8;}
+.paginator a:hover{ text-decoration:none; color:#fff; background:#0093CC;}
+.paginator span.cpb{ height:14px; line-height:14px; margin:0px 1px; padding:4px 8px; display:inline-block; color:#fff; background:#0093CC; border:1px solid #dadad8; font-weight:bold;}
+.paginatordis{ display:none;}
+.paginator input[type="text"]{ text-align:center; height:22px; line-height:22px; border:1px solid #dadad8; padding:0;}
+.paginator input[type="submit"]{ padding:0 5px; height:24px; line-height:22px; margin-left:3px; border:1px solid #ddd; background:#f7f7f7; color:#666;}
+/*#endregion */

@@ -1,0 +1,75 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="wrap">
+<!--banner-->
+<div class="gyt">
+    <img src="{{ url_for('static',filename='home/images/icon12.png') }}" alt="" class="fl" height="36">
+    <div class="gytl">
+<p><a class="icon13a">专人对接</a></p>
+<p><a class="icon13b">安全高效</a></p>
+    </div>
+
+    <div class="cb"></div>
+</div>
+   <!--header end-->
+   <script>
+  $(".fhsy").bind("mousedown touchstart", function(event){
+    event.stopPropagation();
+    event.preventDefault();
+    if($(".goods_nav").hasClass("goods_navnow") == true)
+    {
+     $(".goods_nav_bg").hide()
+     $(".goods_nav").removeClass("goods_navnow")
+ }
+ else{
+     $(".goods_nav_bg").show()
+     $(".goods_nav").addClass("goods_navnow")
+     //4.14添加，当背景层出现时给menum添加点击事件，生效后即unbind解除绑定
+     $(".menum").bind("mousedown touchstart", function(event)
+     {
+         $(".goods_nav_bg").hide()
+         $(".goods_nav").removeClass("goods_navnow")
+         $(".menum").unbind()
+     })
+ }
+})
+$(".goods_nav_bg").bind("mousedown touchstart", function(event){
+event.stopPropagation();
+event.preventDefault();
+ $(".goods_nav_bg").hide()
+ $(".goods_nav").removeClass("goods_navnow")
+ })
+ })
+</script>
+ <div class="menu">
+    <a href="javascript:history.go(-1);" class="fhlink"></a>
+    <div class="menu" style="background:#fff">
+        <a href="javascript:history.back();" class="fhlink"></a>
+        <div class="menum">
+            <a href="javascript:void(0);" class="now">交易流程</a>
+        </div>
+        <a href="{{ url_for('home.index') }}" class="fhsy"></a>
+        <!---->
+    </div>
+    <!---->
+   </div>
+   <!--menu end-->
+<div class="page_agent_about page_sell detail_wrap">
+
+    <div class="stages_shop_con agent_about_con">
+     <div class="stages_shop_itme">
+      <div class="tui_process">
+       <div class="border_green">
+         <p>&nbsp;<span style="font-family: ; color: rgb(102,102,102)" microsoft="">本公司支持支付宝或者微信下单。千万要辨别真假客服，微信客服只有网站显示的才是真正客服。
+（声明，本公司所有账号均需签订账号转让合同，终身售后）。
+</span></p>
+       </div>
+      </div>
+     </div>
+
+     <p style="height:70px;"></p>
+    </div>
+   </div>
+</div>
+{% endblock %}
