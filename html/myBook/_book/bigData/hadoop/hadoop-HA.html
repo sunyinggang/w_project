@@ -1,0 +1,611 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HDFS-HA集群环境搭建 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="zookeeper.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../docker/">
+            
+                <a href="../../docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../docker/mysql.html">
+            
+                <a href="../../docker/mysql.html">
+            
+                    
+                    安装Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../docker/flask.html">
+            
+                <a href="../../docker/flask.html">
+            
+                    
+                    部署Flask项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    线上服务器环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="environment.html">
+            
+                <a href="environment.html">
+            
+                    
+                    Hadoop集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    Zookeeper集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.1.3" data-path="hadoop-HA.html">
+            
+                <a href="hadoop-HA.html">
+            
+                    
+                    HDFS-HA集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >HDFS-HA集群环境搭建</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;hdfs-ha&#x96C6;&#x7FA4;&#x73AF;&#x5883;&#x642D;&#x5EFA;">&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;HDFS-HA&#x96C6;&#x7FA4;&#x73AF;&#x5883;&#x642D;&#x5EFA;</h1>
+<h2 id="&#x4E00;&#x3001;&#x914D;&#x7F6E;hdfs-ha&#x96C6;&#x7FA4;">&#x4E00;&#x3001;&#x914D;&#x7F6E;HDFS-HA&#x96C6;&#x7FA4;</h2>
+<h3 id="1&#x5173;&#x95ED;&#x4E4B;&#x524D;&#x7684;hadoop&#x96C6;&#x7FA4;&#x73AF;&#x5883;">1.&#x5173;&#x95ED;&#x4E4B;&#x524D;&#x7684;hadoop&#x96C6;&#x7FA4;&#x73AF;&#x5883;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ stop-dfs.sh
+[hadoop@hadoop102 hadoop-2.7.7]$ stop-yarn.sh
+[hadoop@hadoop103 hadoop-2.7.7]$ mr-jobhistory-daemon.sh stop historyserver
+</code></pre>
+<h3 id="2&#x5728;optmodule&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ha&#x6587;&#x4EF6;&#x5939;">2.&#x5728;/opt/module/&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;ha&#x6587;&#x4EF6;&#x5939;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 ~]$ <span class="hljs-built_in">cd</span> /opt/module/
+[hadoop@hadoop101 module]$ mkdir ha
+</code></pre>
+<h3 id="3&#x5C06;optmodule&#x4E0B;&#x7684;hadoop-277&#x62F7;&#x8D1D;&#x5230;optmoduleha&#x76EE;&#x5F55;&#x4E0B;">3.&#x5C06;/opt/module/&#x4E0B;&#x7684;hadoop-2.7.7&#x62F7;&#x8D1D;&#x5230;/opt/module/ha&#x76EE;&#x5F55;&#x4E0B;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 module]$ cp -r hadoop-2.7.7/ /opt/module/ha/
+[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">cd</span> /opt/module/ha/hadoop-2.7.7
+[hadoop@hadoop101 hadoop-2.7.7]$ rm -rf data logs <span class="hljs-comment">#&#x5220;&#x9664;&#x4E4B;&#x524D;&#x8FD0;&#x884C;&#x65F6;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x8282;&#x70B9;</span>
+</code></pre>
+<h3 id="4&#x914D;&#x7F6E;hadoop-envsh">4.&#x914D;&#x7F6E;hadoop-env.sh</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">cd</span> etc/hadoop
+[hadoop@hadoop101 hadoop]$ vim hadoop-env.sh
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;javahome">&#x914D;&#x7F6E;JAVA_HOME</h4>
+<pre><code class="lang-bash"><span class="hljs-built_in">export</span> JAVA_HOME=/opt/module/jdk1.8.0_251
+</code></pre>
+<h3 id="5&#x914D;&#x7F6E;core-sitexml">5.&#x914D;&#x7F6E;core-site.xml</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vim core-site.xml
+</code></pre>
+<h4 id="core-sitexml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x5185;&#x5BB9;">core-site.xml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x5185;&#x5BB9;</h4>
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x5220;&#x9664;&#x65E7;&#x914D;&#x7F6E;&#xFF0C;&#x6362;&#x6210;&#x4E0B;&#x9762;&#x65B0;&#x7684;</span>
+&lt;configuration&gt;
+&lt;!-- &#x628A;&#x4E24;&#x4E2A;NameNode&#xFF09;&#x7684;&#x5730;&#x5740;&#x7EC4;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;mycluster --&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://mycluster&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x6307;&#x5B9A;hadoop&#x8FD0;&#x884C;&#x65F6;&#x4EA7;&#x751F;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x50A8;&#x76EE;&#x5F55; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/opt/module/ha/hadoop-2.7.7/data/tmp&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h3 id="6&#x914D;&#x7F6E;hdfs-sitexml">6.&#x914D;&#x7F6E;hdfs-site.xml</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vim hdfs-site.xml
+</code></pre>
+<h4 id="hdfs-sitexml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x5185;&#x5BB9;">hdfs-site.xml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x5185;&#x5BB9;</h4>
+<pre><code class="lang-bash">&lt;configuration&gt;
+  &lt;!-- &#x5B8C;&#x5168;&#x5206;&#x5E03;&#x5F0F;&#x96C6;&#x7FA4;&#x540D;&#x79F0; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.nameservices&lt;/name&gt;
+    &lt;value&gt;mycluster&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x96C6;&#x7FA4;&#x4E2D;NameNode&#x8282;&#x70B9;&#x90FD;&#x6709;&#x54EA;&#x4E9B; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.ha.namenodes.mycluster&lt;/name&gt;
+    &lt;value&gt;nn1,nn2&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- nn1&#x7684;RPC&#x901A;&#x4FE1;&#x5730;&#x5740; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn1&lt;/name&gt;
+    &lt;value&gt;hadoop101:9000&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- nn2&#x7684;RPC&#x901A;&#x4FE1;&#x5730;&#x5740; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.rpc-address.mycluster.nn2&lt;/name&gt;
+    &lt;value&gt;hadoop102:9000&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- nn1&#x7684;http&#x901A;&#x4FE1;&#x5730;&#x5740; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.http-address.mycluster.nn1&lt;/name&gt;
+    &lt;value&gt;hadoop101:50070&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- nn2&#x7684;http&#x901A;&#x4FE1;&#x5730;&#x5740; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.http-address.mycluster.nn2&lt;/name&gt;
+    &lt;value&gt;hadoop102:50070&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x6307;&#x5B9A;NameNode&#x5143;&#x6570;&#x636E;&#x5728;JournalNode&#x4E0A;&#x7684;&#x5B58;&#x653E;&#x4F4D;&#x7F6E; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.namenode.shared.edits.dir&lt;/name&gt;
+  &lt;value&gt;qjournal://hadoop101:8485;hadoop102:8485;hadoop103:8485/mycluster&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x914D;&#x7F6E;&#x9694;&#x79BB;&#x673A;&#x5236;&#xFF0C;&#x5373;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5916;&#x54CD;&#x5E94; --&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.ha.fencing.methods&lt;/name&gt;
+    &lt;value&gt;sshfence&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x4F7F;&#x7528;&#x9694;&#x79BB;&#x673A;&#x5236;&#x65F6;&#x9700;&#x8981;ssh&#x65E0;&#x79D8;&#x94A5;&#x767B;&#x5F55;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.ha.fencing.ssh.private-key-files&lt;/name&gt;
+    &lt;value&gt;/home/atguigu/.ssh/id_rsa&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x58F0;&#x660E;journalnode&#x670D;&#x52A1;&#x5668;&#x5B58;&#x50A8;&#x76EE;&#x5F55;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.journalnode.edits.dir&lt;/name&gt;
+    &lt;value&gt;/opt/module/ha/hadoop-2.7.7/data/jn&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x5173;&#x95ED;&#x6743;&#x9650;&#x68C0;&#x67E5;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.permissions.enable&lt;/name&gt;
+    &lt;value&gt;<span class="hljs-literal">false</span>&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!-- &#x8BBF;&#x95EE;&#x4EE3;&#x7406;&#x7C7B;&#xFF1A;client&#xFF0C;mycluster&#xFF0C;active&#x914D;&#x7F6E;&#x5931;&#x8D25;&#x81EA;&#x52A8;&#x5207;&#x6362;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;dfs.client.failover.proxy.provider.mycluster&lt;/name&gt;
+    &lt;value&gt;org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h3 id="7&#x62F7;&#x8D1D;&#x914D;&#x7F6E;&#x597D;&#x7684;hadoop&#x73AF;&#x5883;&#x5230;&#x5176;&#x4ED6;&#x8282;&#x70B9;">7.&#x62F7;&#x8D1D;&#x914D;&#x7F6E;&#x597D;&#x7684;hadoop&#x73AF;&#x5883;&#x5230;&#x5176;&#x4ED6;&#x8282;&#x70B9;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/
+[hadoop@hadoop101 module]$ xsync ha
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x8FC7;&#x7A0B;&#x5F88;&#x6162;&#x53EF;&#x4EE5;&#x5728;hadoop102&#x3001;hadoop103&#x4E2D;&#x6267;&#x884C;&#x4E0A;&#x8FF0;&#x6B65;&#x9AA4;1&#x3001;2&#x3001;3&#xFF0C;&#x7136;&#x540E;&#x4EC5;&#x540C;&#x6B65;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;</p>
+</blockquote>
+<pre><code class="lang-bash">xsync /opt/module/ha/hadoop-2.7.7/etc/hadoop/
+</code></pre>
+<h2 id="&#x4E8C;&#x3001;&#x542F;&#x52A8;hdfs-ha&#x96C6;&#x7FA4;">&#x4E8C;&#x3001;&#x542F;&#x52A8;HDFS-HA&#x96C6;&#x7FA4;</h2>
+<h3 id="1&#x7FA4;&#x8D77;journalnode&#x670D;&#x52A1;">1.&#x7FA4;&#x8D77;journalnode&#x670D;&#x52A1;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/ha/hadoop-2.7.7
+[hadoop@hadoop101 hadoop-2.7.7]$ sbin/hadoop-daemons.sh start journalnode
+</code></pre>
+<h3 id="2&#x5728;nn1&#x4E0A;&#xFF0C;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x5E76;&#x542F;&#x52A8;">2.&#x5728;[nn1]&#x4E0A;&#xFF0C;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x5316;&#xFF0C;&#x5E76;&#x542F;&#x52A8;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/hdfs namenode -format
+[hadoop@hadoop101 hadoop-2.7.7]$ sbin/hadoop-daemon.sh start namenode
+</code></pre>
+<h3 id="3&#x5728;nn2&#x4E0A;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x540C;&#x6B65;nn1&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;">3.&#x5728;[nn2]&#x4E0A;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x540C;&#x6B65;nn1&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop-2.7.7]$ bin/hdfs namenode -bootstrapStandby
+</code></pre>
+<h3 id="4&#x542F;&#x52A8;nn2">4.&#x542F;&#x52A8;[nn2]</h3>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop-2.7.7]$ sbin/hadoop-daemon.sh start namenode
+</code></pre>
+<h3 id="5&#x67E5;&#x770B;web&#x9875;&#x9762;&#x663E;&#x793A;">5.&#x67E5;&#x770B;web&#x9875;&#x9762;&#x663E;&#x793A;</h3>
+<h3 id="6&#x5728;nn1&#x4E0A;&#xFF0C;&#x542F;&#x52A8;&#x6240;&#x6709;datanode">6.&#x5728;[nn1]&#x4E0A;&#xFF0C;&#x542F;&#x52A8;&#x6240;&#x6709;datanode</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/hadoop-daemons.sh start datanode
+</code></pre>
+<h3 id="7&#x5C06;nn1&#x5207;&#x6362;&#x4E3A;active">7.&#x5C06;[nn1]&#x5207;&#x6362;&#x4E3A;Active</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/hdfs haadmin -transitionToActive nn1
+</code></pre>
+<h3 id="8&#x67E5;&#x770B;&#x662F;&#x5426;active">8.&#x67E5;&#x770B;&#x662F;&#x5426;Active</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/hdfs haadmin -getServiceState nn1
+</code></pre>
+<h2 id="&#x4E09;&#x3001;&#x914D;&#x7F6E;hdfs-ha&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8F6C;&#x79FB;">&#x4E09;&#x3001;&#x914D;&#x7F6E;HDFS-HA&#x81EA;&#x52A8;&#x6545;&#x969C;&#x8F6C;&#x79FB;</h2>
+<h3 id="1&#x5728;hdfs-sitexml&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">1.&#x5728;hdfs-site.xml&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-bash">&lt;property&gt;
+  &lt;name&gt;dfs.ha.automatic-failover.enabled&lt;/name&gt;
+  &lt;value&gt;<span class="hljs-literal">true</span>&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="2&#x5728;core-sitexml&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">2.&#x5728;core-site.xml&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-bash">&lt;property&gt;
+  &lt;name&gt;ha.zookeeper.quorum&lt;/name&gt;
+  &lt;value&gt;hadoop101:2181,hadoop102:2181,hadoop103:2181&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="3&#x540C;&#x6B65;&#x914D;&#x7F6E;">3.&#x540C;&#x6B65;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ xsync /opt/module/ha/hadoop-2.7.7/etc
+</code></pre>
+<h3 id="4&#x5173;&#x95ED;&#x6240;&#x6709;hdfs&#x670D;&#x52A1;">4.&#x5173;&#x95ED;&#x6240;&#x6709;HDFS&#x670D;&#x52A1;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/stop-dfs.sh
+[hadoop@hadoop101 hadoop-2.7.7]$ rm -rf data logs <span class="hljs-comment">#&#x4E09;&#x53F0;&#x673A;&#x5668;&#x90FD;&#x8981;&#x6267;&#x884C;&#x5220;&#x9664;&#x64CD;&#x4F5C;</span>
+</code></pre>
+<h3 id="5&#x518D;&#x6B21;&#x7FA4;&#x8D77;journalnode&#x670D;&#x52A1;">5.&#x518D;&#x6B21;&#x7FA4;&#x8D77;journalnode&#x670D;&#x52A1;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/hadoop-daemons.sh start journalnode
+</code></pre>
+<h3 id="6&#x683C;&#x5F0F;&#x5316;namenode">6.&#x683C;&#x5F0F;&#x5316;namenode</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/hdfs namenode -format
+</code></pre>
+<h3 id="7&#x542F;&#x52A8;zookeeper&#x96C6;&#x7FA4;&#x5982;&#x679C;&#x5DF2;&#x542F;&#x52A8;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x6B21;&#x542F;&#x52A8;&#xFF09;">7.&#x542F;&#x52A8;Zookeeper&#x96C6;&#x7FA4;(&#x5982;&#x679C;&#x5DF2;&#x542F;&#x52A8;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x6B21;&#x542F;&#x52A8;&#xFF09;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ /opt/module/zookeeper-3.4.14/bin/zkServer.sh start
+</code></pre>
+<h3 id="7&#x521D;&#x59CB;&#x5316;ha&#x5728;zookeeper&#x4E2D;&#x72B6;&#x6001;">7.&#x521D;&#x59CB;&#x5316;HA&#x5728;Zookeeper&#x4E2D;&#x72B6;&#x6001;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/hdfs zkfc -formatZK
+[hadoop@hadoop102 hadoop-2.7.7]$ bin/hdfs namenode &#x2013;bootstrapStandby<span class="hljs-comment">#&#x540C;&#x6B65;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5728;hadoop102&#x540C;&#x76EE;&#x5F55;&#x6267;&#x884C;</span>
+</code></pre>
+<h3 id="8&#x542F;&#x52A8;hdfs&#x670D;&#x52A1;">8.&#x542F;&#x52A8;HDFS&#x670D;&#x52A1;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/start-dfs.sh
+</code></pre>
+<h2 id="&#x56DB;&#x3001;&#x914D;&#x7F6E;yarn-ha&#x96C6;&#x7FA4;">&#x56DB;&#x3001;&#x914D;&#x7F6E;YARN-HA&#x96C6;&#x7FA4;</h2>
+<h3 id="1&#x914D;&#x7F6E;yarn-sitexml">1.&#x914D;&#x7F6E;yarn-site.xml</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">cd</span> /opt/module/ha/hadoop-2.7.7
+[hadoop@hadoop101 hadoop-2.7.7]$ vim etc/hadoop/yarn-site.xml
+</code></pre>
+<h4 id="&#x91CD;&#x5199;&#x914D;&#x7F6E;&#x5185;&#x5BB9;">&#x91CD;&#x5199;&#x914D;&#x7F6E;&#x5185;&#x5BB9;</h4>
+<pre><code class="lang-bash">&lt;configuration&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+
+  &lt;!--&#x542F;&#x7528;resourcemanager ha--&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.ha.enabled&lt;/name&gt;
+    &lt;value&gt;<span class="hljs-literal">true</span>&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!--&#x58F0;&#x660E;&#x4E24;&#x53F0;resourcemanager&#x7684;&#x5730;&#x5740;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.cluster-id&lt;/name&gt;
+    &lt;value&gt;cluster-yarn1&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.ha.rm-ids&lt;/name&gt;
+    &lt;value&gt;rm1,rm2&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname.rm1&lt;/name&gt;
+    &lt;value&gt;hadoop101&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname.rm2&lt;/name&gt;
+    &lt;value&gt;hadoop102&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!--&#x6307;&#x5B9A;zookeeper&#x96C6;&#x7FA4;&#x7684;&#x5730;&#x5740;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.zk-address&lt;/name&gt;
+    &lt;value&gt;hadoop101:2181,hadoop102:2181,hadoop103:2181&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!--&#x542F;&#x7528;&#x81EA;&#x52A8;&#x6062;&#x590D;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.recovery.enabled&lt;/name&gt;
+    &lt;value&gt;<span class="hljs-literal">true</span>&lt;/value&gt;
+  &lt;/property&gt;
+
+  &lt;!--&#x6307;&#x5B9A;resourcemanager&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x5B58;&#x50A8;&#x5728;zookeeper&#x96C6;&#x7FA4;--&gt;
+  &lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.store.class&lt;/name&gt;
+    &lt;value&gt;org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h4 id="&#x540C;&#x6B65;&#x66F4;&#x65B0;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;">&#x540C;&#x6B65;&#x66F4;&#x65B0;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ xsync etc
+</code></pre>
+<h3 id="3&#x542F;&#x52A8;yarn">3.&#x542F;&#x52A8;YARN</h3>
+<h4 id="&#x5728;hadoop101&#x4E2D;&#x6267;&#x884C;">&#x5728;hadoop101&#x4E2D;&#x6267;&#x884C;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/start-yarn.sh
+</code></pre>
+<h4 id="&#x5728;hadoop102&#x4E2D;&#x6267;&#x884C;">&#x5728;hadoop102&#x4E2D;&#x6267;&#x884C;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ sbin/yarn-daemon.sh start resourcemanager
+</code></pre>
+<h4 id="&#x67E5;&#x770B;&#x670D;&#x52A1;&#x72B6;&#x6001;">&#x67E5;&#x770B;&#x670D;&#x52A1;&#x72B6;&#x6001;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ bin/yarn rmadmin -getServiceState rm1
+[hadoop@hadoop101 hadoop-2.7.7]$ bin/yarn rmadmin -getServiceState rm2
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="zookeeper.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Zookeeper集群环境搭建">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HDFS-HA集群环境搭建","level":"1.3.1.3","depth":3,"previous":{"title":"Zookeeper集群环境搭建","level":"1.3.1.2","depth":3,"path":"bigData/hadoop/zookeeper.md","ref":"bigData/hadoop/zookeeper.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigData/hadoop/hadoop-HA.md","mtime":"2020-07-05T06:39:18.834Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T13:47:37.709Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

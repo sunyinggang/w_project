@@ -1,0 +1,810 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Hadoop集群环境搭建 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="zookeeper.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../docker/">
+            
+                <a href="../../docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../docker/mysql.html">
+            
+                <a href="../../docker/mysql.html">
+            
+                    
+                    安装Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../docker/flask.html">
+            
+                <a href="../../docker/flask.html">
+            
+                    
+                    部署Flask项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    大数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    线上服务器环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1.1" data-path="environment.html">
+            
+                <a href="environment.html">
+            
+                    
+                    Hadoop集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    Zookeeper集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="hadoop-HA.html">
+            
+                <a href="hadoop-HA.html">
+            
+                    
+                    HDFS-HA集群环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Hadoop集群环境搭建</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;hadoop&#x96C6;&#x7FA4;&#x73AF;&#x5883;&#x642D;&#x5EFA;">&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;Hadoop&#x96C6;&#x7FA4;&#x73AF;&#x5883;&#x642D;&#x5EFA;</h1>
+<h2 id="&#x4E00;-&#x3001;&#x524D;&#x671F;&#x51C6;&#x5907;&#xFF08;&#x516C;&#x5171;&#x914D;&#x7F6E;&#xFF09;">&#x4E00; &#x3001;&#x524D;&#x671F;&#x51C6;&#x5907;&#xFF08;&#x516C;&#x5171;&#x914D;&#x7F6E;&#xFF09;</h2>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;&#x9700;&#x8981;&#x4E09;&#x53F0;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;&#xFF08;1&#x6838;2G&#x7684;&#x57FA;&#x7840;&#x914D;&#x7F6E;&#x5373;&#x53EF;&#xFF09;<br>&#x8FD9;&#x91CC;&#x5047;&#x8BBE;&#x6B64;&#x4E09;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x522B;&#x540D;&#x4E3A;hadoop101&#x3001;hadoop102&#x3001;hadoop103<br>&#x516C;&#x5171;&#x914D;&#x7F6E;&#x8981;&#x5728;&#x4E09;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x90FD;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</p>
+</blockquote>
+<h3 id="1-&#x914D;&#x7F6E;network">1. &#x914D;&#x7F6E;network</h3>
+<h4 id="&#x6253;&#x5F00;network&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x6253;&#x5F00;network&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p>  <code>vim /etc/sysconfig/network</code></p>
+<h4 id="&#x4E66;&#x5199;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x9000;&#x51FA;">&#x4E66;&#x5199;&#x914D;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x9000;&#x51FA;</h4>
+<pre><code class="lang-bash">    PEERNTP=no
+    <span class="hljs-comment">#&#x540C;&#x7406;&#x5728;hadoop102&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x914D;&#x7F6E;&#x4E3A;HOSTNAME=hadoop102&#xFF0C;hadoop103&#x540C;&#x7406;</span>
+    HOSTNAME=hadoop101
+</code></pre>
+<h3 id="2&#x914D;&#x7F6E;hosts">2.&#x914D;&#x7F6E;hosts</h3>
+<h4 id="&#x6253;&#x5F00;hosts&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x6253;&#x5F00;hosts&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p><code>vim /etc/hosts</code></p>
+<h4 id="&#x914D;&#x7F6E;hosts&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x9000;&#x51FA;">&#x914D;&#x7F6E;hosts&#xFF0C;&#x7136;&#x540E;&#x4FDD;&#x5B58;&#x9000;&#x51FA;</h4>
+<pre><code class="lang-bash">  <span class="hljs-comment">#&#x5728;hadoop101&#x4E0A;&#xFF0C;&#x914D;&#x7F6E;hosts&#x6587;&#x4EF6;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x662F;hadoop101&#x7684;&#x79C1;&#x7F51;ip</span>
+  <span class="hljs-comment"># &#x4F7F;&#x7528;&#x547D;&#x4EE4;ifconfig -a&#x67E5;&#x770B;&#x5185;&#x7F51;ip</span>
+  xxx.xx.xx.xx hadoop101
+
+  <span class="hljs-comment">#&#x914D;&#x7F6E;hadoop102&#x7684;&#x516C;&#x7F51;ip</span>
+  xxx.xx.xx.xx hadoop102
+
+  <span class="hljs-comment">#&#x914D;&#x7F6E;hadoop103&#x7684;&#x516C;&#x7F51;ip</span>
+  xxx.xx.xx.xx hadoop103
+
+  <span class="hljs-comment">#&#x540C;&#x7406;&#x5728;hadoop102&#x4E2D;&#x914D;&#x7F6E;hosts&#x65F6;&#x4F7F;&#x7528;hadoop102&#x7684;&#x79C1;&#x6709;ip&#xFF0C;hadoop101&#x4E0E;hadoop103&#x7684;&#x516C;&#x6709;ip&#xFF1B;hadoop103&#x540C;&#x7406;</span>
+</code></pre>
+<h3 id="3&#x9A8C;&#x8BC1;&#x914D;&#x7F6E;">3.&#x9A8C;&#x8BC1;&#x914D;&#x7F6E;</h3>
+<p>&#x5728;&#x4E09;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x4F9D;&#x6B21;&#x6267;&#x884C;&#x4E00;&#x4E0B;&#x6B65;&#x9AA4;&#xFF0C;&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x914D;&#x7F6E;&#x6210;&#x529F;</p>
+<pre><code class="lang-bash">[root@hadoop101 ~]$ ping hadoop101
+[root@hadoop101 ~]$ ping hadoop102
+[root@hadoop101 ~]$ ping hadoop103
+</code></pre>
+<h3 id="4&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7528;&#x6237;">4.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7528;&#x6237;</h3>
+<h4 id="&#x65B0;&#x5EFA;&#x7528;&#x6237;">&#x65B0;&#x5EFA;&#x7528;&#x6237;</h4>
+<pre><code class="lang-bash">[root@hadoop101 ~]$ useradd hadoop <span class="hljs-comment">#&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7528;&#x6237;hadoop</span>
+[root@hadoop101 ~]$ passwd hadoop <span class="hljs-comment">#&#x4E3A;hadoop&#x7528;&#x6237;&#x521B;&#x5EFA;&#x5BC6;&#x7801;</span>
+</code></pre>
+<h4 id="&#x5C06;&#x8BE5;&#x7528;&#x6237;&#x5199;&#x5165;sudoers&#x6587;&#x4EF6;&#x4E2D;">&#x5C06;&#x8BE5;&#x7528;&#x6237;&#x5199;&#x5165;sudoers&#x6587;&#x4EF6;&#x4E2D;</h4>
+<blockquote>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x5199;&#x5165;&#x5230;sudoers&#x6587;&#x4EF6;&#x4E2D;&#xFF1F;<br>&#x65B9;&#x4FBF;&#x6267;&#x884C;sudo&#x547D;&#x4EE4;&#x3002;sudo&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x662F;: &#x5F53;&#x524D;&#x7528;&#x6237;&#x8F6C;&#x6362;&#x5230;root, &#x7136;&#x540E;&#x4EE5;root&#x8EAB;&#x4EFD;&#x6267;&#x884C;&#x547D;&#x4EE4;, &#x6267;&#x884C;&#x5B8C;&#x6210;&#x540E;, &#x76F4;&#x63A5;&#x9000;&#x56DE;&#x5230;&#x5F53;&#x524D;&#x7528;&#x6237;</p>
+</blockquote>
+<pre><code class="lang-bash">vim /etc/sudoers
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x5728;root ALL=(ALL)  ALL&#x6DFB;&#x52A0;</span>
+<span class="hljs-comment">#&#x4EE3;&#x8868;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;sudo&#x547D;&#x4EE4;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x63D0;&#x793A;&#x4F60;&#x8F93;&#x5165;&#x6839;&#x5BC6;&#x7801;</span>
+hadoop  ALL=(ALL) NOPASSWD:ALL
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;&#x65F6;wq!&#x5F3A;&#x5236;&#x4FDD;&#x5B58;</span>
+</code></pre>
+<h3 id="5&#x521B;&#x5EFA;&#x7528;&#x6237;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;">5.&#x521B;&#x5EFA;&#x7528;&#x6237;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</h3>
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x5728;/opt&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x5939;module&#x548C;software&#xFF0C;&#x5E76;&#x628A;&#x6240;&#x6709;&#x6743;&#x8D4B;&#x7ED9;hadoop</span>
+<span class="hljs-comment">#software&#x7528;&#x4E0E;&#x5B58;&#x653E;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x5305;&#x6587;&#x4EF6;&#xFF0C;module&#x5219;&#x662F;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x76EE;&#x5F55;</span>
+[root@hadoop101 ~]$ mkdir /opt/module /opt/software
+[root@hadoop101 ~]$ chown hadoop:hadoop /opt/module /opt/software
+</code></pre>
+<h3 id="6&#x6C38;&#x4E45;&#x4FEE;&#x6539;&#x4E3B;&#x673A;&#x540D;">6.&#x6C38;&#x4E45;&#x4FEE;&#x6539;&#x4E3B;&#x673A;&#x540D;</h3>
+<pre><code class="lang-bash">[root@localhost ~]$ hostnamectl --static <span class="hljs-built_in">set</span>-hostname hadoop101 <span class="hljs-comment">#hadoop101&#x670D;&#x52A1;&#x5668;&#x4E2D;</span>
+[root@localhost ~]$ hostnamectl --static <span class="hljs-built_in">set</span>-hostname hadoop102 <span class="hljs-comment">#hadoop102&#x670D;&#x52A1;&#x5668;&#x4E2D;</span>
+[root@localhost ~]$ hostnamectl --static <span class="hljs-built_in">set</span>-hostname hadoop103 <span class="hljs-comment">#hadoop103&#x670D;&#x52A1;&#x5668;&#x4E2D;</span>
+
+[root@localhost ~]$ reboot <span class="hljs-_">-f</span> <span class="hljs-comment">#&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x90FD;&#x8981;&#x91CD;&#x542F;&#x624D;&#x80FD;&#x751F;&#x6548;</span>
+[root@hadoop101 ~]$ hostnamectl <span class="hljs-comment">#&#x67E5;&#x770B;&#x662F;&#x5426;&#x751F;&#x6548;</span>
+</code></pre>
+<h2 id="&#x4E8C;-&#x3001;jdk&#x4E0E;hadoop&#x7684;&#x5B89;&#x88C5;">&#x4E8C; &#x3001;JDK&#x4E0E;Hadoop&#x7684;&#x5B89;&#x88C5;</h2>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x53EA;&#x9700;&#x5728;hadoop101&#x4E3B;&#x673A;&#x4E2D;&#x8FDB;&#x884C;</p>
+</blockquote>
+<h3 id="1&#x4E0B;&#x8F7D;&#x8F6F;&#x4EF6;&#x5305;">1.&#x4E0B;&#x8F7D;&#x8F6F;&#x4EF6;&#x5305;</h3>
+<pre><code class="lang-bash">[root@hadoop101 ~]$ <span class="hljs-built_in">cd</span> /opt/software
+[hadoop@hadoop101 software]$ wget https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.tar.gz?AuthParam=1592397487_784064cf4a36bbbe87ea8eace28d38d2 <span class="hljs-comment">#&#x4E0B;&#x8F7D;jdk</span>
+
+[hadoop@hadoop101 software]$ wget https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz <span class="hljs-comment">#&#x4E0B;&#x8F7D;hadoop</span>
+</code></pre>
+<h3 id="2&#x89E3;&#x538B;&#x5B89;&#x88C5;jdk">2.&#x89E3;&#x538B;&#x5B89;&#x88C5;JDK</h3>
+<h4 id="&#x89E3;&#x538B;jdk&#x5230;optmodule&#x76EE;&#x5F55;&#x4E0B;">&#x89E3;&#x538B;JDK&#x5230;/opt/module&#x76EE;&#x5F55;&#x4E0B;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 software]$ tar -zxvf jdk-8u251-linux-x64.tar.gz -C /opt/module/
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;jdk&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x914D;&#x7F6E;JDK&#x73AF;&#x5883;&#x53D8;&#x91CF;</h4>
+<h5 id="&#x8FDB;&#x5165;&#x5230;jdk&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#xFF0C;&#x83B7;&#x53D6;jdk&#x8DEF;&#x5F84;">&#x8FDB;&#x5165;&#x5230;jdk&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#xFF0C;&#x83B7;&#x53D6;JDK&#x8DEF;&#x5F84;</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ <span class="hljs-built_in">pwd</span>
+/opt/module/jdk1.8.0_251
+</code></pre>
+<h5 id="&#x6253;&#x5F00;etcprofile&#x6587;&#x4EF6;">&#x6253;&#x5F00;/etc/profile&#x6587;&#x4EF6;</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 software]$ sudo vi /etc/profile
+</code></pre>
+<h5 id="&#x5728;profile&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;jdk&#x8DEF;&#x5F84;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x9000;&#x51FA;">&#x5728;profile&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;JDK&#x8DEF;&#x5F84;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x9000;&#x51FA;</h5>
+<pre><code class="lang-bash"><span class="hljs-comment">#JAVA_HOME</span>
+<span class="hljs-built_in">export</span> JAVA_HOME=/opt/module/jdk1.8.0_251
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$JAVA_HOME</span>/bin
+</code></pre>
+<h5 id="&#x8BA9;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6548;">&#x8BA9;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6548;</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ <span class="hljs-built_in">source</span> /etc/profile
+</code></pre>
+<h4 id="&#x6D4B;&#x8BD5;jdk&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x6D4B;&#x8BD5;JDK&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ java -version
+java version <span class="hljs-string">&quot;1.8.0_251&quot;</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x91CD;&#x542F;&#xFF08;&#x5982;&#x679C;java -version&#x53EF;&#x4EE5;&#x7528;&#x5C31;&#x4E0D;&#x7528;&#x91CD;&#x542F;&#xFF09;</p>
+</blockquote>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ sync
+[hadoop@hadoop101 jdk1.8.0_251]$ sudo reboot
+</code></pre>
+<h3 id="3&#x5B89;&#x88C5;hadoop">3.&#x5B89;&#x88C5;Hadoop</h3>
+<h4 id="&#x8FDB;&#x5165;&#x5230;hadoop&#x5B89;&#x88C5;&#x5305;&#x8DEF;&#x5F84;&#x4E0B;&#x89E3;&#x538B;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x5230;optmodule&#x4E0B;&#x9762;">&#x8FDB;&#x5165;&#x5230;Hadoop&#x5B89;&#x88C5;&#x5305;&#x8DEF;&#x5F84;&#x4E0B;,&#x89E3;&#x538B;&#x5B89;&#x88C5;&#x6587;&#x4EF6;&#x5230;/opt/module&#x4E0B;&#x9762;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 software]$ tar -zxvf hadoop-2.7.7.tar.gz -C /opt/module/
+</code></pre>
+<h4 id="&#x5C06;hadoop&#x6DFB;&#x52A0;&#x5230;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x5C06;Hadoop&#x6DFB;&#x52A0;&#x5230;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h4>
+<h5 id="&#x83B7;&#x53D6;hadoop&#x5B89;&#x88C5;&#x8DEF;&#x5F84;">&#x83B7;&#x53D6;Hadoop&#x5B89;&#x88C5;&#x8DEF;&#x5F84;</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">pwd</span>
+/opt/module/hadoop-2.7.7
+</code></pre>
+<h5 id="&#x518D;&#x6B21;&#x6253;&#x5F00;&#x6253;&#x5F00;etcprofile&#x6587;&#x4EF6;">&#x518D;&#x6B21;&#x6253;&#x5F00;&#x6253;&#x5F00;/etc/profile&#x6587;&#x4EF6;</h5>
+<p>[hadoop@hadoop101 hadoop-2.7.7]$ sudo vi /etc/profile</p>
+<h5 id="&#x5728;profile&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x9000;&#x51FA;">&#x5728;profile&#x6587;&#x4EF6;&#x672B;&#x5C3E;&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x9000;&#x51FA;</h5>
+<pre><code class="lang-bash"><span class="hljs-comment">##HADOOP_HOME</span>
+<span class="hljs-built_in">export</span> HADOOP_HOME=/opt/module/hadoop-2.7.7
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$HADOOP_HOME</span>/bin
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$HADOOP_HOME</span>/sbin
+</code></pre>
+<h5 id="&#x8BA9;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6548;">&#x8BA9;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6548;</h5>
+<pre><code class="lang-bash">[hadoop@ hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">source</span> /etc/profile
+</code></pre>
+<h4 id="&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;">&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x6210;&#x529F;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ hadoop version
+Hadoop 2.7.7
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x91CD;&#x542F;&#xFF08;&#x5982;&#x679C;Hadoop&#x547D;&#x4EE4;&#x4E0D;&#x80FD;&#x7528;&#x518D;&#x91CD;&#x542F;&#xFF09;</p>
+</blockquote>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ sync
+[hadoop@hadoop101 jdk1.8.0_251]$ sudo reboot
+</code></pre>
+<h2 id="&#x4E09;&#x3001;&#x7F16;&#x5199;&#x96C6;&#x7FA4;&#x5206;&#x53D1;&#x811A;&#x672C;">&#x4E09;&#x3001;&#x7F16;&#x5199;&#x96C6;&#x7FA4;&#x5206;&#x53D1;&#x811A;&#x672C;</h2>
+<h3 id="1&#x5B89;&#x88C5;rsync">1.&#x5B89;&#x88C5;rsync</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 jdk1.8.0_251]$ sudo yum -y install rsync
+</code></pre>
+<h3 id="2&#x5728;homeatguigu&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;bin&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5728;bin&#x76EE;&#x5F55;&#x4E0B;xsync&#x521B;&#x5EFA;&#x6587;&#x4EF6;">2.&#x5728;/home/atguigu&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;bin&#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x5728;bin&#x76EE;&#x5F55;&#x4E0B;xsync&#x521B;&#x5EFA;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 ~]$ mkdir bin
+[hadoop@hadoop101 ~]$ <span class="hljs-built_in">cd</span> bin/
+[hadoop@hadoop101 bin]$ touch xsync
+[hadoop@hadoop101 bin]$ vi xsync
+</code></pre>
+<h3 id="3&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x4EE3;&#x7801;">3.&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#1 &#x83B7;&#x53D6;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x4E2A;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#xFF0C;&#x76F4;&#x63A5;&#x9000;&#x51FA;</span>
+pcount=<span class="hljs-variable">$#</span>
+<span class="hljs-keyword">if</span> ((pcount==0)); <span class="hljs-keyword">then</span>
+<span class="hljs-built_in">echo</span> no args;
+<span class="hljs-built_in">exit</span>;
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-comment">#2 &#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x540D;&#x79F0;</span>
+p1=<span class="hljs-variable">$1</span>
+fname=`basename <span class="hljs-variable">$p1</span>`
+<span class="hljs-built_in">echo</span> fname=<span class="hljs-variable">$fname</span>
+
+<span class="hljs-comment">#3 &#x83B7;&#x53D6;&#x4E0A;&#x7EA7;&#x76EE;&#x5F55;&#x5230;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</span>
+<span class="hljs-comment"># cd &#x2013;P&#x662F;&#x5F53;&#x5B58;&#x5728;&#x8F6F;&#x8FDE;&#x63A5;&#x65F6;&#xFF0C;&#x8C03;&#x8F6C;&#x5230;&#x8F6F;&#x8FDE;&#x63A5;&#x6240;&#x6307;&#x5B9A;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#x76EE;&#x5F55;</span>
+pdir=`<span class="hljs-built_in">cd</span> -P $(dirname <span class="hljs-variable">$p1</span>); <span class="hljs-built_in">pwd</span>`
+<span class="hljs-built_in">echo</span> pdir=<span class="hljs-variable">$pdir</span>
+
+<span class="hljs-comment">#4 &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7528;&#x6237;&#x540D;&#x79F0;</span>
+user=`whoami`
+
+<span class="hljs-comment">#5 &#x5FAA;&#x73AF;</span>
+<span class="hljs-keyword">for</span>((host=102; host&lt;104; host++)); <span class="hljs-keyword">do</span>
+        <span class="hljs-built_in">echo</span> ------------------- hadoop<span class="hljs-variable">$host</span> --------------
+        rsync -av <span class="hljs-variable">$pdir</span>/<span class="hljs-variable">$fname</span> <span class="hljs-variable">$user</span>@hadoop<span class="hljs-variable">$host</span>:<span class="hljs-variable">$pdir</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h3 id="4&#x4FEE;&#x6539;&#x811A;&#x672C;-xsync-&#x5177;&#x6709;&#x6267;&#x884C;&#x6743;&#x9650;">4.&#x4FEE;&#x6539;&#x811A;&#x672C; xsync &#x5177;&#x6709;&#x6267;&#x884C;&#x6743;&#x9650;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 bin]$ chmod 777 xsync
+</code></pre>
+<h3 id="5&#x8C03;&#x7528;&#x811A;&#x672C;&#xFF0C;&#x5F62;&#x5F0F;&#xFF1A;xsync-&#x6587;&#x4EF6;&#x540D;&#x79F0;">5.&#x8C03;&#x7528;&#x811A;&#x672C;&#xFF0C;&#x5F62;&#x5F0F;&#xFF1A;xsync &#x6587;&#x4EF6;&#x540D;&#x79F0;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 bin]$ xsync /home/atguigu/bin
+<span class="hljs-comment">#&#x9047;&#x5230;&#x63D0;&#x793A;&#x76F4;&#x63A5;yes&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x5165;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x7684;&#x5BC6;&#x7801;</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5C06;xsync&#x653E;&#x5230;/home/atguigu/bin&#x76EE;&#x5F55;&#x4E0B;&#x4EC5;&#x5728;hadoop&#x7528;&#x6237;&#x4E0B;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x60F3;&#x8981;&#x6240;&#x6709;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;xsync&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x5C06;xsync&#x79FB;&#x52A8;&#x5230;/usr/local/bin&#x76EE;&#x5F55;&#x4E0B;</p>
+</blockquote>
+<h3 id="6&#x5C06;xsync&#x590D;&#x5236;&#x5230;bin&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x5206;&#x53D1;">6.&#x5C06;xsync&#x590D;&#x5236;&#x5230;/bin&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x5206;&#x53D1;</h3>
+<blockquote>
+<p>&#x56E0;&#x4E3A;&#x540E;&#x671F;&#x4F1A;&#x4F20;&#x8F93;&#x67D0;&#x4E9B;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x8BB2;xsync&#x653E;&#x5230;root&#x7528;&#x6237;&#x7684;bin&#x4E0B;&#xFF0C;&#x65B9;&#x4FBF;&#x4F7F;&#x7528;<code>sudo xsync</code>&#x547D;&#x4EE4;</p>
+</blockquote>
+<pre><code class="lang-bash">[hadoop@hadoop101 bin]$ sudo cp xsync /bin
+[hadoop@hadoop101 bin]$ <span class="hljs-built_in">cd</span> /bin
+[hadoop@hadoop101 bin]$ sudo xsync xsync
+</code></pre>
+<h2 id="&#x56DB;&#x3001;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;">&#x56DB;&#x3001;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;</h2>
+<h3 id="1&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x89C4;&#x5212;">1.&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x89C4;&#x5212;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">hadoop101</th>
+<th style="text-align:center">hadoop102</th>
+<th style="text-align:center">hadoop103</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">HDFS</td>
+<td style="text-align:center">NameNode  DataNode</td>
+<td style="text-align:center">DataNode</td>
+<td style="text-align:center">SecondaryNameNode  DataNode</td>
+</tr>
+<tr>
+<td style="text-align:center">YARN</td>
+<td style="text-align:center">NodeManager</td>
+<td style="text-align:center">ResourceManager  NodeManager</td>
+<td style="text-align:center">NodeManager</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2&#x6587;&#x4EF6;&#x62F7;&#x8D1D;">2.&#x6587;&#x4EF6;&#x62F7;&#x8D1D;</h3>
+<pre><code class="lang-bash">[atguigu@hadoop101 module]$ <span class="hljs-built_in">cd</span> /opt/module <span class="hljs-comment">#&#x8FDB;&#x5165;&#x5230;&#x5B89;&#x88C5;&#x76EE;&#x5F55;</span>
+[atguigu@hadoop101 module]$ xsync hadoop-2.7.7 <span class="hljs-comment">#&#x62F7;&#x8D1D;hadoop</span>
+[atguigu@hadoop101 module]$ xsync jdk1.8.0_251/ <span class="hljs-comment">#&#x62F7;&#x8D1D;jdk</span>
+[atguigu@hadoop101 module]$ sudo xsync /etc/profile  <span class="hljs-comment">#&#x62F7;&#x8D1D;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6587;&#x4EF6;,&#x6CE8;&#x610F;&#x8981;&#x4F7F;&#x7528;sudo&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x5BC6;&#x7801;&#x662F;root&#x7528;&#x6237;&#x5BC6;&#x7801;</span>
+<span class="hljs-comment"># &#x5728;hadoop102&#x4E0E;hadoop103&#x4E2D;&#x66F4;&#x65B0;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+[hadoop@hadoop101 module]$  <span class="hljs-built_in">source</span> /etc/profile <span class="hljs-comment">#&#x4F7F;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x751F;&#x6548;</span>
+<span class="hljs-comment"># &#x5B8C;&#x6210;&#x540E;&#x53EF;&#x8F93;&#x5165;hadoop&#x3001;java&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x751F;&#x6548;</span>
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8FC7;&#x7A0B;&#x4F1A;&#x6BD4;&#x8F83;&#x6162;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#xFF1A;&#x4E8C;&#x3001;JDK&#x4E0E;Hadoop&#x7684;&#x5B89;&#x88C5;&#x4E2D;&#x7B2C;&#x4E00;&#x6B65;&#x76F4;&#x63A5;&#x5728;hadoop102&#x4E0E;hadoop103&#x4E2D;&#x4E0B;&#x8F7D;hadoop&#x4E0E;jdk</p>
+</blockquote>
+<h3 id="2&#x914D;&#x7F6E;&#x96C6;&#x7FA4;">2.&#x914D;&#x7F6E;&#x96C6;&#x7FA4;</h3>
+<h4 id="&#x6838;&#x5FC3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x6838;&#x5FC3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<h5 id="&#x8FDB;&#x5165;&#x5230;hadoop&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E2D;">&#x8FDB;&#x5165;&#x5230;hadoop&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E2D;</h5>
+<pre><code class="lang-bash">[atguigu@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/hadoop-2.7.7/etc/hadoop
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;core-sitexml">&#x914D;&#x7F6E;core-site.xml</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi core-site.xml
+</code></pre>
+<h5 id="&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h5>
+<pre><code class="lang-bash">&lt;configuration&gt;
+&lt;!-- &#x6307;&#x5B9A;HDFS&#x4E2D;NameNode&#x7684;&#x5730;&#x5740; --&gt;
+&lt;property&gt;
+  &lt;name&gt;fs.defaultFS&lt;/name&gt;
+  &lt;value&gt;hdfs://hadoop101:9000&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- &#x6307;&#x5B9A;Hadoop&#x8FD0;&#x884C;&#x65F6;&#x4EA7;&#x751F;&#x6587;&#x4EF6;&#x7684;&#x5B58;&#x50A8;&#x76EE;&#x5F55; --&gt;
+&lt;property&gt;
+  &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+  &lt;value&gt;/opt/module/hadoop-2.7.7/data/tmp&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h4 id="hdfs&#x914D;&#x7F6E;&#x6587;&#x4EF6;">HDFS&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<h5 id="&#x914D;&#x7F6E;hadoop-envsh">&#x914D;&#x7F6E;hadoop-env.sh</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi hadoop-env.sh
+<span class="hljs-comment"># &#x6587;&#x4EF6;&#x5185;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</span>
+<span class="hljs-built_in">export</span> JAVA_HOME=/opt/module/jdk1.8.0_251
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;hdfs-sitexml">&#x914D;&#x7F6E;hdfs-site.xml</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi hdfs-site.xml
+</code></pre>
+<h5 id="&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x7F16;&#x5199;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h5>
+<pre><code class="lang-bash">&lt;property&gt;
+  &lt;name&gt;dfs.replication&lt;/name&gt;
+  &lt;value&gt;3&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- &#x6307;&#x5B9A;Hadoop&#x8F85;&#x52A9;&#x540D;&#x79F0;&#x8282;&#x70B9;&#x4E3B;&#x673A;&#x914D;&#x7F6E; --&gt;
+&lt;property&gt;
+  &lt;name&gt;dfs.namenode.secondary.http-address&lt;/name&gt;
+  &lt;value&gt;hadoop103:50090&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h4 id="yarn&#x914D;&#x7F6E;&#x6587;&#x4EF6;">YARN&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<h5 id="&#x914D;&#x7F6E;yarn-envsh">&#x914D;&#x7F6E;yarn-env.sh</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi yarn-env.sh
+<span class="hljs-built_in">export</span> JAVA_HOME=/opt/module/jdk1.8.0_251
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;yarn-sitexml">&#x914D;&#x7F6E;yarn-site.xml</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi yarn-site.xml
+</code></pre>
+<h5 id="&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h5>
+<pre><code class="lang-bash">&lt;!-- Reducer&#x83B7;&#x53D6;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F; --&gt;
+&lt;property&gt;
+  &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+  &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- &#x6307;&#x5B9A;YARN&#x7684;ResourceManager&#x7684;&#x5730;&#x5740; --&gt;
+&lt;property&gt;
+  &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+  &lt;value&gt;hadoop102&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h4 id="mapreduce&#x914D;&#x7F6E;&#x6587;&#x4EF6;">MapReduce&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<h5 id="&#x914D;&#x7F6E;mapred-envsh">&#x914D;&#x7F6E;mapred-env.sh</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ vi mapred-env.sh
+<span class="hljs-built_in">export</span> JAVA_HOME=/opt/module/jdk1.8.0_251
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;mapred-sitexml">&#x914D;&#x7F6E;mapred-site.xml</h5>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ cp mapred-site.xml.template mapred-site.xml
+[hadoop@hadoop101 hadoop]$ vi mapred-site.xml
+</code></pre>
+<h5 id="&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h5>
+<pre><code class="lang-bash">&lt;!-- &#x6307;&#x5B9A;MR&#x8FD0;&#x884C;&#x5728;Yarn&#x4E0A; --&gt;
+&lt;property&gt;
+  &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+  &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="3&#x5728;&#x96C6;&#x7FA4;&#x4E0A;&#x5206;&#x53D1;&#x914D;&#x7F6E;&#x597D;&#x7684;hadoop&#x914D;&#x7F6E;&#x6587;&#x4EF6;">3.&#x5728;&#x96C6;&#x7FA4;&#x4E0A;&#x5206;&#x53D1;&#x914D;&#x7F6E;&#x597D;&#x7684;Hadoop&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ xsync /opt/module/hadoop-2.7.7/
+</code></pre>
+<h3 id="4&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5206;&#x53D1;&#x60C5;&#x51B5;">4.&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x5206;&#x53D1;&#x60C5;&#x51B5;</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5728;hadoop102&#x4E0E;hadoop103&#x4E2D;&#x67E5;&#x770B;&#x662F;&#x5426;&#x5206;&#x53D1;&#x6210;&#x529F;</span>
+[atguigu@hadoop103 hadoop]$ cat /opt/module/hadoop-2.7.7/etc/hadoop/core-site.xml
+</code></pre>
+<h2 id="&#x4E94;&#x3001;&#x96C6;&#x7FA4;&#x5355;&#x70B9;&#x542F;&#x52A8;">&#x4E94;&#x3001;&#x96C6;&#x7FA4;&#x5355;&#x70B9;&#x542F;&#x52A8;</h2>
+<h3 id="1&#x5982;&#x679C;&#x96C6;&#x7FA4;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x683C;&#x5F0F;&#x5316;namenode">1.&#x5982;&#x679C;&#x96C6;&#x7FA4;&#x662F;&#x7B2C;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#xFF0C;&#x9700;&#x8981;&#x683C;&#x5F0F;&#x5316;NameNode</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ hdfs namenode -format
+</code></pre>
+<h3 id="2&#x5728;hadoop101&#x4E0A;&#x542F;&#x52A8;namenode">2.&#x5728;hadoop101&#x4E0A;&#x542F;&#x52A8;NameNode</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ hadoop-daemon.sh start namenode
+[hadoop@hadoop101 hadoop-2.7.7]$ jps
+5504 Jps
+5435 NameNode
+</code></pre>
+<h3 id="3&#x5728;hadoop101&#x3001;hadoop102&#x4EE5;&#x53CA;hadoop103&#x4E0A;&#x5206;&#x522B;&#x542F;&#x52A8;datanode">3.&#x5728;hadoop101&#x3001;hadoop102&#x4EE5;&#x53CA;hadoop103&#x4E0A;&#x5206;&#x522B;&#x542F;&#x52A8;DataNode</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ hadoop-daemon.sh start datanode
+[hadoop@hadoop101 hadoop-2.7.7]$ jps
+5604 Jps
+5435 NameNode
+5532 DataNode
+[hadoop@hadoop102 hadoop-2.7.7]$ hadoop-daemon.sh start datanode[hadoop@hadoop102 hadoop-2.7.7]$ jps
+7127 Jps
+7021 DataNode
+[hadoop@hadoop103 hadoop-2.7.7]$ hadoop-daemon.sh start datanode
+[hadoop@hadoop103 hadoop-2.7.7]$ jps
+30146 DataNode
+30298 Jps
+</code></pre>
+<h4 id="4&#x8FD0;&#x884C;&#x6548;&#x679C;">4.&#x8FD0;&#x884C;&#x6548;&#x679C;</h4>
+<h2 id="&#x516D;&#x3001;&#x7FA4;&#x8D77;&#x96C6;&#x7FA4;">&#x516D;&#x3001;&#x7FA4;&#x8D77;&#x96C6;&#x7FA4;</h2>
+<h3 id="1ssh&#x65E0;&#x5BC6;&#x767B;&#x5F55;&#x914D;&#x7F6E;&#xFF08;&#x5728;hadoop101&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF09;">1.SSH&#x65E0;&#x5BC6;&#x767B;&#x5F55;&#x914D;&#x7F6E;&#xFF08;&#x5728;hadoop101&#x4E2D;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF09;</h3>
+<h4 id="&#x751F;&#x6210;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;">&#x751F;&#x6210;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ ssh-keygen -t rsa
+</code></pre>
+<h4 id="&#x5C06;&#x516C;&#x94A5;&#x62F7;&#x8D1D;&#x5230;&#x8981;&#x514D;&#x5BC6;&#x767B;&#x5F55;&#x7684;&#x76EE;&#x6807;&#x673A;&#x5668;&#x4E0A;">&#x5C06;&#x516C;&#x94A5;&#x62F7;&#x8D1D;&#x5230;&#x8981;&#x514D;&#x5BC6;&#x767B;&#x5F55;&#x7684;&#x76EE;&#x6807;&#x673A;&#x5668;&#x4E0A;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">cd</span> /home/atguigu/.ssh
+[hadoop@hadoop101 hadoop-2.7.7]$ ssh-copy-id hadoop101
+[hadoop@hadoop101 hadoop-2.7.7]$ ssh-copy-id hadoop102
+[hadoop@hadoop101 hadoop-2.7.7]$ ssh-copy-id hadoop103
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8FD8;&#x9700;&#x8981;&#x5728;hadoop101&#x4E0A;&#x91C7;&#x7528;root&#x8D26;&#x53F7;&#xFF0C;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x65E0;&#x5BC6;&#x767B;&#x5F55;&#x5230;hadoop101&#x3001;hadoop102&#x3001;hadoop103<br>&#x8FD8;&#x9700;&#x8981;&#x5728;hadoop102&#x4E0A;&#x91C7;&#x7528;atguigu&#x8D26;&#x53F7;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x65E0;&#x5BC6;&#x767B;&#x5F55;&#x5230;hadoop101&#x3001;hadoop102&#x3001;hadoop103&#x670D;&#x52A1;&#x5668;&#x4E0A;</p>
+</blockquote>
+<h3 id="2&#x7FA4;&#x8D77;&#x914D;&#x7F6E;">2.&#x7FA4;&#x8D77;&#x914D;&#x7F6E;</h3>
+<h4 id="&#x914D;&#x7F6E;slaves">&#x914D;&#x7F6E;slaves</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ <span class="hljs-built_in">cd</span> /opt/module/hadoop-2.7.7/etc/hadoop
+[hadoop@hadoop101 hadoop]$ vi slaves
+</code></pre>
+<h4 id="&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5185;&#x5BB9;">&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x5185;&#x5BB9;</h4>
+<pre><code class="lang-bash"><span class="hljs-comment">#&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x5185;&#x5BB9;&#x7ED3;&#x5C3E;&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x6587;&#x4EF6;&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x7A7A;&#x884C;</span>
+hadoop101
+hadoop102
+hadoop103
+</code></pre>
+<h4 id="&#x540C;&#x6B65;&#x6240;&#x6709;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x540C;&#x6B65;&#x6240;&#x6709;&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ xsync slaves
+</code></pre>
+<h3 id="3&#x505C;&#x6B62;&#x4E4B;&#x524D;&#x542F;&#x52A8;&#x7684;namenode&#x4E0E;datanode">3.&#x505C;&#x6B62;&#x4E4B;&#x524D;&#x542F;&#x52A8;&#x7684;namenode&#x4E0E;datanode</h3>
+<h4 id="hadoop101&#x4E2D;">hadoop101&#x4E2D;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ hadoop-daemon.sh stop namenode
+[hadoop@hadoop101 hadoop]$ hadoop-daemon.sh stop datanode
+</code></pre>
+<h4 id="hadoop102&#x4E2D;">hadoop102&#x4E2D;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop]$ hadoop-daemon.sh stop datanode
+</code></pre>
+<h4 id="hadoop103&#x4E2D;">hadoop103&#x4E2D;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop103 hadoop]$ hadoop-daemon.sh stop datanode
+</code></pre>
+<h3 id="4&#x6574;&#x4F53;&#x542F;&#x52A8;&#x505C;&#x6B62;hdfs">4.&#x6574;&#x4F53;&#x542F;&#x52A8;/&#x505C;&#x6B62;HDFS</h3>
+<h4 id="&#x5728;hadoop101&#x4E2D;&#x6267;&#x884C;&#x542F;&#x52A8;">&#x5728;hadoop101&#x4E2D;&#x6267;&#x884C;&#x542F;&#x52A8;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ start-dfs.sh
+</code></pre>
+<h4 id="&#x5982;&#x679C;&#x60F3;&#x8981;&#x5173;&#x95ED;hdfs&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;">&#x5982;&#x679C;&#x60F3;&#x8981;&#x5173;&#x95ED;HDFS&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ stop-dfs.sh
+</code></pre>
+<h3 id="5&#x6574;&#x4F53;&#x542F;&#x52A8;&#x505C;&#x6B62;yarn">5.&#x6574;&#x4F53;&#x542F;&#x52A8;/&#x505C;&#x6B62;YARN</h3>
+<h4 id="&#x5728;hadoop102&#x4E2D;&#x6267;&#x884C;&#x542F;&#x52A8;">&#x5728;hadoop102&#x4E2D;&#x6267;&#x884C;&#x542F;&#x52A8;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop]$ start-yarn.sh
+</code></pre>
+<h4 id="&#x5982;&#x679C;&#x60F3;&#x8981;&#x5173;&#x95ED;yarn&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;">&#x5982;&#x679C;&#x60F3;&#x8981;&#x5173;&#x95ED;YARN&#xFF0C;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</h4>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop]$ stop-yarn.sh
+</code></pre>
+<blockquote>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x56DE;&#x7B54;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;<br>1.&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x914D;&#x7F6E;ssh&#x514D;&#x5BC6;&#x767B;&#x9646;&#xFF1F;<br>&#x65B9;&#x4FBF;&#x5728;hadoop101&#x4E2D;&#x6267;&#x884C;&#x7FA4;&#x8D77;HDFS&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x6B21;&#x8F93;&#x5165;hadoop102&#x4E0E;hadoop103&#x4E3B;&#x673A;&#x7528;&#x6237;&#x5BC6;&#x7801;<br>2.&#x4E3A;&#x4EC0;&#x4E48;&#x4E5F;&#x8981;&#x5728;hadoop102&#x4E2D;&#x4E3B;&#x52A8;&#x914D;&#x7F6E;&#x65E0;&#x5BC6;&#x767B;&#x5F55;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;hadoop102&#x4E2D;&#x7FA4;&#x8D77;YARN&#xFF1F;<br>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x90E8;&#x7F72;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#x65F6;&#x7531;YARN&#x542F;&#x52A8;&#x7684;ResourceManager&#x8981;&#x90E8;&#x7F72;&#x5728;hadoop102&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x5728;hadoop102&#x4E2D;&#x542F;&#x52A8;YARN&#xFF0C;&#x5E76;&#x65E0;&#x9700;&#x5728;&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;&#x4E2D;&#x8F93;&#x5165;hadoop101&#x4E0E;hadoop103&#x7684;&#x7528;&#x6237;&#x5BC6;&#x7801;</p>
+</blockquote>
+<h3 id="6&#x67E5;&#x770B;yarn&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;">6.&#x67E5;&#x770B;YARN&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;</h3>
+<p>&#x8BBF;&#x95EE;&#xFF1A;<code>http://hadoop102:8088/</code></p>
+<p>&#x754C;&#x9762;&#xFF1A;</p>
+<h2 id="&#x4E03;&#x3001;&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;&#x4E0E;&#x65E5;&#x5FD7;&#x805A;&#x96C6;">&#x4E03;&#x3001;&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;&#x4E0E;&#x65E5;&#x5FD7;&#x805A;&#x96C6;</h2>
+<h3 id="1&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;">1.&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;</h3>
+<blockquote>
+<p>&#x4E3A;&#x4E86;&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x7684;&#x5386;&#x53F2;&#x8FD0;&#x884C;&#x60C5;&#x51B5;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;</p>
+</blockquote>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/hadoop-2.7.7/etc/hadoop
+[hadoop@hadoop101 hadoop]$ vi mapred-site.xml
+</code></pre>
+<h4 id="&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;hadoop103&#x914D;&#x7F6E;&#x4E3A;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;">&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#xFF0C;&#x5C06;hadoop103&#x914D;&#x7F6E;&#x4E3A;&#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;</h4>
+<pre><code class="lang-bash">&lt;!-- &#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x5730;&#x5740; --&gt;
+&lt;property&gt;
+&lt;name&gt;mapreduce.jobhistory.address&lt;/name&gt;
+&lt;value&gt;hadoop103:10020&lt;/value&gt;
+&lt;/property&gt;
+&lt;!-- &#x5386;&#x53F2;&#x670D;&#x52A1;&#x5668;web&#x7AEF;&#x5730;&#x5740; --&gt;
+&lt;property&gt;
+    &lt;name&gt;mapreduce.jobhistory.webapp.address&lt;/name&gt;
+    &lt;value&gt;hadoop103:19888&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="2&#x914D;&#x7F6E;&#x65E5;&#x5FD7;&#x7684;&#x805A;&#x96C6;">2.&#x914D;&#x7F6E;&#x65E5;&#x5FD7;&#x7684;&#x805A;&#x96C6;</h3>
+<blockquote>
+<p>&#x65E5;&#x5FD7;&#x805A;&#x96C6;&#x6982;&#x5FF5;&#xFF1A;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x5B8C;&#x6210;&#x4EE5;&#x540E;&#xFF0C;&#x5C06;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x4E0A;&#x4F20;&#x5230;HDFS&#x7CFB;&#x7EDF;&#x4E0A;&#x3002;<br>&#x65E5;&#x5FD7;&#x805A;&#x96C6;&#x529F;&#x80FD;&#x597D;&#x5904;&#xFF1A;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x67E5;&#x770B;&#x5230;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8BE6;&#x60C5;&#xFF0C;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/hadoop-2.7.7/etc/hadoop
+[hadoop@hadoop101 hadoop]$ vi mapred-site.xml
+</code></pre>
+<h4 id="&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;">&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</h4>
+<pre><code class="lang-bash">&lt;!-- &#x65E5;&#x5FD7;&#x805A;&#x96C6;&#x529F;&#x80FD;&#x4F7F;&#x80FD; --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.log-aggregation-enable&lt;/name&gt;
+&lt;value&gt;<span class="hljs-literal">true</span>&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;!-- &#x65E5;&#x5FD7;&#x4FDD;&#x7559;&#x65F6;&#x95F4;&#x8BBE;&#x7F6E;7&#x5929; --&gt;
+&lt;property&gt;
+&lt;name&gt;yarn.log-aggregation.retain-seconds&lt;/name&gt;
+&lt;value&gt;604800&lt;/value&gt;
+&lt;/property&gt;
+</code></pre>
+<h3 id="3&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540C;&#x6B65;">3.&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540C;&#x6B65;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop]$ <span class="hljs-built_in">cd</span> /opt/module/hadoop-2.7.7
+[hadoop@hadoop101 hadoop-2.7.7]$ xsync etc/
+</code></pre>
+<h3 id="4&#x91CD;&#x65B0;&#x542F;&#x52A8;hdfs&#x4E0E;yarn&#xFF0C;&#x4F7F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x751F;&#x6548;">4.&#x91CD;&#x65B0;&#x542F;&#x52A8;HDFS&#x4E0E;YARN&#xFF0C;&#x4F7F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x751F;&#x6548;</h3>
+<pre><code class="lang-bash">[hadoop@hadoop101 hadoop-2.7.7]$ stop-dfs.sh
+[hadoop@hadoop101 hadoop-2.7.7]$ start-dfs.sh
+</code></pre>
+<pre><code class="lang-bash">[hadoop@hadoop102 hadoop-2.7.7]$ stop-yarn.sh
+[hadoop@hadoop102 hadoop-2.7.7]$ start-yarn.sh
+</code></pre>
+<pre><code class="lang-bash">[hadoop@hadoop103 hadoop-2.7.7]$ mr-jobhistory-daemon.sh start historyserver
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 线上服务器环境搭建">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="zookeeper.html" class="navigation navigation-next " aria-label="Next page: Zookeeper集群环境搭建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Hadoop集群环境搭建","level":"1.3.1.1","depth":3,"next":{"title":"Zookeeper集群环境搭建","level":"1.3.1.2","depth":3,"path":"bigData/hadoop/zookeeper.md","ref":"bigData/hadoop/zookeeper.md","articles":[]},"previous":{"title":"线上服务器环境搭建","level":"1.3.1","depth":2,"path":"bigData/hadoop/README.md","ref":"bigData/hadoop/README.md","articles":[{"title":"Hadoop集群环境搭建","level":"1.3.1.1","depth":3,"path":"bigData/hadoop/environment.md","ref":"bigData/hadoop/environment.md","articles":[]},{"title":"Zookeeper集群环境搭建","level":"1.3.1.2","depth":3,"path":"bigData/hadoop/zookeeper.md","ref":"bigData/hadoop/zookeeper.md","articles":[]},{"title":"HDFS-HA集群环境搭建","level":"1.3.1.3","depth":3,"path":"bigData/hadoop/hadoop-HA.md","ref":"bigData/hadoop/hadoop-HA.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigData/hadoop/environment.md","mtime":"2020-07-04T04:10:25.234Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-14T13:47:37.709Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

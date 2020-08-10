@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a523706-9a6c-4db7-b923-e8845d48c607" name="Default" comment="" />
+    <list default="true" id="7a523706-9a6c-4db7-b923-e8845d48c607" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../java/BookManager/BookManager.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/iview-admin" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/iview-admin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/myBook/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/myBook/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/myBook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/myBook/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/myBook/docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/myBook/docker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html/myBook/docker/flask.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/myBook/docker/flask.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/java-lms/java-lms-web" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/java-lms/java-lms-web" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../autscore.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../autscore.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freshShop.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../freshShop.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +27,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1WhEiX7dDi3w89UytQJtmXRWLUc" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -32,6 +48,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -39,6 +56,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -222,6 +240,7 @@
       <workItem from="1585229450855" duration="52000" />
       <workItem from="1585398362381" duration="36000" />
       <workItem from="1589192391809" duration="8489000" />
+      <workItem from="1594744722461" duration="1491000" />
     </task>
     <servers />
   </component>
