@@ -1,0 +1,22 @@
+{
+  "name": "color-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp -f build/index.js build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-jsonminify": "^1.1.0",
+    "less": "^3.12.2"
+  }
+}
