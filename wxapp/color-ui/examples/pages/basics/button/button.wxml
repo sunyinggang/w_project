@@ -1,0 +1,85 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">按钮</view>
+</cu-custom>
+<view class="cu-bar bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>按钮形状
+  </view>
+  <navigator class="action" url="design" hover-class="none">
+    <text class="cuIcon-skinfill"></text>
+    <text class="text-df">设计</text>
+  </navigator>
+</view>
+<view class="padding flex flex-wrap justify-between align-center bg-white">
+  <c-button>默认</c-button>
+  <c-button shape="round">圆角</c-button>
+  <button class="cu-btn icon">
+    <text class="cuIcon-emojifill"></text>
+  </button>
+</view>
+<view class="cu-bar margin-top bg-white solid-bottom">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>按钮尺寸
+  </view>
+</view>
+<view class="padding flex flex-wrap justify-between align-center bg-white">
+  <c-button size="sm" shape="round">小尺寸</c-button>
+  <c-button shape="round">默认</c-button>
+  <c-button size="lg" shape="round">大尺寸</c-button>
+</view>
+<view class="cu-bar margin-top bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>按钮颜色
+  </view>
+  <view class="action">
+    <text class="text-df margin-right-sm">阴影</text>
+    <switch class="sm" bindchange="SetShadow"></switch>
+  </view>
+</view>
+<view class="grid col-5 padding-sm">
+  <view class="margin-tb-sm text-center" wx:for="{{ColorList}}" wx:key>
+    <c-button shape="round" bg="{{item.name}}" shadow="{{ shadow ? true : flase }}">{{item.title}}</c-button>
+  </view>
+</view>
+<view class="cu-bar margin-top bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>镂空按钮
+  </view>
+</view>
+<view class="grid col-5 padding-sm">
+  <view class="margin-tb-sm text-center" wx:for="{{ColorList}}" wx:key wx:if="{{item.name!='white'}}">
+    <c-button shape="round" bg="{{item.name}}" line="true" shadow="{{ shadow ? true : flase }}">{{item.title}}</c-button>
+  </view>
+</view>
+<view class="cu-bar margin-top bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>块状按钮
+  </view>
+</view>
+<view class="padding flex flex-direction">
+  <!-- <c-button size="lg" bg="grey">大尺寸</c-button> -->
+  <button class="cu-btn bg-grey lg">玄灰</button>
+  <button class="cu-btn bg-red margin-tb-sm lg">嫣红</button>
+</view>
+<view class="cu-bar margin-top bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>无效状态
+  </view>
+</view>
+<view class="padding">
+  <button class="cu-btn block bg-blue margin-tb-sm lg" disabled type="">无效状态</button>
+  <button class="cu-btn block line-blue margin-tb-sm lg" disabled>无效状态</button>
+</view>
+<view class="cu-bar margin-top bg-white">
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>按钮加图标
+  </view>
+</view>
+<view class="padding-xl">
+  <button class="cu-btn block line-orange lg">
+    <text class="cuIcon-upload"></text> 图标</button>
+  <button class="cu-btn block bg-blue margin-tb-sm lg">
+    <text class="cuIcon-loading2 iconfont-spin"></text> 加载</button>
+  <button class="cu-btn block bg-black margin-tb-sm lg" loading> 微信加载</button>
+</view>

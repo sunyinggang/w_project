@@ -1,0 +1,1 @@
+Component({externalClasses:["c-class"],behaviors:[],properties:{size:{type:String,value:"medium",options:["sm","lg","medium"]},bg:{type:String,value:"blue"},shape:{type:String,value:"square"},shadow:{type:Boolean,value:!1},line:{type:Boolean,value:!1}},methods:{}});

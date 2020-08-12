@@ -1,0 +1,3 @@
+<view class="c-btn {{ 'c-btn-' + size }} {{ 'c-btn-' + bg }} {{ 'c-btn-' + shape }} {{ shadow ? 'c-btn-shadow':'' }} {{ line ? 'c-btn-line':'' }} l-class">
+    <slot/>
+</view>
