@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c726e66-f46d-4718-a0de-1e76561d01ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/styles/_base.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/button/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tem/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tem/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tem/index.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tem/index.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../html/iview-admin" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/iview-admin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../java/java-lms/java-lms-web" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/java-lms/java-lms-web" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/task.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/examples/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/pages/index/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/examples/pages/index/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/examples/pages/index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/logs/logs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/logs/logs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/logs/logs.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/pages/logs/logs.wxss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/examples/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/utils/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +60,7 @@
       <updated>1597147392408</updated>
       <workItem from="1597147394547" duration="8479000" />
       <workItem from="1597215723410" duration="3353000" />
-      <workItem from="1597219131335" duration="19474000" />
+      <workItem from="1597219131335" duration="20001000" />
     </task>
     <servers />
   </component>
