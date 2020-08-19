@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    # 指定数据库驱动
+    driver-class-name: com.mysql.jdbc.Driver
+    # 数据库jdbc连接url地址
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    # 数据库账号密码
+    username: root
+    password: 123456
+
+  # thymeleaf设置
+  thymeleaf:
+    # 关闭缓存
+    cache: false
+    # 指定thymeleaf模板路径
+    prefix: classpath:/templates/
+    # 指定字符集编码
+    encoding: utf-8
+
+  # js ,css 等静态文件路径
+  mvc:
+    static-path-pattern: /static/**
+
+# mybatis相关
+mybatis:
+  # 实体类包路径
+  type-aliases-package: com.syg.demo.po
+  # 扫描mapper映射文件
+  mapper-locations: classpath:Mapper/*.xml

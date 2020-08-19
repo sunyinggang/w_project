@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--将默认的头 <html lang="en"> 引入thymeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>职业</td>
+        <td>手机号</td>
+    </tr>
+    <tr>
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.username}"></td>
+        <td th:text="${customer.job}"></td>
+        <td th:text="${customer.phone}"></td>
+    </tr>
+</table>
+</body>
+</html>
