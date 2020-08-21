@@ -1,5 +1,7 @@
 # SpringBoot边学边用（六）使用Mybatis Generator 自动生成 Mapper 文件
 
+>  Mybatis generator主要的功能就是方便，快捷的创建好Dao、entry、xml，加快了开发速度 
+
 ## 添加依赖
 
 在项目pom.xml文件<dependencies></dependencies>标签内添加如下代码
@@ -127,19 +129,19 @@ public class GeneratorMapper {
 
 打开GeneratorMapper文件，点击运行，控制台没有输出报错信息即代表成功运行，生成了mapper、dao、po
 
-![image-20200819210648422]( http://images.simplesay.top/book/image-20200819210648422.png)
+![]( http://images.simplesay.top/book/image-20200819210648422.png)
 
 > 提示：由于前几节内容自己创建过po与mapper文件，所以这里控制台最后信息为重写文件（单纯只阅读本节内容的自动忽略这个提示）
 
 这里需要注意一点，通过Mybatis Generator生成的dao层默认类名为*Mapper，所以这里删除我们之前自己创建的CustomerDao接口文件（单纯只阅读本节内容的自动忽略这个删除）
 
-![image-20200819210450124]( http://images.simplesay.top/book/image-20200819210450124.png)
+![]( http://images.simplesay.top/book/image-20200819210450124.png)
 
 ## 添加MyBatis的Java配置
 
 我们打开生成的CustomerMapper接口，发现接口上没有使用@Mapper注解，这样在SpringBoot启动时就无法实现自动注入，就不可能将这个dao交给Spring管理
 
-![image-20200819211458062]( http://images.simplesay.top/book/image-20200819211458062.png)
+![]( http://images.simplesay.top/book/image-20200819211458062.png)
 
 
 
@@ -166,10 +168,18 @@ public class MyBatisConfig {
 
 在com.syg.demo.service.impl包下找到CustomerServiceImpl.java，我们要将之前的customerDao对象换成自动生成的customerMapper对象，并调用自动生成的通过主键查询数据的方法
 
-![image-20200819212645897]( http://images.simplesay.top/book/image-20200819212645897.png)
+![]( http://images.simplesay.top/book/image-20200819212645897.png)
 
 > 提示：只查看本节内容的读者忽略这个修改
 
 ## 总结
 
 自动生成mapper在开发中是一种非常省时的方式，本节内容讲解了自动生成整个过程，特别是书写的generator-config.xml 文件查阅了很多博客，才能达到一次运行，没有报错的效果。在文章内容中出现的几个提示是给阅读整个专栏内容的读者看的，但是不影响单独学习这节内容的其他读者，如果感兴趣也可以阅读此专栏其他文章
+
+**阅读更多技术文章，及时获取内容更新，请扫码关注微信公众号-大数据School！**
+
+![](http://images.simplesay.top/book/wechat.png)
+欢迎评论区留下你的精彩评论~
+觉得文章不错可以分享到朋友圈让更多的小伙伴看到哦~
+
+客官！在看一下呗

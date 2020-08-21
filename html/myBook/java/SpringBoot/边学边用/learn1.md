@@ -8,7 +8,7 @@
 
 ![](http://images.simplesay.top/book/20200806171241.jpg)
 
-左侧选择Spring Initializr -> 选择要使用的SDK（我这里升级到了jdk 11版本）-> 选择默认地址下载已经创建的初始化SpringBoot项目 -> 点击next
+左侧选择Spring Initializr -> 选择要使用的SDK（我这里升级到了jdk 11版本）-> 选择默认地址下载已经创建的初始化SpringBoot项目 -> 点击nex
 
 ![image-20200817172916195]( http://images.simplesay.top/book/image-20200817172916195.png)
 

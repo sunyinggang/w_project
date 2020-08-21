@@ -155,3 +155,10 @@ mybatis:
   mapper-locations: classpath:Mapper/*.xml
 ```
 
+**阅读更多技术文章，及时获取内容更新，请扫码关注微信公众号-大数据School！**
+
+![](http://images.simplesay.top/book/wechat.png)
+欢迎评论区留下你的精彩评论~
+觉得文章不错可以分享到朋友圈让更多的小伙伴看到哦~
+
+客官！在看一下呗

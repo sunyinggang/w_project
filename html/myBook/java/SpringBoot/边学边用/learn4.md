@@ -4,7 +4,7 @@
 
 通过下图可以很容易理解，模板引擎就是将数据绑定到静态页面模板中，并输出绑定数据后的页面
 
-![image-20200818202655131]( http://images.simplesay.top/book/image-20200818202655131.png)
+![]( http://images.simplesay.top/book/image-20200818202655131.png)
 
 相对于JSP、Velocity、Freemarker等模板引擎，SpringBoot推荐的Thymeleaf语法更简单，功能更强大
 
@@ -40,7 +40,7 @@ spring.mvc.static-path-pattern=/static/**
 
 在resources/templates目录下新建静态页面
 
-![image-20200818200627116]( http://images.simplesay.top/book/image-20200818200627116.png)
+![]( http://images.simplesay.top/book/image-20200818200627116.png)
 
 在html页面中 引入thymeleaf，使用th:text 在标签内设置文本内容，使用${}调用在控制器中绑定的数据，具体代码如下：
 
@@ -106,4 +106,12 @@ public class CustomerController {
 
 此时返回的结果填充在表格中
 
-![image-20200818204035372]( http://images.simplesay.top/book/image-20200818204035372.png)
+![]( http://images.simplesay.top/book/image-20200818204035372.png)
+
+**阅读更多技术文章，及时获取内容更新，请扫码关注微信公众号-大数据School！**
+
+![](http://images.simplesay.top/book/wechat.png)
+欢迎评论区留下你的精彩评论~
+觉得文章不错可以分享到朋友圈让更多的小伙伴看到哦~
+
+客官！在看一下呗

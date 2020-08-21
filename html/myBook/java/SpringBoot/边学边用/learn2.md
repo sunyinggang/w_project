@@ -41,7 +41,7 @@ INSERT INTO `customer` VALUES ('2', '小红', '教师','18756576778');
 
 在项目启动类同级包下新建所需包，并在resources中创建Mapper文件夹
 
-![image-20200818184546338]( http://images.simplesay.top/book/image-20200818184546338.png)
+![]( http://images.simplesay.top/book/image-20200818184546338.png)
 
 ## 创建实现方法
 
@@ -214,13 +214,13 @@ mybatis.mapper-locations=classpath:Mapper/*.xml
 
 重新运行项目
 
-![image-20200818184217366]( http://images.simplesay.top/book/image-20200818184217366.png)
+![]( http://images.simplesay.top/book/image-20200818184217366.png)
 
 打开路由器，输入url地址：http://localhost:8081/findCustomerById?id=1
 
 可以成功访问到Id为1的数据
 
-![image-20200818190420640]( http://images.simplesay.top/book/image-20200818190420640.png)
+![]( http://images.simplesay.top/book/image-20200818190420640.png)
 
 ## 快速构建xml文件
 
@@ -230,5 +230,10 @@ mybatis.mapper-locations=classpath:Mapper/*.xml
 
 
 
+**阅读更多技术文章，及时获取内容更新，请扫码关注微信公众号-大数据School！**
 
+![](http://images.simplesay.top/book/wechat.png)
+欢迎评论区留下你的精彩评论~
+觉得文章不错可以分享到朋友圈让更多的小伙伴看到哦~  
+客官！在看一下呗
 
