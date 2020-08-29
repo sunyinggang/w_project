@@ -104,6 +104,8 @@ hadoop  ALL=(ALL) NOPASSWD:ALL
 
 ### 1.下载软件包
 
+下载jdk1.8，进入[下载地址](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，复制下载目录后，下载到hadoop101主机中
+
 ```bash
 [root@hadoop101 ~]$ cd /opt/software
 [hadoop@hadoop101 software]$ wget https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.tar.gz?AuthParam=1592397487_784064cf4a36bbbe87ea8eace28d38d2 #下载jdk

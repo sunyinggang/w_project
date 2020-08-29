@@ -24,7 +24,7 @@
 
 初始化目录结构如下，对文件作用进行基本解释
 
-```xml
+```json
 
 └─ .idea # idea创建的编译器配置文件
 └─ .mvnw # 一个maven wrapper script,可以在没有安装maven或者maven版本不兼容的条件下运行maven的命令
