@@ -1,0 +1,45 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>我的借书记录</h1>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>图书名称<i class="fa fa-sort"></i></th>
+                    <th>借书日期<i class="fa fa-sort"></i></th>
+                    <th>借书天数<i class="fa fa-sort"></i></th>
+                    <th>修改信息<i class="fa fa-sort"></i></th>
+                    <th>删除图书<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for v in book_list %}
+                  <tr>
+                    <td>{{ v.title }}</td>
+                    <td>{{ v.date }}</td>
+                    <td>{{ v.day }}</td>
+                    <td><a href="{{ url_for('home.edit',id=v.id) }}">点击修改</a></td>
+                    <td><a href="{{ url_for('home.delbook',id=v.id) }}">删除</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="040a4081-0202-40c5-8f19-45b59473099c" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>jquery-1.</find>
+      <find>jquery-1.1</find>
+      <find>jquery-1.12</find>
+      <find>jquery-1.12.min.js</find>
+      <find>jquery-1.12.min.j</find>
+      <find>jquery-1.12.min.</find>
+      <find>jquery-1.12.min</find>
+      <find>jquery-1.12.mi</find>
+      <find>jquery-1.12.m</find>
+      <find>jquery-1.12.</find>
+      <find>jquery-1.12.4</find>
+      <find>jquery-1.12.4.</find>
+      <find>jquery-1.12.4.m</find>
+      <find>jquery-1.12.4.mi</find>
+      <find>jquery-1.12.4.min.</find>
+      <find>jquery-1.12.4.min.j</find>
+      <find>adv fl</find>
+      <find>jquery-1.12.4.min.js</find>
+      <find>slideshow</find>
+      <find>slideshow.</find>
+      <find>slideshow.j</find>
+      <find>slideshow.js</find>
+      <find>jq</find>
+      <find>jquery-1.12.4.min</find>
+      <find>BC</find>
+      <find>.login_form_bg</find>
+      <find>42ad46</find>
+      <find>39a93e</find>
+      <find>00bc6f</find>
+      <find>logo</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>f59ba5</replace>
+    </replaceStrings>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="14" />
+    <option name="y" value="200" />
+    <option name="width" value="1380" />
+    <option name="height" value="314" />
+  </component>
+  <component name="ProjectId" id="1ZkNhavq90yfoMhjgo0DQZbsLmx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wedding_shop" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="040a4081-0202-40c5-8f19-45b59473099c" name="Default" comment="" />
+      <created>1542079940988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542079940988</updated>
+      <workItem from="1542079942615" duration="5507000" />
+      <workItem from="1585379254151" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1585379278279">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585379278279" />
+  </component>
+</project>

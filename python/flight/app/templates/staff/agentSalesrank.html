@@ -1,0 +1,61 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+{% include "staff/menu.html" %}
+      <div id="page-wrapper">
+          <div class="row panel">
+            <div class="col-lg-12">
+                <h1 class="panel">Top 5 booking agents based on number of tickets sales</h1>
+                <h4 class="panel">Last Month</h4>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover tablesorter">
+                          <thead>
+                          <tr>
+                              <th>Email<i class="fa fa-sort"></i></th>
+                              <th>Number<i class="fa fa-sort"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                           {% for m in ticket_last_month %}
+                            <tr>
+                              <th>{{ agent_email_month[m[0]] }}<i class="fa fa-sort"></i></th>
+                              <th>{{ m[1] }}<i class="fa fa-sort"></i></th>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+              </div><!-- /.row -->
+              <h4 class="panel">Last Year</h4>
+                <div class="row">
+                    <div class="col-lg-12">
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover tablesorter">
+                          <thead>
+                            <tr>
+                              <th>Email<i class="fa fa-sort"></i></th>
+                              <th>Number<i class="fa fa-sort"></i></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for y in ticket_last_year %}
+                            <tr>
+                              <th>{{ agent_email_year[y[0]] }}<i class="fa fa-sort"></i></th>
+                              <th>{{ y[1] }}<i class="fa fa-sort"></i></th>
+                            </tr>
+                          {% endfor %}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+              </div><!-- /.row -->
+            </div>
+          </div>
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+{% endblock %}

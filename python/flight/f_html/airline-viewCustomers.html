@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Air Ticket Reservation System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="css/morris-0.4.3.min.css">
+  </head>
+
+  <body>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Air Ticket Reservation System</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="airline-index.html"><i class="fa fa-dashboard"></i>My Flight</a></li>
+            <li><a href="airline-creatFlight.html"><i class="fa fa-dashboard"></i>Create Flight</a></li>
+            <li><a href="airline-addAircraft.html"><i class="fa fa-dashboard"></i>Add Airplane</a></li>
+            <li><a href="airline-addAirport.html"><i class="fa fa-dashboard"></i>Add Airport</a></li>
+            <li><a href="airline-viewCustomers.html"><i class="fa fa-dashboard"></i>View frequent customers</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>View reports<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="airline-reportSalesrank.html">Sales ranking</a></li>
+                  <li><a href="airline-reportMonthsales.html">Monthly sales</a></li>
+                </ul>
+              </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i>View Agents<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="airline-agentSalesrank.html">Sales ranking</a></li>
+                  <li><a href="airline-agentComrank.html">Commission ranking</a></li>
+                </ul>
+              </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                  <li><a href="airline-index.html"><i class="fa fa-user"></i>Home Page</a></li>
+                <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <div id="page-wrapper">
+          <div class="row">
+              <div class="col-lg-12">
+                <div class="table-responsive">
+                  <h1 class="panel">View requent customers</h1>
+                  <table class="table table-bordered table-hover tablesorter">
+                    <thead>
+                      <tr>
+                        <th>Name<i class="fa fa-sort"></i></th>
+                        <th>Email<i class="fa fa-sort"></i></th>
+                        <th>Ticket Number<i class="fa fa-sort"></i></th>
+                        <th>Operating<i class="fa fa-sort"></i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>/index.html</td>
+                        <td>1265</td>
+                        <td>32.3%</td>
+                        <td><button type="button" class="btn btn-primary" onclick="location.href='airline-customerTicket.html'">View purchase details</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div><!-- /.row -->
+
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Page Specific Plugins -->    <script src="js/raphael-min.js"></script>
+  </body>
+</html>

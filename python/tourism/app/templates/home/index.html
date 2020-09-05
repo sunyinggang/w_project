@@ -1,0 +1,171 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+
+
+<div class="container"> 		
+
+		<!--banner开始-->
+
+		<div class="banner"> 
+
+            <div class="bd">
+
+                <ul>
+
+                    <li style="background:url({{ url_for('static',filename='images/banner_4.png') }}) no-repeat center top;"></li>
+
+                </ul>
+
+            </div>
+
+            <div class="hd">
+
+                <ul>
+
+                    <li></li>
+
+                    <li></li>
+
+                </ul>
+
+            </div>
+
+            <a class="prev" href="javascript:void(0)"></a>
+
+            <a class="next" href="javascript:void(0)"></a>
+
+        </div>
+		 <!--调用JS模块图片滚动--> 
+        <script type="text/javascript">jQuery(".banner").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold",delayTime:1000,interTime:5000,autoPlay:true, autoPage:true, trigger:"click" });</script>
+
+		<!--banner结束--> 
+
+		
+
+		<!--content开始-->
+
+		<div class="content"> 
+
+			<p class="p_tit1">走进宁夏</p>	
+
+			<ul class="ul_jishu clearfix">
+
+            	<li class="fl">
+
+                	<a href="template/introduce.html"><img src="{{ url_for('static',filename='images/pic_1.jpg') }}" width="291" height="126" alt="" title=""></a>
+
+<p>
+                    	<a href="template/introduce.html">简介</a>
+                        宁夏回族自治区处在中国西部的黄河上游，东邻陕西省，西、北部接内蒙古自治区，西南、南部和东南部与甘肃省相连。南北相距约456千米，东西相距约250千米，总面积为6.64万多平方千米。宁夏回族自治区得黄河水灌溉而形成了悠久的黄河文明。</p>
+
+                </li>
+
+            	<li class="fl ml20">
+
+                	<a href="template/Culture.html"><img src="{{ url_for('static',filename='images/z2.png') }}" width="291" height="126" alt="" title=""></a>
+
+<p>
+                    	<a href="template/Culture.html" tppabs="http://www.17sucai.com/preview/163436/2016-11-09/ZP/template/Culture.html">政治</a>
+                        宁夏，全称宁夏回族自治区，简称“宁”。首府银川市，成立于1958年10月25日  ，是中国五大少数民族自治区之一，是全国最大的回族聚居区，辖5个地级市，22个县、市（区）。
+                    </p>
+
+                </li>
+
+                <li class="fr">
+
+                	<a href="template/historic.html" tppabs="http://www.17sucai.com/preview/163436/2016-11-09/ZP/template/historic.html"><img src="{{ url_for('static',filename='images/z3.png') }}" tppabs="http://www.17sucai.com/preview/163436/2016-11-09/ZP/images/pic_3.jpg" width="291" height="126" alt="" title=""></a>
+
+<p>
+                    	<a href="template/historic.html" tppabs="http://www.17sucai.com/preview/163436/2016-11-09/ZP/template/historic.html">经济</a>
+                        2017年，宁夏回族自治区实现生产总值3453.93亿元，按可比价格计算，比上年增长7.8%。按常住人口计算，全区人均生产总值50917元，增长6.7%。2018年上半年，宁夏接待境外游客37905人，旅游外汇收入2315.2万美元，同比分别增长56%、42.7%。</p>
+
+                </li>
+
+            </ul>	
+
+
+            <div class="zjfc">
+
+            	<p class="p_tit1">秀丽宁夏</p>
+
+                <div class="picScroll-left">
+
+                    <div class="bd">
+
+                        <ul class="picList">
+
+     
+
+                     
+
+
+                                             
+
+                   <li>
+
+                                <div class="pic"><img src="{{ url_for('static',filename='images/f1.jpg') }}" width="231" height="151" /></div>
+
+                               
+
+                            </li>
+
+                                             
+
+                   <li>
+
+                                <div class="pic"><img src="{{ url_for('static',filename='images/f2.jpg') }}" width="231" height="151" /></div>
+
+                                
+
+                            </li>
+
+                                             
+
+                   <li>
+
+                                <div class="pic"><img src="{{ url_for('static',filename='images/f3.jpg') }}" width="231" height="151" /></div>
+
+                               
+
+                            </li>
+
+                                             
+
+                   <li>
+
+                                <div class="pic"><img src="{{ url_for('static',filename='images/f4.jpg') }}" width="231" height="151" /></div>
+
+                               
+
+                   </li>                               
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+        		<!--为秀丽南宁模块图片向左滚到--> 
+
+                <script type="text/javascript">
+
+                jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
+
+                </script>
+			
+
+
+                	
+
+            </div>
+
+		</div>
+
+		<!--content 结束--> 
+
+</div>
+
+
+{% endblock %}
+

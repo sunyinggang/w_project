@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>塞上江南-宁夏</title>
+
+<meta content="塞上江南-宁夏" name="keywords" />
+
+<meta content="塞上江南-宁夏" name="description" />
+
+<link href="{{ url_for('static',filename='css/base.css') }}" rel="stylesheet" type="text/css">
+
+<link href="{{ url_for('static',filename='css/pagename.css') }}" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-1.6.2.min.js') }}"></script>
+
+
+</head>
+
+
+
+<body>
+<div class="w1000">
+
+	<div class="header_bottom">
+
+			<a href="{{url_for('home.index')}}"><img src="{{ url_for('static',filename='images/logo.png') }}" width="294" height="49" alt="" title="绿城之都-南宁"></a>
+
+       		<ul>
+
+            	<li><a href="{{ url_for('home.index') }}">首页</a></li>
+                <li><a href="{{ url_for('home.delicacy',id=1) }}">美食</a></li>
+                <li><a href="{{ url_for('home.natural') }}">自然</a></li>
+                <li><a href="{{ url_for('home.human') }}">人文</a></li>
+                <li><a href="{{ url_for('home.historic') }}">历史</a></li>
+
+     		</ul>
+
+    </div>
+
+</div>
+
+ {% block content %}{% endblock %}
+<div class="footer">
+
+	<p>
+        <a href="{{ url_for('home.index') }}">首页</a> |
+        <a href="{{ url_for('home.delicacy',id=1) }}">美食</a> |
+        <a href="{{ url_for('home.natural') }}">自然</a> |
+        <a href="{{ url_for('home.historic') }}">历史</a> |
+        <a href="{{ url_for('home.human') }}">人问</a> |
+    </p>
+
+<p>Copyright &copy; 2015－2016 All Rights Reserved 版权所有 XXXXXXXXXXXXXXXXXX</p>
+  <p>地址：XXXXXXXXXXXXXXXXXX </p>
+
+</div>
+
+
+
+<!--footer 结束-->
+
+</body>
+
+</html>

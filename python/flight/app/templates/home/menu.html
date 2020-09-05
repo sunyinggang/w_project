@@ -1,0 +1,36 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('home.index') }}">Air Ticket Reservation System</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="{{ url_for('home.index') }}"><i class="fa fa-dashboard"></i>Upcoming Flight</a></li>
+            <li><a href="{{ url_for('home.flystatus') }}"><i class="fa fa-bar-chart-o"></i>View Flight Status</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right navbar-user">
+              {% if session["username"] %}
+              <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>{{ session["username"] }}<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ url_for(session['url']) }}"><i class="fa fa-user"></i>Home Page</a></li>
+                <li><a href="{{ url_for('home.logout') }}"><i class="fa fa-power-off"></i> Log Out</a></li>
+              </ul>
+            </li>
+              {% else %}
+              <li class="dropdown user-dropdown">
+              <a href="{{ url_for('home.login') }}" class="dropdown-toggle">Go to Login</a>
+            </li>
+              {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+</nav>

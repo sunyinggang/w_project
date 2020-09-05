@@ -1,0 +1,94 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+{% include "home/menu.html" %}
+<div id="page-wrapper">
+<div class="row">
+   <div class="col-lg-4">
+          <form role="form" method="post">
+                    <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+					</div>
+                  <h1>Purchase ticket</h1>
+                  <div class="form-group">
+                      <label>Flight Number</label>
+                    {{ form.flight_num(value=flight.flight_num) }}
+							{% for err in form.flight_num.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                 <div class="form-group">
+                      <label>Departure Airport Name</label>
+                    {{ form.departure_airport_name(value=flight.departure_airport_name) }}
+							{% for err in form.departure_airport_name.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                    <div class="form-group">
+                      <label>Arrival Airport Name</label>
+                    {{ form.arrival_airport_name(value=flight.arrival_airport_name) }}
+							{% for err in form.arrival_airport_name.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                      <label>Departure Time</label>
+                    {{ form.departure_time(value=flight.departure_time) }}
+							{% for err in form.departure_time.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                      <label>Arrival Time</label>
+                    {{ form.arrival_time(value=flight.arrival_time) }}
+							{% for err in form.arrival_time.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                    <div class="form-group">
+                      <label>Price</label>
+                    {{ form.price(value=flight.price) }}
+							{% for err in form.price.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                      <label>Rest Seats</label>
+                      {{ form.rest_seat(value=flight.rest_seat) }}
+							{% for err in form.rest_seat.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					  {% endfor %}
+                  </div>
+                 <div class="form-group">
+                      <label>Email</label>
+                      {{ form.email(value=email) }}
+							{% for err in form.email.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					  {% endfor %}
+                  </div>
+                  {{ form.submit }}
+				  {{ form.csrf_token }}
+                </form>
+          </div>
+</div><!-- /.row -->
+</div>
+{% endblock %}
+

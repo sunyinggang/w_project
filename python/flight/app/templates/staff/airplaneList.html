@@ -1,0 +1,46 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+{% include "staff/menu.html" %}
+      <div id="page-wrapper">
+          <div class="row panel">
+            <div class="col-lg-12">
+                <h1 class="panel">Airplane List</h1>
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <button class="btn btn-success" style="margin-top:25px;"><a href="{{ url_for('staff.addAirplane') }}">Add Airplane</a></button>
+                    </div>
+                  <div class="table-responsive">
+                        <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+					</div>
+                    <table class="table table-bordered table-hover tablesorter">
+                      <thead>
+                        <tr>
+                          <th>ID<i class="fa fa-sort"></i></th>
+                          <th>Seats<i class="fa fa-sort"></i></th>
+                          <th>Operating<i class="fa fa-sort"></i></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for v in airplane_list %}
+                        <tr>
+                          <td>{{ v.id }}</td>
+                          <td>{{ v.seats }}</td>
+                          <td><a href="{{ url_for('staff.delAirplane',id=v.id) }}">Delete</a></td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+          </div><!-- /.row -->
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+{% endblock %}

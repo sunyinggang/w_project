@@ -1,0 +1,86 @@
+{% extends "home/home.html" %}
+
+{% block content %}
+<div class="container"> 		
+
+		<!--banner-->
+
+		<div class="banner_erji">
+
+        	<img src="../images/banner_erji3.jpg" width="1000" height="187" alt="" title="">        </div>
+
+		<!--banner end--> 
+
+		
+
+		<!--content-->
+
+		<div class="content clearfix">
+
+        	<div class="leftbar">
+
+            	<div class="leftnav">
+
+                	<h1>必吃美食</h1>
+
+                	<ul class="ul_left">
+
+						{% for c in category %}
+                      <li><h3><a href="{{ url_for('home.delicacy',id=c.id) }}">{{ c.name }}</a></h3></li>
+						{% endfor %}
+         	</ul>
+
+                 
+              </div>
+
+                <div class="left_lx">
+
+                	<h1>联系方式</h1>
+
+                    <p>地址：XXXX</p>
+
+                      <p>联系人：XXXXX</p>
+
+                      <p>电话：0771-xxxxxxx</p>
+
+                      <p>QQ：951XXX95</p>
+
+                      <p>网址：XXXn.com</p>
+
+                      <p>邮编：530001</p>
+
+                </div>
+
+            </div>
+
+        	<div class="rightbar">
+
+            	<div class="bread"><a href="{{ url_for('home.index') }}">首页</a> >{{ category[product.category_id-1].name }}</div>
+							<p class="p_tit2">
+
+								<span>{{ product.name }}</span>
+
+
+						</p>
+
+                    	<a href="detail.html"><img src="{{ url_for('static',filename='uploads/'+product.img) }}" style="width:320px;height:240px;margin: 50px  0 0 200px;"></a>
+
+       
+											<p style="margin: 50px;">
+												&nbsp;&nbsp;&nbsp;&nbsp;{{ product.content }}
+												</p>
+        
+
+
+                <div class="paging"></div>
+
+            </div>
+
+        </div>
+
+		<!--content end--> 
+
+</div>
+
+{% endblock %}
+

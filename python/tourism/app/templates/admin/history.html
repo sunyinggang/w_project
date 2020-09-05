@@ -1,0 +1,56 @@
+{% extends "admin/home.html" %}
+{% import "admin/page.html" as pg %}
+{% block content %}
+      <div id="page-wrapper">
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>我的历史列表</h1>
+          </div>
+          <div class="col-lg-2 col-lg-offset-10" style="margin-bottom:30px;">
+            <button class="btn btn-primary" onclick="window.location.href='{{ url_for('admin.addHistory') }}'">添加历史</button>
+          </div>
+        </div><!-- /.row -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="table-responsive">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <th>历史名称<i class="fa fa-sort"></i></th>
+                    <th>历史图片<i class="fa fa-sort"></i></th>
+                    <th>历史简介<i class="fa fa-sort"></i></th>
+                    <th>创建时间<i class="fa fa-sort"></i></th>
+                    <th>查看或修改信息<i class="fa fa-sort"></i></th>
+                    <th>删除<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for v in product_list.items %}
+                  <tr>
+                    <td>{{ v.name }}</td>
+                    <td><img src="{{ url_for('static',filename='uploads/'+v.img) }}" style="width:100px;height:100px;"></td>
+                    <td style="max-width: 100px;overflow: hidden; text-overflow:ellipsis;white-space: nowrap">{{ v.content }}</td>
+                    <td>{{ v.create_time }}</td>
+                    <td><a href="{{ url_for('admin.editHistory',id=v.id) }}">点击查看或修改</a></td>
+                    <td><a href="{{ url_for('admin.delHistory',id=v.id) }}">删除</a></td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            <div class="box-footer clearfix">
+              {{ pg.page(product_list,"admin.history") }}
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}
+
+{% block js %}
+{% endblock %}

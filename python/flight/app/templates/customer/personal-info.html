@@ -1,0 +1,122 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "customer/menu.html" %}
+      <div id="page-wrapper">
+        <div class="row panel">
+          <div class="col-md-offset-3 col-lg-6">
+              <h1 class="panel">Personal Information</h1>
+              <form role="form" method="post">
+                   <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+                   </div>
+                  <div class="form-group">
+                    <label>Name</label>
+                    {{ form.name(value=customer.name) }}
+							{% for err in form.name.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>Building_number</label>
+                    {{ form.building_number(value=customer.building_number) }}
+							{% for err in form.building_number.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>Strees</label>
+                    {{ form.street(value=customer.street) }}
+							{% for err in form.street.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                      <label>City</label>
+                      {{ form.city(value=customer.city) }}
+							{% for err in form.city.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                    </div>
+                    <div class="form-group">
+                      <label>State</label>
+                      {{ form.state(value=customer.state) }}
+							{% for err in form.state.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                    </div>
+                    <div class="form-group">
+                      <label>Phone_number</label>
+                      {{ form.phone_number(value=customer.phone_number) }}
+							{% for err in form.phone_number.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <label>Passport_number</label>
+                        {{ form.passport_number(value=customer.passport_number) }}
+							{% for err in form.passport_number.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                      </div>
+                      <div class="form-group">
+                        <label>Passport_expiration</label>
+                        {{ form.passport_expiration(value=customer.passport_expiration) }}
+							{% for err in form.passport_expiration.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}>
+                      </div>
+                      <div class="form-group">
+                        <label>Passport_country</label>
+                        {{ form.passport_country(value=customer.passport_country) }}
+							{% for err in form.passport_country.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                      </div>
+                      <div class="form-group">
+                          <label>Data_of_birth</label>
+                          {{ form.date_of_birth(value=customer.date_of_birth) }}
+							{% for err in form.date_of_birth.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                        </div>
+                   {{ form.submit }}
+					{{ form.csrf_token }}
+                </form>
+          </div>
+        </div>  
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+{% endblock %}
+{% block js %}
+    <script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+    $('#datetimepicker2').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+    </script>
+{% endblock %}

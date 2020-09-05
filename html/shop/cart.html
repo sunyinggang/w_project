@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>天天生鲜-购物车</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+<script type="text/javascript" src="js/etao.js"></script>
+<script type="text/javascript" src="js/cart.js"></script>
+</head>
+<body>
+	<div class="header_con">
+		<div class="header">
+			<div class="welcome fl">欢迎来到天天生鲜!</div>
+			<div class="fr">
+				<div class="login_info fl">
+					欢迎您：<em>张 山</em>
+				</div>
+				<div class="login_btn fl">
+					<a href="login.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/login.html">登录</a>
+					<span>|</span>
+					<a href="register.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/register.html">注册</a>
+				</div>
+				<div class="user_link fl">
+					<span>|</span>
+					<a href="user_center_info.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/user_center_info.html">用户中心</a>
+					<span>|</span>
+					<a href="cart.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/cart.html">我的购物车</a>
+					<span>|</span>
+					<a href="user_center_order.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/user_center_order.html">我的订单</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="search_bar clearfix">
+		<a href="index.html" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/index.html" class="logo fl"><img src="images/logo.png" style="width: 200px;height: 90px;" tppabs="http://www.17sucai.com/preview/905504/2018-09-09/%E5%A4%A9%E5%A4%A9%E7%94%9F%E9%B2%9C%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2/images/logo.png"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;购物车</div>
+		<div class="search_con fr">
+			<input type="text" class="input_text fl" name="" placeholder="搜索商品">
+			<input type="button" class="input_btn fr" name="" value="搜索">
+		</div>		
+	</div>
+
+	<div class="total_count">全部商品<em>2</em>件</div>	
+	<div class="cart-wrap">
+		<table id="cartTable" class="cart table table-condensed">
+			<thead>
+				<tr>
+					<th class="t-checkbox"><label><input class="check-all check" type="checkbox" />全选</label></th>
+					<th class="t-goods text-center"><label>产品图片</label></th>
+					<th class="t-goods text-center"><label>产品名称</label></th>
+					<th class="text-center">产品分类</th>
+					<th class="t-selling-price text-center"><label>销售单价</label></th>
+					<th class="t-qty text-center"><label>采购数量</label></th>
+					<th class="t-subtotal text-center"><label>金额小计</label></th>
+					<th class="t-action"><label>操作</label></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="2"><label> <input type="checkbox" class="check-one check" /><img src="images/adv01.jpg" style="width:100px;height:100px;margin-left:100px;"></label></td>
+					<td class="goods text-center">商品</td>
+					<td class="goods text-center">分类一</td>
+					<td class="selling-price number small-bold-red text-right"
+								style="padding-top: 1.1rem;" data-bind="76.55">76.55</td>
+					<td>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon minus">-</span> <input
+										type="text" class="number form-control input-sm" value="2" />
+							<span class="input-group-addon plus">+</span>
+						</div>
+					</td>
+					<td class="subtotal number small-bold-red text-right" style="padding-top: 1.1rem;"></td>
+					<td class="action" style="padding-top: 1.1rem;"><span class="delete btn btn-xs btn-warning">删除</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label> <input type="checkbox" class="check-one check" /><img src="images/adv01.jpg" style="width:100px;height:100px;margin-left:100px;"></label></td>
+					<td class="goods text-center">商品</td>
+					<td class="goods text-center">分类一</td>
+					<td class="selling-price number small-bold-red text-right"
+								style="padding-top: 1.1rem;" data-bind="76.55">76.55</td>
+					<td>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon minus">-</span> <input
+										type="text" class="number form-control input-sm" value="2" />
+							<span class="input-group-addon plus">+</span>
+						</div>
+					</td>
+					<td class="subtotal number small-bold-red text-right" style="padding-top: 1.1rem;"></td>
+					<td class="action" style="padding-top: 1.1rem;"><span class="delete btn btn-xs btn-warning">删除</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label> <input type="checkbox" class="check-one check" /><img src="images/adv01.jpg" style="width:100px;height:100px;margin-left:100px;"></label></td>
+					<td class="goods text-center">商品</td>
+					<td class="goods text-center">分类一</td>
+					<td class="selling-price number small-bold-red text-right"
+								style="padding-top: 1.1rem;" data-bind="76.55">76.55</td>
+					<td>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon minus">-</span> <input
+										type="text" class="number form-control input-sm" value="2" />
+							<span class="input-group-addon plus">+</span>
+						</div>
+					</td>
+					<td class="subtotal number small-bold-red text-right" style="padding-top: 1.1rem;"></td>
+					<td class="action" style="padding-top: 1.1rem;"><span class="delete btn btn-xs btn-warning">删除</span></td>
+				</tr>
+				<tr>
+					<td colspan="2"><label> <input type="checkbox" class="check-one check" /><img src="images/adv01.jpg" style="width:100px;height:100px;margin-left:100px;"></label></td>
+					<td class="goods text-center">商品</td>
+					<td class="goods text-center">分类一</td>
+					<td class="selling-price number small-bold-red text-right"
+								style="padding-top: 1.1rem;" data-bind="76.55">76.55</td>
+					<td>
+						<div class="input-group input-group-sm">
+							<span class="input-group-addon minus">-</span> <input
+										type="text" class="number form-control input-sm" value="2" />
+							<span class="input-group-addon plus">+</span>
+						</div>
+					</td>
+					<td class="subtotal number small-bold-red text-right" style="padding-top: 1.1rem;"></td>
+					<td class="action" style="padding-top: 1.1rem;"><span class="delete btn btn-xs btn-warning">删除</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="row">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<div class="cart-summary">
+					<div style="margin-left: 2rem;" class="pull-right">
+						<a href="confirmation.html"
+							id="btn_settlement" type="button" class="btn btn-primary" disabled>去结算</a>
+					</div>
+					<div style="margin-left: 1rem; margin-top: 0.4rem;" class="pull-right total">
+						<label>金额合计:<span id="priceTotal" class="price-total large-bold-red">0.00</span></label>
+					</div>
+					<div style="margin-top: 4px;" class="pull-right">
+						<label>您选择了<span id="itemCount" class="large-bold-red" style="margin: 0 4px;"></span>种产品型号，共计<span id="qtyCount" class="large-bold-red" style="margin: 0 4px;"></span>件
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>		
+		</div>
+		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    京ICP备*******8号</p>
+	</div>
+	
+</body>
+</html>

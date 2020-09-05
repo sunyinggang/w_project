@@ -1,0 +1,47 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "agent/menu.html" %}
+      <div id="page-wrapper">
+        <div class="row panel">
+          <div class="col-lg-12">
+              <h1 class="panel">Search for commission records for a specified date range</h1>
+              <form class="form-inline">
+                  <div class="form-group  col-lg-2">
+                        <label>Start Time</label>
+                        <input type="date" class="form-control" name="start_time">
+                    </div>
+                    <div class="form-group  col-lg-2">
+                        <label>End Time</label>
+                        <input type="date" class="form-control" name="end_time">
+                    </div>
+                  <div class="form-group">
+                      <button type="submit" class="btn btn-primary" style="margin-top:25px;">Confirm searchn</button>
+                  </div>
+                </form>
+          </div>
+        </div>  
+        <div class="row">
+            <div class="col-lg-12">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover tablesorter">
+                  <thead>
+                    <tr>
+                      <th>Total commission<i class="fa fa-sort"></i></th>
+                      <th>Total number of tickets<i class="fa fa-sort"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ sum }}</td>
+                      <td>{{ n }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </div><!-- /.row -->
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+{% endblock %}

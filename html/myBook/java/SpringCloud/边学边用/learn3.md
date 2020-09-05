@@ -26,15 +26,9 @@ Eureka Server集群架构：
 
 ![]( http://images.simplesay.top/book/image-20200902192538505.png)
 
-
-
-
-
 ## 搭建Eureka Server模块
 
-在上节内容中创建的项目中，删除根目录下的src目录，因为根目录相当于父模块，只需要使用pom进行配置
-
-首先在父模块下新建Module
+首先在父模块（根目录）下新建Module
 
 ![]( http://images.simplesay.top/book/image-20200902182227986.png)
 
@@ -135,3 +129,6 @@ eureka:
 运行启动类EurekaApplication，在浏览器中访问此地址：http://localhost:8000/，可以看到Eureka Server模块搭建成功
 
 ![]( http://images.simplesay.top/book/image-20200902203532499.png)
+
+## 升华
+

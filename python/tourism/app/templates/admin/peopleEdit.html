@@ -1,0 +1,45 @@
+{% extends "admin/home.html" %}
+
+{% block content %}
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-6">
+            <form method="post" role="form" enctype="multipart/form-data">
+              {% for msg in get_flashed_messages() %}
+					<p style="color:red;">{{ msg }}</p>
+              {% endfor %}
+              <h1>添加人文</h1>
+              <div class="form-group">
+                <label>人文名称</label>
+                {{ form.name(value=product.name) }}
+                {% for err in form.name.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>介绍</label>
+                {{ form.content() }}
+                {% for err in form.content.errors %}
+					<div class="clo-md-12">
+						<font style="color:red">{{ err }}</font>
+					</div>
+				{% endfor %}
+              </div>
+              <div class="form-group">
+                <label>人文图片</label>
+                {{ form.img(value=product.img) }}
+                <img src="{{ url_for('static',filename='uploads/'+product.img) }}" style="width:300px;height:300px;">
+              </div>
+              {{ form.submit }}
+			  {{ form.csrf_token }}
+            </form>
+          </div>
+          <div class="col-lg-4"></div>
+        </div><!-- /.row -->
+
+      </div><!-- /#page-wrapper -->
+{% endblock %}
+

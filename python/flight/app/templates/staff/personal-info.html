@@ -1,0 +1,61 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "staff/menu.html" %}
+      <div id="page-wrapper">
+        <div class="row panel">
+          <div class="col-md-offset-3 col-lg-6">
+              <h1 class="panel">Personal Information</h1>
+              <form role="form" method="post">
+                  <div class="row">
+						{% for msg in get_flashed_messages() %}
+					     <p style="color:red;">{{ msg }}</p>
+					     {% endfor %}
+					</div>
+                  <div class="form-group">
+                    <label>First Name</label>
+                    {{ form.first_name(value=staff.first_name) }}
+							{% for err in form.first_name.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    {{ form.last_name(value=staff.last_name) }}
+							{% for err in form.last_name.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                    <label>Date of Birth</label>
+                    {{ form.date_of_birth(value=staff.date_of_birth) }}
+							{% for err in form.date_of_birth.errors %}
+							<div class="clo-md-12">
+								<font style="color:red">{{ err }}</font>
+							</div>
+					{% endfor %}
+                  </div>
+                  <div class="form-group">
+                      <label>Airline Name</label>
+                      {{ form.airline_name(value=staff.airline_name) }}
+                  </div>
+                  {{ form.submit }}
+					{{ form.csrf_token }}
+                </form>
+          </div>
+        </div>  
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+{% endblock %}
+{% block js %}
+    <script>
+    $('#datetimepicker').datetimepicker({
+      format: 'yyyy-mm-dd hh:ii'
+    });
+    </script>
+{% endblock %}
+

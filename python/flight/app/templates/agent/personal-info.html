@@ -1,0 +1,24 @@
+{% extends "home/home.html" %}
+{% block content %}
+{% include "agent/menu.html" %}
+      <div id="page-wrapper">
+        <div class="row panel">
+          <div class="col-md-offset-3 col-lg-6">
+              <h1 class="panel">Personal Information</h1>
+              <form role="form">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" readonly="readonly" value="{{ agent.email }}">
+                  </div>
+                  <div class="form-group">
+                    <label>Booking Agent ID</label>
+                    <input class="form-control" readonly="readonly" value="{{ agent.booking_agent_id }}">
+                  </div>
+                </form>
+          </div>
+        </div>  
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+{% endblock %}
+

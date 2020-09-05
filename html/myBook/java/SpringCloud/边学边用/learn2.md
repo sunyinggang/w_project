@@ -44,7 +44,7 @@ Spring Cloud是完全基于Spring Boot 而开发，Spring Cloud 利用 Spring Bo
 
 ### 修改父工程pom文件
 
-打开根目录下pom.xml文件，将以下配置覆盖原文件内容
+删除根目录下的src目录，因为根目录相当于父模块，只需要对pom.xml进行配置，打开根目录下pom.xml文件，将以下配置覆盖原文件内容
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
